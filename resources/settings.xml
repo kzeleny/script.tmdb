@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+        <setting id="session_id" type="text" default="" visible="false" />
+        <setting id="username" type="text" label="32000" default="" />
+        <setting id="password" type="text" label="32001"  option="hidden" default=""/>
+</settings>
+
+

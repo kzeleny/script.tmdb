@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window type="window">
+  <controls>
+    <control type="image">
+      <posx>0</posx>
+      <posy>0</posy>
+      <texture>grey_overlay.png</texture>
+      <height>720</height>
+      <width>1280</width>
+    </control>
+    <control type="image">
+      <posx>0</posx>
+      <posy>0</posy>
+      <aspectratio>center</aspectratio>
+      <texture>loading.png</texture>
+      <height>720</height>
+      <width>1280</width>
+    </control>   
+    <control type="image" id="100">
+      <posx>0</posx>
+      <posy>0</posy>
+      <aspectratio>keep</aspectratio>
+      <height>720</height>
+      <width>1280</width>
+    </control>
+  </controls>
+</window>

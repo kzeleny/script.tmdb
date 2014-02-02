@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window type="window">
+  <defaultcontrol always="false">1005</defaultcontrol>
+  <coordinates>
+    <posx>440</posx>
+    <posy>260</posy>
+  </coordinates>
+  <controls>
+    <control type="group">
+      <control type="image">
+        <posx>0</posx>
+        <posy>0</posy>
+        <height>200</height>
+        <width>400</width>
+        <texture>background.png</texture>
+      </control>
+      <control type="image">
+        <posx>4</posx>
+        <posy>4</posy>
+        <height>192</height>
+        <width>392</width>
+        <texture>grey.png</texture>
+      </control>
+      <control type="image">
+        <posx>4</posx>
+        <posy>3</posy>
+        <texture>listitem-has-focus.png</texture>
+        <width>392</width>
+        <height>50</height>
+      </control>
+      <control type="label">
+        <posx>0</posx>
+        <posy>20</posy>
+        <width>392</width>
+        <align>center</align>
+        <label>What did you think?</label>
+        <textcolor>ffE68a00</textcolor>
+      </control>
+      <control type="label" id="1001">
+        <posx>0</posx>
+        <posy>65</posy>
+        <height>20</height>
+        <width>400</width>
+        <textcolor>ff606060</textcolor>
+        <align>center</align>
+        <label></label>
+      </control>
+      <control type="label" id="1002">
+        <posx>0</posx>
+        <posy>145</posy>
+        <height>20</height>
+        <width>400</width>
+        <textcolor>ff606060</textcolor>
+        <align>center</align>
+        <label></label>
+        <visible>Control.HasFocus(1005)|Control.HasFocus(1010)|Control.HasFocus(1015)|Control.HasFocus(1020)|Control.HasFocus(1025)|Control.HasFocus(1030)|Control.HasFocus(1035)|Control.HasFocus(1040)|Control.HasFocus(1045)|Control.HasFocus(1050)|Control.HasFocus(1055)|Control.HasFocus(1060)|Control.HasFocus(1065)|Control.HasFocus(1070)|Control.HasFocus(1075)|Control.HasFocus(1080)|Control.HasFocus(1085)|Control.HasFocus(1090)|Control.HasFocus(1095)|Control.HasFocus(1100)</visible>
+      </control>
+      <control type="group">
+        <posx>40</posx>
+        <posy>70</posy>
+      <!--half star button-->
+      <control type="button" id="1005">
+        <posx>20</posx>
+        <posy>0</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1010</onright>
+      </control>
+      <!-- 1 star button-->
+      <control type="button" id="1010">
+        <posx>16</posx>
+        <posy>0</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1015</onright>
+        <onleft>1005</onleft>
+        <ondown>200</ondown>
+      </control>
+      <control type="image">
+        <posx>0</posx>
+        <posy>32</posy>
+        <texture>star-icon-disable.png</texture>
+        <height>32</height>
+        <width>32</width>
+      </control>
+      <control type="image" id="2005">
+        <posx>0</posx>
+        <posy>32</posy>
+        <texture>half-star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1005)</visible>
+      </control>
+      <control type="image" id="2010">
+        <posx>0</posx>
+        <posy>32</posy>
+        <texture>star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1010)|Control.HasFocus(1015)|Control.HasFocus(1020)|Control.HasFocus(1025)|Control.HasFocus(1030)|Control.HasFocus(1035)|Control.HasFocus(1040)|Control.HasFocus(1045)|Control.HasFocus(1050)|Control.HasFocus(1055)|Control.HasFocus(1060)|Control.HasFocus(1065)|Control.HasFocus(1070)|Control.HasFocus(1075)|Control.HasFocus(1080)|Control.HasFocus(1085)|Control.HasFocus(1090)|Control.HasFocus(1095)|Control.HasFocus(1100)</visible>
+      </control>
+      <!-- 1.5 star button -->
+      <control type="button" id="1015">
+        <posx>32</posx>
+        <posy>0</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1020</onright>
+        <onleft>1010</onleft>
+        <ondown>200</ondown>
+      </control>
+      <!-- 2 star button-->
+      <control type="button" id="1020">
+        <posx>48</posx>
+        <posy>32</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1025</onright>
+        <onleft>1015</onleft>
+        <ondown>200</ondown>
+      </control>
+      <control type="image">
+        <posx>32</posx>
+        <posy>32</posy>
+        <texture>star-icon-disable.png</texture>
+        <height>32</height>
+        <width>32</width>
+      </control>
+      <control type="image" id="2015">
+        <posx>32</posx>
+        <posy>32</posy>
+        <texture>half-star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1015)</visible>
+      </control>
+      <control type="image" id="2020">
+        <posx>32</posx>
+        <posy>32</posy>
+        <texture>star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1020)|Control.HasFocus(1025)|Control.HasFocus(1030)|Control.HasFocus(1035)|Control.HasFocus(1040)|Control.HasFocus(1045)|Control.HasFocus(1050)|Control.HasFocus(1055)|Control.HasFocus(1060)|Control.HasFocus(1065)|Control.HasFocus(1070)|Control.HasFocus(1075)|Control.HasFocus(1080)|Control.HasFocus(1085)|Control.HasFocus(1090)|Control.HasFocus(1095)|Control.HasFocus(1100)</visible>
+      </control>
+      <!-- 2.5 star button -->
+      <control type="button" id="1025">
+        <posx>64</posx>
+        <posy>0</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1030</onright>
+        <onleft>1020</onleft>
+        <ondown>200</ondown>
+      </control>
+      <!-- 3 star button-->
+      <control type="button" id="1030">
+        <posx>80</posx>
+        <posy>32</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1035</onright>
+        <onleft>1025</onleft>
+        <ondown>200</ondown>
+      </control>
+      <control type="image">
+        <posx>64</posx>
+        <posy>32</posy>
+        <texture>star-icon-disable.png</texture>
+        <height>32</height>
+        <width>32</width>
+      </control>
+      <control type="image" id="2025">
+        <posx>64</posx>
+        <posy>32</posy>
+        <texture>half-star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1025)</visible>
+      </control>
+      <control type="image" id="2030">
+        <posx>64</posx>
+        <posy>32</posy>
+        <texture>star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1030)|Control.HasFocus(1035)|Control.HasFocus(1040)|Control.HasFocus(1045)|Control.HasFocus(1050)|Control.HasFocus(1055)|Control.HasFocus(1060)|Control.HasFocus(1065)|Control.HasFocus(1070)|Control.HasFocus(1075)|Control.HasFocus(1080)|Control.HasFocus(1085)|Control.HasFocus(1090)|Control.HasFocus(1095)|Control.HasFocus(1100)</visible>
+      </control>
+      <!-- 3.5 star button -->
+      <control type="button" id="1035">
+        <posx>96</posx>
+        <posy>0</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1040</onright>
+        <onleft>1030</onleft>
+        <ondown>200</ondown>
+      </control>
+      <!-- 4 star button-->
+      <control type="button" id="1040">
+        <posx>112</posx>
+        <posy>32</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1045</onright>
+        <onleft>1035</onleft>
+        <ondown>200</ondown>
+      </control>
+      <control type="image">
+        <posx>96</posx>
+        <posy>32</posy>
+        <texture>star-icon-disable.png</texture>
+        <height>32</height>
+        <width>32</width>
+      </control>
+      <control type="image" id="2035">
+        <posx>96</posx>
+        <posy>32</posy>
+        <texture>half-star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1035)</visible>
+      </control>
+      <control type="image" id="2040">
+        <posx>96</posx>
+        <posy>32</posy>
+        <texture>star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1040)|Control.HasFocus(1045)|Control.HasFocus(1050)|Control.HasFocus(1055)|Control.HasFocus(1060)|Control.HasFocus(1065)|Control.HasFocus(1070)|Control.HasFocus(1075)|Control.HasFocus(1080)|Control.HasFocus(1085)|Control.HasFocus(1090)|Control.HasFocus(1095)|Control.HasFocus(1100)</visible>
+      </control>
+      <!-- 4.5 star button -->
+      <control type="button" id="1045">
+        <posx>128</posx>
+        <posy>0</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1050</onright>
+        <onleft>1040</onleft>
+        <ondown>200</ondown>
+      </control>
+      <!-- 5 star button-->
+      <control type="button" id="1050">
+        <posx>144</posx>
+        <posy>32</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1055</onright>
+        <onleft>1045</onleft>
+        <ondown>200</ondown>
+      </control>
+      <control type="image">
+        <posx>128</posx>
+        <posy>32</posy>
+        <texture>star-icon-disable.png</texture>
+        <height>32</height>
+        <width>32</width>
+      </control>
+      <control type="image" id="2045">
+        <posx>128</posx>
+        <posy>32</posy>
+        <texture>half-star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1045)</visible>
+      </control>
+      <control type="image" id="2050">
+        <posx>128</posx>
+        <posy>32</posy>
+        <texture>star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1050)|Control.HasFocus(1055)|Control.HasFocus(1060)|Control.HasFocus(1065)|Control.HasFocus(1070)|Control.HasFocus(1075)|Control.HasFocus(1080)|Control.HasFocus(1085)|Control.HasFocus(1090)|Control.HasFocus(1095)|Control.HasFocus(1100)</visible>
+      </control>
+      <!-- 5.5 star button -->
+      <control type="button" id="1055">
+        <posx>160</posx>
+        <posy>0</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1060</onright>
+        <onleft>1050</onleft>
+        <ondown>200</ondown>
+        <onright>1002</onright>
+      </control>
+      <!-- 6 star button-->
+      <control type="button" id="1060">
+        <posx>176</posx>
+        <posy>32</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1065</onright>
+        <onleft>1055</onleft>
+        <ondown>200</ondown>
+      </control>
+      <control type="image">
+        <posx>160</posx>
+        <posy>32</posy>
+        <texture>star-icon-disable.png</texture>
+        <height>32</height>
+        <width>32</width>
+      </control>
+      <control type="image" id="2055">
+        <posx>160</posx>
+        <posy>32</posy>
+        <texture>half-star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1055)</visible>
+      </control>
+      <control type="image" id="2060">
+        <posx>160</posx>
+        <posy>32</posy>
+        <texture>star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1060)|Control.HasFocus(1065)|Control.HasFocus(1070)|Control.HasFocus(1075)|Control.HasFocus(1080)|Control.HasFocus(1085)|Control.HasFocus(1090)|Control.HasFocus(1095)|Control.HasFocus(1100)</visible>
+      </control>
+      <!-- 6.5 star button -->
+      <control type="button" id="1065">
+        <posx>192</posx>
+        <posy>0</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1070</onright>
+        <onleft>1060</onleft>
+        <ondown>200</ondown>
+      </control>
+      <!-- 7 star button-->
+      <control type="button" id="1070">
+        <posx>208</posx>
+        <posy>32</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1075</onright>
+        <onleft>1065</onleft>
+        <ondown>200</ondown>
+      </control>
+      <control type="image">
+        <posx>192</posx>
+        <posy>32</posy>
+        <texture>star-icon-disable.png</texture>
+        <height>32</height>
+        <width>32</width>
+      </control>
+      <control type="image" id="2065">
+        <posx>192</posx>
+        <posy>32</posy>
+        <texture>half-star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1065)</visible>
+      </control>
+      <control type="image" id="2070">
+        <posx>192</posx>
+        <posy>32</posy>
+        <texture>star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1070)|Control.HasFocus(1075)|Control.HasFocus(1080)|Control.HasFocus(1085)|Control.HasFocus(1090)|Control.HasFocus(1095)|Control.HasFocus(1100)</visible>
+      </control>
+      <!-- 7.5 star button -->
+      <control type="button" id="1075">
+        <posx>224</posx>
+        <posy>0</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1080</onright>
+        <onleft>1070</onleft>
+        <ondown>200</ondown>
+      </control>
+      <!-- 8 star button-->
+      <control type="button" id="1080">
+        <posx>240</posx>
+        <posy>32</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1085</onright>
+        <onleft>1075</onleft>
+        <ondown>200</ondown>
+      </control>
+      <control type="image">
+        <posx>224</posx>
+        <posy>32</posy>
+        <texture>star-icon-disable.png</texture>
+        <height>32</height>
+        <width>32</width>
+      </control>
+      <control type="image" id="2075">
+        <posx>224</posx>
+        <posy>32</posy>
+        <texture>half-star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1075)</visible>
+      </control>
+      <control type="image" id="2080">
+        <posx>224</posx>
+        <posy>32</posy>
+        <texture>star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1080)|Control.HasFocus(1085)|Control.HasFocus(1090)|Control.HasFocus(1095)|Control.HasFocus(1100)</visible>
+      </control>
+      <!-- 8.5 star button -->
+      <control type="button" id="1085">
+        <posx>256</posx>
+        <posy>0</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1090</onright>
+        <onleft>1080</onleft>
+        <ondown>200</ondown>
+      </control>
+      <!-- 9 star button-->
+      <control type="button" id="1090">
+        <posx>272</posx>
+        <posy>32</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1095</onright>
+        <onleft>1085</onleft>
+        <ondown>200</ondown>
+      </control>
+      <control type="image">
+        <posx>256</posx>
+        <posy>32</posy>
+        <texture>star-icon-disable.png</texture>
+        <height>32</height>
+        <width>32</width>
+      </control>
+      <control type="image" id="2085">
+        <posx>256</posx>
+        <posy>32</posy>
+        <texture>half-star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1085)</visible>
+      </control>
+      <control type="image" id="2090">
+        <posx>256</posx>
+        <posy>32</posy>
+        <texture>star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1090)|Control.HasFocus(1095)|Control.HasFocus(1100)</visible>
+      </control>
+      <!-- 9.5 star button -->
+      <control type="button" id="1095">
+        <posx>288</posx>
+        <posy>0</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>1100</onright>
+        <onleft>1090</onleft>
+        <ondown>200</ondown>
+      </control>
+      <!-- 10 star button-->
+      <control type="button" id="1100">
+        <posx>304</posx>
+        <posy>32</posy>
+        <height>64</height>
+        <width>32</width>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
+        <onright>405</onright>
+        <onleft>1095</onleft>
+        <ondown>200</ondown>
+      </control>
+      <control type="image">
+        <posx>288</posx>
+        <posy>32</posy>
+        <texture>star-icon-disable.png</texture>
+        <height>32</height>
+        <width>32</width>
+      </control>
+      <control type="image" id="2095">
+        <posx>288</posx>
+        <posy>32</posy>
+        <texture>half-star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1095)</visible>
+      </control>
+      <control type="image" id="2100">
+        <posx>288</posx>
+        <posy>32</posy>
+        <texture>star-icon-enable.png</texture>
+        <height>32</height>
+        <width>32</width>
+        <visible>Control.HasFocus(1100)</visible>
+      </control>
+      </control>
+    </control>
+  </controls>
+</window>

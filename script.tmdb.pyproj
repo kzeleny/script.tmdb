@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{59d18732-bfa9-4170-94cc-dfb081660404}</ProjectGuid>
+        <ProjectHome />
+        <StartupFile />
+        <SearchPath />
+        <WorkingDirectory>.</WorkingDirectory>
+        <OutputPath>.</OutputPath>
+        <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+        <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+    <ItemGroup>
+        <Content Include="changelog.txt" />
+        <Content Include="LICENSE.txt" />
+        <Content Include="icon.png" />
+        <Content Include="addon.xml" />
+        <Compile Include="default.py" />
+        <Compile Include="movies.py" />
+        <Compile Include="service.py" />
+        <Content Include="resources\settings.xml" />
+        <Compile Include="resources\__init__.py" />
+        <Compile Include="resources\lib\class1.py" />
+        <Compile Include="resources\lib\movies.py" />
+        <Compile Include="resources\lib\tmdb.py" />
+        <Compile Include="resources\lib\tvshows.py" />
+        <Compile Include="resources\lib\tvspeople.py" />
+        <Compile Include="resources\lib\utils.py" />
+        <Compile Include="resources\lib\__init__.py" />
+        <Content Include="resources\media\focus-back.png" />
+        <Content Include="resources\media\half_thumb.png" />
+        <Content Include="resources\media\no-background-w300.jpg" />
+        <Content Include="resources\media\no-poster-w92.jpg" />
+        <Content Include="resources\language\English\strings.xml" />
+        <Content Include="resources\skins\default\720p\script-BlankWindow.xml" />
+        <Content Include="resources\skins\default\720p\script-movieWindow.xml" />
+        <Content Include="resources\skins\default\720p\script-peopleWindow.xml" />
+        <Content Include="resources\skins\default\720p\script-tvWindow.xml" />
+        <Content Include="resources\skins\default\media\background.png" />
+        <Content Include="resources\skins\default\media\black.png" />
+        <Content Include="resources\skins\default\media\button-bar.png" />
+        <Content Include="resources\skins\default\media\button-focus.png" />
+        <Content Include="resources\skins\default\media\button-nofocus.png" />
+        <Content Include="resources\skins\default\media\focus-back.png" />
+        <Content Include="resources\skins\default\media\grey.png" />
+        <Content Include="resources\skins\default\media\header-background.png" />
+        <Content Include="resources\skins\default\media\header-bg.png" />
+        <Content Include="resources\skins\default\media\header-movies.png" />
+        <Content Include="resources\skins\default\media\header-people.png" />
+        <Content Include="resources\skins\default\media\header-tv.png" />
+        <Content Include="resources\skins\default\media\heart-icon-disable.png" />
+        <Content Include="resources\skins\default\media\heart-icon-enable.png" />
+        <Content Include="resources\skins\default\media\icon-person-48.png" />
+        <Content Include="resources\skins\default\media\next-new.png" />
+        <Content Include="resources\skins\default\media\noposter.png" />
+        <Content Include="resources\skins\default\media\popcorn-icon-disable.png" />
+        <Content Include="resources\skins\default\media\popcorn-icon-enable.png" />
+        <Content Include="resources\skins\default\media\prev-new.png" />
+        <Content Include="resources\skins\default\media\star-icon-disable.png" />
+        <Content Include="resources\skins\default\media\star-icon-enable.png" />
+        <Content Include="resources\skins\default\media\tmdb-logo.png" />
+        <Content Include="resources\skins\default\media\white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="resources" />
+        <Folder Include="resources\language\English" />
+        <Folder Include="resources\lib" />
+        <Folder Include="resources\media" />
+        <Folder Include="resources\skins\default\720p" />
+        <Folder Include="resources\skins\default\media" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+</Project>
