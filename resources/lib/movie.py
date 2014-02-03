@@ -36,7 +36,6 @@ class movieWindow(xbmcgui.WindowXMLDialog):
     session_id=''
     def onInit(self):
         self.session_id=addon.getSetting('session_id')
-        self.getControl(127).setVisible(False)
         self.getControl(123).setVisible(False)
         you_tube_base_url='plugin://plugin.video.youtube/?action=play_video&videoid='
         self.posters=[]
@@ -52,7 +51,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         self.current_movie=movie
         self.file=utils.find_xbmc_by_title(movie['title'])
         if self.file!='':
-            self.getControl(127).setVisible(True)
+            self.getControl(127).setLabel('Play')
         crew = movie['credits']['crew']
         cast = movie['credits']['cast']
         self.cast= sorted(cast, key=lambda k: k['order'])
@@ -253,9 +252,11 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             self.show_cast(self.cast)
                 
         if control ==127:
-            xbmc.Player().play(self.file)
-            xbmc.executebuiltin('Dialog.Close(all,true)')
-
+            if self.getControl(127).getLabel()=='Play':
+                xbmc.Player().play(self.file)
+                xbmc.executebuiltin('Dialog.Close(all,true)')
+            else:
+                xbmc.executebuiltin("XBMC.RunPlugin('plugin://plugin.video.couchpotato_manager/movies/add?title='" + self.current_movie['title']+ "')'")
         if control == 405 or control == 406:
             if control==405:
                 if self.background_index==0:

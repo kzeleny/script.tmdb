@@ -30,7 +30,7 @@ def getTitleFont():
         fonts.append({'name':name,'size':float(size)})
     fonts =sorted(fonts, key=lambda k: k['size'])
     for f in fonts:
-        if f['size'] >= 24:
+        if f['size'] >= 28:
             title_font=f['name']
             break
     return title_font

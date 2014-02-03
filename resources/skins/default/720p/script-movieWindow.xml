@@ -35,24 +35,6 @@
         <aspectratio>stretch</aspectratio>
         <texture>header-movies.png</texture>
       </control>
-      <control type="button" id="5000">
-        <posx>1080</posx>
-        <posy>30</posy>
-        <height>30</height>
-        <width>150</width>
-        <texturefocus>account-blank.png</texturefocus>
-        <texturenofocus>account-blank.png</texturenofocus>
-        <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
-        <font>font13</font>
-        <textwidth>150</textwidth>
-        <textoffsetx>40</textoffsetx>
-        <label>Account</label>
-        <ondown>32113</ondown>
-        <onright>32113</onright>
-        <onleft>32113</onleft>
-        <ondown>32113</ondown>
-      </control>
       <control type="image">
         <posx>25</posx>
         <posy>15</posy>
@@ -350,26 +332,26 @@
         <autoscroll delay="5000" time="2000" repeat="5000"></autoscroll>
       </control>
       <control type="button" id="32116">
-        <posx>1159</posx>
-        <posy>690</posy>
-        <height>24</height>
-        <width>31</width>
+        <posx>466</posx>
+        <posy>680</posy>
+        <height>32</height>
+        <width>32</width>
         <textwidth>150</textwidth>
-        <texturefocus>prev-new.png</texturefocus>
-        <texturenofocus>prev-new.png</texturenofocus>
+        <texturefocus>prev-enable.png</texturefocus>
+        <texturenofocus>prev-disable.png</texturenofocus>
         <animation effect ="zoom" center="auto" end="120" time="100">Focus</animation>
         <label></label>
         <font>font13</font>
         <textcolor>ff606060</textcolor>
       </control>
       <control type="button" id="32117">
-        <posx>1191</posx>
-        <posy>690</posy>
-        <height>24</height>
-        <width>31</width>
+        <posx>1200</posx>
+        <posy>680</posy>
+        <height>32</height>
+        <width>32</width>
         <textwidth>150</textwidth>
-        <texturefocus>next-new.png</texturefocus>
-        <texturenofocus>next-new.png</texturenofocus>
+        <texturefocus>next-enable.png</texturefocus>
+        <texturenofocus>next-disable.png</texturenofocus>
         <animation effect ="zoom" center="auto" end="120" time="100">Focus</animation>
         <label></label>
         <font>font13</font>
@@ -377,10 +359,11 @@
       </control>
       <control type="label" id="32120">
         <posx>466</posx>
-        <posy>690</posy>
+        <posy>685</posy>
         <height>20</height>
-        <width>auto</width>
+        <width>764</width>
         <font>font13</font>
+        <align>center</align>
         <textcolor>ff606060</textcolor>
         <label>Page 1 of 10</label>
       </control>

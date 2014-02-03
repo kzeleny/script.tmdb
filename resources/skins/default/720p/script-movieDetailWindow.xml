@@ -8,7 +8,7 @@
   <controls>
     <control type="group">
       <animation effect="slide" start="0" end="1280" time="500">WindowClose</animation>
-      <animation effect="slide" start="1280" end="0" time="500">WindowOpen</animation>
+      <animation effect="slide" start="1280" end="0" tween="back" easing="out" time="750">WindowOpen</animation>
       <control type="image">
         <posx>0</posx>
         <posy>0</posy>
@@ -60,41 +60,41 @@
         <control type="button" id="105">
           <posx>20</posx>
           <posy>265</posy>
-          <height>24</height>
-          <width>31</width>
+          <height>32</height>
+          <width>32</width>
           <textwidth>150</textwidth>
-          <texturefocus>prev-new.png</texturefocus>
-          <texturenofocus>prev-new.png</texturenofocus>
+          <texturefocus>prev-enable.png</texturefocus>
+          <texturenofocus>prev-disable.png</texturenofocus>
           <animation effect ="zoom" center="auto" end="120" time="100">Focus</animation>
           <label></label>
           <font>font13</font>
           <textcolor>ff606060</textcolor>
           <onright>106</onright>
           <onup>104</onup>
-          <ondown>301</ondown>
+          <ondown>122</ondown>
           <onleft>406</onleft>
         </control>
         <control type="button" id="106">
           <posx>175</posx>
           <posy>265</posy>
-          <height>24</height>
-          <width>31</width>
+          <height>32</height>
+          <width>32</width>
           <textwidth>150</textwidth>
-          <texturefocus>next-new.png</texturefocus>
-          <texturenofocus>next-new.png</texturenofocus>
+          <texturefocus>next-enable.png</texturefocus>
+          <texturenofocus>next-disable.png</texturenofocus>
           <animation effect ="zoom" center="auto" end="120" time="100">Focus</animation>
           <label></label>
           <font>font13</font>
           <textcolor>ff606060</textcolor>
           <onup>104</onup>
-          <onright>1005</onright>
+          <onright>132</onright>
           <onleft>105</onleft>
           <ondown>122</ondown>
         </control>
         <control type="label" id="107">
-          <posx>51</posx>
-          <posy>265</posy>
-          <width>130</width>
+          <posx>20</posx>
+          <posy>270</posy>
+          <width>185</width>
           <font>font13</font>
           <align>center</align>
           <textcolor>ff606060</textcolor>
@@ -143,28 +143,28 @@
         <control type="button" id="405">
           <posx>0</posx>
           <posy>166</posy>
-          <height>24</height>
-          <width>31</width>
+          <height>32</height>
+          <width>32</width>
           <textwidth>165</textwidth>
-          <texturefocus>prev-new.png</texturefocus>
-          <texturenofocus>prev-new.png</texturenofocus>
+          <texturefocus>prev-enable.png</texturefocus>
+          <texturenofocus>prev-disable.png</texturenofocus>
           <animation effect ="zoom" center="auto" end="120" time="100">Focus</animation>
           <label></label>
           <font>font13</font>
           <textcolor>ff606060</textcolor>
           <onright>406</onright>
-          <onleft>1100</onleft>
+          <onleft>132</onleft>
           <ondown>50</ondown>
           <onup>404</onup>
         </control>
         <control type="button" id="406">
           <posx>271</posx>
           <posy>166</posy>
-          <height>24</height>
-          <width>31</width>
+          <height>32</height>
+          <width>32</width>
           <textwidth>150</textwidth>
-          <texturefocus>next-new.png</texturefocus>
-          <texturenofocus>next-new.png</texturenofocus>
+          <texturefocus>next-enable.png</texturefocus>
+          <texturenofocus>next-disable.png</texturenofocus>
           <animation effect ="zoom" center="auto" end="120" time="100">Focus</animation>
           <label></label>
           <font>font13</font>
@@ -176,7 +176,7 @@
         </control>
         <control type="label" id="407">
           <posx>0</posx>
-          <posy>170</posy>
+          <posy>175</posy>
           <width>300</width>
           <font>font13</font>
           <align>center</align>
@@ -438,7 +438,7 @@
         <height>30</height>
         <width>150</width>
         <align>center</align>
-        <texturenofocus>button-has-focus.png</texturenofocus>
+        <texturenofocus>button-no-focus.png</texturenofocus>
         <texturefocus>button-has-focus.png</texturefocus>
         <textcolor>ff606060</textcolor>
         <textwidth>150</textwidth>
@@ -446,8 +446,8 @@
         <label>Rate Movie</label>
         <onup>101</onup>
         <ondown>200</ondown>
-        <onleft>122</onleft>
-        <onright>122</onright>
+        <onleft>106</onleft>
+        <onright>405</onright>
       </control>
   <control type="label" id="118">
           <posx>5</posx>
@@ -582,7 +582,7 @@
         <height>30</height>
         <width>150</width>
         <align>center</align>
-        <texturenofocus>button-has-focus.png</texturenofocus>
+        <texturenofocus>button-no-focus.png</texturenofocus>
         <texturefocus>button-has-focus.png</texturefocus>
         <textcolor>ff606060</textcolor>
         <textwidth>150</textwidth>
@@ -615,7 +615,7 @@
         <height>30</height>
         <width>150</width>
         <align>center</align>
-        <texturenofocus>button-has-focus.png</texturenofocus>
+        <texturenofocus>button-no-focus.png</texturenofocus>
         <texturefocus>button-has-focus.png</texturefocus>
         <textcolor>ff606060</textcolor>
         <textwidth>150</textwidth>
@@ -632,12 +632,12 @@
         <height>30</height>
         <width>150</width>
         <align>center</align>
-        <texturenofocus>button-has-focus.png</texturenofocus>
+        <texturenofocus>button-no-focus.png</texturenofocus>
         <texturefocus>button-has-focus.png</texturefocus>
         <textcolor>ff606060</textcolor>
         <textwidth>150</textwidth>
         <focusedcolor>ff000000</focusedcolor>
-        <label>Play</label>
+        <label>Couch Potato</label>
         <onup>101</onup>
         <ondown>200</ondown>
         <onleft>122</onleft>
