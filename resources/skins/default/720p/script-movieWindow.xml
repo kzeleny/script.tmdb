@@ -1,4 +1,4 @@
-﻿﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window type="window">
   <defaultcontrol always="false">32101</defaultcontrol>
   <coordinates>
@@ -35,7 +35,24 @@
         <aspectratio>stretch</aspectratio>
         <texture>header-movies.png</texture>
       </control>
-
+      <control type="button" id="5000">
+        <posx>1080</posx>
+        <posy>30</posy>
+        <height>30</height>
+        <width>150</width>
+        <texturefocus>account-blank.png</texturefocus>
+        <texturenofocus>account-blank.png</texturenofocus>
+        <textcolor>ffffffff</textcolor>
+        <focusedcolor>ffc0c0c0</focusedcolor>
+        <font>font13</font>
+        <textwidth>150</textwidth>
+        <textoffsetx>40</textoffsetx>
+        <label>Account</label>
+        <ondown>32113</ondown>
+        <onright>32113</onright>
+        <onleft>32113</onleft>
+        <ondown>32113</ondown>
+      </control>
       <control type="image">
         <posx>25</posx>
         <posy>15</posy>
@@ -60,7 +77,7 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup>32117</onup>
+        <onup>5000</onup>
         <ondown>32101</ondown>
         <onleft>32115</onleft>
         <onright>32114</onright>
@@ -179,6 +196,63 @@
         <onup></onup>
         <ondown>32001</ondown>
         <onleft>32103</onleft>
+        <onright>33105</onright>
+      </control>
+      <control type="button" id="33105">
+        <description>favorites_button</description>
+        <posx>650</posx>
+        <posy>137</posy>
+        <width>150</width>
+        <textwidth>150</textwidth>
+        <height>25</height>
+        <font>font13</font>
+        <label>Favorites</label>
+        <align>center</align>
+        <texturefocus></texturefocus>
+        <texturenofocus></texturenofocus>
+        <textcolor>ffffffff</textcolor>
+        <focusedcolor>ffc0c0c0</focusedcolor>
+        <onup></onup>
+        <ondown>32001</ondown>
+        <onleft>32104</onleft>
+        <onright>33106</onright>
+      </control>
+      <control type="button" id="33106">
+        <description>watchlist-button</description>
+        <posx>810</posx>
+        <posy>137</posy>
+        <width>150</width>
+        <textwidth>150</textwidth>
+        <height>25</height>
+        <font>font13</font>
+        <label>Watchlist</label>
+        <align>center</align>
+        <texturefocus></texturefocus>
+        <texturenofocus></texturenofocus>
+        <textcolor>ffffffff</textcolor>
+        <focusedcolor>ffc0c0c0</focusedcolor>
+        <onup></onup>
+        <ondown>32001</ondown>
+        <onleft>33105</onleft>
+        <onright>33107</onright>
+      </control>
+      <control type="button" id="33107">
+        <description>favorites_button</description>
+        <posx>970</posx>
+        <posy>137</posy>
+        <width>150</width>
+        <textwidth>150</textwidth>
+        <height>25</height>
+        <font>font13</font>
+        <label>Rated</label>
+        <align>center</align>
+        <texturefocus></texturefocus>
+        <texturenofocus></texturenofocus>
+        <textcolor>ffffffff</textcolor>
+        <focusedcolor>ffc0c0c0</focusedcolor>
+        <onup></onup>
+        <ondown>32001</ondown>
+        <onleft>33106</onleft>
         <onright>32110</onright>
       </control>
       <control type="button" id="32110">
@@ -197,7 +271,7 @@
         <focusedcolor>ffc0c0c0</focusedcolor>
         <onup></onup>
         <ondown>32001</ondown>
-        <onleft>32104</onleft>
+        <onleft>33107</onleft>
         <onright>32101</onright>
       </control>
 

@@ -1,4 +1,4 @@
-﻿﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window type="window">
   <defaultcontrol always="false">32101</defaultcontrol>
   <coordinates>
@@ -35,7 +35,20 @@
         <texture>button-bar.png</texture>
         <aspectratio>stretch</aspectratio>
       </control>
-
+      <control type="button" id="5000">
+        <posx>1080</posx>
+        <posy>30</posy>
+        <height>30</height>
+        <width>150</width>
+        <texturefocus>account-blank.png</texturefocus>
+        <texturenofocus>account-blank.png</texturenofocus>
+        <textcolor>ffffffff</textcolor>
+        <focusedcolor>ffc0c0c0</focusedcolor>
+        <font>font13</font>
+        <textwidth>150</textwidth>
+        <textoffsetx>40</textoffsetx>
+        <label>Account</label>
+      </control>
       <control type="image">
         <posx>25</posx>
         <posy>15</posy>

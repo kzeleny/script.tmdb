@@ -643,7 +643,7 @@
         <onleft>122</onleft>
         <onright>122</onright>
       </control>
-      <control type="label"id="126">
+      <control type="label" id="126">
         <posx>0</posx>
         <posy>515</posy>
         <height>30</height>
@@ -933,8 +933,13 @@
           <posy>0</posy>
           <texturefocus></texturefocus>
           <texturenofocus></texturenofocus>
+          <textcolor>ffe68a00</textcolor>
+          <textwidth>150</textwidth>
+          <textoffsetx>40</textoffsetx>
+          <focusedcolor>ff006060</focusedcolor>
+          <label>Favorite</label>          
           <height>32</height>
-          <width>32</width>
+          <width>150</width>
         </control>
         <control type="image" id="4011">
           <posx>0</posx>
@@ -942,22 +947,6 @@
           <texture>favorite-disable.png</texture>
           <height>32</height>
           <width>32</width>
-        </control>
-        <control type="image" id="4012">
-          <posx>0</posx>
-          <posy>0</posy>
-          <texture>favorite-enable.png</texture>
-          <visible>Control.HasFocus(4001)</visible>
-          <height>32</height>
-          <width>32</width>
-        </control>
-        <control type="label">
-          <posx>42</posx>
-          <posy>5</posy>
-          <height>32</height>
-          <width>auto</width>
-          <label>Favorite</label>
-          <textcolor>ffe68a00</textcolor>
         </control>
       </control>
       <!-- Watchlist -->
@@ -971,7 +960,12 @@
           <texturefocus></texturefocus>
           <texturenofocus></texturenofocus>
           <height>32</height>
-          <width>32</width>
+          <width>150</width>
+          <textcolor>ffe68a00</textcolor>
+          <textwidth>150</textwidth>
+          <textoffsetx>40</textoffsetx>
+          <focusedcolor>ff006060</focusedcolor>
+          <label>Watchlist</label>
         </control>
         <control type="image" id="5011">
           <posx>0</posx>
@@ -979,22 +973,6 @@
           <texture>popcorn-disable.png</texture>
           <height>32</height>
           <width>32</width>
-        </control>
-        <control type="image" id="5012">
-          <posx>0</posx>
-          <posy>0</posy>
-          <texture>popcorn-enable.png</texture>
-          <visible>Control.HasFocus(5001)</visible>
-          <height>32</height>
-          <width>32</width>
-        </control>
-        <control type="label">
-          <posx>42</posx>
-          <posy>5</posy>
-          <height>32</height>
-          <width>auto</width>
-          <label>Watchlist</label>
-          <textcolor>ffe68a00</textcolor>
         </control>
       </control>
       </control>

@@ -33,7 +33,9 @@ class movieWindow(xbmcgui.WindowXMLDialog):
     mode='similar'
     file=''
     current_movie=''
+    session_id=''
     def onInit(self):
+        self.session_id=addon.getSetting('session_id')
         self.getControl(127).setVisible(False)
         self.getControl(123).setVisible(False)
         you_tube_base_url='plugin://plugin.video.youtube/?action=play_video&videoid='
@@ -43,7 +45,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         plot=self.getControl(103)
         tagline=self.getControl(108)
         runtime=self.getControl(109)
-        title=xbmcgui.ControlButton(20,5,1000,30,'','','',0,0,0,title_font,'ff606060','',0,'','ff606060')
+        title=xbmcgui.ControlButton(20,5,800,30,'','','',0,0,0,title_font,'ff606060','',0,'','ff606060')
         title=self.addControl(title)
         title=self.getControl(3001)
         movie=tmdb.get_movie(movie_id)
@@ -85,7 +87,10 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         self.getControl(118).setLabel(utils.format_date(movie['release_date']))
         li=xbmcgui.ListItem
         for trailer in movie['trailers']['youtube']:
-            li=xbmcgui.ListItem(trailer['name'])
+            if trailer['name']!='':
+                li=xbmcgui.ListItem(trailer['name'])
+            else:
+                li=xbmcgui.ListItem('Trailer')
             li.setProperty('url',you_tube_base_url + trailer['source'])
             self.getControl(50).addItem(li)
         self.getControl(111).setLabel(writer)
@@ -147,8 +152,16 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         if star >= 9: self.getControl(1009).setImage('star-icon-enable.png')
         if star >= 9.5: self.getControl(1010).setImage('half-star-icon-enable.png')
         if star >= 10: self.getControl(1010).setImage('star-icon-enable.png')
-        self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes)')
-
+        if self.session_id!='':
+            states=tmdb.get_movie_account_states(movie_id,self.session_id)
+            if states['favorite']:self.getControl(4011).setImage('favorite-enable.png')
+            if states['watchlist']:self.getControl(5011).setImage('popcorn-enable.png')
+            if states['rated']:
+                self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes, you voted '+ str(states['rated']['value']) +')')
+            else:
+                self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes)')
+        else:
+            self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes)')
     def show_similar(self,similar):
         for i in range(0,10):
             if similar[i]['poster_path']==None:
@@ -175,7 +188,17 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         else:
             self.getControl(126).setLabel('')
 
+    def onAction(self, action):
+        if action == 10:
+            d = xbmcgui.Dialog()
+            ans=d.yesno('tmdb Browser','Exit themoviedb.org Browser?')
+            if ans:
+                xbmc.executebuiltin('Dialog.Close(all,true)')
+        elif action == 92:
+            self.close()
+
     def onClick(self,control):
+        xbmc.log('you clicked '+ str(control))
         global movie_id
         global movie
         if control in(200,201,202,203,204,205,206,207,208,209):
@@ -189,11 +212,13 @@ class movieWindow(xbmcgui.WindowXMLDialog):
 
         if control == 50:
             ulr=''
-            url=self.getControl(50).getSelectedItem().getProperty('url')
-            vw = videoWindow('script-videoplayerWindow.xml', addon_path,'default')    
-            vw.url=url
-            vw.doModal()
-            del vw
+            li=self.getControl(50).getSelectedItem()
+            if li!=None:
+                url=li.getProperty('url')
+                vw = videoWindow('script-videoplayerWindow.xml', addon_path,'default')    
+                vw.url=url
+                vw.doModal()
+                del vw
 
         if control == 105 or control == 106:
             if control==105:
@@ -268,6 +293,39 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             rw.curr_movie=self.current_movie
             rw.doModal()
 
+        if control==4001: #Favorite
+            if self.session_id=='':
+                session_id=utils.get_login()
+                if session_id!='':self.session_id=session_id
+            if self.session_id!='':
+                res=tmdb.update_favorite_movie(self.current_movie['id'],addon.getSetting('session_id'))
+                if res['success']:
+                    if res['update']:
+                        dialog = xbmcgui.Dialog()
+                        dialog.notification('themoviedb.org Browser', 'Successfully Added ' + self.current_movie['title'] + ' to Favorites')
+                        self.getControl(4011).setImage('favorite-enable.png')
+                    else:
+                        dialog = xbmcgui.Dialog()
+                        dialog.notification('themoviedb.org Browser', 'Successfully Removed ' + self.current_movie['title'] + ' from Favorites')
+                        self.getControl(4011).setImage('favorite-disable.png')
+
+        if control==5001: #Watchlist
+            if self.session_id=='':
+                session_id=utils.get_login()
+                if session_id!='':self.session_id=session_id
+            if self.session_id!='':
+                res=tmdb.update_watchlist_movie(self.current_movie['id'],addon.getSetting('session_id'))
+                if res['success']:
+                    if res['update']:
+                        dialog = xbmcgui.Dialog()
+                        dialog.notification('themoviedb.org Browser', 'Successfully Added ' + self.current_movie['title'] + ' to Watchlist')
+                        self.getControl(5011).setImage('popcorn-enable.png')
+                    else:
+                        dialog = xbmcgui.Dialog()
+                        dialog.notification('themoviedb.org Browser', 'Successfully Removed ' + self.current_movie['title'] + ' from Watchlist')
+                        self.getControl(5011).setImage('popcorn-disable.png')
+
+
 class ratingWindow(xbmcgui.WindowXMLDialog):
     curr_movie=''
     def onInit(self):
@@ -275,11 +333,17 @@ class ratingWindow(xbmcgui.WindowXMLDialog):
 
     def onClick(self,control):
         session_id=addon.getSetting('session_id')
+        #No session id lets rate movie as guest
+        if session_id=='':
+            session_id=addon.getSetting('guest_session_id')
+            if session+id=='':session_id=tmdb.get_guest_session_id()
         value=self.getControl(1002).getLabel()
         res=tmdb.rate_movie(self.curr_movie['id'],value,session_id)
-        if res=="Success":
+        if res:
             dialog = xbmcgui.Dialog()
             dialog.notification('themoviedb.org Browser', 'Successfully Rated '+self.curr_movie['title'], xbmcgui.NOTIFICATION_INFO, 5000)
+            #if we rated movie as a guest lets save the guest session id to use later.
+            if addon.getSetting('session_id')=='':addon.setSetting('guest_session_id',session_id)
         else:
             dialog = xbmcgui.Dialog()
             dialog.notification('themoviedb.org Browser', 'Failed to Rated '+self.curr_movie['title'], xbmcgui.NOTIFICATION_ERROR, 5000)

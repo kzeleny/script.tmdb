@@ -8,6 +8,7 @@ image_base_url=''
 you_tube_base_url='plugin://plugin.video.youtube/?action=play_video&videoid='
 api_key='99e8b7beac187a857152f57d67495cf4'
 
+
 def get_movies(source,page):
     data = {}
     data['api_key'] = api_key
@@ -50,21 +51,66 @@ def search_movies(query,page):
     infostring = json.loads(infostring)
     return infostring
 
+def get_favorite_movies(session_id,page):
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    data = {}
+    data['api_key'] = api_key
+    data['page']=str(page)
+    data['session_id'] = session_id
+    url_values = urllib.urlencode(data)
+    url = 'https://api.themoviedb.org/3/account/' + str(session_id) + '/favorite_movies'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url,headers=headers)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    return infostring
+
+def get_watchlist_movies(session_id,page):
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    data = {}
+    data['api_key'] = api_key
+    data['page']=str(page)
+    data['session_id'] = session_id
+    url_values = urllib.urlencode(data)
+    url = 'https://api.themoviedb.org/3/account/' + str(session_id) + '/movie_watchlist'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url,headers=headers)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    return infostring
+
+def get_rated_movies(session_id,page):
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    data = {}
+    data['api_key'] = api_key
+    data['page']=str(page)
+    data['session_id'] = session_id
+    url_values = urllib.urlencode(data)
+    url = 'https://api.themoviedb.org/3/account/' + str(session_id) + '/rated_movies'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url,headers=headers)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    return infostring
+
 def rate_movie(movie_id,value,session_id):
-    xbmc.log('session='+session_id)
-    values = urllib.urlencode({"value": value})
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    values = json.dumps({"value": value})
     data = {}
     data['api_key'] = api_key
     data['session_id'] = session_id
     url_values = urllib.urlencode(data)
     url = 'http://api.themoviedb.org/3/movie/'+str(movie_id) +'/rating'
     full_url = url + '?' + url_values
-    req = urllib2.Request(full_url,values)
-    xbmc.log(full_url)
+    req = urllib2.Request(full_url,values,headers)
     infostring = urllib2.urlopen(req).read()
     xbmc.log(infostring)
     infostring = json.loads(infostring)
-    return infostring['status_message']
+    if infostring['status_code']in (1,12):
+        return True
+    else:
+        return False
+
 
 
 def get_image_base_url():
@@ -255,6 +301,76 @@ def search_tv_shows(query,page):
     infostring = json.loads(infostring)
     return infostring
 
+def get_movie_account_states(movie_id,session_id):
+    data = {}
+    data['api_key'] = api_key
+    data['session_id'] = session_id
+    url_values = urllib.urlencode(data)
+    url = 'http://api.themoviedb.org/3/movie/'+str(movie_id) +'/account_states'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    xbmc.log(str(infostring))
+    return infostring
+
+def update_favorite_movie(movie_id,session_id):
+    account_state = get_movie_account_states(movie_id,session_id)
+    favorite=True
+    if account_state['favorite']:favorite=False
+    values = {"movie_id": movie_id,'favorite':favorite}
+    values = json.dumps(values)
+    xbmc.log(values)
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    data = {}
+    data['api_key'] = api_key
+    data['session_id'] = session_id
+    url_values = urllib.urlencode(data)
+    url = 'http://api.themoviedb.org/3/account/'+str(movie_id) +'/favorite'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url,values,headers)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    xbmc.log(str(infostring))
+    if infostring['status_code'] in (13,12,1):
+        return {'update':favorite,'success':True}
+    else:
+        return  {'update':favorite,'success':False}
+  
+def update_watchlist_movie(movie_id,session_id):
+    account_state = get_movie_account_states(movie_id,session_id)
+    watchlist=True
+    if account_state['watchlist']:watchlist=False
+    values = {"movie_id": movie_id,'movie_watchlist':watchlist}
+    values = json.dumps(values)
+    xbmc.log(values)
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    data = {}
+    data['api_key'] = api_key
+    data['session_id'] = session_id
+    url_values = urllib.urlencode(data)
+    url = 'http://api.themoviedb.org/3/account/'+str(movie_id) +'/movie_watchlist'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url,values,headers)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    xbmc.log(str(infostring))
+    if infostring['status_code'] in (13,12,1):
+        return {'update':watchlist,'success':True}
+    else:
+        return  {'update':watchlist,'success':False}
+
+def get_guest_session_id():
+    data = {}
+    data['api_key'] = api_key
+    url_values = urllib.urlencode(data)
+    url = 'https://api.themoviedb.org/3/authentication/guest_session/new'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    return infostring['guest_session_id']
+
 def validate_new_user(username,password):
     token=request_token()
     authorize_token(username,password,token)
@@ -300,3 +416,16 @@ def get_new_session(request_token):
          return ''
     except:
         return ''
+
+def get_account(session_id):
+    data = {}
+    data['api_key'] = api_key
+    data['session_id'] = session_id
+    url_values = urllib.urlencode(data)
+    url = 'http://api.themoviedb.org/3/account'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    xbmc.log(str(infostring))
+    return infostring

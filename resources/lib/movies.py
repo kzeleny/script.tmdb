@@ -45,7 +45,9 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
     controls=[]
     title=xbmcgui.ControlLabel
     backdrop=xbmcgui.ControlImage
+    session_id=''
     def onInit(self):
+        self.session_id=addon.getSetting('session_id')
         xbmc.log('init window')
         base_font=utils.getBaseFont()
         self.update_movies(self.movies)
@@ -359,6 +361,9 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if source=='upcoming':self.getControl(32111).setLabel('Upcoming Movies')
         if source=='now_playing':self.getControl(32111).setLabel('Now Playing Movies')
         if source=='query':self.getControl(32111).setLabel('Search Results')
+        if source=='favorites':self.getControl(32111).setLabel('Favorite Movies')
+        if source=='watchlist':self.getControl(32111).setLabel('Movies on Watchlist')
+        if source=='rated':self.getControl(32111).setLabel('Rated Movies')
 
         self.setFocus(b0)
 
@@ -413,6 +418,9 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         top_rated =  32102
         upcoming = 32103
         now_playing = 32104
+        favorites = 33105
+        watchlist = 33106
+        rated = 33107
         query_btn = 32110
         previous = 32116
         next =32117
@@ -442,6 +450,15 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
             source='now_playing'
             do_movies=True
             page=1
+        if control == favorites:
+            do_movies=True
+            source = 'favorites'
+        if control == watchlist:
+            do_movies=True
+            source = 'watchlist'
+        if control == rated:
+            do_movies=True
+            source = 'rated'
         if control == query_btn:
             source='query'
             do_movies=True
@@ -460,6 +477,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
             do_people=True
 
         if do_movies:
+            ans=True
             if source=='query':
                 if control==query_btn:
                     k=xbmc.Keyboard('','Enter Movie Title to Search For')
@@ -473,6 +491,45 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                         movies.append(tmdb.search_movies(query,page+1)['results'][0])    
                     self.close()
                     show_movies(movies,source,page)
+            elif source=='favorites':
+                if self.session_id=='':
+                    session_id=utils.get_login()
+                    if session_id!='':self.session_id=session_id
+                if self.session_id!='':
+                    movies=tmdb.get_favorite_movies(self.session_id,page)
+                    total_pages=movies['total_pages']     
+                    maxpage=total_pages
+                    movies=movies['results']
+                    if total_pages > page:
+                        movies.append(tmdb.get_favorite_movies(self.session_id,page+1)['results'][0])
+                    self.close()
+                    show_movies(movies,source,page) 
+            elif source=='watchlist':
+                if self.session_id=='':
+                    session_id=utils.get_login()
+                    if session_id!='':self.session_id=session_id
+                if self.session_id!='':
+                    movies=tmdb.get_watchlist_movies(self.session_id,page)
+                    total_pages=movies['total_pages']     
+                    maxpage=total_pages
+                    movies=movies['results']
+                    if total_pages > page:
+                        movies.append(tmdb.get_watchlist_movies(self.session_id,page+1)['results'][0])
+                    self.close()
+                    show_movies(movies,source,page) 
+            elif source=='rated':
+                if self.session_id=='':
+                    session_id=utils.get_login()
+                    if session_id!='':self.session_id=session_id
+                if self.session_id!='':
+                    movies=tmdb.get_rated_movies(self.session_id,page)
+                    total_pages=movies['total_pages']     
+                    maxpage=total_pages
+                    movies=movies['results']
+                    if total_pages > page:
+                        movies.append(tmdb.get_rated_movies(self.session_id,page+1)['results'][0])
+                    self.close()
+                    show_movies(movies,source,page)                                                                  
             else:
                 query=''
                 xbmc.log(source)

@@ -4,6 +4,10 @@ import xbmc
 import os
 import locale
 import json
+import xbmcgui
+import xbmcaddon
+from resources.lib import tmdb
+addon = xbmcaddon.Addon()
 
 def getTitleFont():
     title_font='font13'
@@ -94,3 +98,22 @@ def find_xbmc_by_title(title):
                 break
     return xbmc_file
 
+def get_login():
+    session_id=''
+    d = xbmcgui.Dialog()
+    ans=d.yesno('tmdb Browser','You Need to Login to Perform this Funciton','','Would you Like to Set your tmdb Credentials?')
+    if ans:
+        addon.openSettings()
+        if addon.getSetting('username')!='' and addon.getSetting('password')!='':
+            session_id=tmdb.validate_new_user(addon.getSetting('username'),addon.getSetting('password'))
+            if session_id!='':
+                addon.setSetting('session_id',session_id)
+                dialog =xbmcgui.Dialog()
+                dialog.notification('themoviedb.org Browser', 'themoviedb.org Login Success', xbmcgui.NOTIFICATION_INFO, 5000)
+                return session_id
+            else:
+                dialog =xbmcgui.Dialog()
+                dialog.notification('themoviedb.org Browser', 'themoviedb.org Login Failed', xbmcgui.NOTIFICATION_ERROR, 5000)
+                return ''
+    else:
+        return ''

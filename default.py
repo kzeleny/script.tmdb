@@ -90,7 +90,7 @@ class openingWindow(xbmcgui.WindowXMLDialog):
             movies.source='query'
             movies.doSearch(self.getControl(100).getText())
 
-if addon.getSetting('session_id')=='':
+if addon.getSetting('session_id')=='' and addon.getSetting('username')!='' and addon.getSetting('password')!='':
     addon.setSetting('session_id',tmdb.validate_new_user(addon.getSetting('username'),addon.getSetting('password')))
 
 openingWindow = openingWindow('script-openingWindow.xml', addon_path,'default')
