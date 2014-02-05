@@ -161,8 +161,15 @@ class movieWindow(xbmcgui.WindowXMLDialog):
                 self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes)')
         else:
             self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes)')
+
     def show_similar(self,similar):
-        for i in range(0,10):
+        x=10
+        for i in range(0,x):
+            self.getControl(300+i).setImage('')
+            self.getControl(200+i).setEnabled(False)
+        if len(similar) < 10:x=len(similar)
+        for i in range(0,x):
+            self.getControl(200+i).setEnabled(True)
             if similar[i]['poster_path']==None:
                 self.getControl(300+i).setImage('no-poster-w92.jpg')
             else:
@@ -170,7 +177,13 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         self.similar=similar
 
     def show_cast(self,cast):
-        for i in range(0,10):
+        x=10
+        for i in range(0,x):
+            self.getControl(300+i).setImage('')
+            self.getControl(200+i).setEnabled(False)
+        if len(cast) <10:x=len(cast)
+        for i in range(0,x):
+            self.getControl(200+i).setEnabled(True)
             if cast[i]['profile_path']==None:
                 self.getControl(300+i).setImage('no-profile-w92.jpg')
             else:

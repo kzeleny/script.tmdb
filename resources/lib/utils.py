@@ -98,6 +98,15 @@ def find_xbmc_by_title(title):
                 break
     return xbmc_file
 
+def get_xbmc_movies():
+    moviestring = xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "VideoLibrary.GetMovies", "params": {"properties": ["title","year"]}, "id": 1}')
+    moviestring = unicode(moviestring, 'utf-8', errors='ignore')
+    moviestring = json.loads(moviestring)  
+    movies=set()
+    for movie in moviestring['result']['movies']:
+        movies.add(movie['title'] + ' ('+ str(movie['year'])+')')
+    return movies
+
 def get_login():
     session_id=''
     d = xbmcgui.Dialog()
