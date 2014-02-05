@@ -405,6 +405,7 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
+			<focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
@@ -444,7 +445,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -483,7 +485,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -523,7 +526,8 @@
             <texturenofocus></texturenofocus>
             <font>font13</font>
             <textcolor>ff606060</textcolor>
-            <scroll>Focus</scroll>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <scroll>Focus</scroll>
             <textcolor>ff606060</textcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
@@ -564,7 +568,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -603,7 +608,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -642,7 +648,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -681,7 +688,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -720,7 +728,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -759,7 +768,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -798,7 +808,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -837,7 +848,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -876,7 +888,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -915,7 +928,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -954,7 +968,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -993,7 +1008,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -1032,7 +1048,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -1071,7 +1088,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -1110,7 +1128,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -1149,7 +1168,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -1188,7 +1208,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+			  <focusedcolor>ffffffff</focusedcolor>
+			  <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>

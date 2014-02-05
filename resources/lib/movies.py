@@ -9,8 +9,6 @@ addon = xbmcaddon.Addon()
 addon_path = addon.getAddonInfo('path')
 resources_path = xbmc.translatePath( os.path.join( addon_path, 'resources' ) ).decode('utf-8')
 media_path = xbmc.translatePath( os.path.join( resources_path, 'media' ) ).decode('utf-8')
-no_poster_path = xbmc.translatePath( os.path.join( media_path, 'no-poster-w92.jpg' ) ).decode('utf-8')
-no_background_path = xbmc.translatePath( os.path.join( media_path, 'no-background-w300.jpg' ) ).decode('utf-8')
 title_font=utils.getTitleFont()
 image_base_url=tmdb.get_image_base_url()
 source='popular'
@@ -57,7 +55,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         self.addControl(title)
         for i in range(0,21):
             if len(movies)>i:
-                self.getControl(i+500).setImage('no-poster-w92.jpg')
+                self.getControl(i+500).setImage('loading-w92.jpg')
             else:
                 self.getControl(i+400).setEnabled(False) 
         xbmc_movies=utils.get_xbmc_movies()
@@ -67,7 +65,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                     self.getControl(i+300).setImage('xbmc_icon.png')
                 self.getControl(i+400).setEnabled(True)
                 if movies[i]['poster_path']==None:
-                    self.getControl(i+200).setImage(no_poster_path)
+                    self.getControl(i+200).setImage('no-poster-w92.jpg')
                     self.getControl(i+400).setLabel(movies[i]['title'])
                 else:
                     self.getControl(i+200).setImage('http://image.tmdb.org/t/p/w92' +movies[i]['poster_path'])
@@ -169,12 +167,15 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if control == favorites:
             do_movies=True
             source = 'favorites'
+            page=1
         if control == watchlist:
             do_movies=True
             source = 'watchlist'
+            page=1
         if control == rated:
             do_movies=True
             source = 'rated'
+            page=1
         if control == query_btn:
             source='query'
             do_movies=True
