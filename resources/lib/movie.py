@@ -172,6 +172,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             self.getControl(200+i).setEnabled(True)
             if similar[i]['poster_path']==None:
                 self.getControl(300+i).setImage('no-poster-w92.jpg')
+                self.getControl(200+i).setLabel(similar[i]['title'])
             else:
                 self.getControl(300+i).setImage('http://image.tmdb.org/t/p/w92' + similar[i]['poster_path'])
         self.similar=similar
