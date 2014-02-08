@@ -44,7 +44,6 @@
           <posy>15</posy>
           <width>185</width>
           <aspectratio>stretch</aspectratio>
-
           <height>251</height>
           <fadetime>500</fadetime>
         </control>
@@ -93,7 +92,7 @@
         </control>
         <control type="label" id="107">
           <posx>20</posx>
-          <posy>270</posy>
+          <posy>265</posy>
           <width>185</width>
           <font>font13</font>
           <align>center</align>
@@ -432,24 +431,24 @@
           <font>font13</font>
           <label></label>
         </control>
-      <control type="button" id="132">
-        <posx>5</posx>
-        <posy>280</posy>
-        <height>30</height>
-        <width>150</width>
-        <align>center</align>
-        <texturenofocus>button-no-focus.png</texturenofocus>
-        <texturefocus>button-has-focus.png</texturefocus>
-        <textcolor>ff606060</textcolor>
-        <textwidth>150</textwidth>
-        <focusedcolor>ff000000</focusedcolor>
-        <label>Rate Movie</label>
-        <onup>101</onup>
-        <ondown>200</ondown>
-        <onleft>106</onleft>
-        <onright>405</onright>
-      </control>
-  <control type="label" id="118">
+        <control type="button" id="132">
+          <posx>5</posx>
+          <posy>280</posy>
+          <height>30</height>
+          <width>150</width>
+          <align>center</align>
+          <texturenofocus>button-no-focus.png</texturenofocus>
+          <texturefocus>button-has-focus.png</texturefocus>
+          <textcolor>ff606060</textcolor>
+          <textwidth>150</textwidth>
+          <focusedcolor>ff000000</focusedcolor>
+          <label>Rate Movie</label>
+          <onup>101</onup>
+          <ondown>200</ondown>
+          <onleft>106</onleft>
+          <onright>405</onright>
+        </control>
+        <control type="label" id="118">
           <posx>5</posx>
           <posy>200</posy>
           <align>left</align>
@@ -461,124 +460,54 @@
           <label></label>
         </control>
         <control type="label" id="109">
-        <posx>5</posx>
-        <posy>225</posy>
-        <align>right</align>
+          <posx>5</posx>
+          <posy>225</posy>
+          <align>right</align>
+          <textcolor>ff606060</textcolor>
+          <height>20</height>
+          <width>auto</width>
+          <font>font13</font>
+          <label></label>
+        </control>
+      </control>
+      <control type="button" id="50">
+        <posx>1035</posx>
+        <posy>270</posy>
+        <height>30</height>
+        <width>150</width>
+        <align>center</align>
+        <texturenofocus>button-no-focus.png</texturenofocus>
+        <texturefocus>button-has-focus.png</texturefocus>
         <textcolor>ff606060</textcolor>
-        <height>20</height>
-        <width>auto</width>
-        <font>font13</font>
-        <label></label>
+        <textwidth>150</textwidth>
+        <focusedcolor>ff000000</focusedcolor>
+        <label>Trailers</label>
+        <onup>104</onup>
+        <onright>200</onright>
+        <onleft></onleft>
+        <ondown>124</ondown>
       </control>
-      </control>
-      <control type="label">
-        <posx>960</posx>
-        <posy>265</posy>
-        <textcolor>ffe68a00</textcolor>
-        <font>font13</font>
-        <width>auto</width>
-        <height>20</height>
-        <label>Trailers:</label>
-      </control>
-      <control type="image">
-        <posx>960</posx>
-        <posy>290</posy>
-        <height>1</height>
-        <width>300</width>
-        <texture>black.png</texture>
-      </control>
-      <control type="image">
-        <posx>960</posx>
-        <posy>380</posy>
-        <height>1</height>
-        <width>300</width>
-        <texture>black.png</texture>
-      </control>
-      <control type="image">
-        <posx>960</posx>
-        <posy>290</posy>
-        <height>90</height>
-        <width>1</width>
-        <texture>black.png</texture>
-      </control>
-      <control type="image">
-        <posx>1260</posx>
-        <posy>290</posy>
-        <height>90</height>
-        <width>1</width>
-        <texture>black.png</texture>
-      </control>
-      <control type="fixedlist" id="50">
-        <description>My first list container</description>
-        <posx>960</posx>
-        <posy>290</posy>
-        <width>300</width>
-        <height>90</height>
-        <visible>true</visible>
-        <onup>406</onup>
-        <ondown>122</ondown>
-        <onleft>106</onleft>
-        <onright>1</onright>
-        <viewtype>list</viewtype>
-        <orientation>vertical</orientation>
-        <scrolltime tween="sine" easing="out">200</scrolltime>
-        <itemlayout width="400" height="30">
-          <control type="label">
-            <posx>5</posx>
-            <posy>5</posy>
-            <width>400</width>
-            <height>20</height>
-            <aligny>center</aligny>
-            <font>font13</font>
-            <selectedcolor>red</selectedcolor>
-            <textcolor>ff606060</textcolor>
-            <align>left</align>
-            <info>ListItem.Label</info>
-          </control>
-        </itemlayout>
-        <focusedlayout height="30" width="300">
-          <control type="image">
-            <posx>0</posx>
-            <posy>0</posy>
-            <height>30</height>
-            <width>300</width>
-            <texture>listitem-has-focus.png</texture>
-            <visible>Control.HasFocus(50)</visible>
-          </control>
-          <control type="label">
-            <posx>5</posx>
-            <posy>5</posy>
-            <width>300</width>
-            <height>20</height>
-            <font>font13</font>
-            <aligny>center</aligny>
-            <textcolor>ff606060</textcolor>
-            <align>left</align>
-            <scroll>Control.HasFocus(50)</scroll>
-            <info>ListItem.Label</info>
-          </control>
-        </focusedlayout>
+      <control type="button" id="127">
+        <posx>1035</posx>
+        <posy>320</posy>
+        <height>30</height>
+        <width>150</width>
+        <align>center</align>
+        <texturenofocus>button-no-focus.png</texturenofocus>
+        <texturefocus>button-has-focus.png</texturefocus>
+        <textcolor>ff606060</textcolor>
+        <textwidth>150</textwidth>
+        <focusedcolor>ff000000</focusedcolor>
+        <label>Couch Potato</label>
+        <onup>101</onup>
+        <ondown>200</ondown>
+        <onleft>122</onleft>
+        <onright>122</onright>
       </control>
       <!-- actors / Similar -->
-      <control type="group" id="121">
-        <control type="image">
-          <posx>10</posx>
-          <posy>550</posy>
-          <height>3</height>
-          <width>150</width>
-          <texture>focus-back.png</texture>
-        </control>
-        <control type="image">
-          <posx>10</posx>
-          <posy>550</posy>
-          <height>30</height>
-          <width>2</width>
-          <texture>focus-back.png</texture>
-        </control>
-      </control>
       <control type="button" id="122">
         <posx>12</posx>
-        <posy>553</posy>
+        <posy>543</posy>
         <height>30</height>
         <width>150</width>
         <align>center</align>
@@ -593,25 +522,43 @@
         <onleft></onleft>
         <ondown>124</ondown>
       </control>
-      <control type="group" id="123">
-        <control type="image">
-          <posx>10</posx>
-          <posy>600</posy>
-          <height>3</height>
-          <width>150</width>
-          <texture>focus-back.png</texture>
-        </control>
-        <control type="image">
-          <posx>10</posx>
-          <posy>600</posy>
-          <height>30</height>
-          <width>3</width>
-          <texture>focus-back.png</texture>
-        </control>
+      <control type="button" id="51">
+        <posx>12</posx>
+        <posy>583</posy>
+        <height>30</height>
+        <width>150</width>
+        <align>center</align>
+        <texturenofocus>button-no-focus.png</texturenofocus>
+        <texturefocus>button-has-focus.png</texturefocus>
+        <textcolor>ff606060</textcolor>
+        <textwidth>150</textwidth>
+        <focusedcolor>ff000000</focusedcolor>
+        <label>Keywords</label>
+        <onup>104</onup>
+        <onright>200</onright>
+        <onleft></onleft>
+        <ondown>124</ondown>
+      </control>
+      <control type="button" id="52">
+        <posx>12</posx>
+        <posy>623</posy>
+        <height>30</height>
+        <width>150</width>
+        <align>center</align>
+        <texturenofocus>button-no-focus.png</texturenofocus>
+        <texturefocus>button-has-focus.png</texturefocus>
+        <textcolor>ff606060</textcolor>
+        <textwidth>150</textwidth>
+        <focusedcolor>ff000000</focusedcolor>
+        <label>Genre</label>
+        <onup>104</onup>
+        <onright>200</onright>
+        <onleft></onleft>
+        <ondown>124</ondown>
       </control>
       <control type="button" id="124">
         <posx>12</posx>
-        <posy>603</posy>
+        <posy>663</posy>
         <height>30</height>
         <width>150</width>
         <align>center</align>
@@ -625,23 +572,6 @@
         <ondown>127</ondown>
         <onleft></onleft>
         <onright>200</onright>
-      </control>
-      <control type="button" id="127">
-        <posx>12</posx>
-        <posy>653</posy>
-        <height>30</height>
-        <width>150</width>
-        <align>center</align>
-        <texturenofocus>button-no-focus.png</texturenofocus>
-        <texturefocus>button-has-focus.png</texturefocus>
-        <textcolor>ff606060</textcolor>
-        <textwidth>150</textwidth>
-        <focusedcolor>ff000000</focusedcolor>
-        <label>Couch Potato</label>
-        <onup>101</onup>
-        <ondown>200</ondown>
-        <onleft>122</onleft>
-        <onright>122</onright>
       </control>
       <control type="label" id="126">
         <posx>0</posx>
@@ -703,7 +633,7 @@
           <posy>0</posy>
           <height>138</height>
           <width>92</width>
--          <animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(206)">Conditional</animation>
+          -          <animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(206)">Conditional</animation>
         </control>
         <control type="image" id="307">
           <posx>772</posx>
@@ -726,187 +656,187 @@
           <width>92</width>
           <animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(209)">Conditional</animation>
         </control>
-		  <control type="button" id="200">
-			  <texturefocus></texturefocus>
-			  <texturenofocus></texturenofocus>
-			  <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <font>font13</font>
-			  <scroll>focus</scroll>
-			  <posx>0</posx>
-			  <posy>0</posy>
-			  <height>138</height>
-			  <width>92</width>
-			  <onup>104</onup>
-			  <ondown>101</ondown>
-			  <onright>201</onright>
-			  <onleft>122</onleft>
-			  <aligny>top</aligny>
-			  <textoffsety>110</textoffsety>
-		  </control>
-		  <control type="button" id="201">
-			  <texturefocus></texturefocus>
-			  <texturenofocus></texturenofocus>
-			  <posx>112</posx>
-			  <posy>0</posy>
-			  <height>138</height>
-			  <width>92</width>
-			  <ondown>104</ondown>
-			  <ondown>101</ondown>
-			  <onright>202</onright>
-			  <onleft>200</onleft>
-			  <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <font>font13</font>
-			  <scroll>focus</scroll>
-			  <aligny>top</aligny>
-			  <textoffsety>110</textoffsety>
-		  </control>
-		  <control type="button" id="202">
-			  <texturefocus></texturefocus>
-			  <texturenofocus></texturenofocus>
-			  <posx>222</posx>
-			  <posy>0</posy>id="204
-			  <height>138</height>
-			  <width>92</width>
-			  <ondown>104</ondown>
-			  <ondown>101</ondown>
-			  <onright>203</onright>
-			  <onleft>201</onleft>
-			  <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <font>font13</font>
-			  <scroll>focus</scroll>
-			  <aligny>top</aligny>
-			  <textoffsety>110</textoffsety>
-		  </control>
-		  <control type="button" id="203">
-			  <texturefocus></texturefocus>
-			  <texturenofocus></texturenofocus>
-			  <posx>332</posx>
-			  <posy>0</posy>
-			  <height>138</height>
-			  <width>92</width>
-			  <ondown>104</ondown>
-			  <ondown>101</ondown>
-			  <onright>204</onright>
-			  <onleft>202</onleft>
-			  <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <font>font13</font>
-			  <scroll>focus</scroll>
-			  <aligny>top</aligny>
-			  <textoffsety>110</textoffsety>
-		  </control>
-		  <control type="button" id="204">
-			  <texturefocus></texturefocus>
-			  <texturenofocus></texturenofocus>
-			  <posx>442</posx>
-			  <posy>0</posy>
-			  <height>138</height>
-			  <width>92</width>
-			  <onup>104</onup>
-			  <ondown>101</ondown>
-			  <onright>205</onright>
-			  <onleft>203</onleft>
-			  <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <font>font13</font>
-			  <scroll>focus</scroll>
-			  <aligny>top</aligny>
-			  <textoffsety>110</textoffsety>
-		  </control>
-		  <control type="button" id="205">
-			  <texturefocus></texturefocus>
-			  <texturenofocus></texturenofocus>
-			  <posx>552</posx>
-			  <posy>0</posy>
-			  <height>138</height>
-			  <width>92</width>
-			  <onup>404</onup>
-			  <ondown>101</ondown>
-			  <onright>206</onright>
-			  <onleft>204</onleft>
-			  <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <font>font13</font>
-			  <scroll>focus</scroll>
-			  <aligny>top</aligny>
-			  <textoffsety>110</textoffsety>
-		  </control>
-		  <control type="button" id="206">
-			  <texturefocus></texturefocus>
-			  <texturenofocus></texturenofocus>
-			  <posx>662</posx>
-			  <posy>0</posy>
-			  <height>138</height>
-			  <width>92</width>
-			  <onup>404</onup>
-			  <ondown>101</ondown>
-			  <onright>207</onright>
-			  <onleft>205</onleft>
-			  <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <font>font13</font>
-			  <scroll>focus</scroll>
-			  <aligny>top</aligny>
-			  <textoffsety>110</textoffsety>
-		  </control>
-		  <control type="button" id="207">
-			  <texturefocus></texturefocus>
-			  <texturenofocus></texturenofocus>
-			  <posx>772</posx>
-			  <posy>0</posy>
-			  <height>138</height>
-			  <width>92</width>
-			  <onup>404</onup>
-			  <ondown>101</ondown>
-			  <onright>208</onright>
-			  <onleft>206</onleft>
-			  <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <font>font13</font>
-			  <scroll>focus</scroll>
-			  <aligny>top</aligny>
-			  <textoffsety>110</textoffsety>
-		  </control>
-		  <control type="button" id="208">
-			  <texturefocus></texturefocus>
-			  <texturenofocus></texturenofocus>
-			  <posx>882</posx>
-			  <posy>0</posy>
-			  <height>138</height>
-			  <width>92</width>
-			  <onup>404</onup>
-			  <ondown>101</ondown>
-			  <onright>209</onright>
-			  <onleft>207</onleft>
-			  <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <font>font13</font>
-			  <scroll>focus</scroll>
-			  <aligny>top</aligny>
-			  <textoffsety>110</textoffsety>
-		  </control>
-		  <control type="button" id="209">
-			  <texturefocus></texturefocus>
-			  <texturenofocus></texturenofocus>
-			  <posx>992</posx>
-			  <posy>0</posy>
-			  <height>138</height>
-			  <width>92</width>
-			  <onup>404</onup>
-			  <ondown>101</ondown>
-			  <onright>200</onright>
-			  <onleft>208</onleft>
-			  <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <font>font13</font>
-			  <scroll>focus</scroll>
-			  <label></label>
-			  <aligny>top</aligny>
-			  <textoffsety>110</textoffsety>
-		  </control>		  
+        <control type="button" id="200">
+          <texturefocus></texturefocus>
+          <texturenofocus></texturenofocus>
+          <textcolor>ff606060</textcolor>
+          <focusedcolor>ffffffff</focusedcolor>
+          <font>font13</font>
+          <scroll>focus</scroll>
+          <posx>0</posx>
+          <posy>0</posy>
+          <height>138</height>
+          <width>92</width>
+          <onup>104</onup>
+          <ondown>101</ondown>
+          <onright>201</onright>
+          <onleft>122</onleft>
+          <aligny>top</aligny>
+          <textoffsety>110</textoffsety>
+        </control>
+        <control type="button" id="201">
+          <texturefocus></texturefocus>
+          <texturenofocus></texturenofocus>
+          <posx>112</posx>
+          <posy>0</posy>
+          <height>138</height>
+          <width>92</width>
+          <ondown>104</ondown>
+          <ondown>101</ondown>
+          <onright>202</onright>
+          <onleft>200</onleft>
+          <textcolor>ff606060</textcolor>
+          <focusedcolor>ffffffff</focusedcolor>
+          <font>font13</font>
+          <scroll>focus</scroll>
+          <aligny>top</aligny>
+          <textoffsety>110</textoffsety>
+        </control>
+        <control type="button" id="202">
+          <texturefocus></texturefocus>
+          <texturenofocus></texturenofocus>
+          <posx>222</posx>
+          <posy>0</posy>id="204
+          <height>138</height>
+          <width>92</width>
+          <ondown>104</ondown>
+          <ondown>101</ondown>
+          <onright>203</onright>
+          <onleft>201</onleft>
+          <textcolor>ff606060</textcolor>
+          <focusedcolor>ffffffff</focusedcolor>
+          <font>font13</font>
+          <scroll>focus</scroll>
+          <aligny>top</aligny>
+          <textoffsety>110</textoffsety>
+        </control>
+        <control type="button" id="203">
+          <texturefocus></texturefocus>
+          <texturenofocus></texturenofocus>
+          <posx>332</posx>
+          <posy>0</posy>
+          <height>138</height>
+          <width>92</width>
+          <ondown>104</ondown>
+          <ondown>101</ondown>
+          <onright>204</onright>
+          <onleft>202</onleft>
+          <textcolor>ff606060</textcolor>
+          <focusedcolor>ffffffff</focusedcolor>
+          <font>font13</font>
+          <scroll>focus</scroll>
+          <aligny>top</aligny>
+          <textoffsety>110</textoffsety>
+        </control>
+        <control type="button" id="204">
+          <texturefocus></texturefocus>
+          <texturenofocus></texturenofocus>
+          <posx>442</posx>
+          <posy>0</posy>
+          <height>138</height>
+          <width>92</width>
+          <onup>104</onup>
+          <ondown>101</ondown>
+          <onright>205</onright>
+          <onleft>203</onleft>
+          <textcolor>ff606060</textcolor>
+          <focusedcolor>ffffffff</focusedcolor>
+          <font>font13</font>
+          <scroll>focus</scroll>
+          <aligny>top</aligny>
+          <textoffsety>110</textoffsety>
+        </control>
+        <control type="button" id="205">
+          <texturefocus></texturefocus>
+          <texturenofocus></texturenofocus>
+          <posx>552</posx>
+          <posy>0</posy>
+          <height>138</height>
+          <width>92</width>
+          <onup>404</onup>
+          <ondown>101</ondown>
+          <onright>206</onright>
+          <onleft>204</onleft>
+          <textcolor>ff606060</textcolor>
+          <focusedcolor>ffffffff</focusedcolor>
+          <font>font13</font>
+          <scroll>focus</scroll>
+          <aligny>top</aligny>
+          <textoffsety>110</textoffsety>
+        </control>
+        <control type="button" id="206">
+          <texturefocus></texturefocus>
+          <texturenofocus></texturenofocus>
+          <posx>662</posx>
+          <posy>0</posy>
+          <height>138</height>
+          <width>92</width>
+          <onup>404</onup>
+          <ondown>101</ondown>
+          <onright>207</onright>
+          <onleft>205</onleft>
+          <textcolor>ff606060</textcolor>
+          <focusedcolor>ffffffff</focusedcolor>
+          <font>font13</font>
+          <scroll>focus</scroll>
+          <aligny>top</aligny>
+          <textoffsety>110</textoffsety>
+        </control>
+        <control type="button" id="207">
+          <texturefocus></texturefocus>
+          <texturenofocus></texturenofocus>
+          <posx>772</posx>
+          <posy>0</posy>
+          <height>138</height>
+          <width>92</width>
+          <onup>404</onup>
+          <ondown>101</ondown>
+          <onright>208</onright>
+          <onleft>206</onleft>
+          <textcolor>ff606060</textcolor>
+          <focusedcolor>ffffffff</focusedcolor>
+          <font>font13</font>
+          <scroll>focus</scroll>
+          <aligny>top</aligny>
+          <textoffsety>110</textoffsety>
+        </control>
+        <control type="button" id="208">
+          <texturefocus></texturefocus>
+          <texturenofocus></texturenofocus>
+          <posx>882</posx>
+          <posy>0</posy>
+          <height>138</height>
+          <width>92</width>
+          <onup>404</onup>
+          <ondown>101</ondown>
+          <onright>209</onright>
+          <onleft>207</onleft>
+          <textcolor>ff606060</textcolor>
+          <focusedcolor>ffffffff</focusedcolor>
+          <font>font13</font>
+          <scroll>focus</scroll>
+          <aligny>top</aligny>
+          <textoffsety>110</textoffsety>
+        </control>
+        <control type="button" id="209">
+          <texturefocus></texturefocus>
+          <texturenofocus></texturenofocus>
+          <posx>992</posx>
+          <posy>0</posy>
+          <height>138</height>
+          <width>92</width>
+          <onup>404</onup>
+          <ondown>101</ondown>
+          <onright>200</onright>
+          <onleft>208</onleft>
+          <textcolor>ff606060</textcolor>
+          <focusedcolor>ffffffff</focusedcolor>
+          <font>font13</font>
+          <scroll>focus</scroll>
+          <label></label>
+          <aligny>top</aligny>
+          <textoffsety>110</textoffsety>
+        </control>
       </control>
       <!-- rating stars -->
       <control type="group" id="9999">
@@ -982,7 +912,7 @@
           <height>16</height>
           <width>16</width>
         </control>
-        </control>
+      </control>
       <!-- favorite -->
       <control type="group">
         <posx>960</posx>
@@ -997,7 +927,7 @@
           <textwidth>150</textwidth>
           <textoffsetx>40</textoffsetx>
           <focusedcolor>ff006060</focusedcolor>
-          <label>Favorite</label>          
+          <label>Favorite</label>
           <height>32</height>
           <width>150</width>
         </control>
@@ -1035,15 +965,15 @@
           <width>32</width>
         </control>
       </control>
-      </control>
-  <control type="videowindow" id="2">
+    </control>
+    <control type="videowindow" id="2">
       <description>My first video control</description>
       <posx>0</posx>
       <posy>0</posy>
-    <texture>black.png</texture>
+      <texture>black.png</texture>
       <width>1280</width>
       <height>720</height>
       <visible>true</visible>
-</control>
+    </control>
   </controls>
 </window>

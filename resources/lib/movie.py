@@ -15,6 +15,7 @@ title_font=utils.getTitleFont()
 image_base_url=tmdb.get_image_base_url()
 movie_id=0
 movie=''
+keyword_id=''
 def startup():
     movie=tmdb.get_movie(movie_id)
     show_movie(movie)
@@ -28,6 +29,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
     poster_index=0
     backgrounds=[]
     similar=[]
+    keywords=[]
     cast=[]
     background_index=0
     mode='similar'
@@ -36,7 +38,6 @@ class movieWindow(xbmcgui.WindowXMLDialog):
     session_id=''
     def onInit(self):
         self.session_id=addon.getSetting('session_id')
-        self.getControl(123).setVisible(False)
         you_tube_base_url='plugin://plugin.video.youtube/?action=play_video&videoid='
         self.posters=[]
         str_similar=tmdb.get_similar_movies(movie_id,1)
@@ -84,14 +85,6 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         self.getControl(116).setLabel(utils.format_currency(movie['budget']))
         self.getControl(117).setLabel(utils.format_currency(movie['revenue']))
         self.getControl(118).setLabel(utils.format_date(movie['release_date']))
-        li=xbmcgui.ListItem
-        for trailer in movie['trailers']['youtube']:
-            if trailer['name']!='':
-                li=xbmcgui.ListItem(trailer['name'])
-            else:
-                li=xbmcgui.ListItem('Trailer')
-            li.setProperty('url',you_tube_base_url + trailer['source'])
-            self.getControl(50).addItem(li)
         self.getControl(111).setLabel(writer)
         title.setLabel(movie['title'])
         runtime.setLabel(str(movie['runtime']) +' min')
@@ -166,6 +159,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
+            self.getControl(200+i).setLabel(' ')
             self.getControl(200+i).setEnabled(False)
         if len(similar) < 10:x=len(similar)
         for i in range(0,x):
@@ -181,22 +175,42 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
+            self.getControl(200+i).setLabel(' ')
             self.getControl(200+i).setEnabled(False)
         if len(cast) <10:x=len(cast)
         for i in range(0,x):
             self.getControl(200+i).setEnabled(True)
             if cast[i]['profile_path']==None:
                 self.getControl(300+i).setImage('no-profile-w92.jpg')
+                self.getControl(200+i).setLabel(cast[i]['name'])
             else:
                 self.getControl(300+i).setImage('http://image.tmdb.org/t/p/w92' + cast[i]['profile_path'])
         self.cast=cast
+
+    def show_keywords(self,keywords):
+        x=10
+        for i in range(0,x):
+            self.getControl(300+i).setImage('')
+            self.getControl(200+i).setLabel(' ')
+            self.getControl(200+i).setEnabled(False)
+        if len(keywords) < 10:x=len(keywords)
+        for i in range(0,x):
+            self.getControl(200+i).setEnabled(True)
+            if keywords[i]['poster_path']==None:
+                self.getControl(300+i).setImage('no-poster-w92.jpg')
+                self.getControl(200+i).setLabel(keywords[i]['title'])
+            else:
+                self.getControl(300+i).setImage('http://image.tmdb.org/t/p/w92' + keywords[i]['poster_path'])
+        self.keywords=keywords
 
     def onFocus(self, control):
         xbmc.log('Focus='+str(control))
         if control in(200,201,202,203,204,205,206,207,208,209):
             if self.mode=='similar':
                 self.getControl(126).setLabel(self.similar[control-200]['title'])
-            else:
+            elif self.mode=='keywords':
+                self.getControl(126).setLabel(self.keywords[control-200]['title'])
+            elif self.mode=='cast':
                 self.getControl(126).setLabel(self.cast[control-200]['name'] + ' as ' + self.cast[control-200]['character'])
         else:
             self.getControl(126).setLabel('')
@@ -218,21 +232,26 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             if self.mode=='similar':
                 movie_id=self.similar[control-200]['id']
                 startup()  
-            if self.mode=='cast':
+            elif self.mode=='cast':
                self.similar=tmdb.getMoviesByActor(self.cast[control-200]['id'],1)
                self.mode='similar'
-               self.show_similar(self.similar)   
+               self.show_similar(self.similar)
+            elif self.mode=='keywords':
+               movie_id=self.keywords[control-200]['id']
+               startup()    
 
-        if control == 50:
-            ulr=''
-            li=self.getControl(50).getSelectedItem()
-            if li!=None:
-                url=li.getProperty('url')
-                vw = videoWindow('script-videoplayerWindow.xml', addon_path,'default')    
-                vw.url=url
-                vw.doModal()
-                del vw
-
+        if control in (50,51):
+            dg = dialogWindow('dialog_select.xml',addon_path,'default')
+            dg.curr_movie=self.current_movie
+            if control==50:dg.mode='trailer'
+            if control==51:dg.mode='keyword'
+            dg.doModal()
+            if control==51:
+                if keyword_id!='':
+                    self.mode='keywords'
+                    self.keywords=tmdb.getMoviesByKeyword(keyword_id,1)
+                    self.show_keywords(self.keywords)
+                
         if control == 105 or control == 106:
             if control==105:
                 if self.poster_index==0:
@@ -251,8 +270,6 @@ class movieWindow(xbmcgui.WindowXMLDialog):
 
         if control == 122:
             self.getControl(126).setLabel('')
-            self.getControl(121).setVisible(True)
-            self.getControl(123).setVisible(False)
             self.mode='similar'
             str_similar=tmdb.get_similar_movies(self.current_movie['id'],1)
             self.similar=str_similar['results']
@@ -260,8 +277,6 @@ class movieWindow(xbmcgui.WindowXMLDialog):
 
         if control == 124:
             self.getControl(126).setLabel('')
-            self.getControl(123).setVisible(True)
-            self.getControl(121).setVisible(False)
             self.mode = 'cast'
             self.show_cast(self.cast)
                 
@@ -386,6 +401,36 @@ class ratingWindow(xbmcgui.WindowXMLDialog):
         if control==1095:self.getControl(1002).setLabel('9.5')
         if control==1100:self.getControl(1002).setLabel('10')
 
+class dialogWindow(xbmcgui.WindowXMLDialog):
+    curr_movie=''
+    mode=''
+    def onInit(self):
+        if self.mode=='trailer':
+            self.getControl(1).setLabel('Trailers')
+            for trailer in self.curr_movie['trailers']['youtube']:
+               li=xbmcgui.ListItem(trailer['name'])
+               li.setProperty('url','plugin://plugin.video.youtube/?action=play_video&videoid='+trailer['source'])
+               self.getControl(300).addItem(li)
+        elif self.mode=='keyword':
+            self.getControl(1).setLabel('Keywords')
+            for keyword in self.curr_movie['keywords']['keywords']:
+                li=xbmcgui.ListItem(keyword['name'])
+                li.setProperty('id',str(keyword['id']))
+                self.getControl(300).addItem(li)
+
+    def onClick(self,control):
+        global keyword_id
+        if control==300:
+            if self.mode=='trailer':
+                li= self.getControl(300).getSelectedItem()
+                vw=videoWindow('script-videoPlayerWindow.xml',addon_path,'Default')
+                vw.url=li.getProperty('url')
+                vw.doModal()
+            elif self.mode=='keyword':
+                li=self.getControl(300).getSelectedItem()
+                keyword_id=li.getProperty('id')
+                self.close()
+        
 class videoWindow(xbmcgui.WindowXMLDialog):
     url=''
     def onInit(self):

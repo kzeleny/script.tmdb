@@ -24,7 +24,7 @@ def get_movies(source,page):
 
 def get_movie(movieId):
     data={}
-    data['append_to_response']='credits,trailers,releases,images'
+    data['append_to_response']='credits,trailers,releases,images,keywords'
     data['api_key'] = api_key
     url_values = urllib.urlencode(data)
     url = 'http://api.themoviedb.org/3/movie/' + str(movieId)
@@ -126,10 +126,6 @@ def get_image_base_url():
 
 def get_movies_by_genre(genre,page,sort_by):
     sort_by=plugin.get_setting('sort_by')
-    #'first_air_date.desc'
-    #'first_air_date.asc'
-    #'popularity.desc'
-    #'vote_average.desc'
     data = {}
     data['api_key'] = api_key
     data['page'] = str(page)
@@ -157,6 +153,20 @@ def getMoviesByActor(actor,page):
     xbmc.log(infostring)
     infostring = json.loads(infostring)
     return infostring['cast']
+
+def getMoviesByKeyword(keyword,page):
+    data = {}
+    data['api_key'] = api_key
+    data['page'] = str(page)
+    data['language']='en'
+    url_values = urllib.urlencode(data)
+    url = 'https://api.themoviedb.org/3/keyword/' + str(keyword) + '/movies'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url)
+    infostring = urllib2.urlopen(req).read()
+    xbmc.log(infostring)
+    infostring = json.loads(infostring)
+    return infostring['results']
 
 def get_similar_movies(movie_id,page):
     data = {}
