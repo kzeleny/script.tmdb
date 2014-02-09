@@ -124,8 +124,8 @@ def get_image_base_url():
     infostring = json.loads(infostring)
     return infostring['images']['base_url']
 
-def get_movies_by_genre(genre,page,sort_by):
-    sort_by=plugin.get_setting('sort_by')
+def get_movies_by_genre(genre,page):
+    sort_by='popularity.desc'
     data = {}
     data['api_key'] = api_key
     data['page'] = str(page)
@@ -138,7 +138,7 @@ def get_movies_by_genre(genre,page,sort_by):
     req = urllib2.Request(full_url)
     infostring = urllib2.urlopen(req).read()
     infostring = json.loads(infostring)
-    return infostring
+    return infostring['results']
 
 def getMoviesByActor(actor,page):
     data = {}

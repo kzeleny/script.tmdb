@@ -16,6 +16,10 @@ image_base_url=tmdb.get_image_base_url()
 movie_id=0
 movie=''
 keyword_id=''
+genre_id=''
+current_keyword=''
+current_genre=''
+cast_member=''
 def startup():
     movie=tmdb.get_movie(movie_id)
     show_movie(movie)
@@ -29,8 +33,10 @@ class movieWindow(xbmcgui.WindowXMLDialog):
     poster_index=0
     backgrounds=[]
     similar=[]
+    cast_movies=[]
     keywords=[]
     cast=[]
+    genres=[]
     background_index=0
     mode='similar'
     file=''
@@ -156,6 +162,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes)')
 
     def show_similar(self,similar):
+        self.getControl(128).setLabel('Movies Similar to ' + self.current_movie['title'])
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -171,7 +178,26 @@ class movieWindow(xbmcgui.WindowXMLDialog):
                 self.getControl(300+i).setImage('http://image.tmdb.org/t/p/w92' + similar[i]['poster_path'])
         self.similar=similar
 
+    def show_cast_movies(self,cast_movies):
+        global cast_member
+        self.getControl(128).setLabel('Movies with ' + cast_member + ' in the Cast')
+        x=10
+        for i in range(0,x):
+            self.getControl(300+i).setImage('')
+            self.getControl(200+i).setLabel(' ')
+            self.getControl(200+i).setEnabled(False)
+        if len(cast_movies) < 10:x=len(cast_movies)
+        for i in range(0,x):
+            self.getControl(200+i).setEnabled(True)
+            if cast_movies[i]['poster_path']==None:
+                self.getControl(300+i).setImage('no-poster-w92.jpg')
+                self.getControl(200+i).setLabel(cast_movies[i]['title'])
+            else:
+                self.getControl(300+i).setImage('http://image.tmdb.org/t/p/w92' + cast_movies[i]['poster_path'])
+        self.cast_movies=cast_movies
+
     def show_cast(self,cast):
+        self.getControl(128).setLabel('Cast From '+ self.current_movie['title'])
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -188,6 +214,8 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         self.cast=cast
 
     def show_keywords(self,keywords):
+        global current_keyword
+        self.getControl(128).setLabel('Movies with ' + current_keyword + ' Keyword')
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -203,15 +231,35 @@ class movieWindow(xbmcgui.WindowXMLDialog):
                 self.getControl(300+i).setImage('http://image.tmdb.org/t/p/w92' + keywords[i]['poster_path'])
         self.keywords=keywords
 
+    def show_genre(self,genres):
+        global current_genre
+        self.getControl(128).setLabel(current_genre + ' Movies')
+        x=10
+        for i in range(0,x):
+            self.getControl(300+i).setImage('')
+            self.getControl(200+i).setLabel(' ')
+            self.getControl(200+i).setEnabled(False)
+        if len(genres) < 10:x=len(genres)
+        for i in range(0,x):
+            self.getControl(200+i).setEnabled(True)
+            if genres[i]['poster_path']==None:
+                self.getControl(300+i).setImage('no-poster-w92.jpg')
+                self.getControl(200+i).setLabel(genres[i]['title'])
+            else:
+                self.getControl(300+i).setImage('http://image.tmdb.org/t/p/w92' + genres[i]['poster_path'])
+        self.genres=genres
+
     def onFocus(self, control):
         xbmc.log('Focus='+str(control))
         if control in(200,201,202,203,204,205,206,207,208,209):
-            if self.mode=='similar':
+            if self.mode =='similar':
                 self.getControl(126).setLabel(self.similar[control-200]['title'])
             elif self.mode=='keywords':
                 self.getControl(126).setLabel(self.keywords[control-200]['title'])
             elif self.mode=='cast':
                 self.getControl(126).setLabel(self.cast[control-200]['name'] + ' as ' + self.cast[control-200]['character'])
+            elif self.mode=='cast_movies':
+                self.getControl(126).setLabel(self.cast_movies[control-200]['title'])
         else:
             self.getControl(126).setLabel('')
 
@@ -228,30 +276,44 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         xbmc.log('you clicked '+ str(control))
         global movie_id
         global movie
+        global cast_member
         if control in(200,201,202,203,204,205,206,207,208,209):
             if self.mode=='similar':
                 movie_id=self.similar[control-200]['id']
                 startup()  
             elif self.mode=='cast':
-               self.similar=tmdb.getMoviesByActor(self.cast[control-200]['id'],1)
-               self.mode='similar'
-               self.show_similar(self.similar)
+               cast_member=self.cast[control-200]['name']
+               self.cast_movies=tmdb.getMoviesByActor(self.cast[control-200]['id'],1)
+               self.mode='cast_movies'
+               self.show_cast_movies(self.cast_movies)
             elif self.mode=='keywords':
                movie_id=self.keywords[control-200]['id']
-               startup()    
+               startup()  
+            elif self.mode=='genre':  
+                movie_id=self.genres[control-200]['id']
+                startup()
+            elif self.mode=='cast_movies':
+                movie_id=self.cast_movies[control-200]['id']
+                startup()
 
-        if control in (50,51):
+        if control in (50,51,52):
             dg = dialogWindow('dialog_select.xml',addon_path,'default')
             dg.curr_movie=self.current_movie
             if control==50:dg.mode='trailer'
             if control==51:dg.mode='keyword'
+            if control==52:dg.mode='genre'
             dg.doModal()
             if control==51:
                 if keyword_id!='':
                     self.mode='keywords'
                     self.keywords=tmdb.getMoviesByKeyword(keyword_id,1)
                     self.show_keywords(self.keywords)
-                
+            elif control==52:
+                if genre_id!='':
+                    self.mode='genre'
+                    self.genres=tmdb.get_movies_by_genre(genre_id,1)  
+                    self.show_genre(self.genres)
+                                  
         if control == 105 or control == 106:
             if control==105:
                 if self.poster_index==0:
@@ -417,9 +479,18 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
                 li=xbmcgui.ListItem(keyword['name'])
                 li.setProperty('id',str(keyword['id']))
                 self.getControl(300).addItem(li)
+        elif self.mode=='genre':
+            self.getControl(1).setLabel('Genres')
+            for genre in self.curr_movie['genres']:
+                li=xbmcgui.ListItem(genre['name'])
+                li.setProperty('id',str(genre['id']))
+                self.getControl(300).addItem(li)
 
     def onClick(self,control):
         global keyword_id
+        global genre_id
+        global current_genre
+        global current_keyword
         if control==300:
             if self.mode=='trailer':
                 li= self.getControl(300).getSelectedItem()
@@ -429,8 +500,14 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
             elif self.mode=='keyword':
                 li=self.getControl(300).getSelectedItem()
                 keyword_id=li.getProperty('id')
+                current_keyword=li.getLabel()
                 self.close()
-        
+            elif self.mode=='genre':
+                li=self.getControl(300).getSelectedItem()
+                genre_id=li.getProperty('id')
+                current_genre=li.getLabel()
+                self.close()
+
 class videoWindow(xbmcgui.WindowXMLDialog):
     url=''
     def onInit(self):
