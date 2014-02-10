@@ -85,14 +85,14 @@ def format_currency(number):
     locale.setlocale( locale.LC_ALL, '' )
     return locale.currency( number, grouping=True )[:-3]
 
-def find_xbmc_by_title(title):
-    moviestring = xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "VideoLibrary.GetMovies", "params": {"properties": ["file","title","imdbnumber"]}, "id": 1}')
+def find_xbmc_by_title(title,year):
+    moviestring = xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "VideoLibrary.GetMovies", "params": {"properties": ["file","title","year"]}, "id": 1}')
     moviestring = unicode(moviestring, 'utf-8', errors='ignore')
     moviestring = json.loads(moviestring)  
     xbmc_file=''
     if 'result' in moviestring:
         for movie in moviestring['result']['movies']:
-            if movie['title']==title:
+            if movie['title']==title and movie['year']==int(year):
                 xbmc_file=movie['file'] 
                 xbmc.log(xbmc_file) 
                 break

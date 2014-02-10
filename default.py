@@ -70,6 +70,7 @@ class openingWindow(xbmcgui.WindowXMLDialog):
             bw.show()
             from resources.lib import movies
             movies.source='popular'
+            movies.page=1
             movies.startup()
             bw.close()
             del bw
@@ -77,11 +78,13 @@ class openingWindow(xbmcgui.WindowXMLDialog):
         if control==102:
             from resources.lib import tvshows
             tvshows.source='popular'
+            tvshows.page=1
             tvshows.startup()
 
         if control==103:
             from resources.lib import people
             people.source='popular'
+            people.page=1
             people.startup()
 
         if control==99:

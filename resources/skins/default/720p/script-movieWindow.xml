@@ -4,6 +4,7 @@
     <posx>0</posx>
     <posy>0</posy>
   </coordinates>
+  <defaultcontrol always="true">400</defaultcontrol>
   <controls>
     <control type="group">
       <!--animation effect="fade" start="100" end="0" time="2000">WindowClose</animation>
@@ -21,7 +22,7 @@
       <control type="image">
         <posx>0</posx>
         <posy>95</posy>
-        <width>1280</width>
+        <width>1500</width>
         <height>74</height>
         <texture>button-bar.png</texture>
         <aspectratio>stretch</aspectratio>
@@ -118,7 +119,7 @@
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
         <onup>32113</onup>
-        <ondown>32001</ondown>
+        <ondown>400</ondown>
         <onleft>32104</onleft>
         <onright>32102</onright>
       </control>
@@ -136,8 +137,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup></onup>
-        <ondown>32001</ondown>
+        <onup>32113</onup>
+        <ondown>400</ondown>
         <onleft>32101</onleft>
         <onright>32103</onright>
       </control>
@@ -155,8 +156,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup></onup>
-        <ondown>32001</ondown>
+        <onup>32113</onup>
+        <ondown>400</ondown>
         <onleft>32102</onleft>
         <onright>32104</onright>
       </control>
@@ -174,8 +175,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup></onup>
-        <ondown>32001</ondown>
+        <onup>32113</onup>
+        <ondown>400</ondown>
         <onleft>32103</onleft>
         <onright>33105</onright>
       </control>
@@ -193,8 +194,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup></onup>
-        <ondown>32001</ondown>
+        <onup>32113</onup>
+        <ondown>400</ondown>
         <onleft>32104</onleft>
         <onright>33106</onright>
       </control>
@@ -212,8 +213,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup></onup>
-        <ondown>32001</ondown>
+        <onup>32113</onup>
+        <ondown>400</ondown>
         <onleft>33105</onleft>
         <onright>33107</onright>
       </control>
@@ -231,18 +232,19 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup></onup>
-        <ondown>32001</ondown>
+        <onup>32113</onup>
+        <ondown>400</ondown>
         <onleft>33106</onleft>
         <onright>32110</onright>
       </control>
       <control type="button" id="32110">
         <description>search button</description>
         <posx>1120</posx>
-        <posy>137</posy>
+        <posy>138</posy>
         <width>150</width>
         <textwidth>150</textwidth>
-        <height>25</height>
+        <height>31</height>
+        <aligny>top</aligny>
         <font>font13</font>
         <label>Search</label>
         <align>center</align>
@@ -250,8 +252,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup></onup>
-        <ondown>32001</ondown>
+        <onup>32113</onup>
+        <ondown>81</ondown>
         <onleft>33107</onleft>
         <onright>32101</onright>
       </control>
@@ -264,7 +266,7 @@
         <align>right</align>
         <font>font13</font>
         <label>Popular Movies</label>
-        <textcolor>ff606060</textcolor>
+        <textcolor>ffE68a00</textcolor>
       </control>
       <control type="label" id="32106">
         <posx>20</posx>
@@ -340,6 +342,9 @@
         <label></label>
         <font>font13</font>
         <textcolor>ff606060</textcolor>
+        <onup>414</onup>
+        <onright>32117</onright>
+        <onleft>32117</onleft>
       </control>
       <control type="button" id="32117">
         <posx>1200</posx>
@@ -353,6 +358,9 @@
         <label></label>
         <font>font13</font>
         <textcolor>ff606060</textcolor>
+        <onup>420</onup>
+        <onleft>32116</onleft>
+        <onright>32116</onright>
       </control>
       <control type="label" id="32120">
         <posx>466</posx>
@@ -361,7 +369,7 @@
         <width>764</width>
         <font>font13</font>
         <align>center</align>
-        <textcolor>ff606060</textcolor>
+        <textcolor>ffE68a00</textcolor>
         <label>Page 1 of 10</label>
       </control>
       <!-- Image Grid -->
@@ -405,7 +413,11 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			<focusedcolor>ffffffff</focusedcolor>
+            <onup>32101</onup>
+            <ondown>407</ondown>
+            <onright>401</onright>
+            <onleft></onleft>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
           </control>
@@ -445,9 +457,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>32101</onup>
+            <ondown>408</ondown>
+            <onright>402</onright>
+            <onleft>400</onleft>
           </control>
         </control>
         <!-- image 2 -->
@@ -485,9 +501,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>32101</onup>
+            <ondown>409</ondown>
+            <onright>403</onright>
+            <onleft>401</onleft>
           </control>
         </control>
         <!-- image 3 -->
@@ -526,11 +546,15 @@
             <texturenofocus></texturenofocus>
             <font>font13</font>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <scroll>Focus</scroll>
+            <focusedcolor>ffffffff</focusedcolor>
+            <scroll>Focus</scroll>
             <textcolor>ff606060</textcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>32101</onup>
+            <ondown>410</ondown>
+            <onright>404</onright>
+            <onleft>402</onleft>
           </control>
         </control>
         <!-- image 4 -->
@@ -568,9 +592,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>32101</onup>
+            <ondown>411</ondown>
+            <onright>405</onright>
+            <onleft>403</onleft>
           </control>
         </control>
         <!-- image 5 -->
@@ -608,9 +636,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>32101</onup>
+            <ondown>412</ondown>
+            <onright>406</onright>
+            <onleft>404</onleft>
           </control>
         </control>
         <!-- image 6 -->
@@ -648,9 +680,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>32101</onup>
+            <ondown>413</ondown>
+            <onright>407</onright>
+            <onleft>405</onleft>
           </control>
         </control>
         <!-- image 7 -->
@@ -688,9 +724,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>400</onup>
+            <ondown>414</ondown>
+            <onright>408</onright>
+            <onleft>406</onleft>
           </control>
         </control>
         <!-- image 8 -->
@@ -728,9 +768,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>401</onup>
+            <ondown>415</ondown>
+            <onright>409</onright>
+            <onleft>407</onleft>
           </control>
         </control>
         <!-- image 9 -->
@@ -768,9 +812,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>402</onup>
+            <ondown>416</ondown>
+            <onright>410</onright>
+            <onleft>408</onleft>
           </control>
         </control>
         <!-- image 10 -->
@@ -808,9 +856,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>403</onup>
+            <ondown>417</ondown>
+            <onright>411</onright>
+            <onleft>409</onleft>
           </control>
         </control>
         <!-- image 11 -->
@@ -848,9 +900,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>404</onup>
+            <ondown>418</ondown>
+            <onright>412</onright>
+            <onleft>410</onleft>
           </control>
         </control>
         <!-- image 12 -->
@@ -888,9 +944,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>405</onup>
+            <ondown>419</ondown>
+            <onright>413</onright>
+            <onleft>411</onleft>
           </control>
         </control>
         <!-- image 13 -->
@@ -928,9 +988,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>406</onup>
+            <ondown>420</ondown>
+            <onright>414</onright>
+            <onleft>412</onleft>
           </control>
         </control>
         <!-- image 14 -->
@@ -968,9 +1032,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>407</onup>
+            <ondown>401</ondown>
+            <onright>415</onright>
+            <onleft>413</onleft>
           </control>
         </control>
         <!-- image 15 -->
@@ -1008,9 +1076,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>408</onup>
+            <ondown>402</ondown>
+            <onright>416</onright>
+            <onleft>414</onleft>
           </control>
         </control>
         <!-- image 16 -->
@@ -1048,9 +1120,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>409</onup>
+            <ondown>403</ondown>
+            <onright>417</onright>
+            <onleft>415</onleft>
           </control>
         </control>
         <!-- image 17 -->
@@ -1088,9 +1164,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>410</onup>
+            <ondown>404</ondown>
+            <onright>418</onright>
+            <onleft>416</onleft>
           </control>
         </control>
         <!-- image 18 -->
@@ -1128,9 +1208,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>411</onup>
+            <ondown>405</ondown>
+            <onright>419</onright>
+            <onleft>417</onleft>
           </control>
         </control>
         <!-- image 19 -->
@@ -1168,9 +1252,13 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>412</onup>
+            <ondown>406</ondown>
+            <onright>420</onright>
+            <onleft>418</onleft>
           </control>
         </control>
         <!-- image 20 -->
@@ -1208,10 +1296,75 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
-			  <aligny>top</aligny>
+            <focusedcolor>ffffffff</focusedcolor>
+            <aligny>top</aligny>
             <textoffsety>110</textoffsety>
+            <onup>413</onup>
+            <ondown>32117</ondown>
+            <onright>400</onright>
+            <onleft>419</onleft>
           </control>
+        </control>
+      </control>
+      <control type="group" id="80">
+        <posx>1130</posx>
+        <posy>168</posy>
+        <visible>Control.HasFocus(32110)|Control.HasFocus(80)|Control.HasFocus(81)|Control.HasFocus(82)|Control.HasFocus(83)|Control.HasFocus(84)</visible>
+        <control type="image">
+          <posx>0</posx>
+          <posy>0</posy>
+          <texture>green.png</texture>
+          <height>120</height>
+          <width>150</width>
+        </control>
+        <control type="button" id="81">
+          <posx>0</posx>
+          <posy>0</posy>
+          <label>Title</label>
+          <font>font13</font>
+          <textcolor>ffffffff</textcolor>
+          <textfocuscolor>ffffffff</textfocuscolor>
+          <texturefocus>button-has-focus.png</texturefocus>
+          <height>30</height>
+          <width>150</width>
+          <ondown>82</ondown>
+          <onup>32110</onup>
+        </control>
+        <control type="button" id="82">
+          <posx>0</posx>
+          <posy>30</posy>
+          <label>Genre</label>
+          <height>30</height>
+          <width>150</width>
+          <font>font13</font>
+          <textcolor>ffffffff</textcolor>
+          <texturefocus>button-has-focus.png</texturefocus>
+          <ondown>83</ondown>
+          <onup>81</onup>
+        </control>
+        <control type="button" id="83">
+          <posx>0</posx>
+          <posy>60</posy>
+          <label>Year</label>
+          <height>30</height>
+          <width>150</width>
+          <font>font13</font>
+          <textcolor>ffffffff</textcolor>
+          <texturefocus>button-has-focus.png</texturefocus>
+          <ondown>84</ondown>
+          <onup>82</onup>
+        </control>
+        <control type="button" id="84">
+          <posx>0</posx>
+          <posy>90</posy>
+          <label>Person</label>
+          <height>30</height>
+          <width>150</width>
+          <font>font13</font>
+          <textcolor>ffffffff</textcolor>
+          <texturefocus>button-has-focus.png</texturefocus>
+          <ondown>400</ondown>
+          <onup>83</onup>
         </control>
       </control>
     </control>

@@ -15,7 +15,11 @@ source='popular'
 query=''
 page=1
 maxpage=10
-
+genre_id=''
+genre_name=''
+year=''
+person_id=''
+person_name=''
 def startup():
     movie_results=tmdb.get_movies(source,page)
     movie_ids=movie_results['results']
@@ -66,12 +70,11 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 self.getControl(i+400).setEnabled(True)
                 if movies[i]['poster_path']==None:
                     self.getControl(i+200).setImage('no-poster-w92.jpg')
-                    self.getControl(i+400).setLabel(movies[i]['title'])
                 else:
                     self.getControl(i+200).setImage('http://image.tmdb.org/t/p/w92' +movies[i]['poster_path'])
                 if i==0:self.onFocus(400)
         self.getControl(599).setVisible(True)
-
+        xbmc.log(source)
         if source=='popular':self.getControl(32111).setLabel('Popular Movies')
         if source=='top_rated':self.getControl(32111).setLabel('Top Rated Movies')
         if source=='upcoming':self.getControl(32111).setLabel('Upcoming Movies')
@@ -80,6 +83,9 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if source=='favorites':self.getControl(32111).setLabel('Favorite Movies')
         if source=='watchlist':self.getControl(32111).setLabel('Movies on Watchlist')
         if source=='rated':self.getControl(32111).setLabel('Rated Movies')
+        if source=='genre':self.getControl(32111).setLabel(genre_name + ' Movies')
+        if source=='years':self.getControl(32111).setLabel('Movies From ' + year)
+        if source=='person':self.getControl(32111).setLabel('Movies with ' + person_name)
 
     def onAction(self, action):
         if action == 10:
@@ -97,7 +103,6 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if movieid!='':
             cast=self.getControl(32109)
             plot=self.getControl(32108)
-            title=self.getControl(3001)
             movie=tmdb.get_movie(movieid)
             actors = movie['credits']['cast']
             actors=sorted(actors, key=lambda k: k['order'])
@@ -108,7 +113,10 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 a=a + actor['name'] +", "
                 if i==3:break
             cast.setLabel(a[:-2])
-            title.setLabel(movie['title'] + ' ('+ movie['release_date'][:4] +')')
+            try:
+                self.getControl(3001).setLabel(movie['title'] + ' ('+ movie['release_date'][:4] +')')
+            except:
+                pass
             plot.setText(movie['overview'])
             backdrop.setImage('')
             if movie['backdrop_path']!=None:
@@ -122,6 +130,11 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         global query
         global page
         global maxpage
+        global genre_id
+        global genre_name
+        global year
+        global person_id
+        global person_name
         movieid=''
         movieid=self.get_movieid_from_control(control)
         do_movies=False
@@ -135,11 +148,14 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         favorites = 33105
         watchlist = 33106
         rated = 33107
-        query_btn = 32110
+        query_btn = 81
         previous = 32116
         next =32117
         tv_shows = 32114
         people = 32115
+        genre_btn=82
+        year_btn=83
+        person_btn=84
 
         if movieid!='':
             from resources.lib import movie
@@ -180,6 +196,22 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
             source='query'
             do_movies=True
             page=1
+        if control == genre_btn:
+            source='genre'
+            page=1
+            genre_id=''
+            do_movies=True
+        if control == year_btn:
+            source='years'
+            page=1
+            year=''
+            do_movies=True
+        if control == person_btn:
+            source='person'
+            page=1
+            person_id=''
+            person_name=''
+            do_movies=True
         if control == next:
             if page < maxpage:
                 page=page+1
@@ -196,6 +228,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if do_movies:
             ans=True
             if source=='query':
+                self.getControl(80).setVisible(True)
                 if control==query_btn:
                     k=xbmc.Keyboard('','Enter Movie Title to Search For')
                     k.doModal()
@@ -246,7 +279,45 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                     if total_pages > page:
                         movies.append(tmdb.get_rated_movies(self.session_id,page+1)['results'][0])
                     self.close()
-                    show_movies(movies,source,page)                                                                  
+                    show_movies(movies,source,page)  
+            elif source=='genre':
+                if genre_id=='':
+                    dg=dialogWindow('dialog_select.xml',addon_path,'Default')
+                    dg.mode='genre'
+                    dg.doModal() 
+                if genre_id!='':
+                    movies=tmdb.get_movies_by_genre(genre_id,page)  
+                    total_pages=movies['total_pages']
+                    movies=movies['results']
+                    maxpage=total_pages 
+                    if total_pages > page:
+                        movies.append(tmdb.get_movies_by_genre(genre_id,page+1)['results'][0])
+                    self.close()
+                    show_movies(movies,source,page) 
+            elif source == 'years':
+                if year=='':
+                    kb=xbmc.Keyboard('','Enter Year')
+                    kb.doModal()
+                    year=kb.getText()
+                movies=tmdb.get_movies_by_year(year,page)
+                total_pages=movies['total_pages']
+                movies=movies['results']
+                maxpage=total_pages
+                if total_pages > page:
+                    movies.append(tmdb.get_movies_by_year(year,page+1)['results'][0])
+                self.close()
+                show_movies(movies,source,page)
+            elif source=='person': 
+                if person_id=='':
+                    kb=xbmc.Keyboard('','Enter Persons Name')
+                    kb.doModal()
+                    person_name=kb.getText()
+                    if person_name !='':
+                        dg=dialogWindow('dialog_select.xml',addon_path,'Default')
+                        dg.mode='people'
+                        dg.doModal() 
+
+                                                         
             else:
                 query=''
                 xbmc.log(source)
@@ -292,3 +363,33 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if control==419:movieid=self.movies[19]['id']
         if control==420:movieid=self.movies[20]['id']
         return movieid
+
+class dialogWindow(xbmcgui.WindowXMLDialog):
+    mode=''
+    def onInit(self):
+        global person_name
+        if self.mode=='genre':
+            self.getControl(1).setLabel('Search for Movies by Genre')
+            for genre in tmdb.get_genres():
+                li=xbmcgui.ListItem(genre['name'])
+                li.setProperty('id',str(genre['id']))
+                self.getControl(300).addItem(li)
+        if self.mode=='people':
+            self.getControl(1).setLabel('Select Person')
+            for person in tmdb.search_people(person_name,1)['results']:     
+                li=xbmcgui.ListItem(person['name'])
+                li.setProperty('id',str(person['id']))
+                self.getControl(300).addItem(li)
+
+    def onClick(self,control):
+        global genre_id
+        global genre_name
+        global person_id
+        global person_name
+        if self.mode=='genre':
+            genre_id=self.getControl(300).getSelectedItem().getProperty('id')
+            genre_name=self.getControl(300).getSelectedItem().getLabel()
+        if self.mode=='people':
+            person_id=self.getControl(300).getSelectedItem().getProperty('id')
+            person_name=self.getControl(300).getSelectedItem().getLabel()
+        self.close()

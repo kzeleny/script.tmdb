@@ -8,6 +8,16 @@ image_base_url=''
 you_tube_base_url='plugin://plugin.video.youtube/?action=play_video&videoid='
 api_key='99e8b7beac187a857152f57d67495cf4'
 
+def get_genres():
+    data = {}
+    data['api_key'] = api_key
+    url_values = urllib.urlencode(data)
+    url = 'https://api.themoviedb.org/3/genre/list'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    return infostring['genres']
 
 def get_movies(source,page):
     data = {}
@@ -138,7 +148,23 @@ def get_movies_by_genre(genre,page):
     req = urllib2.Request(full_url)
     infostring = urllib2.urlopen(req).read()
     infostring = json.loads(infostring)
-    return infostring['results']
+    return infostring
+
+def get_movies_by_year(year,page):
+    sort_by='popularity.desc'
+    data = {}
+    data['api_key'] = api_key
+    data['page'] = str(page)
+    data['language']='en'
+    data['year']=year
+    data['sort_by']=sort_by
+    url_values = urllib.urlencode(data)
+    url = 'https://api.themoviedb.org/3/discover/movie'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    return infostring
 
 def getMoviesByActor(actor,page):
     data = {}
@@ -208,6 +234,20 @@ def get_crew_by_movie_id(movie_id):
     credits = json.loads(credits)
     crew=credits['credits']['crew']
     return crew
+
+def search_people(name,page):
+    data = {}
+    data['api_key'] = api_key
+    data['page'] = str(page)
+    data['query'] = name
+    url_values = urllib.urlencode(data)
+    url = 'http://api.themoviedb.org/3/search/person'
+    full_url = url + '?' + url_values
+    xbmc.log(full_url)
+    req = urllib2.Request(full_url)
+    people = urllib2.urlopen(req).read()
+    people = json.loads(people)
+    return people
 
 def get_people(source,page):
     data = {}

@@ -56,7 +56,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         title=self.getControl(3001)
         movie=tmdb.get_movie(movie_id)
         self.current_movie=movie
-        self.file=utils.find_xbmc_by_title(movie['title'])
+        self.file=utils.find_xbmc_by_title(movie['title'],movie['release_date'][:4])
         if self.file!='':
             self.getControl(127).setLabel('Play')
         crew = movie['credits']['crew']
@@ -311,7 +311,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             elif control==52:
                 if genre_id!='':
                     self.mode='genre'
-                    self.genres=tmdb.get_movies_by_genre(genre_id,1)  
+                    self.genres=tmdb.get_movies_by_genre(genre_id,1)['results']
                     self.show_genre(self.genres)
                                   
         if control == 105 or control == 106:
@@ -474,13 +474,13 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
                li.setProperty('url','plugin://plugin.video.youtube/?action=play_video&videoid='+trailer['source'])
                self.getControl(300).addItem(li)
         elif self.mode=='keyword':
-            self.getControl(1).setLabel('Keywords')
+            self.getControl(1).setLabel('Serch for Movies by Keywords')
             for keyword in self.curr_movie['keywords']['keywords']:
                 li=xbmcgui.ListItem(keyword['name'])
                 li.setProperty('id',str(keyword['id']))
                 self.getControl(300).addItem(li)
         elif self.mode=='genre':
-            self.getControl(1).setLabel('Genres')
+            self.getControl(1).setLabel('Search for Movies by Genre')
             for genre in self.curr_movie['genres']:
                 li=xbmcgui.ListItem(genre['name'])
                 li.setProperty('id',str(genre['id']))
