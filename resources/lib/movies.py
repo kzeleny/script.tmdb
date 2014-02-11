@@ -318,11 +318,19 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                         dg.mode='people'
                         dg.doModal() 
                 movies=tmdb.getMoviesByActor(person_id,page)
-                total_pages=1
+                pages=len(movies) / 20
+                if len(movies) % 20 > 0:pages=pages+1
+                total_pages=pages
+                xbmc.log(str(len(movies)))
                 maxpage=total_pages
-                if total_pages > page:
-                    movies.append(tmdb.get_movies_by_year(year,page+1)['results'][0])
                 self.close()
+                movies=sorted(movies, key=lambda k: k['release_date'],reverse=True)
+                person_movies=[]
+                if page > 1:
+                    for i in range((page * 20)-20,(page * 20)+1):
+                        if i < len(movies):
+                            person_movies.append(movies[i])
+                    movies=person_movies
                 show_movies(movies,source,page)                             
             else:
                 query=''
