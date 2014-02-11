@@ -265,7 +265,7 @@
         <scroll>true</scroll>
         <align>right</align>
         <font>font13</font>
-        <label>Popular Movies</label>
+        <label></label>
         <textcolor>ffE68a00</textcolor>
       </control>
       <control type="label" id="32106">

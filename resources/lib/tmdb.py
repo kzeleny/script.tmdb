@@ -240,6 +240,7 @@ def search_people(name,page):
     data['api_key'] = api_key
     data['page'] = str(page)
     data['query'] = name
+    data['search_type']='ngram'
     url_values = urllib.urlencode(data)
     url = 'http://api.themoviedb.org/3/search/person'
     full_url = url + '?' + url_values

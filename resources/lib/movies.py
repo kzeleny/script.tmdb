@@ -65,8 +65,9 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         xbmc_movies=utils.get_xbmc_movies()
         for i in range(0,21):
             if len(movies)>i:
-                if movies[i]['title'] + ' ('+ movies[i]['release_date'][:4] +')' in xbmc_movies:
-                    self.getControl(i+300).setImage('xbmc_icon.png')
+                if movies[i]['release_date']!=None:
+                    if movies[i]['title'] + ' ('+ movies[i]['release_date'][:4] +')' in xbmc_movies:
+                        self.getControl(i+300).setImage('xbmc_icon.png')
                 self.getControl(i+400).setEnabled(True)
                 if movies[i]['poster_path']==None:
                     self.getControl(i+200).setImage('no-poster-w92.jpg')
@@ -316,8 +317,13 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                         dg=dialogWindow('dialog_select.xml',addon_path,'Default')
                         dg.mode='people'
                         dg.doModal() 
-
-                                                         
+                movies=tmdb.getMoviesByActor(person_id,page)
+                total_pages=1
+                maxpage=total_pages
+                if total_pages > page:
+                    movies.append(tmdb.get_movies_by_year(year,page+1)['results'][0])
+                self.close()
+                show_movies(movies,source,page)                             
             else:
                 query=''
                 xbmc.log(source)
