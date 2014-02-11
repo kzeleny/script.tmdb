@@ -3,6 +3,7 @@ import json
 import urllib
 import urllib2
 import xbmc
+import datetime
 
 image_base_url=''
 you_tube_base_url='plugin://plugin.video.youtube/?action=play_video&videoid='
@@ -135,13 +136,14 @@ def get_image_base_url():
     return infostring['images']['base_url']
 
 def get_movies_by_genre(genre,page):
-    sort_by='popularity.desc'
+    sort_by='release_date.desc'
     data = {}
     data['api_key'] = api_key
     data['page'] = str(page)
     data['language']='en'
     data['with_genres']=genre
     data['sort_by']=sort_by
+    data['release_date.lte'] = str(datetime.date.today() + datetime.timedelta(days=90))
     url_values = urllib.urlencode(data)
     url = 'https://api.themoviedb.org/3/discover/movie'
     full_url = url + '?' + url_values
@@ -151,7 +153,7 @@ def get_movies_by_genre(genre,page):
     return infostring
 
 def get_movies_by_year(year,page):
-    sort_by='popularity.desc'
+    sort_by='release_date.desc'
     data = {}
     data['api_key'] = api_key
     data['page'] = str(page)
