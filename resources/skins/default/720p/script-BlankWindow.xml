@@ -44,161 +44,219 @@
         <texture>tmdb-logo.png</texture>
         <colordiffuse>FFFFFFFF</colordiffuse>
       </control>
-      <!-- movies button -->
-      <control type="button" id="32113">
-        <description>Movies Button</description>
-        <posx>10</posx>
-        <posy>105</posy>
-        <width>150</width>
-        <textwidth>150</textwidth>
-        <height>25</height>
-        <font>font13</font>
-        <label>Movies</label>
-        <align>center</align>
-        <texturefocus></texturefocus>
-        <texturenofocus></texturenofocus>
-        <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup>32117</onup>
-        <ondown>32101</ondown>
-        <onleft>32115</onleft>
-        <onright>32114</onright>
+		<!-- movies button -->
+		<control type="button" id="32113">
+			<description>Movies Button</description>
+			<posx>10</posx>
+			<posy>105</posy>
+			<width>150</width>
+			<textwidth>150</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>Movies</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			
+			<onup>5000</onup>
+			<ondown>32101</ondown>
+			<onleft>32115</onleft>
+			<onright>32114</onright>
+		</control>
+		<!-- tv shows button -->
+		<control type="button" id="32114">
+			<description>Tv Shows Button</description>
+			<posx>230</posx>
+			<posy>105</posy>
+			<width>150</width>
+			<textwidth>150</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>TV Shows</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			
+			<onup>32117</onup>
+			<ondown>32101</ondown>
+			<onleft>32113</onleft>
+			<onright>32115</onright>
+		</control>
+		<control type="button" id="32115">
+			<description>People Button</description>
+			<posx>450</posx>
+			<posy>105</posy>
+			<width>150</width>
+			<textwidth>150</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>People</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			
+			<onup>32117</onup>
+			<ondown>32101</ondown>
+			<onleft>32114</onleft>
+			<onright>32113</onright>
+		</control>
+		<!-- header images -->
+		<control type="button" id="32101">
+			<description>popular_button</description>
+			<posx>10</posx>
+			<posy>137</posy>
+			<width>150</width>
+			<textwidth>150</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>Popular Movies</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			
+			<onup>32113</onup>
+			<ondown>400</ondown>
+			<onleft>32104</onleft>
+			<onright>32102</onright>
+		</control>
+		<control type="button" id="32102">
+			<description>top_rated_button</description>
+			<posx>170</posx>
+			<posy>137</posy>
+			<width>150</width>
+			<textwidth>150</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>Top Rated</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			
+			<onup>32113</onup>
+			<ondown>400</ondown>
+			<onleft>32101</onleft>
+			<onright>32103</onright>
+		</control>
+		<control type="button" id="32103">
+			<description>upcoming_button</description>
+			<posx>330</posx>
+			<posy>137</posy>
+			<width>150</width>
+			<textwidth>150</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>Upcoming</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			
+			<onup>32113</onup>
+			<ondown>400</ondown>
+			<onleft>32102</onleft>
+			<onright>32104</onright>
+		</control>
+		<control type="button" id="32104">
+			<description>now_playing_button</description>
+			<posx>490</posx>
+			<posy>137</posy>
+			<width>150</width>
+			<textwidth>150</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>Now Playing</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			
+			<onup>32113</onup>
+			<ondown>400</ondown>
+			<onleft>32103</onleft>
+			<onright>33105</onright>
+		</control>
+		<control type="button" id="33105">
+			<description>favorites_button</description>
+			<posx>650</posx>
+			<posy>137</posy>
+			<width>150</width>
+			<textwidth>150</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>Favorites</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			
+			<onup>32113</onup>
+			<ondown>400</ondown>
+			<onleft>32104</onleft>
+			<onright>33106</onright>
+		</control>
+		<control type="button" id="33106">
+			<description>watchlist-button</description>
+			<posx>810</posx>
+			<posy>137</posy>
+			<width>150</width>
+			<textwidth>150</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>Watchlist</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			
+			<onup>32113</onup>
+			<ondown>400</ondown>
+			<onleft>33105</onleft>
+			<onright>33107</onright>
+		</control>
+		<control type="button" id="33107">
+			<description>favorites_button</description>
+			<posx>970</posx>
+			<posy>137</posy>
+			<width>150</width>
+			<textwidth>150</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>Rated</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			
+			<onup>32113</onup>
+			<ondown>400</ondown>
+			<onleft>33106</onleft>
+			<onright>32110</onright>
+		</control>
+		<control type="button" id="32110">
+			<description>search button</description>
+			<posx>1120</posx>
+			<posy>138</posy>
+			<width>150</width>
+			<textwidth>150</textwidth>
+			<height>31</height>
+			<aligny>top</aligny>
+			<font>font13</font>
+			<label>Search</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			
+			<onup>32113</onup>
+			<ondown>81</ondown>
+			<onleft>33107</onleft>
+			<onright>32101</onright>
+		</control>
       </control>
-      <!-- tv shows button -->
-      <control type="button" id="32114">
-        <description>Tv Shows Button</description>
-        <posx>230</posx>
-        <posy>105</posy>
-        <width>150</width>
-        <textwidth>150</textwidth>
-        <height>25</height>
-        <font>font13</font>
-        <label>TV Shows</label>
-        <align>center</align>
-        <texturefocus></texturefocus>
-        <texturenofocus></texturenofocus>
-        <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup>32117</onup>
-        <ondown>32101</ondown>
-        <onleft>32113</onleft>
-        <onright>32115</onright>
-      </control>
-      <control type="button" id="32115">
-        <description>People Button</description>
-        <posx>450</posx>
-        <posy>105</posy>
-        <width>150</width>
-        <textwidth>150</textwidth>
-        <height>25</height>
-        <font>font13</font>
-        <label>People</label>
-        <align>center</align>
-        <texturefocus></texturefocus>
-        <texturenofocus></texturenofocus>
-        <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup>32117</onup>
-        <ondown>32101</ondown>
-        <onleft>32114</onleft>
-        <onright>32113</onright>
-      </control>
-      <!-- header images -->
-      <control type="button" id="32101">
-        <description>popular_button</description>
-        <posx>10</posx>
-        <posy>137</posy>
-        <width>150</width>
-        <textwidth>150</textwidth>
-        <height>25</height>
-        <font>font13</font>
-        <label>Popular Movies</label>
-        <align>center</align>
-        <texturefocus></texturefocus>
-        <texturenofocus></texturenofocus>
-        <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup>32113</onup>
-        <ondown>32001</ondown>
-        <onleft>32104</onleft>
-        <onright>32102</onright>
-      </control>
-      <control type="button" id="32102">
-        <description>top_rated_button</description>
-        <posx>170</posx>
-        <posy>137</posy>
-        <width>150</width>
-        <textwidth>150</textwidth>
-        <height>25</height>
-        <font>font13</font>
-        <label>Top Rated</label>
-        <align>center</align>
-        <texturefocus></texturefocus>
-        <texturenofocus></texturenofocus>
-        <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup></onup>
-        <ondown>32001</ondown>
-        <onleft>32101</onleft>
-        <onright>32103</onright>
-      </control>
-      <control type="button" id="32103">
-        <description>upcoming_button</description>
-        <posx>330</posx>
-        <posy>137</posy>
-        <width>150</width>
-        <textwidth>150</textwidth>
-        <height>25</height>
-        <font>font13</font>
-        <label>Upcoming</label>
-        <align>center</align>
-        <texturefocus></texturefocus>
-        <texturenofocus></texturenofocus>
-        <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup></onup>
-        <ondown>32001</ondown>
-        <onleft>32102</onleft>
-        <onright>32104</onright>
-      </control>
-      <control type="button" id="32104">
-        <description>now_playing_button</description>
-        <posx>490</posx>
-        <posy>137</posy>
-        <width>150</width>
-        <textwidth>150</textwidth>
-        <height>25</height>
-        <font>font13</font>
-        <label>Now Playing</label>
-        <align>center</align>
-        <texturefocus></texturefocus>
-        <texturenofocus></texturenofocus>
-        <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup></onup>
-        <ondown>32001</ondown>
-        <onleft>32103</onleft>
-        <onright>32110</onright>
-      </control>
-      <control type="button" id="32110">
-        <description>search button</description>
-        <posx>1120</posx>
-        <posy>137</posy>
-        <width>150</width>
-        <textwidth>150</textwidth>
-        <height>25</height>
-        <font>font13</font>
-        <label>Search</label>
-        <align>center</align>
-        <texturefocus></texturefocus>
-        <texturenofocus></texturenofocus>
-        <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup></onup>
-        <ondown>32001</ondown>
-        <onleft>32104</onleft>
-        <onright>32101</onright>
-      </control>
-    </control>
   </controls>
 </window>

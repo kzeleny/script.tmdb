@@ -370,7 +370,7 @@
         <font>font13</font>
         <align>center</align>
         <textcolor>ffE68a00</textcolor>
-        <label>Page 1 of 10</label>
+        <label></label>
       </control>
       <!-- Image Grid -->
       <control type="group" id="599">
