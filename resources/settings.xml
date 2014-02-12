@@ -4,6 +4,7 @@
   <setting id="guest_session_id" type="text" default="" visible="false" />
   <setting id="username" type="text" label="32000" default="" />
   <setting id="password" type="text" label="32001"  option="hidden" default=""/>
+  <setting id="startup" type="bool" lable="32002" default="true" />
 </settings>
 
 

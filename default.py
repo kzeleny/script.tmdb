@@ -96,10 +96,17 @@ class openingWindow(xbmcgui.WindowXMLDialog):
 if addon.getSetting('session_id')=='' and addon.getSetting('username')!='' and addon.getSetting('password')!='':
     addon.setSetting('session_id',tmdb.validate_new_user(addon.getSetting('username'),addon.getSetting('password')))
 
-openingWindow = openingWindow('script-openingWindow.xml', addon_path,'default')
-openingWindow.doModal()
-del openingWindow
-
-#movies.startup()
-                                
-
+if addon.getSetting('startup')=='true':
+    openingWindow = openingWindow('script-openingWindow.xml', addon_path,'default')
+    openingWindow.doModal()
+    del openingWindow
+else:
+    from resources.lib import movie
+    bw=blankWindow('script-blankWindow.xml',addon_path,'default')
+    bw.show()
+    from resources.lib import movies
+    movies.source='popular'
+    movies.page=1
+    movies.startup()
+    bw.close()
+    del bw
