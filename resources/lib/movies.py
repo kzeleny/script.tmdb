@@ -393,6 +393,10 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
             for person in tmdb.search_people(person_name,1)['results']:     
                 li=xbmcgui.ListItem(person['name'])
                 li.setProperty('id',str(person['id']))
+                if person['profile_path']==None:
+                    li.setIconImage('no-profile-w92.jpg')
+                else:
+                    li.setIconImage('http://image.tmdb.org/t/p/w92' +person['profile_path'])
                 self.getControl(300).addItem(li)
 
     def onClick(self,control):

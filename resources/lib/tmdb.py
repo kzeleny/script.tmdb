@@ -136,7 +136,7 @@ def get_image_base_url():
     return infostring['images']['base_url']
 
 def get_movies_by_genre(genre,page):
-    sort_by='release_date.desc'
+    sort_by='popularity.desc'
     data = {}
     data['api_key'] = api_key
     data['page'] = str(page)
@@ -153,12 +153,12 @@ def get_movies_by_genre(genre,page):
     return infostring
 
 def get_movies_by_year(year,page):
-    sort_by='release_date.desc'
+    sort_by='popularity.desc'
     data = {}
     data['api_key'] = api_key
     data['page'] = str(page)
     data['language']='en'
-    data['year']=year
+    data['primary_release_year']=year
     data['sort_by']=sort_by
     url_values = urllib.urlencode(data)
     url = 'https://api.themoviedb.org/3/discover/movie'

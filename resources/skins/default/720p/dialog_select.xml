@@ -16,7 +16,7 @@
         <left>0</left>
         <top>0</top>
         <width>466</width>
-        <height>526</height>
+        <height>546</height>
         <texture>background.png</texture>
       </control>
       <control type="image">
@@ -24,7 +24,7 @@
 				<left>3</left>
 				<top>3</top>
 				<width>460</width>
-				<height>520</height>
+				<height>540</height>
 				<texture>grey_back.png</texture>
 			</control>
 			<control type="image">
@@ -75,14 +75,14 @@
 				<control type="image">
 					<left>0</left>
 					<top>0</top>
-					<width>450</width>
+					<width>400</width>
 					<height>40</height>
 					<texture border="5"></texture>
 				</control>
 				<control type="label">
 					<left>20</left>
 					<top>0</top>
-					<width>410</width>
+					<width>400</width>
 					<height>40</height>
 					<font>font13</font>
 					<textcolor>ff606060</textcolor>
@@ -90,6 +90,13 @@
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
+      <control type="image">
+        <left>411</left>
+        <top>2</top>
+        <width>25</width>
+        <height>36</height>
+        <texture>$INFO[ListItem.Icon]</texture>
+      </control>
 			</itemlayout>
 			<focusedlayout height="46" width="440">
 				<control type="image">
@@ -102,7 +109,7 @@
 				<control type="label">
 					<left>20</left>
 					<top>0</top>
-					<width>410</width>
+					<width>400</width>
 					<height>40</height>
 					<font>font13</font>
 					<textcolor>ff000000</textcolor>
@@ -110,7 +117,22 @@
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
+        <control type="image">
+        <left>411</left>
+        <top>2</top>
+        <width>25</width>
+        <height>36</height>
+          <aspectratio>stretch</aspectratio>
+        <texture>$INFO[ListItem.Icon]</texture>
+      </control>
 			</focusedlayout>
 		</control>
-	</controls>
+    <control type="label">
+      <top>510</top>
+      <left>250</left>
+      <font>font13</font>
+      <textcolor>ff606060</textcolor>
+    <label>([COLOR=ffe68a00]$INFO[Container(300).NumItems][/COLOR]) Items - Page ([COLOR=ffe68a00]$INFO[Container(300).CurrentPage]/$INFO[Container(300).NumPages][/COLOR])</label>
+    </control>
+      </controls>
 </window>
