@@ -977,6 +977,20 @@
         </control>
       </control>
     </control>
+    <control type="button" id="5020">
+      <posx>1170</posx>
+      <posy>695</posy>
+      <texturefocus></texturefocus>
+      <texturenofocus></texturenofocus>
+      <width>92</width>
+      <height>20</height>
+      <textcolor>ffe68a00</textcolor>
+      <focusedcolor>ff006060</focusedcolor>
+      <label>Show All</label>
+      <textoffsetx>0</textoffsetx>
+      <textoffsety>0</textoffsety>
+      <align>center</align>
+    </control>
     <control type="videowindow" id="2">
       <description>My first video control</description>
       <posx>0</posx>

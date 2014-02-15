@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.tmdb"
-       name="themoviedb.org browser"
+       name="themoviedb.org Browser"
        version="0.0.2"
        provider-name="kzeleny">
   <requires>

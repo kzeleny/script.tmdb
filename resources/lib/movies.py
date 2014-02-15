@@ -11,6 +11,7 @@ resources_path = xbmc.translatePath( os.path.join( addon_path, 'resources' ) ).d
 media_path = xbmc.translatePath( os.path.join( resources_path, 'media' ) ).decode('utf-8')
 title_font=utils.getTitleFont()
 image_base_url=tmdb.get_image_base_url()
+
 source='popular'
 query=''
 page=1
@@ -20,6 +21,9 @@ genre_name=''
 year=''
 person_id=''
 person_name=''
+similar_name=''
+similar_id=''
+
 def startup():
     movie_results=tmdb.get_movies(source,page)
     movie_ids=movie_results['results']
@@ -41,6 +45,43 @@ def show_movies(movie_ids,source,page):
     movie_window.source=source
     movie_window.movies=movie_ids
     movie_window.doModal()
+
+def show_movies_by_genre(genre_id):
+    global maxpage
+    page=1
+    movie_results=tmdb.get_movies_by_genre(genre_id,page)
+    maxpage=movie_results['total_pages']
+    movie_ids=movie_results['results']
+    if maxpage > page:
+        movie_ids.append(tmdb.get_movies_by_genre(genre_id,page+1)['results'][0])
+    show_movies(movie_ids,'genre',1)
+
+def show_movies_by_person(person_id):
+    global maxpage
+    page=1
+    movies=tmdb.getMoviesByActor(person_id,page)
+    pages=len(movies) / 20
+    if len(movies) % 20 > 0:pages=pages+1
+    total_pages=pages
+    maxpage=total_pages
+    movies=sorted(movies, key=lambda k: k['release_date'],reverse=True)
+    person_movies=[]
+    if maxpage > 1:
+        for i in range((page * 20)-20,(page * 20)+1):
+            if i < len(movies):
+                person_movies.append(movies[i])
+    movies=person_movies
+    show_movies(movies,'person',page)  
+
+def show_similar_movies(movie_id):
+    global maxpage
+    page=1
+    movie_results=tmdb.get_similar_movies(movie_id,1)
+    maxpage=movie_results['total_pages']
+    movie_ids=movie_results['results']
+    if maxpage > page:
+        movie_ids.append(tmdb.get_movies_by_genre(genre_id,page+1)['results'][0])
+    show_movies(movie_ids,'similar',1)
 
 class moviesWindow(xbmcgui.WindowXMLDialog):  
     movies=[]
@@ -86,7 +127,8 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if source=='rated':self.getControl(32111).setLabel('Rated Movies')
         if source=='genre':self.getControl(32111).setLabel(genre_name + ' Movies')
         if source=='years':self.getControl(32111).setLabel('Movies From ' + year)
-        if source=='person':self.getControl(32111).setLabel('Movies with ' + person_name)
+        if source=='person':self.getControl(32111).setLabel('Movies With ' + person_name)
+        if source=='similar':self.getControl(32111).setLabel('Movies Similar to ' + similar_name)
 
     def onAction(self, action):
         if action == 10:
@@ -308,6 +350,15 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                     movies.append(tmdb.get_movies_by_year(year,page+1)['results'][0])
                 self.close()
                 show_movies(movies,source,page)
+            elif source == 'similar':
+                movies=tmdb.get_similar_movies(similar_id,page)
+                total_pages=movies['total_pages']
+                movies=movies['results']
+                maxpage=total_pages
+                if total_pages > page:
+                    movies.append(tmdb.get_similar_movies(similar_id,page+1)['results'][0])
+                self.close()
+                show_movies(movies,source,page)
             elif source=='person': 
                 if person_id=='':
                     kb=xbmc.Keyboard('','Enter Persons Name')
@@ -396,7 +447,7 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
                 if person['profile_path']==None:
                     li.setIconImage('no-profile-w92.jpg')
                 else:
-                    li.setIconImage('http://image.tmdb.org/t/p/w92' +person['profile_path'])
+                    li.setIconImage('http://image.tmdb.org/t/p/w45' +person['profile_path'])
                 self.getControl(300).addItem(li)
 
     def onClick(self,control):

@@ -20,6 +20,7 @@ genre_id=''
 current_keyword=''
 current_genre=''
 cast_member=''
+cast_member_id=''
 def startup():
     movie=tmdb.get_movie(movie_id)
     show_movie(movie)
@@ -180,6 +181,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
 
     def show_cast_movies(self,cast_movies):
         global cast_member
+        global cast_member_id
         self.getControl(128).setLabel('Movies with ' + cast_member + ' in the Cast')
         x=10
         for i in range(0,x):
@@ -277,12 +279,18 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         global movie_id
         global movie
         global cast_member
+        global cast_member_id
+        global genre_id
+        global current_genre
+        global keyword_id
+        global current_keyword
         if control in(200,201,202,203,204,205,206,207,208,209):
             if self.mode=='similar':
                 movie_id=self.similar[control-200]['id']
                 startup()  
             elif self.mode=='cast':
                cast_member=self.cast[control-200]['name']
+               cast_member_id=self.cast[control-200]['id']
                self.cast_movies=tmdb.getMoviesByActor(self.cast[control-200]['id'],1)
                self.mode='cast_movies'
                self.show_cast_movies(self.cast_movies)
@@ -416,7 +424,28 @@ class movieWindow(xbmcgui.WindowXMLDialog):
                         dialog = xbmcgui.Dialog()
                         dialog.notification('themoviedb.org Browser', 'Successfully Removed ' + self.current_movie['title'] + ' from Watchlist')
                         self.getControl(5011).setImage('popcorn-disable.png')
-
+        if control==5020: #Show All
+            from resources.lib import movies
+            if self.mode=='genre':
+                movies.genre_id=genre_id
+                movies.genre_name=current_genre
+                movies.page=1
+                movies.source='genre'
+                movies.show_movies_by_genre(genre_id)             
+            if self.mode=='similar':
+                movies.similar_name=self.current_movie['title']
+                movies.similar_id=self.current_movie['id']
+                movies.page=1
+                movies.source='similar'
+                movies.show_similar_movies(self.current_movie['id'])
+            if self.mode=='cast_movies':
+                movies.person_id=cast_member_id
+                movies.person_name=cast_member
+                movies.page=1
+                movies.source='person'
+                movies.show_movies_by_person(cast_member_id)
+                
+                            
 
 class ratingWindow(xbmcgui.WindowXMLDialog):
     curr_movie=''
