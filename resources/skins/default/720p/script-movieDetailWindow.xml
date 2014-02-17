@@ -52,6 +52,7 @@
           <posy>15</posy>
           <width>185</width>
           <height>251</height>
+          <texturenofocus></texturenofocus>
           <texturefocus>white_overlay.png</texturefocus>
           <ondown>106</ondown>
           <onright>404</onright>
@@ -135,6 +136,7 @@
           <posy>0</posy>
           <width>300</width>
           <height>169</height>
+          <texturenofocus></texturenofocus>
           <texturefocus>white_overlay.png</texturefocus>
           <onleft>104</onleft>
           <ondown>406</ondown>

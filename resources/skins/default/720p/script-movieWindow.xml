@@ -108,8 +108,8 @@
         <description>popular_button</description>
         <posx>10</posx>
         <posy>137</posy>
-        <width>150</width>
-        <textwidth>150</textwidth>
+        <width>160</width>
+        <textwidth>160</textwidth>
         <height>25</height>
         <font>font13</font>
         <label>Popular Movies</label>
