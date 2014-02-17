@@ -194,7 +194,7 @@ def getMoviesByKeyword(keyword,page):
     infostring = urllib2.urlopen(req).read()
     xbmc.log(infostring)
     infostring = json.loads(infostring)
-    return infostring['results']
+    return infostring
 
 def get_similar_movies(movie_id,page):
     data = {}

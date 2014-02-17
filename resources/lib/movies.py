@@ -23,6 +23,8 @@ person_id=''
 person_name=''
 similar_name=''
 similar_id=''
+keyword_id=''
+keyword_name=''
 
 def startup():
     movie_results=tmdb.get_movies(source,page)
@@ -80,7 +82,17 @@ def show_similar_movies(movie_id):
     maxpage=movie_results['total_pages']
     movie_ids=movie_results['results']
     if maxpage > page:
-        movie_ids.append(tmdb.get_movies_by_genre(genre_id,page+1)['results'][0])
+        movie_ids.append(tmdb.get_similar_movies(movie_id,page+1)['results'][0])
+    show_movies(movie_ids,'similar',1)
+
+def show_movies_by_keyword(keyword_id):
+    global maxpage
+    page=1
+    movie_results=tmdb.getMoviesByKeyword(keyword_id,1)
+    maxpage=movie_results['total_pages']
+    movie_ids=movie_results['results']
+    if maxpage > page:
+        movie_ids.append(tmdb.getMoviesByKeyword(keyword_id,page+1)['results'][0])
     show_movies(movie_ids,'similar',1)
 
 class moviesWindow(xbmcgui.WindowXMLDialog):  
@@ -98,9 +110,14 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         self.getControl(32120).setLabel('Page ' + str(page) + ' of ' + str(maxpage))
         title=xbmcgui.ControlButton(85,175,1000,30,'','','',0,0,0,title_font,'ff606060','',0,'','ff606060')
         self.addControl(title)
+        try:
+            title=self.getControl(3001)
+        except:
+            pass
+        title.setAnimations([('windowclose', 'effect=fade end=0 time=0',)])
         for i in range(0,21):
             if len(movies)>i:
-                self.getControl(i+500).setImage('loading-w92.jpg')
+                self.getControl(i+500).setImage('no-poster-w92.jpg')
             else:
                 self.getControl(i+400).setEnabled(False) 
         xbmc_movies=utils.get_xbmc_movies()
@@ -116,7 +133,6 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                     self.getControl(i+200).setImage('http://image.tmdb.org/t/p/w92' +movies[i]['poster_path'])
                 if i==0:self.onFocus(400)
         self.getControl(599).setVisible(True)
-        xbmc.log(source)
         if source=='popular':self.getControl(32111).setLabel('Popular Movies')
         if source=='top_rated':self.getControl(32111).setLabel('Top Rated Movies')
         if source=='upcoming':self.getControl(32111).setLabel('Upcoming Movies')
@@ -129,6 +145,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if source=='years':self.getControl(32111).setLabel('Movies From ' + year)
         if source=='person':self.getControl(32111).setLabel('Movies With ' + person_name)
         if source=='similar':self.getControl(32111).setLabel('Movies Similar to ' + similar_name)
+        if source=='keyword':self.getControl(32111).setLabel('Movies with ' + keyword_name + ' Keyword')
 
     def onAction(self, action):
         if action == 10:
@@ -178,6 +195,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         global year
         global person_id
         global person_name
+        global keyword_id
         movieid=''
         movieid=self.get_movieid_from_control(control)
         do_movies=False
@@ -206,32 +224,31 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
             movie_window = movie.movieWindow('script-movieDetailWindow.xml', addon_path,'default')
             movie_window.doModal()
             del movie_window
-
-        if control == popular:
+        if control == popular and source!='popular':
             source='popular'
             page=1
             do_movies=True
-        if control == top_rated:
+        if control == top_rated and source!='top_rated':
             source='top_rated'
             do_movies=True
             page=1
-        if control == upcoming:
+        if control == upcoming and source!='upcoming':
             source='upcoming'
             do_movies=True
             page=1
-        if control == now_playing:
+        if control == now_playing and source!='now_playing':
             source='now_playing'
             do_movies=True
             page=1
-        if control == favorites:
+        if control == favorites and source!='favorites':
             do_movies=True
             source = 'favorites'
             page=1
-        if control == watchlist:
+        if control == watchlist and source!='watchlist':
             do_movies=True
             source = 'watchlist'
             page=1
-        if control == rated:
+        if control == rated and source!='rated':
             do_movies=True
             source = 'rated'
             page=1
@@ -282,7 +299,6 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                     movies=movies['results']
                     if maxpage > page:
                         movies.append(tmdb.search_movies(query,page+1)['results'][0])    
-                    self.close()
                     show_movies(movies,source,page)
             elif source=='favorites':
                 if self.session_id=='':
@@ -295,7 +311,6 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                     movies=movies['results']
                     if total_pages > page:
                         movies.append(tmdb.get_favorite_movies(self.session_id,page+1)['results'][0])
-                    self.close()
                     show_movies(movies,source,page) 
             elif source=='watchlist':
                 if self.session_id=='':
@@ -308,7 +323,6 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                     movies=movies['results']
                     if total_pages > page:
                         movies.append(tmdb.get_watchlist_movies(self.session_id,page+1)['results'][0])
-                    self.close()
                     show_movies(movies,source,page) 
             elif source=='rated':
                 if self.session_id=='':
@@ -335,7 +349,6 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                     maxpage=total_pages 
                     if total_pages > page:
                         movies.append(tmdb.get_movies_by_genre(genre_id,page+1)['results'][0])
-                    self.close()
                     show_movies(movies,source,page) 
             elif source == 'years':
                 if year=='':
@@ -348,7 +361,6 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 maxpage=total_pages
                 if total_pages > page:
                     movies.append(tmdb.get_movies_by_year(year,page+1)['results'][0])
-                self.close()
                 show_movies(movies,source,page)
             elif source == 'similar':
                 movies=tmdb.get_similar_movies(similar_id,page)
@@ -357,7 +369,14 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 maxpage=total_pages
                 if total_pages > page:
                     movies.append(tmdb.get_similar_movies(similar_id,page+1)['results'][0])
-                self.close()
+                show_movies(movies,source,page)
+            elif source == 'keyword':
+                movies=tmdb.getMoviesByKeyword(keyword_id,page)
+                total_pages=movies['total_pages']
+                movies=movies['results']
+                maxpage=total_pages
+                if total_pages > page:
+                    movies.append(tmdb.getMoviesByKeyword(keyword_id,page+1)['results'][0])
                 show_movies(movies,source,page)
             elif source=='person': 
                 if person_id=='':
@@ -374,7 +393,6 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 total_pages=pages
                 xbmc.log(str(len(movies)))
                 maxpage=total_pages
-                self.close()
                 movies=sorted(movies, key=lambda k: k['release_date'],reverse=True)
                 person_movies=[]
                 if page > 1:
@@ -393,15 +411,14 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 movies=movies['results']
                 if total_pages > page:
                     movies.append(tmdb.get_movies(source,page+1)['results'][0])
-                self.close()
                 show_movies(movies,source,page)
         elif do_tv:
             from resources.lib import tvshows
-            self.close()
+            tvshows.source='popular'
             tvshows.startup()
         elif do_people:
             from resources.lib import people
-            self.close()
+            people.source='popular'
             people.startup()
 
     def get_movieid_from_control(self,control):

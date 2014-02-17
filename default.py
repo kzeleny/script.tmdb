@@ -66,14 +66,10 @@ class openingWindow(xbmcgui.WindowXMLDialog):
             movie.startup()
 
         if control==101:
-            bw=blankWindow('script-blankWindow.xml',addon_path,'default')
-            bw.show()
             from resources.lib import movies
             movies.source='popular'
             movies.page=1
             movies.startup()
-            bw.close()
-            del bw
 
         if control==102:
             from resources.lib import tvshows
@@ -102,11 +98,7 @@ if addon.getSetting('startup')=='true':
     del openingWindow
 else:
     from resources.lib import movie
-    bw=blankWindow('script-blankWindow.xml',addon_path,'default')
-    bw.show()
     from resources.lib import movies
     movies.source='popular'
     movies.page=1
     movies.startup()
-    bw.close()
-    del bw

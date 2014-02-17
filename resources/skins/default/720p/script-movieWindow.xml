@@ -7,8 +7,8 @@
   <defaultcontrol always="true">400</defaultcontrol>
   <controls>
     <control type="group">
-      <!--animation effect="fade" start="100" end="0" time="2000">WindowClose</animation>
-      <animation effect="fade" start="0" end="100" time="2000">WindowOpen</animation -->
+      <animation effect="fade" end="0" time="500">WindowClose</animation>
+      <animation effect="fade" start="0" end="100" tween="back"  time="750">WindowOpen</animation>
       <!-- Main Background -->
       <control type="image">
         <posx>0</posx>
@@ -261,7 +261,7 @@
         <posx>1230</posx>
         <posy>180</posy>
         <height>25</height>
-        <width>300</width>
+        <width>800</width>
         <scroll>true</scroll>
         <align>right</align>
         <font>font13</font>
