@@ -45,7 +45,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>ffe68a00</textcolor>
-        <shadowcolor>ffc0c0c0</shadowcolor>
+				<shadowcolor></shadowcolor>
 			</control>
 		</control>
 		<control type="button">
@@ -86,6 +86,7 @@
 					<height>40</height>
 					<font>font13</font>
 					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
@@ -113,6 +114,7 @@
 					<height>40</height>
 					<font>font13</font>
 					<textcolor>ff000000</textcolor>
+					<shadowcolor></shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>

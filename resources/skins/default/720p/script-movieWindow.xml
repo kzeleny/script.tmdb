@@ -58,7 +58,8 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+    	<shadowcolor></shadowcolor>
+		  <focusedcolor>ffc0c0c0</focusedcolor>
         <onup>5000</onup>
         <ondown>32101</ondown>
         <onleft>32115</onleft>
@@ -79,7 +80,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup>32117</onup>
+		  <shadowcolor></shadowcolor>
+		  <onup>32117</onup>
         <ondown>32101</ondown>
         <onleft>32113</onleft>
         <onright>32115</onright>
@@ -98,7 +100,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup>32117</onup>
+		  <shadowcolor></shadowcolor>
+		  <onup>32117</onup>
         <ondown>32101</ondown>
         <onleft>32114</onleft>
         <onright>32113</onright>
@@ -118,7 +121,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup>32113</onup>
+		  <shadowcolor></shadowcolor>
+		  <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32104</onleft>
         <onright>32102</onright>
@@ -136,7 +140,8 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+		  <shadowcolor></shadowcolor>
+		  <focusedcolor>ffc0c0c0</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32101</onleft>
@@ -155,7 +160,8 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+		  <shadowcolor></shadowcolor>
+		  <focusedcolor>ffc0c0c0</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32102</onleft>
@@ -175,7 +181,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup>32113</onup>
+		  <shadowcolor></shadowcolor>
+		  <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32103</onleft>
         <onright>33105</onright>
@@ -193,7 +200,8 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+		  <shadowcolor></shadowcolor>
+		  <focusedcolor>ffc0c0c0</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32104</onleft>
@@ -212,7 +220,8 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+		  <shadowcolor></shadowcolor>
+		  <focusedcolor>ffc0c0c0</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>33105</onleft>
@@ -232,7 +241,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffc0c0c0</focusedcolor>
-        <onup>32113</onup>
+		  <shadowcolor></shadowcolor>
+		  <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>33106</onleft>
         <onright>32110</onright>
@@ -256,7 +266,8 @@
         <ondown>81</ondown>
         <onleft>33107</onleft>
         <onright>32101</onright>
-      </control>
+		  <shadowcolor></shadowcolor>
+	  </control>
       <control type="label" id="32111">
         <posx>1230</posx>
         <posy>180</posy>
@@ -266,7 +277,8 @@
         <align>right</align>
         <font>font13</font>
         <label></label>
-        <textcolor>ffE68a00</textcolor>
+		  <shadowcolor></shadowcolor>
+		  <textcolor>ffE68a00</textcolor>
       </control>
       <control type="label" id="32106">
         <posx>20</posx>
@@ -276,8 +288,8 @@
         <scroll>true</scroll>
         <font>font13</font>
         <label></label>
-        <textcolor>ff606060</textcolor>
-      </control>
+		  <shadowcolor></shadowcolor>
+	  </control>
       <control type="image">
         <posx>65</posx>
         <posy>220</posy>
@@ -298,7 +310,8 @@
         <height>20</height>
         <font>font13</font>
         <label>Loading</label>
-        <textcolor>ff606060</textcolor>
+		  <shadowcolor></shadowcolor>
+		  <textcolor>ff606060</textcolor>
         <width>300</width>
         <align>center</align>
       </control>
@@ -316,8 +329,10 @@
         <width>415</width>
         <align>center</align>
         <scroll>true</scroll>
+		  <font>font13</font>
         <textcolor>ff606060</textcolor>
-        <label></label>
+		  <shadowcolor></shadowcolor>
+		  <label></label>
       </control>
       <control type="textbox" id="32108">
         <description>Plot</description>
@@ -328,7 +343,8 @@
         <font>font13</font>
         <align>justify</align>
         <textcolor>ff606060</textcolor>
-        <autoscroll delay="5000" time="2000" repeat="5000"></autoscroll>
+		  <shadowcolor></shadowcolor>
+		  <autoscroll delay="5000" time="2000" repeat="5000"></autoscroll>
       </control>
       <control type="button" id="32116">
         <posx>466</posx>
@@ -342,7 +358,8 @@
         <label></label>
         <font>font13</font>
         <textcolor>ff606060</textcolor>
-        <onup>414</onup>
+		  <shadowcolor></shadowcolor>
+		  <onup>414</onup>
         <onright>32117</onright>
         <onleft>32117</onleft>
       </control>
@@ -357,7 +374,8 @@
         <animation effect ="zoom" center="auto" end="120" time="100">Focus</animation>
         <label></label>
         <font>font13</font>
-        <textcolor>ff606060</textcolor>
+		  <shadowcolor></shadowcolor>
+		  <textcolor>ff606060</textcolor>
         <onup>420</onup>
         <onleft>32116</onleft>
         <onright>32116</onright>
@@ -369,7 +387,8 @@
         <width>764</width>
         <font>font13</font>
         <align>center</align>
-        <textcolor>ffE68a00</textcolor>
+		  <shadowcolor></shadowcolor>
+		  <textcolor>ffE68a00</textcolor>
         <label></label>
       </control>
       <!-- Image Grid -->
@@ -412,7 +431,8 @@
             <width>92</width>
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
-            <textcolor>ff606060</textcolor>
+			  <shadowcolor></shadowcolor>
+			  <textcolor>ff606060</textcolor>
             <onup>32101</onup>
             <ondown>407</ondown>
             <onright>401</onright>
@@ -456,7 +476,8 @@
             <width>92</width>
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
-            <textcolor>ff606060</textcolor>
+			  <shadowcolor></shadowcolor>
+			  <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
@@ -500,7 +521,8 @@
             <width>92</width>
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
-            <textcolor>ff606060</textcolor>
+			  <shadowcolor></shadowcolor>
+			  <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
@@ -545,10 +567,10 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <font>font13</font>
-            <textcolor>ff606060</textcolor>
+			  <shadowcolor></shadowcolor>
+			  <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
             <scroll>Focus</scroll>
-            <textcolor>ff606060</textcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
@@ -591,7 +613,8 @@
             <width>92</width>
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
-            <textcolor>ff606060</textcolor>
+			  <shadowcolor></shadowcolor>
+			  <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
@@ -635,7 +658,8 @@
             <width>92</width>
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
-            <textcolor>ff606060</textcolor>
+			  <shadowcolor></shadowcolor>
+			  <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
@@ -680,7 +704,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
@@ -724,7 +749,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>400</onup>
@@ -768,7 +794,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>401</onup>
@@ -812,7 +839,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>402</onup>
@@ -856,7 +884,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>403</onup>
@@ -900,7 +929,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>404</onup>
@@ -944,7 +974,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>405</onup>
@@ -988,7 +1019,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>406</onup>
@@ -1032,7 +1064,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>407</onup>
@@ -1076,7 +1109,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>408</onup>
@@ -1120,7 +1154,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>409</onup>
@@ -1164,7 +1199,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>410</onup>
@@ -1208,7 +1244,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>411</onup>
@@ -1252,7 +1289,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>412</onup>
@@ -1296,7 +1334,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-            <focusedcolor>ffffffff</focusedcolor>
+			  <shadowcolor></shadowcolor>
+			  <focusedcolor>ffffffff</focusedcolor>
             <aligny>top</aligny>
             <textoffsety>110</textoffsety>
             <onup>413</onup>
@@ -1323,8 +1362,10 @@
           <label>Title</label>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
-          <textfocuscolor>ffffffff</textfocuscolor>
+			<shadowcolor></shadowcolor>
+			<textfocuscolor>ffffffff</textfocuscolor>
           <texturefocus>button-has-focus.png</texturefocus>
+			<texturenofocus></texturenofocus>
           <height>30</height>
           <width>150</width>
           <ondown>82</ondown>
@@ -1338,7 +1379,9 @@
           <width>150</width>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
-          <texturefocus>button-has-focus.png</texturefocus>
+			<shadowcolor></shadowcolor>
+			<texturefocus>button-has-focus.png</texturefocus>
+			<texturenofocus></texturenofocus>
           <ondown>83</ondown>
           <onup>81</onup>
         </control>
@@ -1350,7 +1393,9 @@
           <width>150</width>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
-          <texturefocus>button-has-focus.png</texturefocus>
+			<shadowcolor></shadowcolor>
+			<texturefocus>button-has-focus.png</texturefocus>
+			<texturenofocus></texturenofocus>
           <ondown>84</ondown>
           <onup>82</onup>
         </control>
@@ -1362,7 +1407,9 @@
           <width>150</width>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
-          <texturefocus>button-has-focus.png</texturefocus>
+			<shadowcolor></shadowcolor>
+			<texturefocus>button-has-focus.png</texturefocus>
+			<texturenofocus></texturenofocus>
           <ondown>400</ondown>
           <onup>83</onup>
         </control>

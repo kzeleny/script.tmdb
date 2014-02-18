@@ -527,19 +527,19 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
     mode=''
     def onInit(self):
         if self.mode=='trailer':
-            self.getControl(1).setLabel('Trailers')
+            self.getControl(1).setLabel('[B]Trailers[/B]')
             for trailer in self.curr_movie['trailers']['youtube']:
                li=xbmcgui.ListItem(trailer['name'])
                li.setProperty('url','plugin://plugin.video.youtube/?action=play_video&videoid='+trailer['source'])
                self.getControl(300).addItem(li)
         elif self.mode=='keyword':
-            self.getControl(1).setLabel('Serch for Movies by Keywords')
+            self.getControl(1).setLabel('[B]Serch for Movies by Keywords[/B]')
             for keyword in self.curr_movie['keywords']['keywords']:
                 li=xbmcgui.ListItem(keyword['name'])
                 li.setProperty('id',str(keyword['id']))
                 self.getControl(300).addItem(li)
         elif self.mode=='genre':
-            self.getControl(1).setLabel('Search for Movies by Genre')
+            self.getControl(1).setLabel('[B]Search for Movies by Genre[/B]')
             for genre in self.curr_movie['genres']:
                 li=xbmcgui.ListItem(genre['name'])
                 li.setProperty('id',str(genre['id']))

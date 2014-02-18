@@ -1,215 +1,227 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window type="window">
-  <defaultcontrol>101</defaultcontrol>
-  <controls>
-    
-    <control type ="image">
-      <posx>0</posx>
-      <posy>0</posy>
-      <widht>1280</widht>
-      <height>720</height>
-      <texture>grey.png</texture>
-    </control>
-    <control type ="image">
-      <posx>310</posx>
-      <posy>68</posy>
-      <width>450</width>
-      <height>353</height>
-      <texture>tmdb-logo-index-bg.png</texture>
-    </control>
-  <control type ="image">
-    <posx>415</posx>
-    <posy>184</posy>
-    <width>523</width>
-    <height>135</height>
-    <texture>search-bg-index.png</texture>
-  </control>
-    <control type ="button" id="99">
-      <posx>450</posx>
-      <posy>220</posy>
-      <width>453</width>
-      <height>36</height>
-      <texturenofocus>search-bg-input-index.png</texturenofocus>
-      <texturefocus>search-bg-input-index.png</texturefocus>
-      <onright>100</onright>
-      <ondown>101</ondown>
-    </control>
-    <control type="edit" id="100">
-      <posx>480</posx>
-      <posy>224</posy>
-      <texturefocus></texturefocus>
-      <textcolor>ff000000</textcolor>
-      <height>30</height>
-      <width>400</width>
-      <ondown>101</ondown>
-      <onleft>99</onleft>
-    </control>
-    <control type="button" id="101">
-      <description>Movies Button</description>
-      <posx>415</posx>
-      <posy>285</posy>
-      <width>150</width>
-      <textwidth>100</textwidth>
-      <height>25</height>
-      <font>font13</font>
-      <label>Movies</label>
-      <align>center</align>
-      <texturefocus></texturefocus>
-      <texturenofocus></texturenofocus>
-      <textcolor>ffffffff</textcolor>
-      <focusedcolor>ffc0c0c0</focusedcolor>
-      <onup>100</onup>
-      <ondown>104</ondown>
-      <onleft>103</onleft>
-      <onright>102</onright>
-    </control>
-    <!-- tv shows button -->
-    <control type="button" id="102">
-      <description>Tv Shows Button</description>
-      <posx>540</posx>
-      <posy>285</posy>
-      <width>50</width>
-      <textwidth>150</textwidth>
-      <height>25</height>
-      <font>font13</font>
-      <label>TV</label>
-      <align>center</align>
-      <texturefocus></texturefocus>
-      <texturenofocus></texturenofocus>
-      <textcolor>ffffffff</textcolor>
-      <focusedcolor>ffc0c0c0</focusedcolor>
-      <onup>100</onup>
-      <ondown>104</ondown>
-      <onleft>101</onleft>
-      <onright>103</onright>
-    </control>
-    <control type="button" id="103">
-      <description>People Button</description>
-      <posx>590</posx>
-      <posy>285</posy>
-      <width>100</width>
-      <textwidth>100</textwidth>
-      <height>25</height>
-      <font>font13</font>
-      <label>People</label>
-      <align>center</align>
-      <texturefocus></texturefocus>
-      <texturenofocus></texturenofocus>
-      <textcolor>ffffffff</textcolor>
-      <focusedcolor>ffc0c0c0</focusedcolor>
-      <onup>100</onup>
-      <ondown>104</ondown>
-      <onleft>102</onleft>
-      <onright>101</onright>
-    </control>
-    <control type="group" id="107">
-    <control type="image">
-      <posx>408</posx>
-      <posy>437</posy>
-      <height>3</height>
-      <width>150</width>
-      <texture>focus-back.png</texture>
-    </control>
-    <control type="image">
-      <posx>408</posx>
-      <posy>437</posy>
-      <height>30</height>
-      <width>2</width>
-      <texture>focus-back.png</texture>
-    </control>
-    </control>
-    <control type="button" id="104">
-      <posx>410</posx>
-      <posy>440</posy>
-      <height>30</height>
-      <width>150</width>
-      <align>center</align>
-      <texturenofocus>button-has-focus.png</texturenofocus>
-      <texturefocus>button-has-focus.png</texturefocus>
-      <textcolor>ff606060</textcolor>
-      <textwidth>150</textwidth>
-      <focusedcolor>ff000000</focusedcolor>
-      <label>Box Office</label>
-      <onup>101</onup>
-      <ondown>201</ondown>
-      <onright>105</onright>
-      <onleft>105</onleft>
-    </control>
-    <control type="group" id="108">
-      <control type="image">
-        <posx>577</posx>
-        <posy>437</posy>
-        <height>3</height>
-        <width>150</width>
-        <texture>focus-back.png</texture>
-      </control>
-      <control type="image">
-        <posx>577</posx>
-        <posy>437</posy>
-        <height>30</height>
-        <width>3</width>
-        <texture>focus-back.png</texture>
-      </control>
-    </control>
-    <control type="button" id="105">
-      <posx>580</posx>
-      <posy>440</posy>
-      <height>30</height>
-      <width>150</width>
-      <align>center</align>
-      <texturenofocus>button-has-focus.png</texturenofocus>
-      <texturefocus>button-has-focus.png</texturefocus>
-      <textcolor>ff606060</textcolor>
-      <textwidth>150</textwidth>
-      <focusedcolor>ff000000</focusedcolor>
-      <label>Most Popular</label>
-      <onup>101</onup>
-      <ondown>201</ondown>
-      <onleft>104</onleft>
-      <onright>104</onright>
-    </control>
-    <control type="wraplist" id="201">
-      <posx>400</posx>
-      <posy>480</posy>
-      <width>550</width>
-      <height>300</height>
-      <onleft></onleft>
-      <onright></onright>
-      <onup>105</onup>
-      <ondown>101</ondown>
-      <preload>2</preload>
-      <orientation>horizontal</orientation>
-      <scrolltime tween="sine" easing="out">500</scrolltime>
-      <viewtype label="536">icon</viewtype>
-      <pagecontrol>60</pagecontrol>
-      <itemlayout height="158" width="112">
-        <control type="image">
-          <posx>10</posx>
-          <posy>10</posy>
-          <width>92</width>
-          <height>138</height>
-          <info>ListItem.Icon</info>
-        </control>
-      </itemlayout>
-      <focusedlayout height="158" width="112">
-        <control type="image">
-          <posx>10</posx>
-          <posy>10</posy>
-          <width>92</width>
-          <height>138</height>
-          <info>ListItem.Icon</info>
-          <animation effect="zoom" center="auto" end="115" time="100">focus</animation>
-        </control>
-        <control type="label">
-          <posx>10</posx>
-          <posy>160</posy>
-          <width>500</width>
-          <height>20</height>
-          <info>ListItem.Label</info>
-          <font>font13</font>
-          <textcolor>ff606060</textcolor>
-        </control>
-      </focusedlayout>
-    </control>
-  </controls>
+	<defaultcontrol>101</defaultcontrol>
+	<controls>
+		<control type ="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<widht>1280</widht>
+			<height>720</height>
+			<texture>grey.png</texture>
+		</control>
+		<control type ="image">
+			<posx>310</posx>
+			<posy>68</posy>
+			<width>450</width>
+			<height>353</height>
+			<texture>tmdb-logo-index-bg.png</texture>
+		</control>
+		<control type ="image">
+			<posx>415</posx>
+			<posy>184</posy>
+			<width>523</width>
+			<height>135</height>
+			<texture>search-bg-index.png</texture>
+		</control>
+		<control type ="button" id="99">
+			<posx>450</posx>
+			<posy>220</posy>
+			<width>453</width>
+			<height>36</height>
+			<font>font13</font>
+			<texturenofocus>search-bg-input-index.png</texturenofocus>
+			<texturefocus>search-bg-input-index.png</texturefocus>
+			<textcolor></textcolor>
+			<shadowcolor></shadowcolor>
+			<onright>100</onright>
+			<ondown>101</ondown>
+		</control>
+		<control type="edit" id="100">
+			<posx>480</posx>
+			<posy>224</posy>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ff000000</textcolor>
+			<shadowcolor></shadowcolor>
+			<height>30</height>
+			<width>400</width>
+			<ondown>101</ondown>
+			<onleft>99</onleft>
+		</control>
+		<control type="button" id="101">
+			<description>Movies Button</description>
+			<posx>415</posx>
+			<posy>285</posy>
+			<width>150</width>
+			<textwidth>100</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>Movies</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			<focusedcolor>ffc0c0c0</focusedcolor>
+			<shadowcolor></shadowcolor>
+			<onup>100</onup>
+			<ondown>104</ondown>
+			<onleft>103</onleft>
+			<onright>102</onright>
+		</control>
+		<!-- tv shows button -->
+		<control type="button" id="102">
+			<description>Tv Shows Button</description>
+			<posx>540</posx>
+			<posy>285</posy>
+			<width>50</width>
+			<textwidth>150</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>TV</label>
+			<align>center</align>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			<shadowcolor></shadowcolor>
+			<focusedcolor>ffc0c0c0</focusedcolor>
+			<onup>100</onup>
+			<ondown>104</ondown>
+			<onleft>101</onleft>
+			<onright>103</onright>
+		</control>
+		<control type="button" id="103">
+			<description>People Button</description>
+			<posx>590</posx>
+			<posy>285</posy>
+			<width>100</width>
+			<textwidth>100</textwidth>
+			<height>25</height>
+			<font>font13</font>
+			<label>People</label>
+			<align>center</align>
+			<shadowcolor></shadowcolor>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>ffffffff</textcolor>
+			<focusedcolor>ffc0c0c0</focusedcolor>
+			<onup>100</onup>
+			<ondown>104</ondown>
+			<onleft>102</onleft>
+			<onright>101</onright>
+		</control>
+		<control type="group" id="107">
+			<control type="image">
+				<posx>408</posx>
+				<posy>437</posy>
+				<height>3</height>
+				<width>150</width>
+				<texture>focus-back.png</texture>
+			</control>
+			<control type="image">
+				<posx>408</posx>
+				<posy>437</posy>
+				<height>30</height>
+				<width>2</width>
+				<texture>focus-back.png</texture>
+			</control>
+		</control>
+		<control type="button" id="104">
+			<posx>410</posx>
+			<posy>440</posy>
+			<height>30</height>
+			<width>150</width>
+			<align>center</align>
+			<font>font13</font>
+			<shadowcolor></shadowcolor>
+			<texturenofocus>button-has-focus.png</texturenofocus>
+			<texturefocus>button-has-focus.png</texturefocus>
+			<textcolor>ff606060</textcolor>
+			<textwidth>150</textwidth>
+			<focusedcolor>ff000000</focusedcolor>
+			<label>Box Office</label>
+			<onup>101</onup>
+			<ondown>201</ondown>
+			<onright>105</onright>
+			<onleft>105</onleft>
+		</control>
+		<control type="group" id="108">
+			<control type="image">
+				<posx>577</posx>
+				<posy>437</posy>
+				<height>3</height>
+				<width>150</width>
+				<texture>focus-back.png</texture>
+			</control>
+			<control type="image">
+				<posx>577</posx>
+				<posy>437</posy>
+				<height>30</height>
+				<width>3</width>
+				<texture>focus-back.png</texture>
+			</control>
+		</control>
+		<control type="button" id="105">
+			<posx>580</posx>
+			<posy>440</posy>
+			<height>30</height>
+			<width>150</width>
+			<align>center</align>
+			<font>font13</font>
+			<shadowcolor></shadowcolor>
+			<texturenofocus>button-has-focus.png</texturenofocus>
+			<texturefocus>button-has-focus.png</texturefocus>
+			<textcolor>ff606060</textcolor>
+			<textwidth>150</textwidth>
+			<focusedcolor>ff000000</focusedcolor>
+			<label>Most Popular</label>
+			<onup>101</onup>
+			<ondown>201</ondown>
+			<onleft>104</onleft>
+			<onright>104</onright>
+		</control>
+		<control type="wraplist" id="201">
+			<posx>400</posx>
+			<posy>480</posy>
+			<width>550</width>
+			<height>300</height>
+			<onleft></onleft>
+			<onright></onright>
+			<onup>105</onup>
+			<ondown>101</ondown>
+			<preload>2</preload>
+			<orientation>horizontal</orientation>
+			<scrolltime tween="sine" easing="out">500</scrolltime>
+			<viewtype label="536">icon</viewtype>
+			<pagecontrol>60</pagecontrol>
+			<itemlayout height="158" width="112">
+				<control type="image">
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>92</width>
+					<height>138</height>
+					<info>ListItem.Icon</info>
+				</control>
+			</itemlayout>
+			<focusedlayout height="158" width="112">
+				<control type="image">
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>92</width>
+					<height>138</height>
+					<info>ListItem.Icon</info>
+					<animation effect="zoom" center="auto" end="115" time="100">focus</animation>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>160</posy>
+					<width>500</width>
+					<height>20</height>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+					<font>font13</font>
+					<textcolor>ffE68a00</textcolor>
+					<shadowcolor></shadowcolor>
+				</control>
+			</focusedlayout>
+		</control>
+	</controls>
 </window>

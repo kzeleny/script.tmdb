@@ -103,7 +103,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
     session_id=''
     
     def onInit(self):
-        self.getControl(599).setVisible(False)
+        #self.getControl(599).setVisible(False)
         self.session_id=addon.getSetting('session_id')
         self.update_movies(self.movies)
     def update_movies(self,movies):
@@ -132,7 +132,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 else:
                     self.getControl(i+200).setImage('http://image.tmdb.org/t/p/w92' +movies[i]['poster_path'])
                 if i==0:self.onFocus(400)
-        self.getControl(599).setVisible(True)
+        #self.getControl(599).setVisible(True)
         if source=='popular':self.getControl(32111).setLabel('Popular Movies')
         if source=='top_rated':self.getControl(32111).setLabel('Top Rated Movies')
         if source=='upcoming':self.getControl(32111).setLabel('Upcoming Movies')
@@ -451,13 +451,13 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
     def onInit(self):
         global person_name
         if self.mode=='genre':
-            self.getControl(1).setLabel('Search for Movies by Genre')
+            self.getControl(1).setLabel('[B]Search for Movies by Genre[/B]')
             for genre in tmdb.get_genres():
                 li=xbmcgui.ListItem(genre['name'])
                 li.setProperty('id',str(genre['id']))
                 self.getControl(300).addItem(li)
         if self.mode=='people':
-            self.getControl(1).setLabel('Select Person')
+            self.getControl(1).setLabel('[B]Select Person[/B]')
             for person in tmdb.search_people(person_name,1)['results']:     
                 li=xbmcgui.ListItem(person['name'])
                 li.setProperty('id',str(person['id']))
