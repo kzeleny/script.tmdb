@@ -91,6 +91,7 @@ def find_xbmc_by_title(title,year):
     moviestring = json.loads(moviestring)  
     xbmc_file=''
     if 'result' in moviestring:
+        if moviestring['result']['limits']['total'] > 0:
         for movie in moviestring['result']['movies']:
             if movie['title']==title and movie['year']==int(year):
                 xbmc_file=movie['file'] 
@@ -101,10 +102,12 @@ def find_xbmc_by_title(title,year):
 def get_xbmc_movies():
     moviestring = xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "VideoLibrary.GetMovies", "params": {"properties": ["title","year"]}, "id": 1}')
     moviestring = unicode(moviestring, 'utf-8', errors='ignore')
-    moviestring = json.loads(moviestring)  
+    moviestring = json.loads(moviestring)
     movies=set()
-    for movie in moviestring['result']['movies']:
-        movies.add(movie['title'] + ' ('+ str(movie['year'])+')')
+    if 'result' in moviestring:
+        if moviestring['result']['limits']['total'] > 0:
+            for movie in moviestring['result']['movies']:
+                movies.add(movie['title'] + ' ('+ str(movie['year'])+')')
     return movies
 
 def get_login():
