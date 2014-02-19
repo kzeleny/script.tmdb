@@ -92,19 +92,11 @@ def find_xbmc_by_title(title,year):
     xbmc_file=''
     if 'result' in moviestring:
         if moviestring['result']['limits']['total'] > 0:
-<<<<<<< HEAD
-        for movie in moviestring['result']['movies']:
-            if movie['title']==title and movie['year']==int(year):
-                xbmc_file=movie['file'] 
-                xbmc.log(xbmc_file) 
-                break
-=======
             for movie in moviestring['result']['movies']:
                 if movie['title']==title and movie['year']==int(year):
                     xbmc_file=movie['file'] 
                     xbmc.log(xbmc_file) 
                     break
->>>>>>> Fix Missing Fonts
     return xbmc_file
 
 def get_xbmc_movies():
