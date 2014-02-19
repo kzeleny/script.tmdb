@@ -96,7 +96,7 @@
 				</control>
 				<control type="label" id="107">
 					<posx>20</posx>
-					<posy>272</posy>
+					<posy>270</posy>
 					<width>185</width>
 					<height>20</height>
 					<font>font13</font>
@@ -185,9 +185,9 @@
 				</control>
 				<control type="label" id="407">
 					<posx>0</posx>
-					<posy>155</posy>
+					<posy>170</posy>
 					<width>300</width>
-					<heigh>20</heigh>
+					<height>20</height>
 					<font>font13</font>
 					<align>center</align>
 					<textcolor>ff606060</textcolor>
