@@ -107,7 +107,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         self.session_id=addon.getSetting('session_id')
         self.update_movies(self.movies)
     def update_movies(self,movies):
-        self.getControl(32120).setLabel('Page ' + str(page) + ' of ' + str(maxpage))
+        self.getControl(32120).setLabel('[B]Page ' + str(page) + ' of ' + str(maxpage)+'[/B]')
         title=xbmcgui.ControlButton(85,175,1000,30,'','','',0,0,0,title_font,'ff606060','',0,'','ff606060')
         self.addControl(title)
         try:
@@ -133,19 +133,19 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                     self.getControl(i+200).setImage('http://image.tmdb.org/t/p/w92' +movies[i]['poster_path'])
                 if i==0:self.onFocus(400)
         #self.getControl(599).setVisible(True)
-        if source=='popular':self.getControl(32111).setLabel('Popular Movies')
-        if source=='top_rated':self.getControl(32111).setLabel('Top Rated Movies')
-        if source=='upcoming':self.getControl(32111).setLabel('Upcoming Movies')
-        if source=='now_playing':self.getControl(32111).setLabel('Now Playing Movies')
-        if source=='query':self.getControl(32111).setLabel('Search Results')
-        if source=='favorites':self.getControl(32111).setLabel('Favorite Movies')
-        if source=='watchlist':self.getControl(32111).setLabel('Movies on Watchlist')
-        if source=='rated':self.getControl(32111).setLabel('Rated Movies')
-        if source=='genre':self.getControl(32111).setLabel(genre_name + ' Movies')
-        if source=='years':self.getControl(32111).setLabel('Movies From ' + year)
-        if source=='person':self.getControl(32111).setLabel('Movies With ' + person_name)
-        if source=='similar':self.getControl(32111).setLabel('Movies Similar to ' + similar_name)
-        if source=='keyword':self.getControl(32111).setLabel('Movies with ' + keyword_name + ' Keyword')
+        if source=='popular':self.getControl(32111).setLabel('[B]Popular Movies[/B]')
+        if source=='top_rated':self.getControl(32111).setLabel('[B]Top Rated Movies[/B]')
+        if source=='upcoming':self.getControl(32111).setLabel('[B]Upcoming Movies[/B]')
+        if source=='now_playing':self.getControl(32111).setLabel('[B]Now Playing Movies[/B]')
+        if source=='query':self.getControl(32111).setLabel('[B]Search Results[/B]')
+        if source=='favorites':self.getControl(32111).setLabel('[B]Favorite Movies[/B]')
+        if source=='watchlist':self.getControl(32111).setLabel('[B]Movies on Watchlist[/B]')
+        if source=='rated':self.getControl(32111).setLabel('[B]Rated Movies[/B]')
+        if source=='genre':self.getControl(32111).setLabel('[B]'+genre_name + ' Movies[/B]')
+        if source=='years':self.getControl(32111).setLabel('[B]Movies From ' + year +'[/B]')
+        if source=='person':self.getControl(32111).setLabel('[B]Movies With ' + person_name+'[/B]')
+        if source=='similar':self.getControl(32111).setLabel('[B]Movies Similar to ' + similar_name+'[/B]')
+        if source=='keyword':self.getControl(32111).setLabel('[B]Movies with ' + keyword_name + ' Keyword[/B]')
 
     def onAction(self, action):
         if action == 10:
@@ -174,7 +174,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 if i==3:break
             cast.setLabel(a[:-2])
             try:
-                self.getControl(3001).setLabel(movie['title'] + ' ('+ movie['release_date'][:4] +')')
+                self.getControl(3001).setLabel('[B]'+movie['title'] + ' ('+ movie['release_date'][:4] +')[/B]')
             except:
                 pass
             plot.setText(movie['overview'])

@@ -69,7 +69,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         self.current_movie=movie
         self.file=utils.find_xbmc_by_title(movie['title'],movie['release_date'][:4])
         if self.file!='':
-            self.getControl(127).setLabel('Play')
+            self.getControl(127).setLabel('[B]Play[/B]')
         crew = movie['credits']['crew']
         cast = movie['credits']['cast']
         self.cast= sorted(cast, key=lambda k: k['order'])
@@ -174,7 +174,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
 
     def show_similar(self,similar):
         self.getControl(5020).setVisible(True)
-        self.getControl(128).setLabel('Top 10 of '+ str(self.total_results) + ' Movies Similar to ' + self.current_movie['title'])
+        self.getControl(128).setLabel('[B]Top 10 of '+ str(self.total_results) + ' Movies Similar to ' + self.current_movie['title']+'[/B]')
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -212,7 +212,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
 
     def show_cast(self,cast):
         self.getControl(5020).setVisible(False)
-        self.getControl(128).setLabel('Cast From '+ self.current_movie['title'])
+        self.getControl(128).setLabel('[B]Cast From '+ self.current_movie['title']+'[/B]')
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -231,7 +231,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
     def show_keywords(self,keywords):
         self.getControl(5020).setVisible(True)
         global current_keyword
-        self.getControl(128).setLabel('Top 10 of '+ str(self.total_results) + ' Movies with ' + current_keyword + ' Keyword')
+        self.getControl(128).setLabel('[B]Top 10 of '+ str(self.total_results) + ' Movies with ' + current_keyword + ' Keyword[/B]')
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -250,7 +250,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
     def show_genre(self,genres):
         global current_genre
         self.getControl(5020).setVisible(True)
-        self.getControl(128).setLabel('Top 10 of '+ str(self.total_results) + ' ' + current_genre + ' Movies')
+        self.getControl(128).setLabel('[B]Top 10 of '+ str(self.total_results) + ' ' + current_genre + ' Movies[/B]')
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -270,13 +270,13 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         xbmc.log('Focus='+str(control))
         if control in(200,201,202,203,204,205,206,207,208,209):
             if self.mode =='similar':
-                self.getControl(126).setLabel(self.similar[control-200]['title'])
+                self.getControl(126).setLabel('[B]'+self.similar[control-200]['title']+'[/B]')
             elif self.mode=='keywords':
-                self.getControl(126).setLabel(self.keywords[control-200]['title'])
+                self.getControl(126).setLabel('[B]'+self.keywords[control-200]['title']+'[/B]')
             elif self.mode=='cast':
-                self.getControl(126).setLabel(self.cast[control-200]['name'] + ' as ' + self.cast[control-200]['character'])
+                self.getControl(126).setLabel('[B]'+self.cast[control-200]['name'] + ' as ' + self.cast[control-200]['character']+'[/B]')
             elif self.mode=='cast_movies':
-                self.getControl(126).setLabel(self.cast_movies[control-200]['title'])
+                self.getControl(126).setLabel('[B]'+self.cast_movies[control-200]['title']+'[/B]')
         else:
             self.getControl(126).setLabel('')
 

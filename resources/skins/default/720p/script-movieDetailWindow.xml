@@ -223,7 +223,7 @@
 				<shadowcolor></shadowcolor>
 				<widht>auto</widht>
 				<height>20</height>
-				<label>Plot:</label>
+				<label>[B]Plot:[/B]</label>
 			</control>
 			<control type="textbox" id="103">
 				<description>Plot</description>
@@ -250,7 +250,7 @@
 					<height>20</height>
 					<width>200</width>
 					<font>font13</font>
-					<label>Director:</label>
+					<label>[B]Director:[/B]</label>
 				</control>
 				<control type="label" id="110">
 					<posx>5</posx>
@@ -272,7 +272,7 @@
 					<height>20</height>
 					<width>200</width>
 					<font>font13</font>
-					<label>Writer:</label>
+					<label>[B]Writer:[/B]</label>
 				</control>
 				<control type="label" id="111">
 					<posx>5</posx>
@@ -295,7 +295,7 @@
 					<height>20</height>
 					<width>200</width>
 					<font>font13</font>
-					<label>Studio:</label>
+					<label>[B]Studio:[/B]</label>
 				</control>
 				<control type="label" id="112">
 					<posx>5</posx>
@@ -318,7 +318,7 @@
 					<height>20</height>
 					<width>200</width>
 					<font>font13</font>
-					<label>Genre:</label>
+					<label>[B]Genre:[/B]</label>
 				</control>
 				<control type="label" id="113">
 					<posx>5</posx>
@@ -341,7 +341,7 @@
 					<height>20</height>
 					<width>200</width>
 					<font>font13</font>
-					<label>MPAA Rating:</label>
+					<label>[B]MPAA Rating:[/B]</label>
 				</control>
 				<control type="label" id="114">
 					<posx>5</posx>
@@ -364,7 +364,7 @@
 					<height>20</height>
 					<width>200</width>
 					<font>font13</font>
-					<label>Status:</label>
+					<label>[B]Status:[/B]</label>
 				</control>
 				<control type="label" id="115">
 					<posx>5</posx>
@@ -387,7 +387,7 @@
 					<height>20</height>
 					<width>200</width>
 					<font>font13</font>
-					<label>Budget:</label>
+					<label>[B]Budget:[/B]</label>
 				</control>
 				<control type="label" id="116">
 					<posx>5</posx>
@@ -410,7 +410,7 @@
 					<height>20</height>
 					<width>200</width>
 					<font>font13</font>
-					<label>Revenue:</label>
+					<label>[B]Revenue:[/B]</label>
 				</control>
 				<control type="label" id="117">
 					<posx>5</posx>
@@ -433,7 +433,7 @@
 					<height>20</height>
 					<width>200</width>
 					<font>font13</font>
-					<label>Release Date:</label>
+					<label>[B]Release Date:[/B]</label>
 				</control>
 				<control type="label">
 					<posx>0</posx>
@@ -444,7 +444,7 @@
 					<height>20</height>
 					<width>200</width>
 					<font>font13</font>
-					<label>Runtime:</label>
+					<label>[B]Runtime:[/B]</label>
 				</control>
 				<control type="label">
 					<posx>0</posx>
@@ -455,7 +455,7 @@
 					<height>20</height>
 					<width>200</width>
 					<font>font13</font>
-					<label>Rating:</label>
+					<label>[B]Rating:[/B]</label>
 				</control>
 				<control type="label" id="131">
 					<posx>158</posx>
@@ -480,7 +480,7 @@
 					<shadowcolor></shadowcolor>
 					<textwidth>150</textwidth>
 					<focusedcolor>ff000000</focusedcolor>
-					<label>Rate Movie</label>
+					<label>[B]Rate Movie[/B]</label>
 					<onup>101</onup>
 					<ondown>200</ondown>
 					<onleft>106</onleft>
@@ -523,7 +523,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ff000000</focusedcolor>
-				<label>Trailers</label>
+				<label>[B]Trailers[/B]</label>
 				<onup>104</onup>
 				<onright>200</onright>
 				<onleft></onleft>
@@ -542,7 +542,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ff000000</focusedcolor>
-				<label>Couch Potato</label>
+				<label>[B]Couch Potato[/B]</label>
 				<onup>101</onup>
 				<ondown>200</ondown>
 				<onleft>122</onleft>
@@ -561,7 +561,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ff000000</focusedcolor>
-				<label>Webpage</label>
+				<label>[B]Webpage[/B]</label>
 				<onup>101</onup>
 				<ondown>200</ondown>
 				<onleft>122</onleft>
@@ -581,7 +581,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ff000000</focusedcolor>
-				<label>Similar</label>
+				<label>[B]Similar[/B]</label>
 				<onup>104</onup>
 				<onright>200</onright>
 				<onleft></onleft>
@@ -600,7 +600,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ff000000</focusedcolor>
-				<label>Keywords</label>
+				<label>[B]Keywords[/B]</label>
 				<onup>104</onup>
 				<onright>200</onright>
 				<onleft></onleft>
@@ -619,7 +619,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ff000000</focusedcolor>
-				<label>Genre</label>
+				<label>[B]Genre[/B]</label>
 				<onup>104</onup>
 				<onright>200</onright>
 				<onleft></onleft>
@@ -638,7 +638,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ff000000</focusedcolor>
-				<label>Cast</label>
+				<label>[B]Cast[/B]</label>
 				<onup>122</onup>
 				<ondown>127</ondown>
 				<onleft></onleft>
@@ -1025,7 +1025,7 @@
 					<textwidth>150</textwidth>
 					<textoffsetx>40</textoffsetx>
 					<focusedcolor>ff006060</focusedcolor>
-					<label>Favorite</label>
+					<label>[B]Favorite[/B]</label>
 					<height>32</height>
 					<width>150</width>
 				</control>
@@ -1055,7 +1055,7 @@
 					<textwidth>150</textwidth>
 					<textoffsetx>40</textoffsetx>
 					<focusedcolor>ff006060</focusedcolor>
-					<label>Watchlist</label>
+					<label>[B]Watchlist[/B]</label>
 				</control>
 				<control type="image" id="5011">
 					<posx>0</posx>
@@ -1077,7 +1077,7 @@
 			<textcolor>ffe68a00</textcolor>
 			<shadowcolor></shadowcolor>
 			<focusedcolor>ff006060</focusedcolor>
-			<label>Show All</label>
+			<label>[B]Show All[/B]</label>
 			<textoffsetx>0</textoffsetx>
 			<textoffsety>0</textoffsety>
 			<align>center</align>
