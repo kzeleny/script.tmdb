@@ -72,7 +72,7 @@ def show_movies_by_person(person_id):
         for i in range((page * 20)-20,(page * 20)+1):
             if i < len(movies):
                 person_movies.append(movies[i])
-    movies=person_movies
+        movies=person_movies
     show_movies(movies,'person',page)  
 
 def show_similar_movies(movie_id):
@@ -172,7 +172,8 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 i=i+1
                 a=a + actor['name'] +", "
                 if i==3:break
-            cast.setLabel(a[:-2])
+            a=a[:-2]
+            cast.setLabel('[B]'+a+'[/B]')
             try:
                 self.getControl(3001).setLabel('[B]'+movie['title'] + ' ('+ movie['release_date'][:4] +')[/B]')
             except:

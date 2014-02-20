@@ -61,7 +61,7 @@
 			<texturefocus></texturefocus>
 			<texturenofocus></texturenofocus>
 			<textcolor>ffffffff</textcolor>
-			<focusedcolor>ffc0c0c0</focusedcolor>
+			<focusedcolor>ffE68a00</focusedcolor>
 			<shadowcolor></shadowcolor>
 			<onup>100</onup>
 			<ondown>104</ondown>
@@ -83,7 +83,7 @@
 			<texturenofocus></texturenofocus>
 			<textcolor>ffffffff</textcolor>
 			<shadowcolor></shadowcolor>
-			<focusedcolor>ffc0c0c0</focusedcolor>
+			<focusedcolor>ffE68a00</focusedcolor>
 			<onup>100</onup>
 			<ondown>104</ondown>
 			<onleft>101</onleft>
@@ -103,7 +103,7 @@
 			<texturefocus></texturefocus>
 			<texturenofocus></texturenofocus>
 			<textcolor>ffffffff</textcolor>
-			<focusedcolor>ffc0c0c0</focusedcolor>
+			<focusedcolor>ffE68a00</focusedcolor>
 			<onup>100</onup>
 			<ondown>104</ondown>
 			<onleft>102</onleft>
@@ -137,8 +137,8 @@
 			<texturefocus>button-has-focus.png</texturefocus>
 			<textcolor>ff606060</textcolor>
 			<textwidth>150</textwidth>
-			<focusedcolor>ff000000</focusedcolor>
-			<label>Box Office</label>
+			<focusedcolor>ffE68a00</focusedcolor>
+			<label>[B]Box Office[/B]</label>
 			<onup>101</onup>
 			<ondown>201</ondown>
 			<onright>105</onright>
@@ -172,8 +172,8 @@
 			<texturefocus>button-has-focus.png</texturefocus>
 			<textcolor>ff606060</textcolor>
 			<textwidth>150</textwidth>
-			<focusedcolor>ff000000</focusedcolor>
-			<label>Most Popular</label>
+			<focusedcolor>ffE68a00</focusedcolor>
+			<label>[B]Most Popular[/B]</label>
 			<onup>101</onup>
 			<ondown>201</ondown>
 			<onleft>104</onleft>

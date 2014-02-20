@@ -33,8 +33,25 @@
         <posy>20</posy>
         <width>392</width>
         <align>center</align>
-        <label>What did you think?</label>
+        <label>[B]What did you think?[/B]</label>
         <textcolor>ffE68a00</textcolor>
+      </control>
+      <control type="button">
+        <description>Close Window button</description>
+        <posx>340</posx>
+        <posy>4</posy>
+        <width>50</width>
+        <height>25</height>
+        <label>-</label>
+        <font>-</font>
+        <onclick>PreviousMenu</onclick>
+        <texturefocus>dialog_close_button_focus.png</texturefocus>
+        <texturenofocus>dialog_close_button.png</texturenofocus>
+        <onleft>10</onleft>
+        <onright>10</onright>
+        <onup>10</onup>
+        <ondown>10</ondown>
+        <visible>system.getbool(input.enablemouse)</visible>
       </control>
       <control type="label" id="1001">
         <posx>0</posx>

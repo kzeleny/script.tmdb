@@ -202,6 +202,7 @@ class tv_Window(xbmcgui.WindowXMLDialog):
 
     def get_show_from_control(self,control):
         movieid=''
+        show_id=''
         if control==400:show_id=self.tv_shows[0]['id']
         if control==401:show_id=self.tv_shows[1]['id']
         if control==402:show_id=self.tv_shows[2]['id']

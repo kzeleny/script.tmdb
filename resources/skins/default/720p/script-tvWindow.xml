@@ -58,7 +58,7 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>5000</onup>
         <ondown>32101</ondown>
         <onleft>32115</onleft>
@@ -78,7 +78,7 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>32117</onup>
         <ondown>32101</ondown>
         <onleft>32113</onleft>
@@ -97,7 +97,7 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>32117</onup>
         <ondown>32101</ondown>
         <onleft>32114</onleft>
@@ -117,7 +117,7 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32104</onleft>
@@ -136,7 +136,7 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32101</onleft>
@@ -155,7 +155,7 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32102</onleft>
@@ -174,7 +174,7 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32103</onleft>
@@ -194,7 +194,7 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32104</onleft>
@@ -214,7 +214,7 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>33105</onleft>
@@ -234,7 +234,7 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>33106</onleft>
@@ -254,7 +254,7 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-        <focusedcolor>ffc0c0c0</focusedcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>32113</onup>
         <ondown>81</ondown>
         <onleft>33107</onleft>
@@ -339,7 +339,7 @@
         <height>32</height>
         <width>32</width>
         <textwidth>150</textwidth>
-        <texturefocus>prev-enable.png</texturefocus>
+        <texturefocus>prev-new-enable.png</texturefocus>
         <texturenofocus>prev-disable.png</texturenofocus>
         <animation effect ="zoom" center="auto" end="120" time="100">Focus</animation>
         <label></label>
@@ -355,7 +355,7 @@
         <height>32</height>
         <width>32</width>
         <textwidth>150</textwidth>
-        <texturefocus>next-enable.png</texturefocus>
+        <texturefocus>next-new-enable.png</texturefocus>
         <texturenofocus>next-disable.png</texturenofocus>
         <animation effect ="zoom" center="auto" end="120" time="100">Focus</animation>
         <label></label>

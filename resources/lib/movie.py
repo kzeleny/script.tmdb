@@ -121,7 +121,8 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         if len(self.posters) > 0:
             self.getControl(102).setImage('')
             self.getControl(101).setLabel('Loading')
-            self.getControl(102).setImage('http://image.tmdb.org/t/p/w300' +self.posters[0])
+            self.getControl(102).setImage('http://image.tmdb.org/t/p/original' +self.posters[0])
+            self.getControl(901).setImage('http://image.tmdb.org/t/p/original' +self.posters[0])
         else:
             self.getControl(101).setLabel('')
         if movie['backdrop_path']!=None:
@@ -134,7 +135,8 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         if len(self.backgrounds) > 0:
             self.getControl(402).setImage('')
             self.getControl(401).setLabel('Loading')
-            self.getControl(402).setImage('http://image.tmdb.org/t/p/w300' +self.backgrounds[0])
+            self.getControl(402).setImage('http://image.tmdb.org/t/p/original' +self.backgrounds[0])
+            self.getControl(900).setImage('http://image.tmdb.org/t/p/original' +self.backgrounds[0])
         else:
             self.getControl(401).setLabel('')
         self.getControl(107).setLabel('1 of ' + str(len(self.posters)))
@@ -356,7 +358,10 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             self.getControl(102).setImage('')
             self.getControl(107).setLabel(str(self.poster_index+1) + ' of ' + str(len(self.posters)))
             self.getControl(101).setLabel('Loading')
-            self.getControl(102).setImage('http://image.tmdb.org/t/p/w300' +self.posters[self.poster_index])
+            self.getControl(102).setImage('http://image.tmdb.org/t/p/original' +self.posters[self.poster_index])
+            self.getControl(901).setImage('http://image.tmdb.org/t/p/original' +self.posters[self.poster_index])
+
+
 
         if control == 122:
             self.getControl(126).setLabel('')
@@ -372,7 +377,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             self.show_cast(self.cast)
                 
         if control ==127:
-            if self.getControl(127).getLabel()=='Play':
+            if self.getControl(127).getLabel()=='[B]Play[/B]':
                 xbmc.Player().play(self.file)
                 xbmc.executebuiltin('Dialog.Close(all,true)')
             else:
@@ -390,9 +395,11 @@ class movieWindow(xbmcgui.WindowXMLDialog):
                     self.background_index=self.background_index+1
 
             self.getControl(402).setImage('')
+            self.getControl(900).setImage('')
             self.getControl(407).setLabel(str(self.background_index+1) + ' of ' + str(len(self.backgrounds)))
             self.getControl(401).setLabel('Loading')
-            self.getControl(402).setImage('http://image.tmdb.org/t/p/w300' +self.backgrounds[self.background_index])
+            self.getControl(402).setImage('http://image.tmdb.org/t/p/original' +self.backgrounds[self.background_index])
+            self.getControl(900).setImage('http://image.tmdb.org/t/p/original' +self.backgrounds[self.background_index])
 
 
         if control==104:
