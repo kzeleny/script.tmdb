@@ -15,6 +15,7 @@ def getTitleFont():
     list_dir = os.listdir( skin_dir )
     fonts=[]
     fontxml_path =''
+    font_xml=''
     for item in list_dir:
         item = os.path.join( skin_dir, item )
         if os.path.isdir( item ):
