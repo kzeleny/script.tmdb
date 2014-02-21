@@ -111,7 +111,11 @@ class tv_Window(xbmcgui.WindowXMLDialog):
                 xbmc.executebuiltin('Dialog.Close(all,true)')
         elif action == 92:
             self.close()
-             
+        elif action==159:
+            xbmc.executebuiltin('Dialog.Close(all,true)')
+            from resources.lib import opening
+            opening.startup()
+                         
     def onClick(self,control):
         global exit_requested
         global source

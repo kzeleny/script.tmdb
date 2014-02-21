@@ -290,7 +290,11 @@ class movieWindow(xbmcgui.WindowXMLDialog):
                 xbmc.executebuiltin('Dialog.Close(all,true)')
         elif action == 92:
             self.close()
-
+        elif action==159:
+            xbmc.executebuiltin('Dialog.Close(all,true)')
+            from resources.lib import opening
+            opening.startup()
+            
     def onClick(self,control):
         xbmc.log('you clicked '+ str(control))
         global movie_id
