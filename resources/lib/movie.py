@@ -69,7 +69,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         self.current_movie=movie
         self.file=utils.find_xbmc_by_title(movie['title'],movie['release_date'][:4])
         if self.file!='':
-            self.getControl(127).setLabel('[B]Play[/B]')
+            self.getControl(127).setLabel('Play')
         crew = movie['credits']['crew']
         cast = movie['credits']['cast']
         self.cast= sorted(cast, key=lambda k: k['order'])
@@ -381,7 +381,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             self.show_cast(self.cast)
                 
         if control ==127:
-            if self.getControl(127).getLabel()=='[B]Play[/B]':
+            if self.getControl(127).getLabel()=='Play':
                 xbmc.Player().play(self.file)
                 xbmc.executebuiltin('Dialog.Close(all,true)')
             else:

@@ -523,7 +523,7 @@
 					<shadowcolor></shadowcolor>
 					<textwidth>150</textwidth>
 					<focusedcolor>ffE68a00</focusedcolor>
-					<label>[B]Rate Movie[/B]</label>
+					<label>Rate Movie</label>
 					<onup>101</onup>
 					<ondown>200</ondown>
 					<onleft>106</onleft>
@@ -566,7 +566,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
-				<label>[B]Trailers[/B]</label>
+				<label>Trailers</label>
 				<onup>104</onup>
 				<onright>200</onright>
 				<onleft></onleft>
@@ -585,7 +585,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
-				<label>[B]Couch Potato[/B]</label>
+				<label>Couch Potato</label>
 				<onup>101</onup>
 				<ondown>200</ondown>
 				<onleft>122</onleft>
@@ -604,7 +604,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
-				<label>[B]Webpage[/B]</label>
+				<label>Webpage</label>
 				<onup>101</onup>
 				<ondown>200</ondown>
 				<onleft>122</onleft>
@@ -624,7 +624,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
-				<label>[B]Similar[/B]</label>
+				<label>Similar</label>
 				<onup>104</onup>
 				<onright>200</onright>
 				<onleft></onleft>
@@ -643,7 +643,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
-				<label>[B]Keywords[/B]</label>
+				<label>Keywords</label>
 				<onup>104</onup>
 				<onright>200</onright>
 				<onleft></onleft>
@@ -662,7 +662,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
-				<label>[B]Genre[/B]</label>
+				<label>Genre</label>
 				<onup>104</onup>
 				<onright>200</onright>
 				<onleft></onleft>
@@ -681,7 +681,7 @@
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
-				<label>[B]Cast[/B]</label>
+				<label>Cast</label>
 				<onup>122</onup>
 				<ondown>127</ondown>
 				<onleft></onleft>

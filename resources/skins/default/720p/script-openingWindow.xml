@@ -138,7 +138,7 @@
 			<textcolor>ff606060</textcolor>
 			<textwidth>150</textwidth>
 			<focusedcolor>ffE68a00</focusedcolor>
-			<label>[B]Box Office[/B]</label>
+			<label>Box Office</label>
 			<onup>101</onup>
 			<ondown>201</ondown>
 			<onright>105</onright>
@@ -173,7 +173,7 @@
 			<textcolor>ff606060</textcolor>
 			<textwidth>150</textwidth>
 			<focusedcolor>ffE68a00</focusedcolor>
-			<label>[B]Most Popular[/B]</label>
+			<label>Most Popular</label>
 			<onup>101</onup>
 			<ondown>201</ondown>
 			<onleft>104</onleft>

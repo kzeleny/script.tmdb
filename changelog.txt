@@ -1,1 +1,5 @@
-v.0.0.1 New
+v.0.0.2 (February 21,2014)
+ - Misc Cosmetic fixes.
+
+v.0.0.1 (February 19,2014)
+- Initial Beta Release, TV and People not fully implemented. Movie Section complete.
