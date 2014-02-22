@@ -176,6 +176,7 @@
 					<texturefocus></texturefocus>
 					<onleft>104</onleft>
 					<ondown>406</ondown>
+          <onup>4001</onup>
 				</control>
 				<control type="button" id="405">
 					<posx>0</posx>
@@ -554,10 +555,10 @@
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
 				<label>Trailers</label>
-				<onup>104</onup>
-				<onright>200</onright>
-				<onleft></onleft>
-				<ondown>124</ondown>
+				<onup>405</onup>
+				<onright></onright>
+				<onleft>132</onleft>
+				<ondown>127</ondown>
 			</control>
 			<control type="button" id="127">
 				<posx>1035</posx>
@@ -573,10 +574,10 @@
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
 				<label>Couch Potato</label>
-				<onup>101</onup>
-				<ondown>200</ondown>
-				<onleft>122</onleft>
-				<onright>122</onright>
+				<onup>50</onup>
+				<ondown>129</ondown>
+				<onleft>132</onleft>
+				<onright></onright>
 			</control>
 			<control type="button" id="129">
 				<posx>1035</posx>
@@ -592,10 +593,10 @@
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
 				<label>Webpage</label>
-				<onup>101</onup>
+				<onup>127</onup>
 				<ondown>200</ondown>
-				<onleft>122</onleft>
-				<onright>122</onright>
+				<onleft>132</onleft>
+				<onright></onright>
 			</control>
 			<!-- actors / Similar -->
 			<control type="button" id="122">
@@ -612,10 +613,10 @@
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
 				<label>Similar</label>
-				<onup>104</onup>
+				<onup>105</onup>
 				<onright>200</onright>
 				<onleft></onleft>
-				<ondown>124</ondown>
+				<ondown>51</ondown>
 			</control>
 			<control type="button" id="51">
 				<posx>12</posx>
@@ -631,10 +632,10 @@
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
 				<label>Keywords</label>
-				<onup>104</onup>
+				<onup>122</onup>
 				<onright>200</onright>
 				<onleft></onleft>
-				<ondown>124</ondown>
+				<ondown>52</ondown>
 			</control>
 			<control type="button" id="52">
 				<posx>12</posx>
@@ -650,7 +651,7 @@
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
 				<label>Genre</label>
-				<onup>104</onup>
+				<onup>51</onup>
 				<onright>200</onright>
 				<onleft></onleft>
 				<ondown>124</ondown>
@@ -669,8 +670,8 @@
 				<textwidth>150</textwidth>
 				<focusedcolor>ffE68a00</focusedcolor>
 				<label>Cast</label>
-				<onup>122</onup>
-				<ondown>127</ondown>
+				<onup>52</onup>
+				<ondown></ondown>
 				<onleft></onleft>
 				<onright>200</onright>
 			</control>
@@ -784,8 +785,8 @@
 					<posy>0</posy>
 					<height>138</height>
 					<width>92</width>
-					<onup>104</onup>
-					<ondown>101</ondown>
+					<onup>132</onup>
+					<ondown>5020</ondown>
 					<onright>201</onright>
 					<onleft>122</onleft>
 					<aligny>top</aligny>
@@ -817,8 +818,8 @@
 					<posy>0</posy>id="204
 					<height>138</height>
 					<width>92</width>
-					<ondown>104</ondown>
-					<ondown>101</ondown>
+					<onup>132</onup>
+					<ondown>5020</ondown>
 					<onright>203</onright>
 					<onleft>201</onleft>
 					<textcolor>ff606060</textcolor><shadowcolor></shadowcolor>
@@ -835,8 +836,8 @@
 					<posy>0</posy>
 					<height>138</height>
 					<width>92</width>
-					<ondown>104</ondown>
-					<ondown>101</ondown>
+					<onup>132</onup>
+					<ondown>5020</ondown>
 					<onright>204</onright>
 					<onleft>202</onleft>
 					<textcolor>ff606060</textcolor>
@@ -854,8 +855,8 @@
 					<posy>0</posy>
 					<height>138</height>
 					<width>92</width>
-					<onup>104</onup>
-					<ondown>101</ondown>
+					<onup>132</onup>
+					<ondown>5020</ondown>
 					<onright>205</onright>
 					<onleft>203</onleft>
 					<textcolor>ff606060</textcolor>
@@ -873,8 +874,8 @@
 					<posy>0</posy>
 					<height>138</height>
 					<width>92</width>
-					<onup>404</onup>
-					<ondown>101</ondown>
+					<onup>132</onup>
+					<ondown>5020</ondown>
 					<onright>206</onright>
 					<onleft>204</onleft>
 					<textcolor>ff606060</textcolor>
@@ -892,8 +893,8 @@
 					<posy>0</posy>
 					<height>138</height>
 					<width>92</width>
-					<onup>404</onup>
-					<ondown>101</ondown>
+					<onup>132</onup>
+					<ondown>5020</ondown>
 					<onright>207</onright>
 					<onleft>205</onleft>
 					<textcolor>ff606060</textcolor>
@@ -911,8 +912,8 @@
 					<posy>0</posy>
 					<height>138</height>
 					<width>92</width>
-					<onup>404</onup>
-					<ondown>101</ondown>
+					<onup>132</onup>
+					<ondown>5020</ondown>
 					<onright>208</onright>
 					<onleft>206</onleft>
 					<textcolor>ff606060</textcolor>
@@ -930,8 +931,8 @@
 					<posy>0</posy>
 					<height>138</height>
 					<width>92</width>
-					<onup>404</onup>
-					<ondown>101</ondown>
+					<onup>132</onup>
+					<ondown>5020</ondown>
 					<onright>209</onright>
 					<onleft>207</onleft>
 					<textcolor>ff606060</textcolor>
@@ -949,8 +950,8 @@
 					<posy>0</posy>
 					<height>138</height>
 					<width>92</width>
-					<onup>404</onup>
-					<ondown>101</ondown>
+					<onup>132</onup>
+					<ondown>5020</ondown>
 					<onright>200</onright>
 					<onleft>208</onleft>
 					<textcolor>ff606060</textcolor>
@@ -1058,6 +1059,8 @@
 					<label>[B]Favorite[/B]</label>
 					<height>32</height>
 					<width>150</width>
+          <ondown>404</ondown>
+          <onright>5001</onright>
 				</control>
 				<control type="image" id="4011">
 					<posx>0</posx>
@@ -1086,6 +1089,8 @@
 					<textoffsetx>40</textoffsetx>
 					<focusedcolor>ffE68a00</focusedcolor>
 					<label>[B]Watchlist[/B]</label>
+          <ondown>404</ondown>
+          <onleft>4001</onleft>
 				</control>
 				<control type="image" id="5011">
 					<posx>0</posx>
@@ -1111,6 +1116,7 @@
 			<textoffsetx>0</textoffsetx>
 			<textoffsety>0</textoffsety>
 			<align>center</align>
+      <onup>209</onup>
 		</control>
 		<control type="videowindow" id="2">
 			<description>My first video control</description>
