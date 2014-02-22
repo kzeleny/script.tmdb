@@ -41,7 +41,7 @@
 				<width>1280</width>
 				<height>720</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>grey_overlay.png</texture>
+				<texture>grey-overlay-225.png</texture>
 			</control>
       <control type="button">
         <description>Close Window button</description>
