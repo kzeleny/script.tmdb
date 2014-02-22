@@ -7,8 +7,8 @@
 	</coordinates>
 	<controls>
 		<control type="group">
-			<animation effect="slide" start="0" end="1280" time="750">WindowClose</animation>
-      <animation effect="slide" start="1280" end="0"   time="750">WindowOpen</animation>
+			<animation effect="slide" start="0" end="1280" time="500">WindowClose</animation>
+      <animation effect="slide" start="1280" end="0"   time="500">WindowOpen</animation>
     <control type="largeimage" id="901">
       <posx>0</posx>
       <posy>0</posy>
@@ -17,6 +17,7 @@
       <aspectratio>keep</aspectratio>
       <fadetime>500</fadetime>
       <texture></texture>
+		<visible>false</visible>
     </control>
       <control type="image">
         <posx>0</posx>
@@ -34,6 +35,7 @@
         <aspectratio>stretch</aspectratio>
         <fadetime>500</fadetime>
         <texture></texture>
+		  <background>true</background>
       </control>
 			<control type="image">
 				<posx>0</posx>
@@ -43,23 +45,6 @@
 				<aspectratio>stretch</aspectratio>
 				<texture>grey-overlay-225.png</texture>
 			</control>
-      <control type="button">
-        <description>Close Window button</description>
-        <posx>1225</posx>
-        <posy>0</posy>
-        <width>50</width>
-        <height>20</height>
-        <label>-</label>
-        <font>-</font>
-        <onclick>Back</onclick>
-        <texturefocus>dialog_close_button_focus.png</texturefocus>
-        <texturenofocus>dialog_close_button.png</texturenofocus>
-        <onleft>10</onleft>
-        <onright>10</onright>
-        <onup>10</onup>
-        <ondown>10</ondown>
-        <visible>system.getbool(input.enablemouse)</visible>
-      </control>
 			<!-- Poster -->
 			<control type="group">
 				<posx>0</posx>
@@ -90,6 +75,7 @@
 					<aspectratio>stretch</aspectratio>
 					<height>251</height>
 					<fadetime>500</fadetime>
+					<animation effect ="zoom" center="auto" end="105" time="100" condition="Control.HasFocus(104)">conditional</animation>
 				</control>
 				<control type="button" id="104">
 					<posx>20</posx>
@@ -97,7 +83,7 @@
 					<width>185</width>
 					<height>251</height>
 					<texturenofocus></texturenofocus>
-					<texturefocus>white_overlay.png</texturefocus>
+					<texturefocus></texturefocus>
 					<ondown>106</ondown>
 					<onright>404</onright>
 				</control>
@@ -179,6 +165,7 @@
 					<aspectratio>stretch</aspectratio>
 					<height>169</height>
 					<fadetime>500</fadetime>
+				<animation effect ="zoom" center="auto" end="105" time="100" condition="Control.HasFocus(404)">conditional</animation>
 				</control>
 				<control type="button" id="404">
 					<posx>0</posx>
@@ -186,7 +173,7 @@
 					<width>300</width>
 					<height>169</height>
 					<texturenofocus></texturenofocus>
-					<texturefocus>white_overlay.png</texturefocus>
+					<texturefocus></texturefocus>
 					<onleft>104</onleft>
 					<ondown>406</ondown>
 				</control>
