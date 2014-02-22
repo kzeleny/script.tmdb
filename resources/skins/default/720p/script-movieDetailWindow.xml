@@ -24,7 +24,7 @@
         <posy>0</posy>
         <width>1280</width>
         <height>720</height>
-        <aspectratio>keep</aspectratio>
+        <aspectratio>stretch</aspectratio>
         <texture>grey.png</texture>
       </control>
       <control type="largeimage" id="900">
