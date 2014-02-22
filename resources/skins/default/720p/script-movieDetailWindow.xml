@@ -84,7 +84,7 @@
 					<height>251</height>
 					<texturenofocus></texturenofocus>
 					<texturefocus></texturefocus>
-					<ondown>106</ondown>
+					<ondown>105</ondown>
 					<onright>404</onright>
 				</control>
 				<control type="button" id="105">
