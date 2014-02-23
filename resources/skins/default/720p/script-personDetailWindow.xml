@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window type="window">
+	<defaultcontrol always="false">50</defaultcontrol>
+	<coordinates>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<controls>
+		<control type="group">
+			<animation effect="slide" start="0" end="1280" time="500">WindowClose</animation>
+      <animation effect="slide" start="1280" end="0"   time="500">WindowOpen</animation>
+    <control type="largeimage" id="901">
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>1280</width>
+      <height>720</height>
+      <aspectratio>keep</aspectratio>
+      <fadetime>500</fadetime>
+      <texture></texture>
+		<visible>false</visible>
+    </control>
+      <control type="image">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>1280</width>
+        <height>720</height>
+        <aspectratio>stretch</aspectratio>
+        <texture>grey.png</texture>
+      </control>
+      <control type="largeimage" id="900">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>1280</width>
+        <height>720</height>
+        <aspectratio>keep</aspectratio>
+        <fadetime>500</fadetime>
+        <texture></texture>
+		  <background>true</background>
+      </control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>grey-overlay-225.png</texture>
+			</control>
+			<!-- Poster -->
+			<control type="group">
+				<posx>40</posx>
+				<posy>40</posy>
+				<control type="image">
+					<posx>20</posx>
+					<posy>15</posy>
+					<width>185</width>
+					<height>251</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>loading-w185.jpg</texture>
+				</control>
+				<control type="label" id="101">
+					<posx>20</posx>
+					<posy>30</posy>
+					<height>20</height>
+					<font>font13</font>
+					<label>Loading</label>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<width>185</width>
+					<align>center</align>
+				</control>
+				<control type="largeimage" id="102">
+					<posx>20</posx>
+					<posy>15</posy>
+					<width>185</width>
+					<aspectratio>stretch</aspectratio>
+					<height>251</height>
+					<fadetime>500</fadetime>
+					<animation effect ="zoom" center="auto" end="105" time="100" condition="Control.HasFocus(104)">conditional</animation>
+				</control>
+				<control type="button" id="104">
+					<posx>20</posx>
+					<posy>15</posy>
+					<width>185</width>
+					<height>251</height>
+					<texturenofocus></texturenofocus>
+					<texturefocus></texturefocus>
+					<ondown>105</ondown>
+					<onright>404</onright>
+				</control>
+				<control type="button" id="105">
+					<posx>20</posx>
+					<posy>265</posy>
+					<height>32</height>
+					<width>32</width>
+					<textwidth>150</textwidth>
+					<texturefocus>prev-new-enable.png</texturefocus>
+					<texturenofocus>prev-disable.png</texturenofocus>
+					<animation effect ="zoom" center="auto" end="120" time="100">Focus</animation>
+					<label></label>
+					<font>font13</font>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<onright>106</onright>
+					<onup>104</onup>
+					<ondown>122</ondown>
+					<onleft>406</onleft>
+				</control>
+				<control type="button" id="106">
+					<posx>175</posx>
+					<posy>265</posy>
+					<height>32</height>
+					<width>32</width>
+					<textwidth>150</textwidth>
+					<texturefocus>next-new-enable.png</texturefocus>
+					<texturenofocus>next-disable.png</texturenofocus>
+					<animation effect ="zoom" center="auto" end="120" time="100">Focus</animation>
+					<label></label>
+					<font>font13</font>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<onup>104</onup>
+					<onright>132</onright>
+					<onleft>105</onleft>
+					<ondown>122</ondown>
+				</control>
+				<control type="label" id="107">
+					<posx>20</posx>
+					<posy>270</posy>
+					<width>185</width>
+					<height>20</height>
+					<font>font13</font>
+					<align>center</align>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<label>1 of 10</label>
+				</control>
+			</control>
+			<control type="label">
+				<posx>300</posx>
+				<posy>50</posy>
+				<font>font13</font>
+				<textcolor>ffe68a00</textcolor>
+				<shadowcolor></shadowcolor>
+				<widht>auto</widht>
+				<height>20</height>
+				<label>[B]Biography:[/B]</label>
+			</control>
+			<control type="textbox" id="103">
+				<description>Plot</description>
+				<posx>300</posx>
+				<posy>80</posy>
+				<width>900</width>
+				<height>400</height>
+				<font>font13</font>
+				<align>justify</align>
+				<textcolor>ff606060</textcolor><shadowcolor></shadowcolor>
+					<autoscroll delay="5000" time="2000" repeat="5000"></autoscroll>
+			</control>
+			<!--info-->
+      <control type="label">
+        <posx>60</posx>
+        <posy>340</posy>
+        <textcolor>ffe68a00</textcolor>
+        <shadowcolor></shadowcolor>
+        <widht>auto</widht>
+        <height>20</height>
+        <label>[B]Known Credits:[/B]</label>
+      </control>
+      <control type="label">
+        <posx>60</posx>
+        <posy>370</posy>
+        <textcolor>ffe68a00</textcolor>
+        <shadowcolor></shadowcolor>
+        <widht>auto</widht>
+        <height>20</height>
+        <label>[B]Birthday:[/B]</label>
+      </control>
+      <control type="label">
+        <posx>60</posx>
+        <posy>400</posy>
+        <textcolor>ffe68a00</textcolor>
+        <shadowcolor></shadowcolor>
+        <widht>auto</widht>
+        <height>20</height>
+        <label>[B]Birth Place:[/B]</label>
+      </control>
+      <control type="button" id="129">
+				<posx>12</posx>
+				<posy>543</posy>
+				<height>30</height>
+				<width>150</width>
+				<align>center</align>
+				<font>font13</font>
+				<texturenofocus>button-no-focus.png</texturenofocus>
+				<texturefocus>button-has-focus.png</texturefocus>
+				<textcolor>ff606060</textcolor>
+				<shadowcolor></shadowcolor>
+				<textwidth>150</textwidth>
+				<focusedcolor>ffE68a00</focusedcolor>
+				<label>Webpage</label>
+				<onup>127</onup>
+				<ondown>200</ondown>
+				<onleft>132</onleft>
+				<onright></onright>
+			</control>
+			<control type="label" id="126">
+				<posx>0</posx>
+				<posy>515</posy>
+				<height>30</height>
+				<width>1280</width>
+				<align>center</align>
+				<font>font13</font>
+				<textcolor>ffe68a00</textcolor>
+				<shadowcolor></shadowcolor>
+				<shadowcolor>ff606060</shadowcolor>
+				<visible>Control.Hasfocus(200)|Control.HasFocus(201)|Control.HasFocus(202)|Control.HasFocus(203)|Control.HasFocus(204)|Control.HasFocus(205)|Control.HasFocus(206)|Control.HasFocus(207)|Control.HasFocus(208)|Control.HasFocus(209)</visible>
+			</control>
+			<control type="label" id="128">
+				<posx>0</posx>
+				<posy>690</posy>
+				<height>30</height>
+				<width>1280</width>
+				<align>center</align>
+				<font>font13</font>
+				<textcolor>ffe68a00</textcolor>
+				<shadowcolor></shadowcolor>
+				<shadowcolor>ff606060</shadowcolor>
+				<label></label>
+			</control>
+
+			<control type="group" id="125">
+				<posx>180</posx>
+				<posy>550</posy>
+				<control type="image" id="300">
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(200)">Conditional</animation>
+				</control>
+				<control type="image" id="301">
+					<posx>112</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(201)">Conditional</animation>
+				</control>
+				<control type="image" id="302">
+					<posx>222</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(202)">Conditional</animation>
+				</control>
+				<control type="image" id="303">
+					<posx>332</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(203)">Conditional</animation>
+				</control>
+				<control type="image" id="304">
+					<posx>442</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(204)">Conditional</animation>
+				</control>
+				<control type="image" id="305">
+					<posx>552</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(205)">Conditional</animation>
+				</control>
+				<control type="image" id="306">
+					<posx>662</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					-          <animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(206)">Conditional</animation>
+				</control>
+				<control type="image" id="307">
+					<posx>772</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(207)">Conditional</animation>
+				</control>
+				<control type="image" id="308">
+					<posx>882</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(208)">Conditional</animation>
+				</control>
+				<control type="image" id="309">
+					<posx>992</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<animation effect ="zoom" center="auto" end="110" time="100" condition="Control.HasFocus(209)">Conditional</animation>
+				</control>
+				<control type="button" id="200">
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<focusedcolor>ffffffff</focusedcolor>
+					<font>font13</font>
+					<scroll>focus</scroll>
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<onup>132</onup>
+					<ondown>5020</ondown>
+					<onright>201</onright>
+					<onleft>122</onleft>
+					<aligny>top</aligny>
+					<textoffsety>110</textoffsety>
+				</control>
+				<control type="button" id="201">
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<posx>112</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<ondown>104</ondown>
+					<ondown>101</ondown>
+					<onright>202</onright>
+					<onleft>200</onleft>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<focusedcolor>ffffffff</focusedcolor>
+					<font>font13</font>
+					<scroll>focus</scroll>
+					<aligny>top</aligny>
+					<textoffsety>110</textoffsety>
+				</control>
+				<control type="button" id="202">
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<posx>222</posx>
+					<posy>0</posy>id="204
+					<height>138</height>
+					<width>92</width>
+					<onup>132</onup>
+					<ondown>5020</ondown>
+					<onright>203</onright>
+					<onleft>201</onleft>
+					<textcolor>ff606060</textcolor><shadowcolor></shadowcolor>
+					<focusedcolor>ffffffff</focusedcolor>
+					<font>font13</font>
+					<scroll>focus</scroll>
+					<aligny>top</aligny>
+					<textoffsety>110</textoffsety>
+				</control>
+				<control type="button" id="203">
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<posx>332</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<onup>132</onup>
+					<ondown>5020</ondown>
+					<onright>204</onright>
+					<onleft>202</onleft>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<focusedcolor>ffffffff</focusedcolor>
+					<font>font13</font>
+					<scroll>focus</scroll>
+					<aligny>top</aligny>
+					<textoffsety>110</textoffsety>
+				</control>
+				<control type="button" id="204">
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<posx>442</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<onup>132</onup>
+					<ondown>5020</ondown>
+					<onright>205</onright>
+					<onleft>203</onleft>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<focusedcolor>ffffffff</focusedcolor>
+					<font>font13</font>
+					<scroll>focus</scroll>
+					<aligny>top</aligny>
+					<textoffsety>110</textoffsety>
+				</control>
+				<control type="button" id="205">
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<posx>552</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<onup>132</onup>
+					<ondown>5020</ondown>
+					<onright>206</onright>
+					<onleft>204</onleft>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<focusedcolor>ffffffff</focusedcolor>
+					<font>font13</font>
+					<scroll>focus</scroll>
+					<aligny>top</aligny>
+					<textoffsety>110</textoffsety>
+				</control>
+				<control type="button" id="206">
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<posx>662</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<onup>132</onup>
+					<ondown>5020</ondown>
+					<onright>207</onright>
+					<onleft>205</onleft>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<focusedcolor>ffffffff</focusedcolor>
+					<font>font13</font>
+					<scroll>focus</scroll>
+					<aligny>top</aligny>
+					<textoffsety>110</textoffsety>
+				</control>
+				<control type="button" id="207">
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<posx>772</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<onup>132</onup>
+					<ondown>5020</ondown>
+					<onright>208</onright>
+					<onleft>206</onleft>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<focusedcolor>ffffffff</focusedcolor>
+					<font>font13</font>
+					<scroll>focus</scroll>
+					<aligny>top</aligny>
+					<textoffsety>110</textoffsety>
+				</control>
+				<control type="button" id="208">
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<posx>882</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<onup>132</onup>
+					<ondown>5020</ondown>
+					<onright>209</onright>
+					<onleft>207</onleft>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<focusedcolor>ffffffff</focusedcolor>
+					<font>font13</font>
+					<scroll>focus</scroll>
+					<aligny>top</aligny>
+					<textoffsety>110</textoffsety>
+				</control>
+				<control type="button" id="209">
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<posx>992</posx>
+					<posy>0</posy>
+					<height>138</height>
+					<width>92</width>
+					<onup>132</onup>
+					<ondown>5020</ondown>
+					<onright>200</onright>
+					<onleft>208</onleft>
+					<textcolor>ff606060</textcolor>
+					<shadowcolor></shadowcolor>
+					<focusedcolor>ffffffff</focusedcolor>
+					<font>font13</font>
+					<scroll>focus</scroll>
+					<label></label>
+					<aligny>top</aligny>
+					<textoffsety>110</textoffsety>
+				</control>
+			</control>
+		</control>
+		<control type="button" id="5020">
+			<posx>1170</posx>
+			<posy>695</posy>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<width>92</width>
+			<height>20</height>
+			<font>font13</font>
+			<textcolor>ff606060</textcolor>
+			<shadowcolor></shadowcolor>
+			<focusedcolor>ffE68a00</focusedcolor>
+			<label>[B]Show All[/B]</label>
+			<textoffsetx>0</textoffsetx>
+			<textoffsety>0</textoffsety>
+			<align>center</align>
+      <onup>209</onup>
+		</control>
+		<control type="videowindow" id="2">
+			<description>My first video control</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<texture>black.png</texture>
+			<width>1280</width>
+			<height>720</height>
+			<visible>true</visible>
+		</control>
+	</controls>
+</window>

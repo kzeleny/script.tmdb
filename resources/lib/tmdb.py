@@ -303,7 +303,7 @@ def get_people_combined_credits(person_id,page):
 def get_person(person_id):
     data = {}
     data['api_key'] = api_key
-    data['append_to_response'] ='combined_credits'
+    data['append_to_response'] ='movie_credits,tv_credits,images'
     url_values = urllib.urlencode(data)
     url = 'http://api.themoviedb.org/3/person/' + str(person_id)
     full_url = url + '?' + url_values

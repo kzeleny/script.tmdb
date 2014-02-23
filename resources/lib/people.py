@@ -112,7 +112,7 @@ class peopleWindow(xbmcgui.WindowXMLDialog):
         tv_shows = 32114
         movies = 32113
         people = 32115
-
+        person_id=self.get_person_from_control(control)
         if control == popular:
             source='popular'
             page=1
@@ -168,6 +168,13 @@ class peopleWindow(xbmcgui.WindowXMLDialog):
             from resources.lib import movies
             movies.source='popular'
             movies.startup()
+
+        if person_id!='':
+            from resources.lib import person
+            person.person_id=person_id
+            person_window = person.personWindow('script-personDetailWindow.xml', addon_path,'default')
+            person_window.doModal()
+            del person_window
 
     def get_person_from_control(self,control):
         person_id=''
