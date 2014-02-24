@@ -11,6 +11,8 @@ addon = xbmcaddon.Addon()
 
 def getTitleFont():
     title_font='font13'
+    base_size=20
+    multiplier=1
     skin_dir = xbmc.translatePath("special://skin/")
     list_dir = os.listdir( skin_dir )
     fonts=[]
@@ -29,9 +31,13 @@ def getTitleFont():
         name = font.getElementsByTagName('name')[0].childNodes[0].nodeValue
         size = font.getElementsByTagName('size')[0].childNodes[0].nodeValue
         fonts.append({'name':name,'size':float(size)})
-    fonts =sorted(fonts, key=lambda k: k['size'])
+    #fonts =sorted(fonts, key=lambda k: k['size'])
     for f in fonts:
-        if f['size'] >= 28:
+        if f['name']=='font13':
+            multiplier=f['size'] / 20
+            break
+    for f in fonts:
+        if f['size'] >= 26 * multiplier:
             title_font=f['name']
             break
     return title_font
