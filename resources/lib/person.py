@@ -27,7 +27,16 @@ def show_person(person):
 class personWindow(xbmcgui.WindowXMLDialog): 
     posters=[]
     poster_index=0
-    cast_movies=[]
+    movie_cast=[]
+    movie_crew=[]
+    tv_cast=[]
+    tv_crew=[]
+    movie_direction=[]
+    movie_production=[]
+    movie_writing=[]
+    tv_direction=[]
+    tv_production=[]
+    tv_writing=[]
     mode='movies'
     total_results=0
     current_person=''
@@ -36,19 +45,68 @@ class personWindow(xbmcgui.WindowXMLDialog):
         self.getControl(129).setVisible(False)
         self.getControl(5020).setVisible(False)
         person=tmdb.get_person(person_id)
+        self.current_person=person
         if use_chrome=='true' and person['homepage']!='':self.getControl(129).setVisible(True)
         bio=self.getControl(103)
-        title=xbmcgui.ControlButton(60,5,800,30,'','','',0,0,0,title_font,'ff606060','',0,'','ff606060')
+        title=xbmcgui.ControlButton(220,15,800,30,'','','',0,0,0,title_font,'ff606060','',0,'','ff606060')
         title=self.addControl(title)
         title=self.getControl(3001)
         title.setAnimations([('windowclose', 'effect=fade end=0 time=0',)])
+        birthday=self.getControl(111)
+        credits=self.getControl(110)
+        birthplace=self.getControl(112)
         self.current_person=person
-        movie_crew = person['movie_credits']['crew']
-        movie_cast = person['movie_credits']['cast']
-        tv_crew = person['movie_credits']['crew']
-        tv_cast = person['movie_credits']['cast']
+        self.movie_crew = person['movie_credits']['crew']
+        self.movie_cast = person['movie_credits']['cast']
+        self.tv_crew = person['tv_credits']['crew']
+        self.tv_cast = person['tv_credits']['cast']
         bio.setText(person['biography'])
         title.setLabel(person['name'])
+        birthday.setLabel(person['birthday'])
+        birthplace.setLabel(person['place_of_birth'])
+        credits.setLabel('Movie: ' + str(len(self.movie_cast)) + ' TV: ' + str(len(self.tv_cast)))
+        movie_direction=[]
+        movie_production=[]
+        movie_writing=[]
+        tv_direction=[]
+        tv_production=[]
+        tv_writing=[]
+        for crew in self.movie_crew:
+            if crew['department']=='Production':self.movie_production.append(crew)
+            if crew['department']=='Writing':self.movie_writing.append(crew)
+            if crew['department']=='Directing':self.movie_direction.append(crew)
+        for crew in self.tv_crew:
+            if crew['department']=='Production':self.tv_production.append(crew)
+            if crew['department']=='Writing':self.tv_writing.append(crew)
+            if crew['department']=='Directing':self.tv_direction.append(crew)
+
+        if self.mode=='movies':
+            if len(self.movie_cast)>0:
+                li=xbmcgui.ListItem('Actor ('+ str(len(self.movie_cast))+')')
+                self.getControl(115).addItem(li)
+            if len(self.movie_direction) > 0:
+                li=xbmcgui.ListItem('Director (' + str(len(self.movie_direction)) +')')
+                self.getControl(115).addItem(li)
+            if len(self.movie_production) > 0:
+                li=xbmcgui.ListItem('Producer (' + str(len(self.movie_production)) +')')
+                self.getControl(115).addItem(li)
+            if len(self.movie_writing) > 0:
+                li=xbmcgui.ListItem('Writer (' + str(len(self.movie_writing)) +')')
+                self.getControl(115).addItem(li)
+        if self.mode=='tv':
+            if len(self.tv_cast)>0:
+                li=xbmcgui.ListItem('Actor ('+ str(len(self.tv_cast))+')')
+                self.getControl(115).addItem(li)
+            if len(self.tv_direction) > 0:
+                li=xbmcgui.ListItem('Director (' + str(len(self.tv_direction)) +')')
+                self.getControl(115).addItem(li)
+            if len(self.tv_production) > 0:
+                li=xbmcgui.ListItem('Producer (' + str(len(self.tv_production)) +')')
+                self.getControl(115).addItem(li)
+            if len(self.tv_writing) > 0:
+                li=xbmcgui.ListItem('Writer (' + str(len(self.tv_writing)) +')')
+                self.getControl(115).addItem(li)
+                
         for image in person['images']['profiles']:
             self.posters.append(image['file_path'])
         if len(self.posters) > 0:
@@ -61,7 +119,119 @@ class personWindow(xbmcgui.WindowXMLDialog):
         self.getControl(107).setLabel('1 of ' + str(len(self.posters)))
         self.show_person_movies(person)
 
+    def onClick(self,control):
+        if control in(200,201,202,203,204,205,206,207,208,209):
+            if self.mode=='movies':
+                movie_id=self.movie_cast[control-200]['id']
+                from resources.lib import movie
+                movie.movie_id=movie_id
+                movie_window = movie.movieWindow('script-movieDetailWindow.xml', addon_path,'default')
+                movie_window.doModal()
+                del movie_window
+        if control==116:
+            self.mode='movies'
+            self.getControl(117).setSelected(False)
+            self.getControl(116).setSelected(True)
+            self.update_mode()
+        if control==117:
+            self.mode='tv'
+            self.getControl(117).setSelected(True)
+            self.getControl(116).setSelected(False)
+            self.update_mode()
+        if control==104:
+            iw = imageWindow('image.xml', addon_path,'default')
+            iw.images=self.posters
+            iw.image_index=self.poster_index
+            iw.doModal()
+            del iw
+
+        if control == 105 or control == 106:
+            if control==105:
+                if self.poster_index==0:
+                    self.poster_index=len(self.posters)-1
+                else:
+                    self.poster_index=self.poster_index-1
+            if control==106:
+                if self.poster_index==len(self.posters)-1:
+                    self.poster_index=0
+                else:
+                    self.poster_index=self.poster_index+1
+            self.getControl(102).setImage('')
+            self.getControl(107).setLabel(str(self.poster_index+1) + ' of ' + str(len(self.posters)))
+            self.getControl(101).setLabel('Loading')
+            self.getControl(102).setImage('http://image.tmdb.org/t/p/original' +self.posters[self.poster_index])
+            self.getControl(901).setImage('http://image.tmdb.org/t/p/original' +self.posters[self.poster_index])
+
+    def onFocus(self, control):
+        if control in(200,201,202,203,204,205,206,207,208,209):
+            if self.mode =='tv':
+                if self.tv_cast[control-200]['character']=='':
+                    self.getControl(126).setLabel('[B]'+self.tv_cast[control-200]['name'] +'[/B]')
+                else:
+                    self.getControl(126).setLabel('[B]'+self.tv_cast[control-200]['name'] + ' as ' + self.tv_cast[control-200]['character'] +'[/B]')
+            elif self.mode=='movies':
+                self.getControl(126).setLabel('[B]'+self.movie_cast[control-200]['title'] + ' as ' + self.movie_cast[control-200]['character']+'[/B]')
+            elif self.mode=='cast':
+                self.getControl(126).setLabel('[B]'+self.cast[control-200]['name'] + ' as ' + self.cast[control-200]['character']+'[/B]')
+            elif self.mode=='cast_movies':
+                self.getControl(126).setLabel('[B]'+self.cast_movies[control-200]['title']+'[/B]')
+        else:
+            self.getControl(126).setLabel('')
+
+    def update_mode(self):
+        self.getControl(115).reset()
+        if self.mode=='movies':
+            if len(self.movie_cast)>0:
+                li=xbmcgui.ListItem('Actor ('+ str(len(self.movie_cast))+')')
+                self.getControl(115).addItem(li)
+            if len(self.movie_direction) > 0:
+                li=xbmcgui.ListItem('Director (' + str(len(self.movie_direction)) +')')
+                self.getControl(115).addItem(li)
+            if len(self.movie_production) > 0:
+                li=xbmcgui.ListItem('Producer (' + str(len(self.movie_production)) +')')
+                self.getControl(115).addItem(li)
+            if len(self.movie_writing) > 0:
+                li=xbmcgui.ListItem('Writer (' + str(len(self.movie_writing)) +')')
+                self.getControl(115).addItem(li)
+            self.show_person_movies(self.current_person)
+        if self.mode=='tv':
+            if len(self.tv_cast)>0:
+                li=xbmcgui.ListItem('Actor ('+ str(len(self.tv_cast))+')')
+                self.getControl(115).addItem(li)
+            if len(self.tv_direction) > 0:
+                li=xbmcgui.ListItem('Director (' + str(len(self.tv_direction)) +')')
+                self.getControl(115).addItem(li)
+            if len(self.tv_production) > 0:
+                li=xbmcgui.ListItem('Producer (' + str(len(self.tv_production)) +')')
+                self.getControl(115).addItem(li)
+            if len(self.tv_writing) > 0:
+                li=xbmcgui.ListItem('Writer (' + str(len(self.tv_writing)) +')')
+                self.getControl(115).addItem(li)
+            self.show_person_tv(self.current_person)
+
+    def show_person_tv(self,person):
+        self.getControl(116).setSelected(False)
+        self.getControl(117).setSelected(True)
+        shows=person['tv_credits']['cast']
+        self.getControl(5020).setVisible(True)
+        self.getControl(128).setLabel('Top 10 of '+ str(len(shows)) + ' TV Shows with ' + person['name'] + ' in the Cast')
+        x=10
+        for i in range(0,x):
+            self.getControl(300+i).setImage('')
+            self.getControl(200+i).setLabel(' ')
+            self.getControl(200+i).setEnabled(False)
+        if len(shows) < 10:x=len(shows)
+        for i in range(0,x):
+            self.getControl(200+i).setEnabled(True)
+            if shows[i]['poster_path']==None:
+                self.getControl(300+i).setImage('no-poster-w92.jpg')
+                self.getControl(200+i).setLabel(shows[i]['name'])
+            else:
+                self.getControl(300+i).setImage('http://image.tmdb.org/t/p/w92' + shows[i]['poster_path'])
+
     def show_person_movies(self,person):
+        self.getControl(116).setSelected(True)
+        self.getControl(117).setSelected(False)
         movies=person['movie_credits']['cast']
         self.getControl(5020).setVisible(True)
         self.getControl(128).setLabel('Top 10 of '+ str(len(movies)) + ' Movies with ' + person['name'] + ' in the Cast')
@@ -78,3 +248,9 @@ class personWindow(xbmcgui.WindowXMLDialog):
                 self.getControl(200+i).setLabel(movies[i]['title'])
             else:
                 self.getControl(300+i).setImage('http://image.tmdb.org/t/p/w92' + movies[i]['poster_path'])
+
+class imageWindow(xbmcgui.WindowXMLDialog):
+    images=[]
+    image_index=0
+    def onInit(self):
+        self.getControl(100).setImage('http://image.tmdb.org/t/p/original' + self.images[self.image_index])     

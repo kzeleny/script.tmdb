@@ -310,12 +310,10 @@ class movieWindow(xbmcgui.WindowXMLDialog):
                 movie_id=self.similar[control-200]['id']
                 startup()  
             elif self.mode=='cast':
-               cast_member=self.cast[control-200]['name']
-               cast_member_id=self.cast[control-200]['id']
-               self.cast_movies=tmdb.getMoviesByActor(self.cast[control-200]['id'],1)
-               self.mode='cast_movies'
-               self.total_results=len(self.cast_movies)
-               self.show_cast_movies(self.cast_movies)
+                from resources.lib import person
+                person.person_id=self.cast[control-200]['id']
+                person.startup()
+               
             elif self.mode=='keywords':
                movie_id=self.keywords[control-200]['id']
                startup()  

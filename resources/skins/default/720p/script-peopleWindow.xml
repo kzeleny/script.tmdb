@@ -215,6 +215,7 @@
         <font>font13</font>
         <align>justify</align>
         <textcolor>ff606060</textcolor>
+        <shadowcolor></shadowcolor>
         <autoscroll delay="5000" time="2000" repeat="5000"></autoscroll>
       </control>
       <control type="button" id="32116">
