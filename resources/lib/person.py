@@ -189,13 +189,29 @@ class personWindow(xbmcgui.WindowXMLDialog):
 
     def onFocus(self, control):
         if control in(200,201,202,203,204,205,206,207,208,209):
-            if 'tv' in self.mode:
-                if self.tv_cast[control-200]['character']=='':
-                    self.getControl(126).setLabel('[B]'+self.tv_cast[control-200]['name'] +'[/B]')
+            movies=[]
+            if self.mode=='actor_movies':movies=self.movie_cast
+            if self.mode=='actor_tv':movies=self.tv_cast
+            if self.mode=='director_movies':movies=self.movie_direction
+            if self.mode=='director_tv':movies=self.tv_direction
+            if self.mode=='producer_movies':movies=self.movie_production
+            if self.mode=='producer_tv':movies=self.tv_production
+            if self.mode=='writer_movies':movies=self.movie_writing
+            if self.mode=='writer_tv':movies=self.tv_writing
+            if 'actor_tv' == self.mode:
+                if movies[control-200]['character']=='':
+                    self.getControl(126).setLabel('[B]'+movies[control-200]['name'] +'[/B]')
                 else:
-                    self.getControl(126).setLabel('[B]'+self.tv_cast[control-200]['name'] + ' as ' + self.tv_cast[control-200]['character'] +'[/B]')
+                    self.getControl(126).setLabel('[B]'+movies[control-200]['name'] + ' as ' + movies[control-200]['character'] +'[/B]')
+            elif 'actor_movies' == self.mode:
+                if movies[control-200]['character']=='':
+                    self.getControl(126).setLabel('[B]'+movies[control-200]['name'] +'[/B]')
+                else:
+                    self.getControl(126).setLabel('[B]'+movies[control-200]['title'] + ' as ' + movies[control-200]['character']+'[/B]')
+            elif 'tv' in self.mode:
+                self.getControl(126).setLabel('[B]'+movies[control-200]['name'] +'[/B]')
             elif 'movies' in self.mode:
-                self.getControl(126).setLabel('[B]'+self.movie_cast[control-200]['title'] + ' as ' + self.movie_cast[control-200]['character']+'[/B]')
+                self.getControl(126).setLabel('[B]'+movies[control-200]['title'] +'[/B]')
         else:
             self.getControl(126).setLabel('')
 
@@ -242,7 +258,7 @@ class personWindow(xbmcgui.WindowXMLDialog):
         for i in range(0,x):
             self.getControl(300+i).setImage('')
             self.getControl(200+i).setLabel(' ')
-            self.getControl(200+i).setEnabled(False)
+            self.getControl(200+i).setEnabled(False) 
         if len(movies) < 10:x=len(movies)
         for i in range(0,x):
             self.getControl(200+i).setEnabled(True)
