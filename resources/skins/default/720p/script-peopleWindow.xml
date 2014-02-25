@@ -119,9 +119,9 @@
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffE68a00</focusedcolor>
         <onup>32113</onup>
-        <ondown>32001</ondown>
-        <onleft>32104</onleft>
-        <onright>32102</onright>
+        <ondown>400</ondown>
+        <onleft>32110</onleft>
+        <onright>32110</onright>
       </control>
       <control type="button" id="32110">
         <description>search button</description>
@@ -138,8 +138,8 @@
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffE68a00</focusedcolor>
         <onup></onup>
-        <ondown>32001</ondown>
-        <onleft>32104</onleft>
+        <ondown>400</ondown>
+        <onleft>32101</onleft>
         <onright>32101</onright>
       </control>
       <control type="label" id="32111">
