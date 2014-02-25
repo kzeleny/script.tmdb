@@ -33,7 +33,7 @@ def startup():
     if total_pages > page:
         movie_ids.append(tmdb.get_movies(source,page+1)['results'][0])
         show_movies(movie_ids,source,page)
-
+    
 def doSearch(query):
     movie_results=tmdb.search_movies(query,1)
     maxpage=movie_results['total_pages']
@@ -74,6 +74,30 @@ def show_movies_by_person(person_id):
                 person_movies.append(movies[i])
         movies=person_movies
     show_movies(movies,'person',page)  
+
+def show_movies_from_person(person_id,department):
+    global source
+    person=tmdb.get_person(person_id)
+    crew_movies=person['movie_credits']['crew']
+    movies=[]
+    for movie in crew_movies:
+        if movie['department']==department:
+            movies.append(movie)
+    global maxpage
+    page=1
+    source=department
+    pages=len(movies) / 20
+    if len(movies) % 20 > 0:pages=pages+1
+    total_pages=pages
+    maxpage=total_pages
+    movies=sorted(movies, key=lambda k: k['release_date'],reverse=True)
+    person_movies=[]
+    if maxpage > 1:
+        for i in range((page * 20)-20,(page * 20)+1):
+            if i < len(movies):
+                person_movies.append(movies[i])
+        movies=person_movies
+    show_movies(movies,source,page)
 
 def show_similar_movies(movie_id):
     global maxpage
@@ -146,6 +170,9 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if source=='person':self.getControl(32111).setLabel('[B]Movies With ' + person_name+'[/B]')
         if source=='similar':self.getControl(32111).setLabel('[B]Movies Similar to ' + similar_name+'[/B]')
         if source=='keyword':self.getControl(32111).setLabel('[B]Movies with ' + keyword_name + ' Keyword[/B]')
+        if source=='Directing':self.getControl(32111).setLabel('[B]Movies Directed by ' + person_name + '[/B]')
+        if source=='Production':self.getControl(32111).setLabel('[B]Movies Produced by ' + person_name + '[/B]')
+        if source=='Writing':self.getControl(32111).setLabel('[B]Movies Written by ' + person_name + '[/B]')
 
     def onAction(self, action):
         if action == 10:
@@ -405,7 +432,26 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                         if i < len(movies):
                             person_movies.append(movies[i])
                     movies=person_movies
-                show_movies(movies,source,page)                             
+                show_movies(movies,source,page)    
+            elif source in ('Production','Directing','Writing'):
+                person=tmdb.get_person(person_id)
+                crew_movies=person['movie_credits']['crew']
+                movies=[]
+                for movie in crew_movies:
+                 if movie['department']==source:
+                       movies.append(movie)
+                pages=len(movies) / 20
+                if len(movies) % 20 > 0:pages=pages+1
+                total_pages=pages
+                maxpage=total_pages
+                movies=sorted(movies, key=lambda k: k['release_date'],reverse=True)
+                person_movies=[]
+                if page > 1:
+                    for i in range((page * 20)-20,(page * 20)+1):
+                        if i < len(movies):
+                            person_movies.append(movies[i])
+                    movies=person_movies
+                show_movies(movies,source,page)                          
             else:
                 query=''
                 xbmc.log(source)

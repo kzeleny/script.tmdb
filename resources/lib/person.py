@@ -163,6 +163,10 @@ class personWindow(xbmcgui.WindowXMLDialog):
             self.getControl(117).setSelected(True)
             self.getControl(116).setSelected(False)
             self.update_mode()
+        if control==129: #Webpage
+            url=self.current_person['homepage']
+            url=urllib.quote_plus(url)
+            xbmc.Player().play('plugin://plugin.program.chrome.launcher/?url=' + url + '&mode=showSite&stopPlayback=no')
         if control==104:
             iw = imageWindow('image.xml', addon_path,'default')
             iw.images=self.posters
@@ -186,6 +190,23 @@ class personWindow(xbmcgui.WindowXMLDialog):
             self.getControl(101).setLabel('Loading')
             self.getControl(102).setImage('http://image.tmdb.org/t/p/original' +self.posters[self.poster_index])
             self.getControl(901).setImage('http://image.tmdb.org/t/p/original' +self.posters[self.poster_index])
+
+        if control==5020:
+            department=''
+            if 'movies' in self.mode:
+                from resources.lib import movies
+                movies.person_id=self.current_person['id']
+                movies.person_name=self.current_person['name']
+                movies.page=1
+                if self.mode=='actor_movies':
+                    movies.source='person'
+                    movies.show_movies_by_person(self.current_person['id'])
+                if self.mode=='director_movies':department='Directing'
+                if self.mode=='producer_movies':department='Production'
+                if self.mode=='writer_movies':department='Writing'
+                if department!='':
+                    movies.show_movies_from_person(self.current_person['id'],department)
+
 
     def onFocus(self, control):
         if control in(200,201,202,203,204,205,206,207,208,209):
