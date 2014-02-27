@@ -185,66 +185,27 @@
 		  <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32103</onleft>
-        <onright>33105</onright>
+        <onright>33100</onright>
       </control>
-      <control type="button" id="33105">
-        <description>favorites_button</description>
-        <posx>650</posx>
-        <posy>137</posy>
-        <width>150</width>
-        <textwidth>150</textwidth>
-        <height>25</height>
-        <font>font13</font>
-        <label>Favorites</label>
-        <align>center</align>
-        <texturefocus></texturefocus>
-        <texturenofocus></texturenofocus>
-        <textcolor>ffffffff</textcolor>
-		  <shadowcolor></shadowcolor>
-		  <focusedcolor>ffE68a00</focusedcolor>
-        <onup>32113</onup>
-        <ondown>400</ondown>
-        <onleft>32104</onleft>
-        <onright>33106</onright>
-      </control>
-      <control type="button" id="33106">
-        <description>watchlist-button</description>
-        <posx>810</posx>
-        <posy>137</posy>
-        <width>150</width>
-        <textwidth>150</textwidth>
-        <height>25</height>
-        <font>font13</font>
-        <label>Watchlist</label>
-        <align>center</align>
-        <texturefocus></texturefocus>
-        <texturenofocus></texturenofocus>
-        <textcolor>ffffffff</textcolor>
-		  <shadowcolor></shadowcolor>
-		  <focusedcolor>ffE68a00</focusedcolor>
-        <onup>32113</onup>
-        <ondown>400</ondown>
-        <onleft>33105</onleft>
-        <onright>33107</onright>
-      </control>
-      <control type="button" id="33107">
-        <description>favorites_button</description>
+      <control type="button" id="33100">
+        <description>my_account_button</description>
         <posx>970</posx>
-        <posy>137</posy>
+        <posy>138</posy>
         <width>150</width>
         <textwidth>150</textwidth>
-        <height>25</height>
+        <height>31</height>
         <font>font13</font>
-        <label>Rated</label>
+        <aligny>top</aligny>
+        <label>My Account</label>
         <align>center</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffE68a00</focusedcolor>
-		  <shadowcolor></shadowcolor>
-		  <onup>32113</onup>
-        <ondown>400</ondown>
-        <onleft>33106</onleft>
+        <shadowcolor></shadowcolor>
+        <onup>32113</onup>
+        <ondown>33105</ondown>
+        <onleft>32104</onleft>
         <onright>32110</onright>
       </control>
       <control type="button" id="32110">
@@ -264,7 +225,7 @@
         <focusedcolor>ffE68a00</focusedcolor>
         <onup>32113</onup>
         <ondown>81</ondown>
-        <onleft>33107</onleft>
+        <onleft>33100</onleft>
         <onright>32101</onright>
 		  <shadowcolor></shadowcolor>
 	  </control>
@@ -1345,6 +1306,99 @@
           </control>
         </control>
       </control>
+      <control type="group" id="33101">
+        <posx>970</posx>
+        <posy>168</posy>
+        <visible>Control.HasFocus(33100)|Control.HasFocus(33101)|Control.HasFocus(33105)|Control.HasFocus(33106)|Control.HasFocus(33107)|Control.HasFocus(33108)</visible>
+        <control type="image">
+          <posx>0</posx>
+          <posy>0</posy>
+          <texture>green.png</texture>
+          <height>120</height>
+          <width>150</width>
+        </control>
+        <control type="button" id="33105">
+          <description>favorites_button</description>
+          <posx>0</posx>
+          <posy>0</posy>
+          <width>150</width>
+          <textwidth>150</textwidth>
+          <height>30</height>
+          <font>font13</font>
+          <label>Favorites</label>
+          <align>left</align>
+          <texturenofocus></texturenofocus>
+          <textcolor>ffffffff</textcolor>
+          <shadowcolor></shadowcolor>
+          <focusedcolor>ffE68a00</focusedcolor>
+          <texturefocus>button-has-focus.png</texturefocus>
+          <onup>33100</onup>
+          <ondown>33106</ondown>
+          <onleft></onleft>
+          <onright></onright>
+        </control>
+        <control type="button" id="33106">
+          <description>watchlist-button</description>
+          <posx>0</posx>
+          <posy>30</posy>
+          <width>150</width>
+          <textwidth>150</textwidth>
+          <height>30</height>
+          <font>font13</font>
+          <label>Watchlist</label>
+          <align>left</align>
+          <texturefocus>button-has-focus.png</texturefocus>
+          <texturenofocus></texturenofocus>
+          <textcolor>ffffffff</textcolor>
+          <shadowcolor></shadowcolor>
+          <focusedcolor>ffE68a00</focusedcolor>
+          <onup>33105</onup>
+          <ondown>33107</ondown>
+          <onleft></onleft>
+          <onright></onright>
+        </control>
+        <control type="button" id="33107">
+          <description>favorites_button</description>
+          <posx>0</posx>
+          <posy>60</posy>
+          <width>150</width>
+          <textwidth>150</textwidth>
+          <height>30</height>
+          <font>font13</font>
+          <label>Rated</label>
+          <align>left</align>
+          <texturefocus>button-has-focus.png</texturefocus>
+          <texturenofocus></texturenofocus>
+          <textcolor>ffffffff</textcolor>
+          <focusedcolor>ffE68a00</focusedcolor>
+          <shadowcolor></shadowcolor>
+          <onup>33106</onup>
+          <ondown>33108</ondown>
+          <onleft></onleft>
+          <onright></onright>
+        </control>
+        <control type="button" id="33108">
+          <description>lists_button</description>
+          <posx>0</posx>
+          <posy>90</posy>
+          <width>150</width>
+          <textwidth>150</textwidth>
+          <height>30</height>
+          <font>font13</font>
+          <label>Lists</label>
+          <align>left</align>
+          <texturefocus>button-has-focus.png</texturefocus>
+          <texturenofocus></texturenofocus>
+          <textcolor>ffffffff</textcolor>
+          <focusedcolor>ffE68a00</focusedcolor>
+          <shadowcolor></shadowcolor>
+          <onup>33107</onup>
+          <ondown></ondown>
+          <onleft></onleft>
+          <onright></onright>
+        </control>        
+      </control>
+
       <control type="group" id="80">
         <posx>1130</posx>
         <posy>168</posy>
