@@ -3,42 +3,42 @@
 	<defaultcontrol always="true">300</defaultcontrol>
 	<coordinates>
 		<system>1</system>
-		<left>250</left>
-		<top>100</top>
+		<posx>407</posx>
+		<posy>100</posy>
 	</coordinates>
   <animation effect="fade" time="500">WindowOpen</animation>
   <animation effect="fade" time="500">WindowClose</animation>
 	<controls>
 		<control type="group">
-			<left>120</left>
+			<posx>0</posx>
       <control type="image">
         <description>background image</description>
-        <left>0</left>
-        <top>0</top>
+        <posx>0</posx>
+        <posy>0</posy>
         <width>466</width>
         <height>546</height>
         <texture>background.png</texture>
       </control>
       <control type="image">
 				<description>background image</description>
-				<left>3</left>
-				<top>3</top>
+				<posx>3</posx>
+				<posy>3</posy>
 				<width>460</width>
 				<height>540</height>
 				<texture>grey_back.png</texture>
 			</control>
 			<control type="image">
 				<description>Dialog Header image</description>
-				<left>3</left>
-				<top>3</top>
+				<posx>3</posx>
+				<posy>3</posy>
 				<width>460</width>
 				<height>40</height>
 				<texture>listitem-has-focus.png</texture>
 			</control>
 			<control type="label" id="1">
 				<description>header label</description>
-				<left>5</left>
-				<top>10</top>
+				<posx>5</posx>
+				<posy>10</posy>
 				<width>460</width>
 				<height>30</height>
 				<font>font13</font>
@@ -50,8 +50,8 @@
 		</control>
 		<control type="button">
 			<description>Close Window button</description>
-			<left>525</left>
-			<top>4</top>
+			<posx>410</posx>
+			<posy>4</posy>
 			<width>50</width>
 			<height>25</height>
 			<label>-</label>
@@ -66,34 +66,34 @@
 			<visible>system.getbool(input.enablemouse)</visible>
 		</control>
 		<control type="list" id="300">
-			<left>135</left>
-			<top>55</top>
+			<posx>15</posx>
+			<posy>55</posy>
 			<width>450</width>
 			<height>460</height>
 			<scrolltime>200</scrolltime>
 			<itemlayout height="46" width="450">
 				<control type="image">
-					<left>0</left>
-					<top>0</top>
+					<posx>0</posx>
+					<posy>0</posy>
 					<width>400</width>
 					<height>40</height>
 					<texture border="5"></texture>
 				</control>
 				<control type="label">
-					<left>20</left>
-					<top>0</top>
+					<posx>20</posx>
+					<posy>0</posy>
 					<width>400</width>
 					<height>40</height>
 					<font>font13</font>
 					<textcolor>ff606060</textcolor>
 					<shadowcolor></shadowcolor>
-					<align>left</align>
+					<align>posx</align>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
       <control type="image">
-        <left>411</left>
-        <top>2</top>
+        <posx>411</posx>
+        <posy>2</posy>
         <width>25</width>
         <height>36</height>
         <texture>$INFO[ListItem.Icon]</texture>
@@ -101,27 +101,27 @@
 			</itemlayout>
 			<focusedlayout height="46" width="440">
 				<control type="image">
-					<left>0</left>
-					<top>0</top>
+					<posx>0</posx>
+					<posy>0</posy>
 					<width>437</width>
 					<height>40</height>
 					<texture border="5">button-has-focus.png</texture>
 				</control>
 				<control type="label">
-					<left>20</left>
-					<top>0</top>
+					<posx>20</posx>
+					<posy>0</posy>
 					<width>400</width>
 					<height>40</height>
 					<font>font13</font>
 					<textcolor>ffE68a00</textcolor>
 					<shadowcolor></shadowcolor>
-					<align>left</align>
+					<align>posx</align>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
         <control type="image">
-        <left>411</left>
-        <top>2</top>
+        <posx>411</posx>
+        <posy>2</posy>
         <width>25</width>
         <height>36</height>
           <aspectratio>stretch</aspectratio>
@@ -130,8 +130,8 @@
 			</focusedlayout>
 		</control>
     <control type="label">
-      <top>510</top>
-      <left>250</left>
+      <posy>330</posy>
+      <posx>260</posx>
       <font>font13</font>
       <textcolor>ff606060</textcolor>
     <label>([COLOR=ffe68a00]$INFO[Container(300).NumItems][/COLOR]) Items - Page ([COLOR=ffe68a00]$INFO[Container(300).CurrentPage]/$INFO[Container(300).NumPages][/COLOR])</label>

@@ -166,7 +166,7 @@ class personWindow(xbmcgui.WindowXMLDialog):
         if control==129: #Webpage
             url=self.current_person['homepage']
             url=urllib.quote_plus(url)
-            xbmc.Player().play('plugin://plugin.program.chrome.launcher/?url=' + url + '&mode=showSite&stopPlayback=no')
+            xbmc.Player().play('plugin://plugin.program.chrome.launcher/?url=' + url + '&mode=showSite&sposyPlayback=no')
         if control==104:
             iw = imageWindow('image.xml', addon_path,'default')
             iw.images=self.posters
@@ -270,11 +270,11 @@ class personWindow(xbmcgui.WindowXMLDialog):
     def show_person_movies(self,person):
         movies=person['movie_credits']['cast']
         self.getControl(5020).setVisible(True)
-        self.getControl(128).setLabel('Top 10 of '+ str(len(movies)) + ' Movies with ' + person['name'] + ' in the Cast')
+        self.getControl(128).setLabel('posy 10 of '+ str(len(movies)) + ' Movies with ' + person['name'] + ' in the Cast')
         if len(movies) < 10:
-            self.getControl(128).setLabel('Top '+str(len(movies)) +' of '+ str(len(movies)) + ' Movies with ' + person['name'] + ' in the Cast')
+            self.getControl(128).setLabel('posy '+str(len(movies)) +' of '+ str(len(movies)) + ' Movies with ' + person['name'] + ' in the Cast')
         else:
-            self.getControl(128).setLabel('Top 10 of '+ str(len(movies)) + ' Movies with ' + person['name'] + ' in the Cast')
+            self.getControl(128).setLabel('posy 10 of '+ str(len(movies)) + ' Movies with ' + person['name'] + ' in the Cast')
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -293,9 +293,9 @@ class personWindow(xbmcgui.WindowXMLDialog):
         movies=self.movie_direction
         self.getControl(5020).setVisible(True)
         if len(movies) < 10:
-            self.getControl(128).setLabel('Top '+str(len(movies)) +' of '+ str(len(movies)) + ' Movies Directed by ' + person['name'])
+            self.getControl(128).setLabel('posy '+str(len(movies)) +' of '+ str(len(movies)) + ' Movies Directed by ' + person['name'])
         else:
-            self.getControl(128).setLabel('Top 10 of '+ str(len(movies)) + ' Movies Directed by ' + person['name'])
+            self.getControl(128).setLabel('posy 10 of '+ str(len(movies)) + ' Movies Directed by ' + person['name'])
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -314,9 +314,9 @@ class personWindow(xbmcgui.WindowXMLDialog):
         movies=self.movie_production
         self.getControl(5020).setVisible(True)
         if len(movies) < 10:
-            self.getControl(128).setLabel('Top '+str(len(movies)) +' of '+ str(len(movies)) + ' Movies Produced by ' + person['name'])
+            self.getControl(128).setLabel('posy '+str(len(movies)) +' of '+ str(len(movies)) + ' Movies Produced by ' + person['name'])
         else:
-            self.getControl(128).setLabel('Top 10 of '+ str(len(movies)) + ' Movies Produced by ' + person['name'])
+            self.getControl(128).setLabel('posy 10 of '+ str(len(movies)) + ' Movies Produced by ' + person['name'])
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -335,9 +335,9 @@ class personWindow(xbmcgui.WindowXMLDialog):
         movies=self.movie_writing
         self.getControl(5020).setVisible(True)
         if len(movies) < 10:
-            self.getControl(128).setLabel('Top '+str(len(movies)) +' of '+ str(len(movies)) + ' Movies Written by ' + person['name'])
+            self.getControl(128).setLabel('posy '+str(len(movies)) +' of '+ str(len(movies)) + ' Movies Written by ' + person['name'])
         else:
-            self.getControl(128).setLabel('Top 10 of '+ str(len(movies)) + ' Movies Written by ' + person['name'])
+            self.getControl(128).setLabel('posy 10 of '+ str(len(movies)) + ' Movies Written by ' + person['name'])
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -356,9 +356,9 @@ class personWindow(xbmcgui.WindowXMLDialog):
         shows=person['tv_credits']['cast']
         self.getControl(5020).setVisible(True)
         if len(shows) > 10:
-            self.getControl(128).setLabel('Top 10 of '+ str(len(shows)) + ' TV Shows with ' + person['name'] + ' in the Cast')
+            self.getControl(128).setLabel('posy 10 of '+ str(len(shows)) + ' TV Shows with ' + person['name'] + ' in the Cast')
         else:
-            self.getControl(128).setLabel('Top ' + str(len(shows)) + ' of ' + str(len(shows)) + ' TV Shows with ' + person['name'] + ' in the Cast')
+            self.getControl(128).setLabel('posy ' + str(len(shows)) + ' of ' + str(len(shows)) + ' TV Shows with ' + person['name'] + ' in the Cast')
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -377,9 +377,9 @@ class personWindow(xbmcgui.WindowXMLDialog):
         shows=self.tv_direction
         self.getControl(5020).setVisible(True)
         if len(shows) < 10:
-            self.getControl(128).setLabel('Top '+str(len(shows)) +' of '+ str(len(shows)) + ' TV Shows Directed by ' + person['name'])
+            self.getControl(128).setLabel('posy '+str(len(shows)) +' of '+ str(len(shows)) + ' TV Shows Directed by ' + person['name'])
         else:
-            self.getControl(128).setLabel('Top 10 of '+ str(len(shows)) + ' TV Shows Directed by ' + person['name'])
+            self.getControl(128).setLabel('posy 10 of '+ str(len(shows)) + ' TV Shows Directed by ' + person['name'])
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -398,9 +398,9 @@ class personWindow(xbmcgui.WindowXMLDialog):
         shows=self.tv_production
         self.getControl(5020).setVisible(True)
         if len(shows) < 10:
-            self.getControl(128).setLabel('Top '+str(len(shows)) +' of '+ str(len(shows)) + ' TV Shows Produced by ' + person['name'])
+            self.getControl(128).setLabel('posy '+str(len(shows)) +' of '+ str(len(shows)) + ' TV Shows Produced by ' + person['name'])
         else:
-            self.getControl(128).setLabel('Top 10 of '+ str(len(shows)) + ' TV Shows Produced by ' + person['name'])
+            self.getControl(128).setLabel('posy 10 of '+ str(len(shows)) + ' TV Shows Produced by ' + person['name'])
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -419,9 +419,9 @@ class personWindow(xbmcgui.WindowXMLDialog):
         shows=self.tv_writing
         self.getControl(5020).setVisible(True)
         if len(shows) < 10:
-            self.getControl(128).setLabel('Top '+str(len(shows)) +' of '+ str(len(shows)) + ' TV Shows Written by ' + person['name'])
+            self.getControl(128).setLabel('posy '+str(len(shows)) +' of '+ str(len(shows)) + ' TV Shows Written by ' + person['name'])
         else:
-            self.getControl(128).setLabel('Top 10 of '+ str(len(shows)) + ' TV Shows Written by ' + person['name'])
+            self.getControl(128).setLabel('posy 10 of '+ str(len(shows)) + ' TV Shows Written by ' + person['name'])
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')

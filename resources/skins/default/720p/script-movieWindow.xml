@@ -128,7 +128,7 @@
         <onright>32102</onright>
       </control>
       <control type="button" id="32102">
-        <description>top_rated_button</description>
+        <description>posy_rated_button</description>
         <posx>170</posx>
         <posy>137</posy>
         <width>150</width>
@@ -189,15 +189,15 @@
       </control>
       <control type="button" id="33100">
         <description>my_account_button</description>
-        <posx>970</posx>
+        <posx>1050</posx>
         <posy>138</posy>
         <width>150</width>
         <textwidth>150</textwidth>
         <height>31</height>
         <font>font13</font>
-        <aligny>top</aligny>
+        <aligny>posy</aligny>
         <label>My Account</label>
-        <align>center</align>
+        <align>posx</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
@@ -210,15 +210,15 @@
       </control>
       <control type="button" id="32110">
         <description>search button</description>
-        <posx>1120</posx>
+        <posx>1180</posx>
         <posy>138</posy>
-        <width>150</width>
-        <textwidth>150</textwidth>
+        <width>100</width>
+        <textwidth>100</textwidth>
         <height>31</height>
-        <aligny>top</aligny>
+        <aligny>posy</aligny>
         <font>font13</font>
         <label>Search</label>
-        <align>center</align>
+        <align>posx</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
@@ -399,7 +399,7 @@
             <onright>401</onright>
             <onleft></onleft>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -440,7 +440,7 @@
 			  <shadowcolor></shadowcolor>
 			  <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
             <ondown>408</ondown>
@@ -485,7 +485,7 @@
 			  <shadowcolor></shadowcolor>
 			  <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
             <ondown>409</ondown>
@@ -532,7 +532,7 @@
 			  <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
             <scroll>Focus</scroll>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
             <ondown>410</ondown>
@@ -577,7 +577,7 @@
 			  <shadowcolor></shadowcolor>
 			  <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
             <ondown>411</ondown>
@@ -622,7 +622,7 @@
 			  <shadowcolor></shadowcolor>
 			  <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
             <ondown>412</ondown>
@@ -667,7 +667,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
             <ondown>413</ondown>
@@ -712,7 +712,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>400</onup>
             <ondown>414</ondown>
@@ -757,7 +757,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>401</onup>
             <ondown>415</ondown>
@@ -802,7 +802,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>402</onup>
             <ondown>416</ondown>
@@ -847,7 +847,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>403</onup>
             <ondown>417</ondown>
@@ -892,7 +892,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>404</onup>
             <ondown>418</ondown>
@@ -937,7 +937,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>405</onup>
             <ondown>419</ondown>
@@ -982,7 +982,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>406</onup>
             <ondown>420</ondown>
@@ -1027,7 +1027,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>407</onup>
             <ondown>401</ondown>
@@ -1072,7 +1072,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>408</onup>
             <ondown>402</ondown>
@@ -1117,7 +1117,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>409</onup>
             <ondown>403</ondown>
@@ -1162,7 +1162,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>410</onup>
             <ondown>404</ondown>
@@ -1207,7 +1207,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>411</onup>
             <ondown>405</ondown>
@@ -1252,7 +1252,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>412</onup>
             <ondown>406</ondown>
@@ -1297,7 +1297,7 @@
             <textcolor>ff606060</textcolor>
 			  <shadowcolor></shadowcolor>
 			  <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>413</onup>
             <ondown>32117</ondown>
@@ -1307,7 +1307,7 @@
         </control>
       </control>
       <control type="group" id="33101">
-        <posx>970</posx>
+        <posx>1050</posx>
         <posy>168</posy>
         <visible>Control.HasFocus(33100)|Control.HasFocus(33101)|Control.HasFocus(33105)|Control.HasFocus(33106)|Control.HasFocus(33107)|Control.HasFocus(33108)</visible>
         <control type="image">
@@ -1315,18 +1315,16 @@
           <posy>0</posy>
           <texture>green.png</texture>
           <height>120</height>
-          <width>150</width>
+          <width>115</width>
         </control>
         <control type="button" id="33105">
           <description>favorites_button</description>
           <posx>0</posx>
           <posy>0</posy>
-          <width>150</width>
-          <textwidth>150</textwidth>
+          <width>115</width>
           <height>30</height>
           <font>font13</font>
           <label>Favorites</label>
-          <align>left</align>
           <texturenofocus></texturenofocus>
           <textcolor>ffffffff</textcolor>
           <shadowcolor></shadowcolor>
@@ -1334,19 +1332,16 @@
           <texturefocus>button-has-focus.png</texturefocus>
           <onup>33100</onup>
           <ondown>33106</ondown>
-          <onleft></onleft>
-          <onright></onright>
         </control>
         <control type="button" id="33106">
           <description>watchlist-button</description>
           <posx>0</posx>
           <posy>30</posy>
-          <width>150</width>
-          <textwidth>150</textwidth>
+          <width>115</width>
           <height>30</height>
           <font>font13</font>
           <label>Watchlist</label>
-          <align>left</align>
+          <align>posx</align>
           <texturefocus>button-has-focus.png</texturefocus>
           <texturenofocus></texturenofocus>
           <textcolor>ffffffff</textcolor>
@@ -1361,12 +1356,11 @@
           <description>favorites_button</description>
           <posx>0</posx>
           <posy>60</posy>
-          <width>150</width>
-          <textwidth>150</textwidth>
+          <width>115</width>
           <height>30</height>
           <font>font13</font>
           <label>Rated</label>
-          <align>left</align>
+          <align>posx</align>
           <texturefocus>button-has-focus.png</texturefocus>
           <texturenofocus></texturenofocus>
           <textcolor>ffffffff</textcolor>
@@ -1381,12 +1375,11 @@
           <description>lists_button</description>
           <posx>0</posx>
           <posy>90</posy>
-          <width>150</width>
-          <textwidth>150</textwidth>
+          <width>115</width>
           <height>30</height>
           <font>font13</font>
           <label>Lists</label>
-          <align>left</align>
+          <align>posx</align>
           <texturefocus>button-has-focus.png</texturefocus>
           <texturenofocus></texturenofocus>
           <textcolor>ffffffff</textcolor>
@@ -1400,7 +1393,7 @@
       </control>
 
       <control type="group" id="80">
-        <posx>1130</posx>
+        <posx>1180</posx>
         <posy>168</posy>
         <visible>Control.HasFocus(32110)|Control.HasFocus(80)|Control.HasFocus(81)|Control.HasFocus(82)|Control.HasFocus(83)|Control.HasFocus(84)</visible>
         <control type="image">
@@ -1421,7 +1414,7 @@
           <texturefocus>button-has-focus.png</texturefocus>
 			<texturenofocus></texturenofocus>
           <height>30</height>
-          <width>150</width>
+          <width>100</width>
           <ondown>82</ondown>
           <onup>32110</onup>
         </control>
@@ -1430,7 +1423,7 @@
           <posy>30</posy>
           <label>Genre</label>
           <height>30</height>
-          <width>150</width>
+          <width>100</width>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
           <focusedcolor>ffE68a00</focusedcolor>
@@ -1445,7 +1438,7 @@
           <posy>60</posy>
           <label>Year</label>
           <height>30</height>
-          <width>150</width>
+          <width>100</width>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
           <focusedcolor>ffE68a00</focusedcolor>
@@ -1460,7 +1453,7 @@
           <posy>90</posy>
           <label>Person</label>
           <height>30</height>
-          <width>150</width>
+          <width>100</width>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
           <focusedcolor>ffE68a00</focusedcolor>

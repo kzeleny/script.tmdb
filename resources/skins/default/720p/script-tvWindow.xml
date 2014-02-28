@@ -124,7 +124,7 @@
         <onright>32102</onright>
       </control>
       <control type="button" id="32102">
-        <description>top_rated_button</description>
+        <description>posy_rated_button</description>
         <posx>170</posx>
         <posy>137</posy>
         <width>150</width>
@@ -247,7 +247,7 @@
         <width>150</width>
         <textwidth>150</textwidth>
         <height>31</height>
-        <aligny>top</aligny>
+        <aligny>posy</aligny>
         <font>font13</font>
         <label>Search</label>
         <align>center</align>
@@ -421,7 +421,7 @@
             <onright>401</onright>
             <onleft></onleft>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
           </control>
         </control>
@@ -461,7 +461,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
             <ondown>408</ondown>
@@ -505,7 +505,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
             <ondown>409</ondown>
@@ -552,7 +552,7 @@
             <focusedcolor>ffffffff</focusedcolor>
             <scroll>Focus</scroll>
             <textcolor>ff606060</textcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
             <ondown>410</ondown>
@@ -596,7 +596,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
             <ondown>411</ondown>
@@ -640,7 +640,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
             <ondown>412</ondown>
@@ -684,7 +684,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
             <ondown>413</ondown>
@@ -728,7 +728,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>400</onup>
             <ondown>414</ondown>
@@ -772,7 +772,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>401</onup>
             <ondown>415</ondown>
@@ -816,7 +816,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>402</onup>
             <ondown>416</ondown>
@@ -860,7 +860,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>403</onup>
             <ondown>417</ondown>
@@ -904,7 +904,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>404</onup>
             <ondown>418</ondown>
@@ -948,7 +948,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>405</onup>
             <ondown>419</ondown>
@@ -992,7 +992,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>406</onup>
             <ondown>420</ondown>
@@ -1036,7 +1036,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>407</onup>
             <ondown>401</ondown>
@@ -1080,7 +1080,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>408</onup>
             <ondown>402</ondown>
@@ -1124,7 +1124,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>409</onup>
             <ondown>403</ondown>
@@ -1168,7 +1168,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>410</onup>
             <ondown>404</ondown>
@@ -1212,7 +1212,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>411</onup>
             <ondown>405</ondown>
@@ -1256,7 +1256,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>412</onup>
             <ondown>406</ondown>
@@ -1300,7 +1300,7 @@
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
-            <aligny>top</aligny>
+            <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>413</onup>
             <ondown>32117</ondown>

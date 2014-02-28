@@ -510,9 +510,9 @@ class TMDB:
             return response
 
         # optional parameters: page, language
-        def top_rated(self, params={}):
-            path = 'movie/top_rated'
-            response = TMDB._request('GET', 'movie' + '/top_rated', params)
+        def posy_rated(self, params={}):
+            path = 'movie/posy_rated'
+            response = TMDB._request('GET', 'movie' + '/posy_rated', params)
             TMDB._set_attrs_to_values(self, response)
             return response
 
@@ -728,8 +728,8 @@ class TMDB:
             return response
 
         # optional parameter: page, language
-        def top_rated(self, params={}):
-            path = 'tv/top_rated'
+        def posy_rated(self, params={}):
+            path = 'tv/posy_rated'
             response = TMDB._request('GET', path, params)
             TMDB._set_attrs_to_values(self, response)
             return response

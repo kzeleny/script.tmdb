@@ -165,7 +165,7 @@
           <posy>0</posy>
           <textcolor>ffe68a00</textcolor>
           <shadowcolor></shadowcolor>
-          <align>left</align>
+          <align>posx</align>
           <width>200</width>
           <height>20</height>
           <label>[B]Known Credits:[/B]</label>
@@ -174,7 +174,7 @@
           <description>Credits</description>
           <posx>0</posx>
           <posy>25</posy>
-          <align>left</align>
+          <align>posx</align>
           <textcolor>ff606060</textcolor>
           <shadowcolor></shadowcolor>
           <height>20</height>
@@ -187,7 +187,7 @@
           <posy>50</posy>
           <textcolor>ffe68a00</textcolor>
           <shadowcolor></shadowcolor>
-          <align>left</align>
+          <align>posx</align>
           <width>200</width>
           <height>20</height>
           <label>[B]Birthday:[/B]</label>
@@ -196,7 +196,7 @@
           <description>Birthday</description>
           <posx>0</posx>
           <posy>75</posy>
-          <align>left</align>
+          <align>posx</align>
           <textcolor>ff606060</textcolor>
           <shadowcolor></shadowcolor>
           <height>20</height>
@@ -207,7 +207,7 @@
         <control type="label">
           <posx>0</posx>
           <posy>100</posy>
-          <align>left</align>
+          <align>posx</align>
           <textcolor>ffe68a00</textcolor>
           <shadowcolor></shadowcolor>
           <width>200</width>
@@ -218,7 +218,7 @@
           <description>BirthPlace</description>
           <posx>0</posx>
           <posy>125</posy>
-          <align>left</align>
+          <align>posx</align>
           <textcolor>ff606060</textcolor>
           <shadowcolor></shadowcolor>
           <height>20</height>
@@ -267,7 +267,7 @@
         <textcolor>ff606060</textcolor>
         <focusedcolor>ffE68a00</focusedcolor>
         <disabledcolor></disabledcolor>
-        <align>left</align>
+        <align>posx</align>
         <aligny>center</aligny>
         <radioposx>1</radioposx>
         <textoffsetx>30</textoffsetx>
@@ -298,7 +298,7 @@
         <textcolor>ff606060</textcolor>
         <focusedcolor>ffE68a00</focusedcolor>
         <disabledcolor></disabledcolor>
-        <align>left</align>
+        <align>posx</align>
         <aligny>center</aligny>
         <radioposx>1</radioposx>
         <textoffsetx>30</textoffsetx>
@@ -320,15 +320,15 @@
         <onup>116</onup>
         <itemlayout height="40" width="150">
           <control type="image">
-            <left>0</left>
-            <top>0</top>
+            <posx>0</posx>
+            <posy>0</posy>
             <width>150</width>
             <height>30</height>
             <texture border="5">button-no-focus.png</texture>
           </control>
           <control type="label">
-            <left>15</left>
-            <top>0</top>
+            <posx>15</posx>
+            <posy>0</posy>
             <width>150</width>
             <height>30</height>
             <font>font13</font>
@@ -342,16 +342,16 @@
         </itemlayout>
         <focusedlayout height="40" width="150">
           <control type="image">
-            <left>0</left>
-            <top>0</top>
+            <posx>0</posx>
+            <posy>0</posy>
             <width>150</width>
             <height>30</height>
             <texture border="5">button-has-focus.png</texture>
             <animation effect="zoom" center="auto" end="105" time="100">focus</animation>
           </control>
           <control type="label">
-            <left>15</left>
-            <top>0</top>
+            <posx>15</posx>
+            <posy>0</posy>
             <width>150</width>
             <height>30</height>
             <font>font13</font>
@@ -478,7 +478,7 @@
 					<ondown>5020</ondown>
 					<onright>201</onright>
 					<onleft>115</onleft>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="201">
@@ -497,7 +497,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="202">
@@ -515,7 +515,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="203">
@@ -534,7 +534,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="204">
@@ -553,7 +553,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="205">
@@ -572,7 +572,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="206">
@@ -591,7 +591,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="207">
@@ -610,7 +610,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="208">
@@ -629,7 +629,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="209">
@@ -649,7 +649,7 @@
 					<font>font13</font>
 					<scroll>focus</scroll>
 					<label></label>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 			</control>

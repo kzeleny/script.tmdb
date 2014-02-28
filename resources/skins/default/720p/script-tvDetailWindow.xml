@@ -125,7 +125,7 @@
         <onright>32102</onright>
       </control>
       <control type="button" id="32102">
-        <description>top_rated_button</description>
+        <description>posy_rated_button</description>
         <posx>185</posx>
         <posy>137</posy>
         <width>150</width>

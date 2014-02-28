@@ -286,7 +286,7 @@
 				<control type="label" id="110">
 					<posx>5</posx>
 					<posy>0</posy>
-					<align>left</align>
+					<align>posx</align>
 					<textcolor>ff606060</textcolor>
 					<shadowcolor></shadowcolor>
 					<height>20</height>
@@ -308,7 +308,7 @@
 				<control type="label" id="111">
 					<posx>5</posx>
 					<posy>25</posy>
-					<align>left</align>
+					<align>posx</align>
 					<textcolor>ff606060</textcolor>
 					<shadowcolor></shadowcolor>
 					<height>20</height>
@@ -331,7 +331,7 @@
 				<control type="label" id="112">
 					<posx>5</posx>
 					<posy>50</posy>
-					<align>left</align>
+					<align>posx</align>
 					<textcolor>ff606060</textcolor>
 					<shadowcolor></shadowcolor>
 					<height>20</height>
@@ -354,7 +354,7 @@
 				<control type="label" id="113">
 					<posx>5</posx>
 					<posy>75</posy>
-					<align>left</align>
+					<align>posx</align>
 					<textcolor>ff606060</textcolor>
 					<shadowcolor></shadowcolor>
 					<height>20</height>
@@ -377,7 +377,7 @@
 				<control type="label" id="114">
 					<posx>5</posx>
 					<posy>100</posy>
-					<align>left</align>
+					<align>posx</align>
 					<textcolor>ff606060</textcolor>
 					<shadowcolor></shadowcolor>
 					<height>20</height>
@@ -400,7 +400,7 @@
 				<control type="label" id="115">
 					<posx>5</posx>
 					<posy>125</posy>
-					<align>left</align>
+					<align>posx</align>
 					<textcolor>ff606060</textcolor>
 					<shadowcolor></shadowcolor>
 					<height>20</height>
@@ -423,7 +423,7 @@
 				<control type="label" id="116">
 					<posx>5</posx>
 					<posy>150</posy>
-					<align>left</align>
+					<align>posx</align>
 					<textcolor>ff606060</textcolor>
 					<shadowcolor></shadowcolor>
 					<height>20</height>
@@ -446,7 +446,7 @@
 				<control type="label" id="117">
 					<posx>5</posx>
 					<posy>175</posy>
-					<align>left</align>
+					<align>posx</align>
 					<textcolor>ff606060</textcolor>
 					<shadowcolor></shadowcolor>
 					<height>20</height>
@@ -520,7 +520,7 @@
 				<control type="label" id="118">
 					<posx>5</posx>
 					<posy>200</posy>
-					<align>left</align>
+					<align>posx</align>
 					<textcolor>ff606060</textcolor>
 					<shadowcolor></shadowcolor>
 					<height>20</height>
@@ -789,7 +789,7 @@
 					<ondown>5020</ondown>
 					<onright>201</onright>
 					<onleft>122</onleft>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="201">
@@ -808,7 +808,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="202">
@@ -826,7 +826,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="203">
@@ -845,7 +845,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="204">
@@ -864,7 +864,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="205">
@@ -883,7 +883,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="206">
@@ -902,7 +902,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="207">
@@ -921,7 +921,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="208">
@@ -940,7 +940,7 @@
 					<focusedcolor>ffffffff</focusedcolor>
 					<font>font13</font>
 					<scroll>focus</scroll>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 				<control type="button" id="209">
@@ -960,7 +960,7 @@
 					<font>font13</font>
 					<scroll>focus</scroll>
 					<label></label>
-					<aligny>top</aligny>
+					<aligny>posy</aligny>
 					<textoffsety>110</textoffsety>
 				</control>
 			</control>
@@ -1040,9 +1040,40 @@
 					<width>16</width>
 				</control>
 			</control>
+      <!-- lists -->
+      <control type="group">
+        <posx>1060</posx>
+        <posy>20</posy>
+        <description>Lists</description>
+        <control type="button" id="4000">
+          <posx>0</posx>
+          <posy>0</posy>
+          <font>font13</font>
+          <texturefocus></texturefocus>
+          <texturenofocus></texturenofocus>
+          <textcolor>ff606060</textcolor>
+          <shadowcolor></shadowcolor>
+          <textwidth>90</textwidth>
+          <textoffsetx>40</textoffsetx>
+          <focusedcolor>ffE68a00</focusedcolor>
+          <label>[B]Lists[/B]</label>
+          <height>32</height>
+          <width>80</width>
+          <ondown>404</ondown>
+          <onright>5001</onright>
+          <onleft>4001</onleft>
+        </control>
+        <control type="image" id="4010">
+          <posx>0</posx>
+          <posy>0</posy>
+          <texture>film-icon.png</texture>
+          <height>32</height>
+          <width>32</width>
+        </control>
+      </control>
 			<!-- favorite -->
 			<control type="group">
-				<posx>960</posx>
+				<posx>930</posx>
 				<posy>20</posy>
 				<description>Favorite</description>
 				<control type="button" id="4001">
@@ -1058,9 +1089,9 @@
 					<focusedcolor>ffE68a00</focusedcolor>
 					<label>[B]Favorite[/B]</label>
 					<height>32</height>
-					<width>150</width>
+					<width>120</width>
           <ondown>404</ondown>
-          <onright>5001</onright>
+          <onright>4000</onright>
 				</control>
 				<control type="image" id="4011">
 					<posx>0</posx>
@@ -1072,7 +1103,7 @@
 			</control>
 			<!-- Watchlist -->
 			<control type="group">
-				<posx>1130</posx>
+				<posx>1150</posx>
 				<posy>20</posy>
 				<description>Watchlist</description>
 				<control type="button" id="5001">
@@ -1090,7 +1121,7 @@
 					<focusedcolor>ffE68a00</focusedcolor>
 					<label>[B]Watchlist[/B]</label>
           <ondown>404</ondown>
-          <onleft>4001</onleft>
+          <onleft>4000</onleft>
 				</control>
 				<control type="image" id="5011">
 					<posx>0</posx>

@@ -480,5 +480,27 @@ def get_account(session_id):
     req = urllib2.Request(full_url)
     infostring = urllib2.urlopen(req).read()
     infostring = json.loads(infostring)
-    xbmc.log(str(infostring))
+    return infostring
+
+def get_users_lists(session_id,page):
+    data = {}
+    data['api_key'] = api_key
+    data['session_id'] = session_id
+    url_values = urllib.urlencode(data)
+    url = 'http://api.themoviedb.org/3/account/'+session_id+'/lists'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    return infostring
+
+def get_movie_list(list_id):
+    data = {}
+    data['api_key'] = api_key
+    url_values = urllib.urlencode(data)
+    url = 'http://api.themoviedb.org/3/list/' + list_id
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
     return infostring

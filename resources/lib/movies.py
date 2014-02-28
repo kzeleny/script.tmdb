@@ -25,6 +25,8 @@ similar_name=''
 similar_id=''
 keyword_id=''
 keyword_name=''
+list_id=''
+list_name=''
 
 def startup():
     movie_results=tmdb.get_movies(source,page)
@@ -158,7 +160,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 if i==0:self.onFocus(400)
         #self.getControl(599).setVisible(True)
         if source=='popular':self.getControl(32111).setLabel('[B]Popular Movies[/B]')
-        if source=='top_rated':self.getControl(32111).setLabel('[B]Top Rated Movies[/B]')
+        if source=='posy_rated':self.getControl(32111).setLabel('[B]Top Rated Movies[/B]')
         if source=='upcoming':self.getControl(32111).setLabel('[B]Upcoming Movies[/B]')
         if source=='now_playing':self.getControl(32111).setLabel('[B]Now Playing Movies[/B]')
         if source=='query':self.getControl(32111).setLabel('[B]Search Results[/B]')
@@ -173,6 +175,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if source=='Directing':self.getControl(32111).setLabel('[B]Movies Directed by ' + person_name + '[/B]')
         if source=='Production':self.getControl(32111).setLabel('[B]Movies Produced by ' + person_name + '[/B]')
         if source=='Writing':self.getControl(32111).setLabel('[B]Movies Written by ' + person_name + '[/B]')
+        if source=='list':self.getControl(32111).setLabel('[B]Movies from list ' + list_name +'[/B]')
 
     def onAction(self, action):
         if action == 10:
@@ -228,6 +231,8 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         global person_id
         global person_name
         global keyword_id
+        global list_id
+        global list_name
         movieid=''
         movieid=self.get_movieid_from_control(control)
         do_movies=False
@@ -235,12 +240,13 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         do_people=False
 
         popular = 32101
-        top_rated =  32102
+        posy_rated =  32102
         upcoming = 32103
         now_playing = 32104
         favorites = 33105
         watchlist = 33106
         rated = 33107
+        list_btn=33108
         query_btn = 81
         previous = 32116
         next =32117
@@ -249,7 +255,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         genre_btn=82
         year_btn=83
         person_btn=84
-
+        
         if movieid!='':
             from resources.lib import movie
             movie.movie_id=movieid
@@ -260,8 +266,8 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
             source='popular'
             page=1
             do_movies=True
-        if control == top_rated and source!='top_rated':
-            source='top_rated'
+        if control == posy_rated and source!='posy_rated':
+            source='posy_rated'
             do_movies=True
             page=1
         if control == upcoming and source!='upcoming':
@@ -303,6 +309,11 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
             page=1
             person_id=''
             person_name=''
+            do_movies=True
+        if control == list_btn:
+            source = 'list'
+            list_id=''
+            page=1
             do_movies=True
         if control == next:
             if page < maxpage:
@@ -367,8 +378,29 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                     movies=movies['results']
                     if total_pages > page:
                         movies.append(tmdb.get_rated_movies(self.session_id,page+1)['results'][0])
-                    self.close()
                     show_movies(movies,source,page)  
+            elif source=='list':
+                if self.session_id=='':
+                    session_id=utils.get_login()
+                    if session_id!='':self.session_id=session_id
+                if self.session_id!='' and list_id=='':
+                    dg=dialogWindow('dialog_select.xml',addon_path,'Default')
+                    dg.mode='list'
+                    dg.doModal()
+                if list_id!='':
+                    movies=tmdb.get_movie_list(list_id)
+                    movies=movies['items']
+                    pages=len(movies) / 20
+                    if len(movies) % 20 > 0:pages=pages+1
+                    total_pages=pages
+                    maxpage=total_pages
+                    list_movies=[]
+                    if page > 1:
+                        for i in range((page * 20)-20,(page * 20)+1):
+                            if i < len(movies):
+                                list_movies.append(movies[i])
+                        movies=list_movies
+                    show_movies(movies,source,page)   
             elif source=='genre':
                 if genre_id=='':
                     dg=dialogWindow('dialog_select.xml',addon_path,'Default')
@@ -517,16 +549,36 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
                 else:
                     li.setIconImage('http://image.tmdb.org/t/p/w45' +person['profile_path'])
                 self.getControl(300).addItem(li)
+        if self.mode=='list':
+            self.getControl(1).setLabel('[B]Your Movie Lists[/B]')
+            lists=tmdb.get_users_lists(addon.getSetting('session_id'),1)
+            lists_results=lists['results']
+            for list in lists_results:
+                li=xbmcgui.ListItem(list['name'])
+                li.setProperty('id',str(list['id']))
+                self.getControl(300).addItem(li)
+            if lists['total_pages']> 1:
+                for i in range(2,lists['total_pages']):
+                    l=tmdb.get_users_lists(addon.getSetting('session_id'),i)
+                    for list in l['results']:
+                        li=xbmcgui.ListItem(list['name'])
+                        li.setProperty('id',str(list['id']))
+                        self.getControl(300).addItem(li)
 
     def onClick(self,control):
         global genre_id
         global genre_name
         global person_id
         global person_name
+        global list_id
+        global list_name
         if self.mode=='genre':
             genre_id=self.getControl(300).getSelectedItem().getProperty('id')
             genre_name=self.getControl(300).getSelectedItem().getLabel()
         if self.mode=='people':
             person_id=self.getControl(300).getSelectedItem().getProperty('id')
             person_name=self.getControl(300).getSelectedItem().getLabel()
+        if self.mode=='list':
+            list_id=self.getControl(300).getSelectedItem().getProperty('id')
+            list_name=self.getControl(300).getSelectedItem().getLabel()
         self.close()
