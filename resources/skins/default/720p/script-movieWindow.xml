@@ -1386,7 +1386,7 @@
           <focusedcolor>ffE68a00</focusedcolor>
           <shadowcolor></shadowcolor>
           <onup>33107</onup>
-          <ondown></ondown>
+          <ondown>400</ondown>
           <onleft></onleft>
           <onright></onright>
         </control>        

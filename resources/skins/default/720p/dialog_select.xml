@@ -130,8 +130,8 @@
 			</focusedlayout>
 		</control>
     <control type="label">
-      <posy>330</posy>
-      <posx>260</posx>
+      <posy>510</posy>
+      <posx>250</posx>
       <font>font13</font>
       <textcolor>ff606060</textcolor>
     <label>([COLOR=ffe68a00]$INFO[Container(300).NumItems][/COLOR]) Items - Page ([COLOR=ffe68a00]$INFO[Container(300).CurrentPage]/$INFO[Container(300).NumPages][/COLOR])</label>

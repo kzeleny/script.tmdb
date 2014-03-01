@@ -23,6 +23,10 @@ current_keyword=''
 current_genre=''
 cast_member=''
 cast_member_id=''
+list_id=''
+list_name=''
+in_list=''
+list_count=0
 def startup():
     movie=tmdb.get_movie(movie_id)
     show_movie(movie)
@@ -52,6 +56,35 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         movie=tmdb.get_movie(movie_id)
         if use_chrome=='true' and movie['homepage']!='':self.getControl(129).setVisible(True)
         self.session_id=addon.getSetting('session_id')
+        star=round(movie['vote_average'],2)
+        if self.session_id!='':
+            lists=[]
+            lists_string=tmdb.get_users_lists(addon.getSetting('session_id'),1)
+            lists_results=lists_string['results']
+            for list in lists_results:
+                li=xbmcgui.ListItem(list['name'])
+                lists.append(list['id'])
+            if lists_string['total_pages']> 1:
+                for i in range(2,lists_string['total_pages']):
+                    l=tmdb.get_users_lists(addon.getSetting('session_id'),i)
+                    for list in l['results']:
+                        lists.append(l['id'])
+            for list in lists:
+                if tmdb.is_in_list(list,movie_id)['item_present']:
+                    self.getControl(4010).setImage('film-icon.png')
+                    break
+            states=tmdb.get_movie_account_states(movie_id,self.session_id)
+            if states['favorite']:self.getControl(4011).setImage('favorite-enable.png')
+            if states['watchlist']:self.getControl(5011).setImage('popcorn-enable.png')
+            if states['rated']:
+                self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes, you voted '+ str(states['rated']['value']) +')')
+            else:
+                self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes)')
+        else:
+            self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes)')
+        self.file=utils.find_xbmc_by_title(movie['title'],movie['release_date'][:4])
+        if self.file!='':
+            self.getControl(127).setLabel('Play')
         you_tube_base_url='plugin://plugin.video.youtube/?action=play_video&videoid='
         self.posters=[]
         str_similar=tmdb.get_similar_movies(movie_id,1)
@@ -63,13 +96,8 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         title=xbmcgui.ControlButton(20,5,800,30,'','','',0,0,0,title_font,'ff606060','',0,'','ff606060')
         title=self.addControl(title)
         title=self.getControl(3001)
-        title.setAnimations([('windowclose', 'effect=fade end=0 time=0',)])
-        
-        
+        title.setAnimations([('windowclose', 'effect=fade end=0 time=0',)])      
         self.current_movie=movie
-        self.file=utils.find_xbmc_by_title(movie['title'],movie['release_date'][:4])
-        if self.file!='':
-            self.getControl(127).setLabel('Play')
         crew = movie['credits']['crew']
         cast = movie['credits']['cast']
         self.cast= sorted(cast, key=lambda k: k['order'])
@@ -142,7 +170,6 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         self.getControl(107).setLabel('1 of ' + str(len(self.posters)))
         self.getControl(407).setLabel('1 of ' + str(len(self.backgrounds)))
         self.show_similar(similar)
-        star=round(movie['vote_average'],2)
         if star >= .5: self.getControl(1001).setImage('half-star-icon-enable.png')
         if star >= 1: self.getControl(1001).setImage('star-icon-enable.png')
         if star >= 1.5: self.getControl(1002).setImage('half-star-icon-enable.png')
@@ -163,17 +190,6 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         if star >= 9: self.getControl(1009).setImage('star-icon-enable.png')
         if star >= 9.5: self.getControl(1010).setImage('half-star-icon-enable.png')
         if star >= 10: self.getControl(1010).setImage('star-icon-enable.png')
-        if self.session_id!='':
-            states=tmdb.get_movie_account_states(movie_id,self.session_id)
-            if states['favorite']:self.getControl(4011).setImage('favorite-enable.png')
-            if states['watchlist']:self.getControl(5011).setImage('popcorn-enable.png')
-            if states['rated']:
-                self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes, you voted '+ str(states['rated']['value']) +')')
-            else:
-                self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes)')
-        else:
-            self.getControl(131).setLabel(str(star)+'/10 (' + str(movie['vote_count']) + ' votes)')
-
     def show_similar(self,similar):
         self.getControl(5020).setVisible(True)
         self.getControl(128).setLabel('[B]posy 10 of '+ str(self.total_results) + ' Movies Similar to ' + self.current_movie['title']+'[/B]')
@@ -305,6 +321,10 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         global current_genre
         global keyword_id
         global current_keyword
+        global list_id
+        global list_name
+        global in_list
+        global list_count
         if control in(200,201,202,203,204,205,206,207,208,209):
             if self.mode=='similar':
                 movie_id=self.similar[control-200]['id']
@@ -324,13 +344,40 @@ class movieWindow(xbmcgui.WindowXMLDialog):
                 movie_id=self.cast_movies[control-200]['id']
                 startup()
 
-        if control in (50,51,52):
+        if control in (50,51,52,4000):
             dg = dialogWindow('dialog_select.xml',addon_path,'default')
             dg.curr_movie=self.current_movie
             if control==50:dg.mode='trailer'
             if control==51:dg.mode='keyword'
             if control==52:dg.mode='genre'
-            dg.doModal()
+            if control==4000: #List
+                dg.mode='list'
+                if self.session_id=='':
+                    session_id=utils.get_login()
+                    if session_id!='':self.session_id=session_id
+            if self.session_id!='' or control in(50,51,52):
+                dg.doModal()
+            if control==4000:
+                if list_id!='':
+                    if in_list=='true':
+                        res=tmdb.remove_from_list(list_id,self.current_movie['id'],addon.getSetting('session_id'))
+                        if res:
+                            list_count=list_count-1
+                            dialog = xbmcgui.Dialog()
+                            dialog.notification('themoviedb.org Browser', 'Successfully Removed ' + self.current_movie['title'] + ' from '+ list_name)
+                            if list_count<=0:self.getControl(4010).setImage('film-icon-disable.png')
+                        else:
+                            dialog = xbmcgui.Dialog()
+                            dialog.notification('themoviedb.org Browser', 'Failed to Remove ' + self.current_movie['title'] + ' from ' + list_name)
+                    else:
+                        res=tmdb.add_to_list(list_id,self.current_movie['id'],addon.getSetting('session_id'))
+                        if res:
+                            dialog = xbmcgui.Dialog()
+                            dialog.notification('themoviedb.org Browser', 'Successfully Added ' + self.current_movie['title'] + ' to '+ list_name)
+                            self.getControl(4010).setImage('film-icon.png')
+                        else:
+                            dialog = xbmcgui.Dialog()
+                            dialog.notification('themoviedb.org Browser', 'Failed to Add ' + self.current_movie['title'] + ' to ' + list_name)
             if control==51:
                 if keyword_id!='':
                     self.mode='keywords'
@@ -427,6 +474,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             url=self.current_movie['homepage']
             url=urllib.quote_plus(url)
             xbmc.Player().play('plugin://plugin.program.chrome.launcher/?url=' + url + '&mode=showSite&sposyPlayback=no')
+
         if control==4001: #Favorite
             if self.session_id=='':
                 session_id=utils.get_login()
@@ -534,7 +582,9 @@ class ratingWindow(xbmcgui.WindowXMLDialog):
 class dialogWindow(xbmcgui.WindowXMLDialog):
     curr_movie=''
     mode=''
+    
     def onInit(self):
+        global list_count
         if self.mode=='trailer':
             self.getControl(1).setLabel('[B]Trailers[/B]')
             for trailer in self.curr_movie['trailers']['youtube']:
@@ -553,13 +603,50 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
                 li=xbmcgui.ListItem(genre['name'])
                 li.setProperty('id',str(genre['id']))
                 self.getControl(300).addItem(li)
+        elif self.mode=='list':
+            list_count=0
+            self.getControl(1).setLabel('[B]Add Movie to Lists[/B]')
+            lists=tmdb.get_users_lists(addon.getSetting('session_id'),1)
+            lists_results=lists['results']
+            for list in lists_results:
+                li=xbmcgui.ListItem(list['name'] +' ('+ str(list['item_count'])+')')
+                li.setProperty('id',str(list['id']))
+                li.setProperty('name',list['name'])
+                if tmdb.is_in_list(list['id'],self.curr_movie['id'])['item_present']:
+                    list_count=list_count+1
+                    li.setIconImage('film-icon.png')
+                    li.setProperty('in_list','true')
+                else:
+                    li.setIconImage('film-icon-disable.png')
+                    li.setProperty('in_list','false')
+                self.getControl(300).addItem(li)
+            if lists['total_pages']> 1:
+                for i in range(2,lists['total_pages']):
+                    l=tmdb.get_users_lists(addon.getSetting('session_id'),i)
+                    for list in l['results']:
+                        li=xbmcgui.ListItem(list['name'] +' ('+ str(list['item_count'])+')')
+                        li.setProperty('id',str(list['id']))
+                        li.setProperty('name',list['name'])
+                        if tmdb.is_in_list(list['id'],self.curr_movie['id'])['item_present']:
+                            list_count=list_count+1
+                            li.setIconImage('film-icon.png')
+                            li.setProperty('in_list','true')
+                        else:
+                            li.setIconImage('film-icon-disable.png')
+                            li.setProperty('in_list','false')
+                        self.getControl(300).addItem(li)
 
     def onClick(self,control):
         global keyword_id
         global genre_id
         global current_genre
         global current_keyword
-
+        global list_id
+        global list_name
+        global in_list
+        keyword_id=''
+        genre_id=''
+        list_id=''
         if control==300:
             if self.mode=='trailer':
                 li= self.getControl(300).getSelectedItem()
@@ -575,6 +662,12 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
                 li=self.getControl(300).getSelectedItem()
                 genre_id=li.getProperty('id')
                 current_genre=li.getLabel()
+                self.close()
+            elif self.mode=='list':
+                li=self.getControl(300).getSelectedItem()
+                list_id=li.getProperty('id')
+                list_name=li.getProperty('name')
+                in_list=li.getProperty('in_list')
                 self.close()
 
 class videoWindow(xbmcgui.WindowXMLDialog):

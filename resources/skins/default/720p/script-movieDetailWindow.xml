@@ -1062,11 +1062,12 @@
           <ondown>404</ondown>
           <onright>5001</onright>
           <onleft>4001</onleft>
+          <ondown></ondown>
         </control>
         <control type="image" id="4010">
           <posx>0</posx>
           <posy>0</posy>
-          <texture>film-icon.png</texture>
+          <texture>film-icon-disable.png</texture>
           <height>32</height>
           <width>32</width>
         </control>

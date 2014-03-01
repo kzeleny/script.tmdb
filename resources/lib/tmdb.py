@@ -504,3 +504,52 @@ def get_movie_list(list_id):
     infostring = urllib2.urlopen(req).read()
     infostring = json.loads(infostring)
     return infostring
+
+def is_in_list(list_id,movie_id):
+    data = {}
+    data['api_key'] = api_key
+    data['movie_id'] = movie_id
+    url_values = urllib.urlencode(data)
+    url = 'http://api.themoviedb.org/3/list/' + list_id +'/item_status'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    return infostring
+
+def add_to_list(list_id,movie_id,session_id):
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    data = {}
+    data['api_key'] = api_key
+    data['session_id'] = session_id
+    values = {"media_id": movie_id}
+    values = json.dumps(values)
+    url_values = urllib.urlencode(data)
+    url = 'http://api.themoviedb.org/3/list/' + list_id +'/add_item'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url,values,headers)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    if infostring['status_code']==12:
+        return True
+    else:
+        return False
+
+def remove_from_list(list_id,movie_id,session_id):
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    data = {}
+    data['api_key'] = api_key
+    data['session_id'] = session_id
+    values = {"media_id": movie_id}
+    values = json.dumps(values)
+    url_values = urllib.urlencode(data)
+    url = 'http://api.themoviedb.org/3/list/' + list_id +'/remove_item'
+    full_url = url + '?' + url_values
+    req = urllib2.Request(full_url,values,headers)
+    infostring = urllib2.urlopen(req).read()
+    infostring = json.loads(infostring)
+    xbmc.log(str(infostring['status_message']))
+    if infostring['status_code']==13:
+        return True
+    else:
+        return False
