@@ -235,8 +235,8 @@
 				<width>150</width>
 				<align>center</align>
 				<font>font13</font>
-				<texturenofocus>button-no-focus.png</texturenofocus>
-				<texturefocus>button-has-focus.png</texturefocus>
+				<texturenofocus>btn-no-focus.png</texturenofocus>
+				<texturefocus>btn-focus.png</texturefocus>
 				<textcolor>ff606060</textcolor>
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
@@ -324,7 +324,7 @@
             <posy>0</posy>
             <width>150</width>
             <height>30</height>
-            <texture border="5">button-no-focus.png</texture>
+            <texture border="5">btn-no-focus.png</texture>
           </control>
           <control type="label">
             <posx>15</posx>
@@ -346,7 +346,7 @@
             <posy>0</posy>
             <width>150</width>
             <height>30</height>
-            <texture border="5">button-has-focus.png</texture>
+            <texture border="5">btn-focus.png</texture>
             <animation effect="zoom" center="auto" end="105" time="100">focus</animation>
           </control>
           <control type="label">

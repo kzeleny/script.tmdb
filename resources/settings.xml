@@ -4,7 +4,7 @@
   <setting id="guest_session_id" type="text" default="" visible="false" />
   <setting id="username" type="text" label="32000" default="" />
   <setting id="password" type="text" label="32001"  option="hidden" default=""/>
-  <setting id="startup" type="bool" label="32002" default="true" />
+  <setting id="start_mode" label="32002" type="enum" default="0" lvalues="32004|32005|32006|32007" />
   <setting id="chrome" type="bool" label="32003" default="false" />
 </settings>
 

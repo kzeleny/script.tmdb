@@ -505,8 +505,8 @@
 					<width>150</width>
 					<align>center</align>
 					<font>font13</font>
-					<texturenofocus>button-no-focus.png</texturenofocus>
-					<texturefocus>button-has-focus.png</texturefocus>
+					<texturenofocus>btn-no-focus.png</texturenofocus>
+					<texturefocus>btn-focus.png</texturefocus>
 					<textcolor>ff606060</textcolor>
 					<shadowcolor></shadowcolor>
 					<textwidth>150</textwidth>
@@ -548,8 +548,8 @@
 				<width>150</width>
 				<align>center</align>
 				<font>font13</font>
-				<texturenofocus>button-no-focus.png</texturenofocus>
-				<texturefocus>button-has-focus.png</texturefocus>
+				<texturenofocus>btn-no-focus.png</texturenofocus>
+				<texturefocus>btn-focus.png</texturefocus>
 				<textcolor>ff606060</textcolor>
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
@@ -567,8 +567,8 @@
 				<width>150</width>
 				<align>center</align>
 				<font>font13</font>
-				<texturenofocus>button-no-focus.png</texturenofocus>
-				<texturefocus>button-has-focus.png</texturefocus>
+				<texturenofocus>btn-no-focus.png</texturenofocus>
+				<texturefocus>btn-focus.png</texturefocus>
 				<textcolor>ff606060</textcolor>
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
@@ -586,8 +586,8 @@
 				<width>150</width>
 				<align>center</align>
 				<font>font13</font>
-				<texturenofocus>button-no-focus.png</texturenofocus>
-				<texturefocus>button-has-focus.png</texturefocus>
+				<texturenofocus>btn-no-focus.png</texturenofocus>
+				<texturefocus>btn-focus.png</texturefocus>
 				<textcolor>ff606060</textcolor>
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
@@ -606,8 +606,8 @@
 				<width>150</width>
 				<align>center</align>
 				<font>font13</font>
-				<texturenofocus>button-no-focus.png</texturenofocus>
-				<texturefocus>button-has-focus.png</texturefocus>
+				<texturenofocus>btn-no-focus.png</texturenofocus>
+				<texturefocus>btn-focus.png</texturefocus>
 				<textcolor>ff606060</textcolor>
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
@@ -625,8 +625,8 @@
 				<width>150</width>
 				<align>center</align>
 				<font>font13</font>
-				<texturenofocus>button-no-focus.png</texturenofocus>
-				<texturefocus>button-has-focus.png</texturefocus>
+				<texturenofocus>btn-no-focus.png</texturenofocus>
+				<texturefocus>btn-focus.png</texturefocus>
 				<textcolor>ff606060</textcolor>
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
@@ -644,8 +644,8 @@
 				<width>150</width>
 				<align>center</align>
 				<font>font13</font>
-				<texturenofocus>button-no-focus.png</texturenofocus>
-				<texturefocus>button-has-focus.png</texturefocus>
+				<texturenofocus>btn-no-focus.png</texturenofocus>
+				<texturefocus>btn-focus.png</texturefocus>
 				<textcolor>ff606060</textcolor>
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>
@@ -663,8 +663,8 @@
 				<width>150</width>
 				<align>center</align>
 				<font>font13</font>
-				<texturenofocus>button-no-focus.png</texturenofocus>
-				<texturefocus>button-has-focus.png</texturefocus>
+				<texturenofocus>btn-no-focus.png</texturenofocus>
+				<texturefocus>btn-focus.png</texturefocus>
 				<textcolor>ff606060</textcolor>
 				<shadowcolor></shadowcolor>
 				<textwidth>150</textwidth>

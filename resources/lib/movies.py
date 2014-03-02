@@ -127,7 +127,8 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
     title=xbmcgui.ControlLabel
     backdrop=xbmcgui.ControlImage
     session_id=''
-    
+    current_movie=''
+    xbmc_movies=[]
     def onInit(self):
         #self.getControl(599).setVisible(False)
         self.session_id=addon.getSetting('session_id')
@@ -146,11 +147,11 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 self.getControl(i+500).setImage('no-poster-w92.jpg')
             else:
                 self.getControl(i+400).setEnabled(False) 
-        xbmc_movies=utils.get_xbmc_movies()
+        self.xbmc_movies=utils.get_xbmc_movies()
         for i in range(0,21):
             if len(movies)>i:
                 if movies[i]['release_date']!=None:
-                    if movies[i]['title'] + ' ('+ movies[i]['release_date'][:4] +')' in xbmc_movies:
+                    if movies[i]['title'] + ' ('+ movies[i]['release_date'][:4] +')' in self.xbmc_movies:
                         self.getControl(i+300).setImage('xbmc_icon.png')
                 self.getControl(i+400).setEnabled(True)
                 if movies[i]['poster_path']==None:
@@ -178,6 +179,17 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if source=='list':self.getControl(32111).setLabel('[B]Movies from list ' + list_name +'[/B]')
 
     def onAction(self, action):
+        if action == 11: #Info
+            from resources.lib import movie
+            movie.movie_id=self.current_movie['id']
+            movie.startup()
+        if action == 117: #Context
+            cm=dialogContext('context_menu.xml',addon_path,'Default')
+            cm.movie=self.current_movie
+            cm.mode=self.source
+            cm.xbmc_movies=self.xbmc_movies
+            cm.session_id=addon.getSetting('session_id')
+            cm.doModal()
         if action == 10:
             d = xbmcgui.Dialog()
             ans=d.yesno('tmdb Browser','Exit themoviedb.org Browser?')
@@ -191,13 +203,13 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
             opening.startup()
 
     def onFocus(self,control):
-        movieid=''
         backdrop = self.getControl(32107)
         movieid=self.get_movieid_from_control(control)
         if movieid!='':
             cast=self.getControl(32109)
             plot=self.getControl(32108)
             movie=tmdb.get_movie(movieid)
+            self.current_movie=movie
             actors = movie['credits']['cast']
             actors=sorted(actors, key=lambda k: k['order'])
             a = ''
@@ -387,6 +399,22 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                     dg=dialogWindow('dialog_select.xml',addon_path,'Default')
                     dg.mode='list'
                     dg.doModal()
+                if list_name=='Add New':
+                    k=xbmc.Keyboard('','Enter List Name')
+                    k.doModal()
+                    name=k.getText()
+                    if name!='' and (k.isConfirmed()):
+                        k=xbmc.Keyboard('','Enter List Description')
+                        k.doModal()
+                        description=k.getText()
+                        if (k.isConfirmed()):
+                            res = tmdb.add_list(name,description,addon.getSetting('session_id'))
+                            if res:
+                                dialog = xbmcgui.Dialog()
+                                dialog.notification('themoviedb.org Browser', 'List ' + name + ' Successfully Added', xbmcgui.NOTIFICATION_INFO, 5000)
+                            else:
+                                dialog = xbmcgui.Dialog()
+                                dialog.notification('themoviedb.org Browser', 'Failed Add ' + name, xbmcgui.NOTIFICATION_ERROR, 5000)
                 if list_id!='':
                     movies=tmdb.get_movie_list(list_id)
                     movies=movies['items']
@@ -529,8 +557,101 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if control==420:movieid=self.movies[20]['id']
         return movieid
 
+class dialogContext(xbmcgui.WindowXMLDialog):
+    movie=''
+    session_id=''
+    mode=''
+    xbmc_movies=[]
+    list_id=''
+    def onInit(self):
+        if self.session_id!='':
+            states=tmdb.get_movie_account_states(self.movie['id'],self.session_id)
+            if states['favorite']:
+                li=xbmcgui.ListItem('Remove from Favorites')
+                li.setProperty('action','remove_favorite')
+            else:
+                li=xbmcgui.ListItem('Add to Favorites')
+                li.setProperty('action','add_favorite')
+            self.getControl(300).addItem(li)
+            if states['watchlist']:
+                li=xbmcgui.ListItem('Remove from Watchlist')
+                li.setProperty('action','remove_watchlist')
+            else:
+                li=xbmcgui.ListItem('Add to Watchlist')
+                li.setProperty('action','add_watchlist')
+            self.getControl(300).addItem(li)
+            if self.mode!='list':
+                li=xbmcgui.ListItem('Add/Remove from List')
+                li.setProperty('action','manage_list')
+            else:
+                li=xbmcgui.ListItem('Remove from List')
+                li.setProperty('action','remove_list')
+            self.getControl(300).addItem(li)
+        if self.movie['title'] + ' ('+ self.movie['release_date'][:4] +')' in self.xbmc_movies:
+            li=xbmcgui.ListItem('Play from Here')
+            li.setProperty('action','play')
+        else:
+            li=xbmcgui.ListItem('Add to Couchpotato')
+            li.setProperty('action','add_couchpotato')
+        self.getControl(300).addItem(li)
+        li=xbmcgui.ListItem('Movie Information')
+        li.setProperty('action','show_info')
+        self.getControl(300).addItem(li)
+        self.setFocus(self.getControl(300))
+
+    def onClick(self, control):
+        movie_id=self.movie['id']
+        if control==300:
+            li=self.getControl(300).getSelectedItem()
+            action=li.getProperty('action')
+            if action=='add_favorite':
+                res=tmdb.update_favorite_movie(movie_id,self.session_id)
+                if res['success']:
+                    dg=xbmcgui.Dialog()
+                    dg.notification('themoviedb.org Browser','Successfully Added '+ self.movie['title'] + ' to Favorites',xbmcgui.NOTIFICATION_INFO,5000)
+                else:
+                    dg=xbmcgui.Dialog()
+                    dg.notification('themoviedb.org Browser','Error Adding '+ self.movie['title'] + ' to Favorites',xbmcgui.NOTIFICATION_ERROR,5000)
+            if action=='remove_favorite':
+                res=tmdb.update_favorite_movie(movie_id,self.session_id)
+                if res['success']:
+                    dg=xbmcgui.Dialog()
+                    dg.notification('themoviedb.org Browser','Successfully Removed '+ self.movie['title'] + ' from Favorites',xbmcgui.NOTIFICATION_INFO,5000)
+                else:
+                    dg=xbmcgui.Dialog()
+                    dg.notification('themoviedb.org Browser','Error Removing '+ self.movie['title'] + ' from Favorites',xbmcgui.NOTIFICATION_ERROR,5000)
+            if action=='add_watchlist':
+                res=tmdb.update_watchlist_movie(movie_id,self.session_id)
+                if res['success']:
+                    dg=xbmcgui.Dialog()
+                    dg.notification('themoviedb.org Browser','Successfully Added '+ self.movie['title'] + ' to Watchlist',xbmcgui.NOTIFICATION_INFO,5000)
+                else:
+                    dg=xbmcgui.Dialog()
+                    dg.notification('themoviedb.org Browser','Error Adding '+ self.movie['title'] + ' to Watchlist',xbmcgui.NOTIFICATION_ERROR,5000)
+            if action=='remove_watchlist':
+                res=tmdb.update_watchlist_movie(movie_id,self.session_id)
+                if res['success']:
+                    dg=xbmcgui.Dialog()
+                    dg.notification('themoviedb.org Browser','Successfully Removed '+ self.movie['title'] + ' from Watchlist',xbmcgui.NOTIFICATION_INFO,5000)
+                else:
+                    dg=xbmcgui.Dialog()
+                    dg.notification('themoviedb.org Browser','Error Removing '+ self.movie['title'] + ' from Watchlist',xbmcgui.NOTIFICATION_ERROR,5000)
+            if action=='show_info':
+                from resources.lib import movie
+                movie.movie_id=self.movie['id']
+                movie.startup()
+            if action=='play':
+                f=utils.find_xbmc_by_title(self.movie['title'],self.movie['release_date'][:4])
+                if f!='':
+                    xbmc.Player().play(f)
+                    xbmc.executebuiltin('Dialog.Close(all,true)')
+            self.close()
+                            
+                
+
 class dialogWindow(xbmcgui.WindowXMLDialog):
     mode=''
+    curr_movie=''
     def onInit(self):
         global person_name
         if self.mode=='genre':
@@ -550,19 +671,54 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
                     li.setIconImage('http://image.tmdb.org/t/p/w45' +person['profile_path'])
                 self.getControl(300).addItem(li)
         if self.mode=='list':
+            li=xbmcgui.ListItem('Add New')
+            li.setProperty('id','')
+            self.getControl(300).addItem(li)
             self.getControl(1).setLabel('[B]Your Movie Lists[/B]')
             lists=tmdb.get_users_lists(addon.getSetting('session_id'),1)
             lists_results=lists['results']
             for list in lists_results:
-                li=xbmcgui.ListItem(list['name'])
+                li=xbmcgui.ListItem(list['name'] + ' (' + str(list['item_count'])+')')
                 li.setProperty('id',str(list['id']))
                 self.getControl(300).addItem(li)
             if lists['total_pages']> 1:
                 for i in range(2,lists['total_pages']):
                     l=tmdb.get_users_lists(addon.getSetting('session_id'),i)
                     for list in l['results']:
-                        li=xbmcgui.ListItem(list['name'])
+                        li=xbmcgui.ListItem(list['name'] + ' (' + str(list['item_count'])+')')
                         li.setProperty('id',str(list['id']))
+                        self.getControl(300).addItem(li)
+        if self.mode=='context_list':
+            list_count=0
+            self.getControl(1).setLabel('[B]Add/Remove Movie from Lists[/B]')
+            lists=tmdb.get_users_lists(addon.getSetting('session_id'),1)
+            lists_results=lists['results']
+            for list in lists_results:
+                li=xbmcgui.ListItem(list['name'] +' ('+ str(list['item_count'])+')')
+                li.setProperty('id',str(list['id']))
+                li.setProperty('name',list['name'])
+                if tmdb.is_in_list(list['id'],self.curr_movie['id'])['item_present']:
+                    list_count=list_count+1
+                    li.setIconImage('film-icon.png')
+                    li.setProperty('in_list','true')
+                else:
+                    li.setIconImage('film-icon-disable.png')
+                    li.setProperty('in_list','false')
+                self.getControl(300).addItem(li)
+            if lists['total_pages']> 1:
+                for i in range(2,lists['total_pages']):
+                    l=tmdb.get_users_lists(addon.getSetting('session_id'),i)
+                    for list in l['results']:
+                        li=xbmcgui.ListItem(list['name'] +' ('+ str(list['item_count'])+')')
+                        li.setProperty('id',str(list['id']))
+                        li.setProperty('name',list['name'])
+                        if tmdb.is_in_list(list['id'],self.curr_movie['id'])['item_present']:
+                            list_count=list_count+1
+                            li.setIconImage('film-icon.png')
+                            li.setProperty('in_list','true')
+                        else:
+                            li.setIconImage('film-icon-disable.png')
+                            li.setProperty('in_list','false')
                         self.getControl(300).addItem(li)
 
     def onClick(self,control):

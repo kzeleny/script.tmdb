@@ -1328,7 +1328,7 @@
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
           <textfocuscolor>ffffffff</textfocuscolor>
-          <texturefocus>button-has-focus.png</texturefocus>
+          <texturefocus>btn-focus.png</texturefocus>
           <height>30</height>
           <width>150</width>
           <ondown>82</ondown>
@@ -1342,7 +1342,7 @@
           <width>150</width>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
-          <texturefocus>button-has-focus.png</texturefocus>
+          <texturefocus>btn-focus.png</texturefocus>
           <ondown>83</ondown>
           <onup>81</onup>
         </control>
@@ -1354,7 +1354,7 @@
           <width>150</width>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
-          <texturefocus>button-has-focus.png</texturefocus>
+          <texturefocus>btn-focus.png</texturefocus>
           <ondown>84</ondown>
           <onup>82</onup>
         </control>
@@ -1366,7 +1366,7 @@
           <width>150</width>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
-          <texturefocus>button-has-focus.png</texturefocus>
+          <texturefocus>btn-focus.png</texturefocus>
           <ondown>400</ondown>
           <onup>83</onup>
         </control>

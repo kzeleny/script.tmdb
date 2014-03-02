@@ -62,7 +62,6 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             lists_string=tmdb.get_users_lists(addon.getSetting('session_id'),1)
             lists_results=lists_string['results']
             for list in lists_results:
-                li=xbmcgui.ListItem(list['name'])
                 lists.append(list['id'])
             if lists_string['total_pages']> 1:
                 for i in range(2,lists_string['total_pages']):
@@ -304,6 +303,8 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             ans=d.yesno('tmdb Browser','Exit themoviedb.org Browser?')
             if ans:
                 xbmc.executebuiltin('Dialog.Close(all,true)')
+        elif action ==11:
+            self.close()
         elif action == 92:
             self.close()
         elif action==159:
@@ -364,20 +365,20 @@ class movieWindow(xbmcgui.WindowXMLDialog):
                         if res:
                             list_count=list_count-1
                             dialog = xbmcgui.Dialog()
-                            dialog.notification('themoviedb.org Browser', 'Successfully Removed ' + self.current_movie['title'] + ' from '+ list_name)
+                            dialog.notification('themoviedb.org Browser', 'Successfully Removed ' + self.current_movie['title'] + ' from '+ list_name, xbmcgui.NOTIFICATION_INFO, 5000)
                             if list_count<=0:self.getControl(4010).setImage('film-icon-disable.png')
                         else:
                             dialog = xbmcgui.Dialog()
-                            dialog.notification('themoviedb.org Browser', 'Failed to Remove ' + self.current_movie['title'] + ' from ' + list_name)
+                            dialog.notification('themoviedb.org Browser', 'Failed to Remove ' + self.current_movie['title'] + ' from ' + list_name, xbmcgui.NOTIFICATION_ERROR, 5000)
                     else:
                         res=tmdb.add_to_list(list_id,self.current_movie['id'],addon.getSetting('session_id'))
                         if res:
                             dialog = xbmcgui.Dialog()
-                            dialog.notification('themoviedb.org Browser', 'Successfully Added ' + self.current_movie['title'] + ' to '+ list_name)
+                            dialog.notification('themoviedb.org Browser', 'Successfully Added ' + self.current_movie['title'] + ' to '+ list_name, xbmcgui.NOTIFICATION_INFO, 5000)
                             self.getControl(4010).setImage('film-icon.png')
                         else:
                             dialog = xbmcgui.Dialog()
-                            dialog.notification('themoviedb.org Browser', 'Failed to Add ' + self.current_movie['title'] + ' to ' + list_name)
+                            dialog.notification('themoviedb.org Browser', 'Failed to Add ' + self.current_movie['title'] + ' to ' + list_name, xbmcgui.NOTIFICATION_ERROR, 5000)
             if control==51:
                 if keyword_id!='':
                     self.mode='keywords'
@@ -484,13 +485,15 @@ class movieWindow(xbmcgui.WindowXMLDialog):
                 if res['success']:
                     if res['update']:
                         dialog = xbmcgui.Dialog()
-                        dialog.notification('themoviedb.org Browser', 'Successfully Added ' + self.current_movie['title'] + ' to Favorites')
+                        dialog.notification('themoviedb.org Browser', 'Successfully Added ' + self.current_movie['title'] + ' to Favorites', xbmcgui.NOTIFICATION_INFO, 5000)
                         self.getControl(4011).setImage('favorite-enable.png')
                     else:
                         dialog = xbmcgui.Dialog()
-                        dialog.notification('themoviedb.org Browser', 'Successfully Removed ' + self.current_movie['title'] + ' from Favorites')
+                        dialog.notification('themoviedb.org Browser', 'Successfully Removed ' + self.current_movie['title'] + ' from Favorites', xbmcgui.NOTIFICATION_INFO, 5000)
                         self.getControl(4011).setImage('favorite-disable.png')
-
+                else:
+                    dialog = xbmcgui.Dialog()
+                    dialog.notification('themoviedb.org Browser','Failed to Update Favorite', xbmcgui.NOTIFICATION_ERROR, 5000)
         if control==5001: #Watchlist
             if self.session_id=='':
                 session_id=utils.get_login()
@@ -500,12 +503,15 @@ class movieWindow(xbmcgui.WindowXMLDialog):
                 if res['success']:
                     if res['update']:
                         dialog = xbmcgui.Dialog()
-                        dialog.notification('themoviedb.org Browser', 'Successfully Added ' + self.current_movie['title'] + ' to Watchlist')
+                        dialog.notification('themoviedb.org Browser', 'Successfully Added ' + self.current_movie['title'] + ' to Watchlist', xbmcgui.NOTIFICATION_INFO, 5000)
                         self.getControl(5011).setImage('popcorn-enable.png')
                     else:
                         dialog = xbmcgui.Dialog()
-                        dialog.notification('themoviedb.org Browser', 'Successfully Removed ' + self.current_movie['title'] + ' from Watchlist')
+                        dialog.notification('themoviedb.org Browser', 'Successfully Removed ' + self.current_movie['title'] + ' from Watchlist', xbmcgui.NOTIFICATION_INFO, 5000)
                         self.getControl(5011).setImage('popcorn-disable.png')
+                else:
+                    dialog = xbmcgui.Dialog()
+                    dialog.notification('themoviedb.org Browser','Failed to Update Watchlist', xbmcgui.NOTIFICATION_ERROR, 5000)
         if control==5020: #Show All
             from resources.lib import movies
             if self.mode=='genre':
