@@ -645,6 +645,11 @@ class dialogContext(xbmcgui.WindowXMLDialog):
                 if f!='':
                     xbmc.Player().play(f)
                     xbmc.executebuiltin('Dialog.Close(all,true)')
+            if action=='manage_list':
+                ds=dialogWindow('dialog_select.xml',addon_path,'Default')
+                ds.mode='context_list'
+                ds.curr_movie=self.movie
+                ds.doModal()
             self.close()
                             
                 
@@ -737,4 +742,24 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
         if self.mode=='list':
             list_id=self.getControl(300).getSelectedItem().getProperty('id')
             list_name=self.getControl(300).getSelectedItem().getLabel()
+        if self.mode=='context_list':
+            in_list=self.getControl(300).getSelectedItem().getProperty('in_list')
+            list_id=self.getControl(300).getSelectedItem().getProperty('id')
+            list_name=self.getControl(300).getSelectedItem().getProperty('name')
+            if in_list=='true':
+                res=tmdb.remove_from_list(list_id,self.curr_movie['id'],addon.getSetting('session_id'))
+                if res:
+                    dialog = xbmcgui.Dialog()
+                    dialog.notification('themoviedb.org Browser', 'Successfully Removed ' + self.curr_movie['title'] + ' from '+ list_name, xbmcgui.NOTIFICATION_INFO, 5000)
+                else:
+                    dialog = xbmcgui.Dialog()
+                    dialog.notification('themoviedb.org Browser', 'Failed to Remove ' + self.curr_movie['title'] + ' from ' + list_name, xbmcgui.NOTIFICATION_ERROR, 5000)
+            else:
+                res=tmdb.add_to_list(list_id,self.curr_movie['id'],addon.getSetting('session_id'))
+                if res:
+                    dialog = xbmcgui.Dialog()
+                    dialog.notification('themoviedb.org Browser', 'Successfully Added ' + self.curr_movie['title'] + ' to '+ list_name, xbmcgui.NOTIFICATION_INFO, 5000)
+                else:
+                    dialog = xbmcgui.Dialog()
+                    dialog.notification('themoviedb.org Browser', 'Failed to Add ' + self.curr_movie['title'] + ' to ' + list_name, xbmcgui.NOTIFICATION_ERROR, 5000)
         self.close()
