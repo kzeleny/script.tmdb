@@ -48,6 +48,31 @@ msgctxt "#32007"
 msgid "Movies"
 msgstr ""
 
+msgctxt "#32008"
+msgid "Movie Status Icons"
+msgstr ""
+
+msgctxt "#32009"
+msgid "WARNING: Enableing Status Icons for All Movies"
+msgstr ""
+
+msgctxt "#32010"
+msgid "Will Slow Down Loading Movies Pages"
+msgstr ""
+
+msgctxt "#32011"
+msgid "All Movies"
+msgstr ""
+
+msgctxt "#32012"
+msgid "Individual Movies"
+msgstr ""
+
+msgctxt "#32013"
+msgid "None"
+msgstr ""
+
+
 #empty strings from id 32004 to 32099
 
 msgctxt "#32100"

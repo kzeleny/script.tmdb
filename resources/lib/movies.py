@@ -2,6 +2,7 @@ import xbmcgui
 import xbmc
 import xbmcaddon
 import os
+import thread
 from resources.lib import utils
 from resources.lib import tmdb
 
@@ -11,6 +12,7 @@ resources_path = xbmc.translatePath( os.path.join( addon_path, 'resources' ) ).d
 media_path = xbmc.translatePath( os.path.join( resources_path, 'media' ) ).decode('utf-8')
 title_font=utils.getTitleFont()
 image_base_url=tmdb.get_image_base_url()
+show_icons=addon.getSetting('show_icons')
 
 source='popular'
 query=''
@@ -128,6 +130,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
     backdrop=xbmcgui.ControlImage
     session_id=''
     current_movie=''
+    current_item=0
     xbmc_movies=[]
     def onInit(self):
         #self.getControl(599).setVisible(False)
@@ -150,9 +153,9 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         self.xbmc_movies=utils.get_xbmc_movies()
         for i in range(0,21):
             if len(movies)>i:
-                if movies[i]['release_date']!=None:
-                    if movies[i]['title'] + ' ('+ movies[i]['release_date'][:4] +')' in self.xbmc_movies:
-                        self.getControl(i+300).setImage('xbmc_icon.png')
+                if show_icons=='0':
+                    if self.session_id!='':
+                        thread.start_new(self.updateIcons,(movies[i],i,3))
                 self.getControl(i+400).setEnabled(True)
                 if movies[i]['poster_path']==None:
                     self.getControl(i+200).setImage('no-poster-w92.jpg')
@@ -178,7 +181,47 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         if source=='Writing':self.getControl(32111).setLabel('[B]Movies Written by ' + person_name + '[/B]')
         if source=='list':self.getControl(32111).setLabel('[B]Movies from list ' + list_name +'[/B]')
 
+    def updateIcons(self,movie,item,*args):
+        if show_icons=='0':
+            if self.session_id!='':
+                state=tmdb.get_movie_account_states(movie['id'],self.session_id)
+                if state['favorite']:
+                    self.getControl(600+item).setImage('favorite-enable.png')
+                else:
+                    self.getControl(600+item).setImage('')
+                if state['watchlist']:
+                    self.getControl(700+item).setImage('popcorn-icon-enable.png')
+                else:
+                    self.getControl(700+item).setImage('')
+                if utils.movie_on_list(movie['id'],self.session_id):
+                    self.getControl(800+item).setImage('film-icon.png')
+                else:
+                    self.getControl(800+item).setImage('')
+            if movie['release_date']!=None:
+                if movie['title'] + ' ('+ movie['release_date'][:4] +')' in self.xbmc_movies:
+                    self.getControl(item+300).setImage('xbmc_icon.png')
+                else:
+                    self.getControl(300+item).setImage('')
+        if show_icons=='1':
+            self.getControl(105).setVisible(True)
+            self.getControl(100).setImage('xbmc_icon_disable.png')
+            self.getControl(101).setImage('favorite-disable.png')
+            self.getControl(102).setImage('popcorn-icon-disable.png')
+            self.getControl(103).setImage('film-icon-disable.png')
+            if self.session_id!='':
+                state=tmdb.get_movie_account_states(movie['id'],self.session_id)
+                if state['favorite']:self.getControl(101).setImage('favorite-enable.png')
+                if state['watchlist']:self.getControl(102).setImage('popcorn-icon-enable.png')
+                if utils.movie_on_list(movie['id'],self.session_id):self.getControl(103).setImage('film-icon.png')
+            if movie['release_date']!=None:
+                if movie['title'] + ' ('+ movie['release_date'][:4] +')' in self.xbmc_movies:
+                    self.getControl(100).setImage('xbmc_icon.png')  
+        else:
+            self.getControl(105).setVisible(False) 
+        thread.exit_thread()
+
     def onAction(self, action):
+        xbmc.log(str(action.getId()))
         if action == 11: #Info
             from resources.lib import movie
             movie.movie_id=self.current_movie['id']
@@ -190,6 +233,9 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
             cm.xbmc_movies=self.xbmc_movies
             cm.session_id=addon.getSetting('session_id')
             cm.doModal()
+            xbmc.sleep(1000)
+            thread.start_new(self.updateIcons,(self.current_movie,self.current_item,3))
+
         if action == 10:
             d = xbmcgui.Dialog()
             ans=d.yesno('tmdb Browser','Exit themoviedb.org Browser?')
@@ -203,12 +249,14 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
             opening.startup()
 
     def onFocus(self,control):
-        backdrop = self.getControl(32107)
         movieid=self.get_movieid_from_control(control)
         if movieid!='':
+            self.current_item=control-400
+            movie=tmdb.get_movie(movieid)
+            if show_icons=='1':thread.start_new(self.updateIcons,(movie,0,3))
+            backdrop=self.getControl(32107)
             cast=self.getControl(32109)
             plot=self.getControl(32108)
-            movie=tmdb.get_movie(movieid)
             self.current_movie=movie
             actors = movie['credits']['cast']
             actors=sorted(actors, key=lambda k: k['order'])
@@ -231,7 +279,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 backdrop.setImage('http://image.tmdb.org/t/p/w300' +movie['backdrop_path'])
             else:
                 self.getControl(32121).setLabel('No Background Available')
-    
+
     def onClick(self,control):
         global source
         global query
@@ -605,37 +653,13 @@ class dialogContext(xbmcgui.WindowXMLDialog):
             li=self.getControl(300).getSelectedItem()
             action=li.getProperty('action')
             if action=='add_favorite':
-                res=tmdb.update_favorite_movie(movie_id,self.session_id)
-                if res['success']:
-                    dg=xbmcgui.Dialog()
-                    dg.notification('themoviedb.org Browser','Successfully Added '+ self.movie['title'] + ' to Favorites',xbmcgui.NOTIFICATION_INFO,5000)
-                else:
-                    dg=xbmcgui.Dialog()
-                    dg.notification('themoviedb.org Browser','Error Adding '+ self.movie['title'] + ' to Favorites',xbmcgui.NOTIFICATION_ERROR,5000)
+                utils.add_favorite(movie_id,self.session_id)
             if action=='remove_favorite':
-                res=tmdb.update_favorite_movie(movie_id,self.session_id)
-                if res['success']:
-                    dg=xbmcgui.Dialog()
-                    dg.notification('themoviedb.org Browser','Successfully Removed '+ self.movie['title'] + ' from Favorites',xbmcgui.NOTIFICATION_INFO,5000)
-                else:
-                    dg=xbmcgui.Dialog()
-                    dg.notification('themoviedb.org Browser','Error Removing '+ self.movie['title'] + ' from Favorites',xbmcgui.NOTIFICATION_ERROR,5000)
+                utils.remove_favorite(movie_id,self.session_id)
             if action=='add_watchlist':
-                res=tmdb.update_watchlist_movie(movie_id,self.session_id)
-                if res['success']:
-                    dg=xbmcgui.Dialog()
-                    dg.notification('themoviedb.org Browser','Successfully Added '+ self.movie['title'] + ' to Watchlist',xbmcgui.NOTIFICATION_INFO,5000)
-                else:
-                    dg=xbmcgui.Dialog()
-                    dg.notification('themoviedb.org Browser','Error Adding '+ self.movie['title'] + ' to Watchlist',xbmcgui.NOTIFICATION_ERROR,5000)
+                utils.remove_watchlist(movie_id,self.session_id)
             if action=='remove_watchlist':
-                res=tmdb.update_watchlist_movie(movie_id,self.session_id)
-                if res['success']:
-                    dg=xbmcgui.Dialog()
-                    dg.notification('themoviedb.org Browser','Successfully Removed '+ self.movie['title'] + ' from Watchlist',xbmcgui.NOTIFICATION_INFO,5000)
-                else:
-                    dg=xbmcgui.Dialog()
-                    dg.notification('themoviedb.org Browser','Error Removing '+ self.movie['title'] + ' from Watchlist',xbmcgui.NOTIFICATION_ERROR,5000)
+                utils.remove_watchlist(movie_id,self.session_id)
             if action=='show_info':
                 from resources.lib import movie
                 movie.movie_id=self.movie['id']

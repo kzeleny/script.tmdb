@@ -137,3 +137,60 @@ def get_login():
                 return ''
     else:
         return ''
+
+def add_favorite(movie_id,session_id):
+    res=tmdb.update_favorite_movie(movie_id,session_id)
+    movie=tmdb.get_movie(movie_id)
+    if res['success']:
+        dg=xbmcgui.Dialog()
+        dg.notification('themoviedb.org Browser','Successfully Added '+ movie['title'] + ' to Favorites',xbmcgui.NOTIFICATION_INFO,5000)
+    else:
+        dg=xbmcgui.Dialog()
+        dg.notification('themoviedb.org Browser','Error Adding '+ movie['title'] + ' to Favorites',xbmcgui.NOTIFICATION_ERROR,5000)
+ 
+def remove_favorite(movie_id,session_id):
+    movie=tmdb.get_movie(movie_id)
+    res=tmdb.update_favorite_movie(movie_id,session_id)
+    if res['success']:
+        dg=xbmcgui.Dialog()
+        dg.notification('themoviedb.org Browser','Successfully Removed '+ movie['title'] + ' from Favorites',xbmcgui.NOTIFICATION_INFO,5000)
+    else:
+        dg=xbmcgui.Dialog()
+        dg.notification('themoviedb.org Browser','Error Removing '+ movie['title'] + ' from Favorites',xbmcgui.NOTIFICATION_ERROR,5000)
+
+def add_watchlist(movie_id,session_id):
+    movie=tmdb.get_movie(movie_id,session_id)
+    res=tmdb.update_watchlist_movie(movie_id,session_id)
+    if res['success']:
+        dg=xbmcgui.Dialog()
+        dg.notification('themoviedb.org Browser','Successfully Added '+ movie['title'] + ' to Watchlist',xbmcgui.NOTIFICATION_INFO,5000)
+    else:
+        dg=xbmcgui.Dialog()
+        dg.notification('themoviedb.org Browser','Error Adding '+ movie['title'] + ' to Watchlist',xbmcgui.NOTIFICATION_ERROR,5000)
+
+def remove_watchlist(movie_id,session_id):
+    movie=tmdb.get_movie(movie_id)
+    res=tmdb.update_watchlist_movie(movie_id,session_id)
+    if res['success']:
+        dg=xbmcgui.Dialog()
+        dg.notification('themoviedb.org Browser','Successfully Removed '+ movie['title'] + ' from Watchlist',xbmcgui.NOTIFICATION_INFO,5000)
+    else:
+        dg=xbmcgui.Dialog()
+        dg.notification('themoviedb.org Browser','Error Removing '+ movie['title'] + ' from Watchlist',xbmcgui.NOTIFICATION_ERROR,5000)
+
+def movie_on_list(movie_id,session_id):
+    lists=tmdb.get_users_lists(addon.getSetting('session_id'),1)
+    lists_results=lists['results']
+    in_list=''
+    for list in lists_results:
+        if tmdb.is_in_list(list['id'],movie_id)['item_present']:
+            in_list=True
+            break
+    if lists['total_pages']> 1 and not in_list:
+        for i in range(2,lists['total_pages']):
+            l=tmdb.get_users_lists(addon.getSetting('session_id'),i)
+            for list in l['results']:
+                if tmdb.is_in_list(list['id'],movie_id)['item_present']:
+                    in_list=True
+                    break
+    return in_list

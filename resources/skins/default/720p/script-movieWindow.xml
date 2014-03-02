@@ -58,8 +58,8 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-    	<shadowcolor></shadowcolor>
-		  <focusedcolor>ffE68a00</focusedcolor>
+        <shadowcolor></shadowcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>5000</onup>
         <ondown>32101</ondown>
         <onleft>32115</onleft>
@@ -80,8 +80,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffE68a00</focusedcolor>
-		  <shadowcolor></shadowcolor>
-		  <onup>32117</onup>
+        <shadowcolor></shadowcolor>
+        <onup>32117</onup>
         <ondown>32101</ondown>
         <onleft>32113</onleft>
         <onright>32115</onright>
@@ -100,8 +100,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffE68a00</focusedcolor>
-		  <shadowcolor></shadowcolor>
-		  <onup>32117</onup>
+        <shadowcolor></shadowcolor>
+        <onup>32117</onup>
         <ondown>32101</ondown>
         <onleft>32114</onleft>
         <onright>32113</onright>
@@ -121,8 +121,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffE68a00</focusedcolor>
-		  <shadowcolor></shadowcolor>
-		  <onup>32113</onup>
+        <shadowcolor></shadowcolor>
+        <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32104</onleft>
         <onright>32102</onright>
@@ -140,8 +140,8 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-		  <shadowcolor></shadowcolor>
-		  <focusedcolor>ffE68a00</focusedcolor>
+        <shadowcolor></shadowcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32101</onleft>
@@ -160,8 +160,8 @@
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
-		  <shadowcolor></shadowcolor>
-		  <focusedcolor>ffE68a00</focusedcolor>
+        <shadowcolor></shadowcolor>
+        <focusedcolor>ffE68a00</focusedcolor>
         <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32102</onleft>
@@ -181,8 +181,8 @@
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
         <focusedcolor>ffE68a00</focusedcolor>
-		  <shadowcolor></shadowcolor>
-		  <onup>32113</onup>
+        <shadowcolor></shadowcolor>
+        <onup>32113</onup>
         <ondown>400</ondown>
         <onleft>32103</onleft>
         <onright>33100</onright>
@@ -227,8 +227,8 @@
         <ondown>81</ondown>
         <onleft>33100</onleft>
         <onright>32101</onright>
-		  <shadowcolor></shadowcolor>
-	  </control>
+        <shadowcolor></shadowcolor>
+      </control>
       <control type="label" id="32111">
         <posx>1230</posx>
         <posy>180</posy>
@@ -238,8 +238,8 @@
         <align>right</align>
         <font>font13</font>
         <label></label>
-		  <shadowcolor></shadowcolor>
-		  <textcolor>ffE68a00</textcolor>
+        <shadowcolor></shadowcolor>
+        <textcolor>ffE68a00</textcolor>
       </control>
       <control type="label" id="32106">
         <posx>20</posx>
@@ -249,8 +249,43 @@
         <scroll>true</scroll>
         <font>font13</font>
         <label></label>
-		  <shadowcolor></shadowcolor>
-	  </control>
+        <shadowcolor></shadowcolor>
+      </control>
+      <!-- Icon Panel -->
+      <control type="group" id="105">
+        <control type="image" id="100">
+          <description>XBMC Icon</description>
+          <posx>25</posx>
+          <posy>225</posy>
+          <height>32</height>
+          <width>32</width>
+          <texture></texture>
+        </control>
+        <control type="image" id="101">
+          <description>Favorite Icon</description>
+          <posx>25</posx>
+          <posy>265</posy>
+          <height>32</height>
+          <width>32</width>
+          <texture></texture>
+        </control>
+        <control type="image" id="102">
+          <description>Watchlist Icon</description>
+          <posx>25</posx>
+          <posy>305</posy>
+          <height>32</height>
+          <width>32</width>
+          <texture></texture>
+        </control>
+        <control type="image" id="103">
+          <description>List Icon</description>
+          <posx>25</posx>
+          <posy>350</posy>
+          <height>32</height>
+          <width>32</width>
+          <texture></texture>
+        </control>
+      </control>
       <control type="image">
         <posx>65</posx>
         <posy>220</posy>
@@ -271,8 +306,8 @@
         <height>20</height>
         <font>font13</font>
         <label>Loading</label>
-		  <shadowcolor></shadowcolor>
-		  <textcolor>ff606060</textcolor>
+        <shadowcolor></shadowcolor>
+        <textcolor>ff606060</textcolor>
         <width>300</width>
         <align>center</align>
       </control>
@@ -290,10 +325,10 @@
         <width>415</width>
         <align>center</align>
         <scroll>true</scroll>
-		  <font>font13</font>
+        <font>font13</font>
         <textcolor>ff606060</textcolor>
-		  <shadowcolor></shadowcolor>
-		  <label></label>
+        <shadowcolor></shadowcolor>
+        <label></label>
       </control>
       <control type="textbox" id="32108">
         <description>Plot</description>
@@ -304,8 +339,8 @@
         <font>font13</font>
         <align>justify</align>
         <textcolor>ff606060</textcolor>
-		  <shadowcolor></shadowcolor>
-		  <autoscroll delay="5000" time="2000" repeat="5000"></autoscroll>
+        <shadowcolor></shadowcolor>
+        <autoscroll delay="5000" time="2000" repeat="5000"></autoscroll>
       </control>
       <control type="button" id="32116">
         <posx>466</posx>
@@ -319,8 +354,8 @@
         <label></label>
         <font>font13</font>
         <textcolor>ff606060</textcolor>
-		  <shadowcolor></shadowcolor>
-		  <onup>414</onup>
+        <shadowcolor></shadowcolor>
+        <onup>414</onup>
         <onright>32117</onright>
         <onleft>32117</onleft>
       </control>
@@ -335,8 +370,8 @@
         <animation effect ="zoom" center="auto" end="120" time="100">Focus</animation>
         <label></label>
         <font>font13</font>
-		  <shadowcolor></shadowcolor>
-		  <textcolor>ff606060</textcolor>
+        <shadowcolor></shadowcolor>
+        <textcolor>ff606060</textcolor>
         <onup>420</onup>
         <onleft>32116</onleft>
         <onright>32116</onright>
@@ -348,8 +383,8 @@
         <width>764</width>
         <font>font13</font>
         <align>center</align>
-		  <shadowcolor></shadowcolor>
-		  <textcolor>ffE68a00</textcolor>
+        <shadowcolor></shadowcolor>
+        <textcolor>ffE68a00</textcolor>
         <label></label>
       </control>
       <!-- Image Grid -->
@@ -385,6 +420,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(400)">Condition</animation>
           </control>
+          <control type="image" id="600">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(400)">Condition</animation>
+          </control>
+          <control type="image" id="700">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(400)">Condition</animation>
+          </control>
+          <control type="image" id="800">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(400)">Condition</animation>
+          </control>
           <control type="button" id="400">
             <posx>0</posx>
             <posy>0</posy>
@@ -392,8 +451,8 @@
             <width>92</width>
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
-			  <shadowcolor></shadowcolor>
-			  <textcolor>ff606060</textcolor>
+            <shadowcolor></shadowcolor>
+            <textcolor>ff606060</textcolor>
             <onup>32101</onup>
             <ondown>407</ondown>
             <onright>401</onright>
@@ -430,6 +489,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(401)">Condition</animation>
           </control>
+          <control type="image" id="601">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(401)">Condition</animation>
+          </control>
+          <control type="image" id="701">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(401)">Condition</animation>
+          </control>
+          <control type="image" id="801">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(401)">Condition</animation>
+          </control>
           <control type="button" id="401">
             <posx>0</posx>
             <posy>0</posy>
@@ -437,8 +520,8 @@
             <width>92</width>
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
-			  <shadowcolor></shadowcolor>
-			  <textcolor>ff606060</textcolor>
+            <shadowcolor></shadowcolor>
+            <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
@@ -475,6 +558,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(402)">Condition</animation>
           </control>
+          <control type="image" id="602">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(402)">Condition</animation>
+          </control>
+          <control type="image" id="702">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(402)">Condition</animation>
+          </control>
+          <control type="image" id="802">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(402)">Condition</animation>
+          </control>
           <control type="button" id="402">
             <posx>0</posx>
             <posy>0</posy>
@@ -482,8 +589,8 @@
             <width>92</width>
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
-			  <shadowcolor></shadowcolor>
-			  <textcolor>ff606060</textcolor>
+            <shadowcolor></shadowcolor>
+            <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
@@ -520,6 +627,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(403)">Condition</animation>
           </control>
+          <control type="image" id="603">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(403)">Condition</animation>
+          </control>
+          <control type="image" id="803">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(403)">Condition</animation>
+          </control>
+          <control type="image" id="703">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(403)">Condition</animation>
+          </control>
           <control type="button" id="403">
             <posx>0</posx>
             <posy>0</posy>
@@ -528,8 +659,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <font>font13</font>
-			  <shadowcolor></shadowcolor>
-			  <textcolor>ff606060</textcolor>
+            <shadowcolor></shadowcolor>
+            <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
             <scroll>Focus</scroll>
             <aligny>posy</aligny>
@@ -567,6 +698,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(404)">Condition</animation>
           </control>
+          <control type="image" id="604">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(404)">Condition</animation>
+          </control>
+          <control type="image" id="704">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(404)">Condition</animation>
+          </control>
+          <control type="image" id="804">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(404)">Condition</animation>
+          </control>
           <control type="button" id="404">
             <posx>0</posx>
             <posy>0</posy>
@@ -574,8 +729,8 @@
             <width>92</width>
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
-			  <shadowcolor></shadowcolor>
-			  <textcolor>ff606060</textcolor>
+            <shadowcolor></shadowcolor>
+            <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
@@ -612,6 +767,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(405)">Condition</animation>
           </control>
+          <control type="image" id="605">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(405)">Condition</animation>
+          </control>
+          <control type="image" id="705">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(405)">Condition</animation>
+          </control>
+          <control type="image" id="805">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(405)">Condition</animation>
+          </control>
           <control type="button" id="405">
             <posx>0</posx>
             <posy>0</posy>
@@ -619,8 +798,8 @@
             <width>92</width>
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
-			  <shadowcolor></shadowcolor>
-			  <textcolor>ff606060</textcolor>
+            <shadowcolor></shadowcolor>
+            <textcolor>ff606060</textcolor>
             <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
@@ -657,6 +836,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(406)">Condition</animation>
           </control>
+          <control type="image" id="606">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(406)">Condition</animation>
+          </control>
+          <control type="image" id="806">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(406)">Condition</animation>
+          </control>
+          <control type="image" id="707">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(406)">Condition</animation>
+          </control>
           <control type="button" id="406">
             <posx>0</posx>
             <posy>0</posy>
@@ -665,8 +868,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>32101</onup>
@@ -702,6 +905,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(407)">Condition</animation>
           </control>
+          <control type="image" id="607">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(407)">Condition</animation>
+          </control>
+          <control type="image" id="707">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(407)">Condition</animation>
+          </control>
+          <control type="image" id="807">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(407)">Condition</animation>
+          </control>
           <control type="button" id="407">
             <posx>0</posx>
             <posy>0</posy>
@@ -710,8 +937,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>400</onup>
@@ -747,6 +974,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(408)">Condition</animation>
           </control>
+          <control type="image" id="608">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(408)">Condition</animation>
+          </control>
+          <control type="image" id="708">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(408)">Condition</animation>
+          </control>
+          <control type="image" id="808">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(408)">Condition</animation>
+          </control>
           <control type="button" id="408">
             <posx>0</posx>
             <posy>0</posy>
@@ -755,8 +1006,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>401</onup>
@@ -792,6 +1043,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(409)">Condition</animation>
           </control>
+          <control type="image" id="609">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(409)">Condition</animation>
+          </control>
+          <control type="image" id="709">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(409)">Condition</animation>
+          </control>
+          <control type="image" id="809">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(409)">Condition</animation>
+          </control>
           <control type="button" id="409">
             <posx>0</posx>
             <posy>0</posy>
@@ -800,8 +1075,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>402</onup>
@@ -837,6 +1112,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(410)">Condition</animation>
           </control>
+          <control type="image" id="610">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(410)">Condition</animation>
+          </control>
+          <control type="image" id="710">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(410)">Condition</animation>
+          </control>
+          <control type="image" id="810">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(410)">Condition</animation>
+          </control>
           <control type="button" id="410">
             <posx>0</posx>
             <posy>0</posy>
@@ -845,8 +1144,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>403</onup>
@@ -882,6 +1181,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(411)">Condition</animation>
           </control>
+          <control type="image" id="611">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(411)">Condition</animation>
+          </control>
+          <control type="image" id="711">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(411)">Condition</animation>
+          </control>
+          <control type="image" id="811">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(411)">Condition</animation>
+          </control>
           <control type="button" id="411">
             <posx>0</posx>
             <posy>0</posy>
@@ -890,8 +1213,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>404</onup>
@@ -927,6 +1250,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(412)">Condition</animation>
           </control>
+          <control type="image" id="612">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(412)">Condition</animation>
+          </control>
+          <control type="image" id="712">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(412)">Condition</animation>
+          </control>
+          <control type="image" id="812">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(412)">Condition</animation>
+          </control>
           <control type="button" id="412">
             <posx>0</posx>
             <posy>0</posy>
@@ -935,8 +1282,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>405</onup>
@@ -972,6 +1319,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(413)">Condition</animation>
           </control>
+          <control type="image" id="613">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(413)">Condition</animation>
+          </control>
+          <control type="image" id="713">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(413)">Condition</animation>
+          </control>
+          <control type="image" id="813">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(413)">Condition</animation>
+          </control>
           <control type="button" id="413">
             <posx>0</posx>
             <posy>0</posy>
@@ -980,8 +1351,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>406</onup>
@@ -1017,6 +1388,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(414)">Condition</animation>
           </control>
+          <control type="image" id="614">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(414)">Condition</animation>
+          </control>
+          <control type="image" id="714">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(414)">Condition</animation>
+          </control>
+          <control type="image" id="814">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(414)">Condition</animation>
+          </control>
           <control type="button" id="414">
             <posx>0</posx>
             <posy>0</posy>
@@ -1025,8 +1420,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>407</onup>
@@ -1062,6 +1457,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(415)">Condition</animation>
           </control>
+          <control type="image" id="615">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(415)">Condition</animation>
+          </control>
+          <control type="image" id="715">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(415)">Condition</animation>
+          </control>
+          <control type="image" id="815">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(415)">Condition</animation>
+          </control>
           <control type="button" id="415">
             <posx>0</posx>
             <posy>0</posy>
@@ -1070,8 +1489,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>408</onup>
@@ -1107,6 +1526,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(416)">Condition</animation>
           </control>
+          <control type="image" id="616">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(416)">Condition</animation>
+          </control>
+          <control type="image" id="716">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(416)">Condition</animation>
+          </control>
+          <control type="image" id="816">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(416)">Condition</animation>
+          </control>
           <control type="button" id="416">
             <posx>0</posx>
             <posy>0</posy>
@@ -1115,8 +1558,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>409</onup>
@@ -1152,6 +1595,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(417)">Condition</animation>
           </control>
+          <control type="image" id="617">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(417)">Condition</animation>
+          </control>
+          <control type="image" id="717">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(417)">Condition</animation>
+          </control>
+          <control type="image" id="817">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(417)">Condition</animation>
+          </control>
           <control type="button" id="417">
             <posx>0</posx>
             <posy>0</posy>
@@ -1160,8 +1627,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>410</onup>
@@ -1197,6 +1664,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(418)">Condition</animation>
           </control>
+          <control type="image" id="618">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(418)">Condition</animation>
+          </control>
+          <control type="image" id="818">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(418)">Condition</animation>
+          </control>
+          <control type="image" id="718">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(418)">Condition</animation>
+          </control>
           <control type="button" id="418">
             <posx>0</posx>
             <posy>0</posy>
@@ -1205,8 +1696,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>411</onup>
@@ -1242,6 +1733,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(419)">Condition</animation>
           </control>
+          <control type="image" id="619">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(419)">Condition</animation>
+          </control>
+          <control type="image" id="719">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(419)">Condition</animation>
+          </control>
+          <control type="image" id="819">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(419)">Condition</animation>
+          </control>
           <control type="button" id="419">
             <posx>0</posx>
             <posy>0</posy>
@@ -1250,8 +1765,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>412</onup>
@@ -1287,6 +1802,30 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="4,-7" time="100" condition="Control.HasFocus(420)">Condition</animation>
           </control>
+          <control type="image" id="620">
+            <posx>0</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,7" time="100" condition="Control.HasFocus(420)">Condition</animation>
+          </control>
+          <control type="image" id="720">
+            <posx>76</posx>
+            <posy>122</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="4,7" time="100" condition="Control.HasFocus(420)">Condition</animation>
+          </control>
+          <control type="image" id="820">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>16</height>
+            <width>16</width>
+            <texture></texture>
+            <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(420)">Condition</animation>
+          </control>
           <control type="button" id="420">
             <posx>0</posx>
             <posy>0</posy>
@@ -1295,8 +1834,8 @@
             <texturefocus></texturefocus>
             <texturenofocus></texturenofocus>
             <textcolor>ff606060</textcolor>
-			  <shadowcolor></shadowcolor>
-			  <focusedcolor>ffffffff</focusedcolor>
+            <shadowcolor></shadowcolor>
+            <focusedcolor>ffffffff</focusedcolor>
             <aligny>posy</aligny>
             <textoffsety>110</textoffsety>
             <onup>413</onup>
@@ -1389,7 +1928,7 @@
           <ondown>400</ondown>
           <onleft></onleft>
           <onright></onright>
-        </control>        
+        </control>
       </control>
 
       <control type="group" id="80">
@@ -1409,10 +1948,10 @@
           <label>Title</label>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
-			<shadowcolor></shadowcolor>
+          <shadowcolor></shadowcolor>
           <focusedcolor>ffE68a00</focusedcolor>
           <texturefocus>btn-focus.png</texturefocus>
-			<texturenofocus></texturenofocus>
+          <texturenofocus></texturenofocus>
           <height>30</height>
           <width>100</width>
           <ondown>82</ondown>
@@ -1427,9 +1966,9 @@
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
           <focusedcolor>ffE68a00</focusedcolor>
-			<shadowcolor></shadowcolor>
-			<texturefocus>btn-focus.png</texturefocus>
-			<texturenofocus></texturenofocus>
+          <shadowcolor></shadowcolor>
+          <texturefocus>btn-focus.png</texturefocus>
+          <texturenofocus></texturenofocus>
           <ondown>83</ondown>
           <onup>81</onup>
         </control>
@@ -1442,9 +1981,9 @@
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
           <focusedcolor>ffE68a00</focusedcolor>
-			<shadowcolor></shadowcolor>
-			<texturefocus>btn-focus.png</texturefocus>
-			<texturenofocus></texturenofocus>
+          <shadowcolor></shadowcolor>
+          <texturefocus>btn-focus.png</texturefocus>
+          <texturenofocus></texturenofocus>
           <ondown>84</ondown>
           <onup>82</onup>
         </control>
@@ -1457,9 +1996,9 @@
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
           <focusedcolor>ffE68a00</focusedcolor>
-			<shadowcolor></shadowcolor>
-			<texturefocus>btn-focus.png</texturefocus>
-			<texturenofocus></texturenofocus>
+          <shadowcolor></shadowcolor>
+          <texturefocus>btn-focus.png</texturefocus>
+          <texturenofocus></texturenofocus>
           <ondown>400</ondown>
           <onup>83</onup>
         </control>
