@@ -669,7 +669,7 @@ class dialogContext(xbmcgui.WindowXMLDialog):
                 if f!='':
                     xbmc.Player().play(f)
                     xbmc.executebuiltin('Dialog.Close(all,true)')
-            if action=='couchpotato':
+            if action=='add_couchpotato':
                 xbmc.executebuiltin("XBMC.RunPlugin('plugin://plugin.video.couchpotato_manager/movies/add?title='" + self.movie['title']+ "')'")
             if action=='manage_list':
                 ds=dialogWindow('dialog_select.xml',addon_path,'Default')
