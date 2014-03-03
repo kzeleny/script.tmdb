@@ -164,7 +164,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
                 if i==0:self.onFocus(400)
         #self.getControl(599).setVisible(True)
         if source=='popular':self.getControl(32111).setLabel('[B]Popular Movies[/B]')
-        if source=='posy_rated':self.getControl(32111).setLabel('[B]Top Rated Movies[/B]')
+        if source=='top_rated':self.getControl(32111).setLabel('[B]Top Rated Movies[/B]')
         if source=='upcoming':self.getControl(32111).setLabel('[B]Upcoming Movies[/B]')
         if source=='now_playing':self.getControl(32111).setLabel('[B]Now Playing Movies[/B]')
         if source=='query':self.getControl(32111).setLabel('[B]Search Results[/B]')
@@ -300,7 +300,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
         do_people=False
 
         popular = 32101
-        posy_rated =  32102
+        top_rated =  32102
         upcoming = 32103
         now_playing = 32104
         favorites = 33105
@@ -326,8 +326,8 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
             source='popular'
             page=1
             do_movies=True
-        if control == posy_rated and source!='posy_rated':
-            source='posy_rated'
+        if control == top_rated and source!='top_rated':
+            source='top_rated'
             do_movies=True
             page=1
         if control == upcoming and source!='upcoming':
@@ -669,6 +669,8 @@ class dialogContext(xbmcgui.WindowXMLDialog):
                 if f!='':
                     xbmc.Player().play(f)
                     xbmc.executebuiltin('Dialog.Close(all,true)')
+            if action=='couchpotato':
+                xbmc.executebuiltin("XBMC.RunPlugin('plugin://plugin.video.couchpotato_manager/movies/add?title='" + self.movie['title']+ "')'")
             if action=='manage_list':
                 ds=dialogWindow('dialog_select.xml',addon_path,'Default')
                 ds.mode='context_list'

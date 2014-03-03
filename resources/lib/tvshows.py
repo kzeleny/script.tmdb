@@ -68,7 +68,7 @@ class tv_Window(xbmcgui.WindowXMLDialog):
 
         self.getControl(599).setVisible(True)
         if source=='popular':self.getControl(32111).setLabel('Popular TV Shows')
-        if source=='posy_rated':self.getControl(32111).setLabel('Top Rated')
+        if source=='top_rated':self.getControl(32111).setLabel('Top Rated')
         if source=='on_the_air':self.getControl(32111).setLabel('On the Air')
         if source=='airing_today':self.getControl(32111).setLabel('Airing Today')
         if source=='query':self.getControl(32111).setLabel('Search Results')
@@ -126,7 +126,7 @@ class tv_Window(xbmcgui.WindowXMLDialog):
         do_movies=False
 
         popular = 32101
-        posy_rated =  32102
+        top_rated =  32102
         on_the_air = 32103
         airing_today = 32104
         query_btn = 32110
@@ -140,8 +140,8 @@ class tv_Window(xbmcgui.WindowXMLDialog):
             source='popular'
             page=1
             do_tv_shows=True
-        if control == posy_rated and source!='posy_rated':
-            source='posy_rated'
+        if control == top_rated and source!='top_rated':
+            source='top_rated'
             do_tv_shows=True
             page=1
         if control == on_the_air and source!='on_the_air':

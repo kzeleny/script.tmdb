@@ -191,7 +191,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         if star >= 10: self.getControl(1010).setImage('star-icon-enable.png')
     def show_similar(self,similar):
         self.getControl(5020).setVisible(True)
-        self.getControl(128).setLabel('[B]posy 10 of '+ str(self.total_results) + ' Movies Similar to ' + self.current_movie['title']+'[/B]')
+        self.getControl(128).setLabel('[B]Top 10 of '+ str(self.total_results) + ' Movies Similar to ' + self.current_movie['title']+'[/B]')
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -211,7 +211,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         global cast_member
         global cast_member_id
         self.getControl(5020).setVisible(True)
-        self.getControl(128).setLabel('posy 10 of '+ str(self.total_results) + ' Movies with ' + cast_member + ' in the Cast')
+        self.getControl(128).setLabel('Top 10 of '+ str(self.total_results) + ' Movies with ' + cast_member + ' in the Cast')
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -248,7 +248,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
     def show_keywords(self,keywords):
         self.getControl(5020).setVisible(True)
         global current_keyword
-        self.getControl(128).setLabel('[B]posy 10 of '+ str(self.total_results) + ' Movies with ' + current_keyword + ' Keyword[/B]')
+        self.getControl(128).setLabel('[B]Top 10 of '+ str(self.total_results) + ' Movies with ' + current_keyword + ' Keyword[/B]')
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -267,7 +267,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
     def show_genre(self,genres):
         global current_genre
         self.getControl(5020).setVisible(True)
-        self.getControl(128).setLabel('[B]posy 10 of '+ str(self.total_results) + ' ' + current_genre + ' Movies[/B]')
+        self.getControl(128).setLabel('[B]Top 10 of '+ str(self.total_results) + ' ' + current_genre + ' Movies[/B]')
         x=10
         for i in range(0,x):
             self.getControl(300+i).setImage('')
@@ -474,7 +474,7 @@ class movieWindow(xbmcgui.WindowXMLDialog):
         if control==129: #Webpage
             url=self.current_movie['homepage']
             url=urllib.quote_plus(url)
-            xbmc.Player().play('plugin://plugin.program.chrome.launcher/?url=' + url + '&mode=showSite&sposyPlayback=no')
+            xbmc.Player().play('plugin://plugin.program.chrome.launcher/?url=' + url + '&mode=showSite&stopPlayback=no')
 
         if control==4001: #Favorite
             if self.session_id=='':

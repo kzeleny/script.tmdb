@@ -852,7 +852,7 @@
             <texture></texture>
             <animation effect="slide" start="0,0" end="-4,-7" time="100" condition="Control.HasFocus(406)">Condition</animation>
           </control>
-          <control type="image" id="707">
+          <control type="image" id="706">
             <posx>76</posx>
             <posy>122</posy>
             <height>16</height>
