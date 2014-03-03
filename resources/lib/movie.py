@@ -470,6 +470,12 @@ class movieWindow(xbmcgui.WindowXMLDialog):
             rw =  ratingWindow('rating_dialog.xml',addon_path,'default')
             rw.curr_movie=self.current_movie
             rw.doModal()
+            del rw
+            xbmc.sleep(1000)
+            states=tmdb.get_movie_account_states(self.current_movie['id'],self.session_id)
+            if states['rated']:
+                star=round(self.current_movie['vote_average'],2)
+                self.getControl(131).setLabel(str(star)+'/10 (' + str(self.current_movie['vote_count']) + ' votes, you voted '+ str(states['rated']['value']) +')')
 
         if control==129: #Webpage
             url=self.current_movie['homepage']
@@ -555,7 +561,7 @@ class ratingWindow(xbmcgui.WindowXMLDialog):
         res=tmdb.rate_movie(self.curr_movie['id'],value,session_id)
         if res:
             dialog = xbmcgui.Dialog()
-            dialog.notification('themoviedb.org Browser', 'Successfully Rated '+self.curr_movie['title'], xbmcgui.NOTIFICATION_INFO, 5000)
+            dialog.notification('themoviedb.org Browser', 'Successfully Rated '+self.curr_movie['title'], xbmcgui.NOTIFICATION_INFO, 5000)         
             #if we rated movie as a guest lets save the guest session id to use later.
             if addon.getSetting('session_id')=='':addon.setSetting('guest_session_id',session_id)
         else:
@@ -641,6 +647,7 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
                             li.setIconImage('film-icon-disable.png')
                             li.setProperty('in_list','false')
                         self.getControl(300).addItem(li)
+        self.setFocus(self.getControl(300))
 
     def onClick(self,control):
         global keyword_id

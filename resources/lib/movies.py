@@ -751,6 +751,7 @@ class dialogWindow(xbmcgui.WindowXMLDialog):
                             li.setIconImage('film-icon-disable.png')
                             li.setProperty('in_list','false')
                         self.getControl(300).addItem(li)
+        self.setFocus(self.getControl(300))
 
     def onClick(self,control):
         global genre_id
