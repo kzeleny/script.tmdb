@@ -189,15 +189,15 @@
       </control>
       <control type="button" id="33100">
         <description>my_account_button</description>
-        <posx>1050</posx>
+        <posx>1015</posx>
         <posy>138</posy>
         <width>150</width>
         <textwidth>150</textwidth>
+        <textoffsetx>5</textoffsetx>
         <height>31</height>
         <font>font13</font>
-        <aligny>posy</aligny>
         <label>My Account</label>
-        <align>posx</align>
+        <align>right</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
@@ -210,15 +210,15 @@
       </control>
       <control type="button" id="32110">
         <description>search button</description>
-        <posx>1180</posx>
+        <posx>1165</posx>
         <posy>138</posy>
-        <width>100</width>
-        <textwidth>100</textwidth>
+        <width>115</width>
+        <textwidth>115</textwidth>
+        <textoffsetx>5</textoffsetx>
         <height>31</height>
-        <aligny>posy</aligny>
         <font>font13</font>
         <label>Search</label>
-        <align>posx</align>
+        <align>right</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
         <textcolor>ffffffff</textcolor>
@@ -1861,9 +1861,12 @@
           <posx>0</posx>
           <posy>0</posy>
           <width>115</width>
+          <textwidth>115</textwidth>
+          <textoffsetx>5</textoffsetx>
           <height>30</height>
           <font>font13</font>
           <label>Favorites</label>
+          <align>right</align>
           <texturenofocus></texturenofocus>
           <textcolor>ffffffff</textcolor>
           <shadowcolor></shadowcolor>
@@ -1877,6 +1880,9 @@
           <posx>0</posx>
           <posy>30</posy>
           <width>115</width>
+          <textwidth>115</textwidth>
+          <textoffsetx>5</textoffsetx>
+          <align>right</align>
           <height>30</height>
           <font>font13</font>
           <label>Watchlist</label>
@@ -1896,6 +1902,9 @@
           <posx>0</posx>
           <posy>60</posy>
           <width>115</width>
+          <textwidth>115</textwidth>
+          <textoffsetx>5</textoffsetx>
+          <align>right</align>
           <height>30</height>
           <font>font13</font>
           <label>Rated</label>
@@ -1915,7 +1924,10 @@
           <posx>0</posx>
           <posy>90</posy>
           <width>115</width>
+          <textwidth>115</textwidth>
+          <textoffsetx>5</textoffsetx>
           <height>30</height>
+          <align>right</align>
           <font>font13</font>
           <label>Lists</label>
           <align>posx</align>
@@ -1932,7 +1944,7 @@
       </control>
 
       <control type="group" id="80">
-        <posx>1180</posx>
+        <posx>1165</posx>
         <posy>168</posy>
         <visible>Control.HasFocus(32110)|Control.HasFocus(80)|Control.HasFocus(81)|Control.HasFocus(82)|Control.HasFocus(83)|Control.HasFocus(84)</visible>
         <control type="image">
@@ -1940,7 +1952,7 @@
           <posy>0</posy>
           <texture>green.png</texture>
           <height>120</height>
-          <width>150</width>
+          <width>115</width>
         </control>
         <control type="button" id="81">
           <posx>0</posx>
@@ -1953,7 +1965,10 @@
           <texturefocus>btn-focus.png</texturefocus>
           <texturenofocus></texturenofocus>
           <height>30</height>
-          <width>100</width>
+          <width>115</width>
+          <textwidth>115</textwidth>
+          <textoffsetx>5</textoffsetx>
+          <align>right</align>
           <ondown>82</ondown>
           <onup>32110</onup>
         </control>
@@ -1962,7 +1977,10 @@
           <posy>30</posy>
           <label>Genre</label>
           <height>30</height>
-          <width>100</width>
+          <width>115</width>
+          <align>right</align>
+          <textwidth>115</textwidth>
+          <textoffsetx>5</textoffsetx>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
           <focusedcolor>ffE68a00</focusedcolor>
@@ -1977,7 +1995,10 @@
           <posy>60</posy>
           <label>Year</label>
           <height>30</height>
-          <width>100</width>
+          <width>115</width>
+          <textwidth>115</textwidth>
+          <textoffsetx>5</textoffsetx>
+          <align>right</align>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
           <focusedcolor>ffE68a00</focusedcolor>
@@ -1992,7 +2013,10 @@
           <posy>90</posy>
           <label>Person</label>
           <height>30</height>
-          <width>100</width>
+          <width>115</width>
+          <textwidth>115</textwidth>
+          <textoffsetx>5</textoffsetx>
+          <align>right</align>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
           <focusedcolor>ffE68a00</focusedcolor>

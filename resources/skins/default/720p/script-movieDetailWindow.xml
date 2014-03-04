@@ -1040,9 +1040,10 @@
 					<width>16</width>
 				</control>
 			</control>
+      
       <!-- lists -->
       <control type="group">
-        <posx>1060</posx>
+        <posx>1040</posx>
         <posy>20</posy>
         <description>Lists</description>
         <control type="button" id="4000">
@@ -1074,7 +1075,7 @@
       </control>
 			<!-- favorite -->
 			<control type="group">
-				<posx>930</posx>
+				<posx>910</posx>
 				<posy>20</posy>
 				<description>Favorite</description>
 				<control type="button" id="4001">
@@ -1104,7 +1105,7 @@
 			</control>
 			<!-- Watchlist -->
 			<control type="group">
-				<posx>1150</posx>
+				<posx>1130</posx>
 				<posy>20</posy>
 				<description>Watchlist</description>
 				<control type="button" id="5001">

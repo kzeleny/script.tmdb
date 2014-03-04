@@ -48,7 +48,6 @@ def get_movie(movieId):
 
 def search_movies(query,page):
     global maxpage
-    movieIds=[]
     data = {}
     data['api_key'] = api_key
     data['page']=str(page)
