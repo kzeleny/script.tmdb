@@ -226,7 +226,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
             from resources.lib import movie
             movie.movie_id=self.current_movie['id']
             movie.startup()
-        if action == 117: #Context
+        if action == 117 or action==101: #Context
             cm=dialogContext('context_menu.xml',addon_path,'Default')
             cm.movie=self.current_movie
             cm.mode=self.source
@@ -235,8 +235,7 @@ class moviesWindow(xbmcgui.WindowXMLDialog):
             cm.doModal()
             xbmc.sleep(1000)
             thread.start_new(self.updateIcons,(self.current_movie,self.current_item,3))
-
-        if action == 10:
+        if action == 10 and action !=101:
             d = xbmcgui.Dialog()
             ans=d.yesno('tmdb Browser','Exit themoviedb.org Browser?')
             if ans:

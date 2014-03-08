@@ -2,6 +2,7 @@ import xbmc
 import xbmcgui
 import xbmcaddon
 from resources.lib import tmdb
+from resources.lib import utils
 
 addon = xbmcaddon.Addon()
 addon_path = addon.getAddonInfo('path')

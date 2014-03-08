@@ -9,6 +9,27 @@ import xbmcaddon
 from resources.lib import tmdb
 addon = xbmcaddon.Addon()
 
+def get_fonts():
+    skin_dir = xbmc.translatePath("special://skin/")
+    list_dir = os.listdir( skin_dir )
+    fonts=[]
+    fontxml_path =''
+    font_xml=''
+    for item in list_dir:
+        item = os.path.join( skin_dir, item )
+        if os.path.isdir( item ):
+            font_xml = os.path.join( item, "Font.xml" )
+        if os.path.exists( font_xml ):
+            fontxml_path=font_xml
+            break
+    dom =  xml.dom.minidom.parse(fontxml_path)
+    fontlist=dom.getElementsByTagName('font')
+    for font in fontlist:
+        name = font.getElementsByTagName('name')[0].childNodes[0].nodeValue
+        size = font.getElementsByTagName('size')[0].childNodes[0].nodeValue
+        if name not in fonts:fonts.append(name)
+    return fonts
+
 def getTitleFont():
     title_font='font13'
     base_size=20
@@ -31,7 +52,7 @@ def getTitleFont():
         name = font.getElementsByTagName('name')[0].childNodes[0].nodeValue
         size = font.getElementsByTagName('size')[0].childNodes[0].nodeValue
         fonts.append({'name':name,'size':float(size)})
-    #fonts =sorted(fonts, key=lambda k: k['size'])
+    fonts =sorted(fonts, key=lambda k: k['size'])
     for f in fonts:
         if f['name']=='font13':
             multiplier=f['size'] / 20
