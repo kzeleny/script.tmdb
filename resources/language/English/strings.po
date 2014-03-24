@@ -72,6 +72,70 @@ msgctxt "#32013"
 msgid "None"
 msgstr ""
 
+msgctxt "#32014"
+msgid "Watchlist"
+msgstr ""
+
+msgctxt "#32015"
+msgid "TV Shows"
+msgstr ""
+
+msgctxt "#32016"
+msgid "Popular Movies"
+msgstr ""
+
+msgctxt "#32017"
+msgid "Top Rated"
+msgstr ""
+
+msgctxt "#32018"
+msgid "Updoming"
+msgstr ""
+
+msgctxt "#32019"
+msgid "Now Playing"
+msgstr ""
+
+msgctxt "#32020"
+msgid "My Account"
+msgstr ""
+
+msgctxt "#32021"
+msgid "Search"
+msgstr ""
+
+msgctxt "#32022"
+msgid "Loading"
+msgstr ""
+
+msgctxt "#32023"
+msgid "Favorites"
+msgstr ""
+
+msgctxt "#32024"
+msgid "Rated"
+msgstr ""
+
+msgctxt "#32025"
+msgid "Lists"
+msgstr ""
+
+msgctxt "#32026"
+msgid "Title"
+msgstr ""
+
+msgctxt "#32027"
+msgid "Genre"
+msgstr ""
+
+msgctxt "#32028"
+msgid "Year"
+msgstr ""
+
+msgctxt "#32029"
+msgid "Person"
+msgstr ""
+
 
 #empty strings from id 32004 to 32099
 
