@@ -153,7 +153,7 @@
         <label>Popular People</label>
         <textcolor>ffE68a00</textcolor>
       </control>
-	  <!-- selected item -->
+      <!-- selected item -->
       <control type="label" id="32106">
         <posx>20</posx>
         <posy>198</posy>
@@ -202,7 +202,7 @@
         <width>415</width>
         <align>center</align>
         <scroll>true</scroll>
-		  <visible>false</visible>
+          <visible>false</visible>
         <textcolor>ff606060</textcolor>
         <label></label>
       </control>
@@ -1193,7 +1193,7 @@
           </control>
         </control>
       </control>
-	</control>
+    </control>
   </controls>
 </window>
 

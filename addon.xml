@@ -4,18 +4,18 @@
        version="0.0.2"
        provider-name="kzeleny">
   <requires>
-    <import addon="xbmc.python"					version="2.1.0"/>
-    <import addon="xbmc.addon"					version="12.0.0"/>
+    <import addon="xbmc.python"                    version="2.1.0"/>
+    <import addon="xbmc.addon"                    version="12.0.0"/>
   </requires>
-  <extension point="xbmc.python.script"			library="default.py" />
+  <extension point="xbmc.python.script"            library="default.py" />
  <provides>executable</provides>
   <extension point="xbmc.addon.metadata">
-	<language></language>
+    <language></language>
     <platform>all</platform>
     <summary lang="en">Browse themoviedb.org</summary>
-    <description lang="en">Browse movies, tv showes, and people on themoviedb.org.	</description>
-	<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-	<forum></forum>
+    <description lang="en">Browse movies, tv showes, and people on themoviedb.org.    </description>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum></forum>
     <website>www.themoviedb.org</website>
     <email>kzeleny@gmail.com</email>
     <source>https://github.com/kzeleny/script.tmdb</source>

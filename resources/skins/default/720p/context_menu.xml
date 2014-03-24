@@ -1,106 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window">
-  <defaultcontrol>300</defaultcontrol>
-	<coordinates>
-		<system>1</system>
-		<posx>540</posx>
-		<posy>260</posy>
-	</coordinates>
-  <animation effect="fade" time="500">WindowOpen</animation>
-  <animation effect="fade" time="500">WindowClose</animation>
-	<controls>
-		<control type="group">
-			<posx>0</posx>
-      <control type="image">
-        <description>background image</description>
-        <posx>0</posx>
-        <posy>0</posy>
-        <width>206</width>
-        <height>246</height>
-        <texture>background.png</texture>
-      </control>
-      <control type="image">
-				<description>background image</description>
-				<posx>3</posx>
-				<posy>3</posy>
-				<width>300</width>
-				<height>240</height>
-				<texture>grey_back.png</texture>
-			</control>
-		</control>
-    <control type="image">
-      <posx>0</posx>
-      <posy>12</posy>
-      <height>4</height>
-      <width>300</width>
-      <texture>separator.png</texture>
-    </control>
-		<control type="button">
-			<description>Close Window button</description>
-			<posx>250</posx>
-			<posy>3</posy>
-			<width>50</width>
-			<height>25</height>
-			<label>-</label>
-			<font>-</font>
-			<onclick>PreviousMenu</onclick>
-			<texturefocus>dialog_close_button_focus.png</texturefocus>
-			<texturenofocus>dialog_close_button.png</texturenofocus>
-			<onleft>10</onleft>
-			<onright>10</onright>
-			<onup>10</onup>
-			<ondown>10</ondown>
-			<visible>system.getbool(input.enablemouse)</visible>
-		</control>
-		<control type="list" id="300">
-			<posx>10</posx>
-			<posy>25</posy>
-			<width>290</width>
-      <orientation>vertical</orientation>
-			<height>212</height>
-      <scrolltime tween="sine" easing="out">200</scrolltime>
-			<itemlayout height="41" width="300">
-				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>285</width>
-					<height>40</height>
-					<texture border="5">btn-no-focus.png</texture>
-				</control>
-				<control type="label">
-					<top>0</top>
-					<left>142.5</left>
-					<width>285</width>
-					<height>40</height>
-					<font>font13</font>
-					<textcolor>ff606060</textcolor>
-					<shadowcolor></shadowcolor>
-          <aligny>center</aligny>
-          <align>center</align>
-					<info>ListItem.Label</info>
-				</control>
-			</itemlayout>
-			<focusedlayout height="41" width="300">
-				<control type="image">
-					<posx>0</posx>
-c					<posy>0</posy>
-					<width>285</width>
-					<height>40</height>
-					<texture border="5">btn-focus.png</texture>
-				</control>
-				<control type="label">
-					<top>0</top>
-					<left>142.5</left>
-					<width>285</width>
-					<height>40</height>
-					<font>font13</font>
-					<textcolor>ffE68a00</textcolor>
-					<shadowcolor></shadowcolor>
-          <aligny>center</aligny>
-          <align>center</align>
-					<info>ListItem.Label</info>
-				</control>
-			</focusedlayout>
-		</control>
-      </controls>
+    <defaultcontrol>300</defaultcontrol>
+    <coordinates>
+        <system>1</system>
+        <posx>540</posx>
+        <posy>260</posy>
+    </coordinates>
+    <animation effect="fade" time="500">WindowOpen</animation>
+    <animation effect="fade" time="500">WindowClose</animation>
+    <controls>
+        <control type="group">
+            <posx>0</posx>
+            <control type="image">
+                <description>background image</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>206</width>
+                <height>246</height>
+                <texture>background.png</texture>
+            </control>
+            <control type="image">
+                <description>background image</description>
+                <posx>3</posx>
+                <posy>3</posy>
+                <width>300</width>
+                <height>240</height>
+                <texture>grey_back.png</texture>
+            </control>
+        </control>
+        <control type="image">
+            <posx>0</posx>
+            <posy>12</posy>
+            <height>4</height>
+            <width>300</width>
+            <texture>separator.png</texture>
+        </control>
+        <control type="button">
+            <description>Close Window button</description>
+            <posx>250</posx>
+            <posy>3</posy>
+            <width>50</width>
+            <height>25</height>
+            <label>-</label>
+            <font>-</font>
+            <onclick>PreviousMenu</onclick>
+            <texturefocus>dialog_close_button_focus.png</texturefocus>
+            <texturenofocus>dialog_close_button.png</texturenofocus>
+            <onleft>10</onleft>
+            <onright>10</onright>
+            <onup>10</onup>
+            <ondown>10</ondown>
+            <visible>system.getbool(input.enablemouse)</visible>
+        </control>
+        <control type="list" id="300">
+            <posx>10</posx>
+            <posy>25</posy>
+            <width>290</width>
+            <orientation>vertical</orientation>
+            <height>212</height>
+            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <itemlayout height="41" width="300">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>285</width>
+                    <height>40</height>
+                    <texture border="5">btn-no-focus.png</texture>
+                </control>
+                <control type="label">
+                    <top>0</top>
+                    <left>142.5</left>
+                    <width>285</width>
+                    <height>40</height>
+                    <font>font13</font>
+                    <textcolor>ff606060</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <aligny>center</aligny>
+                    <align>center</align>
+                    <info>ListItem.Label</info>
+                </control>
+            </itemlayout>
+            <focusedlayout height="41" width="300">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>285</width>
+                    <height>40</height>
+                    <texture border="5">btn-focus.png</texture>
+                </control>
+                <control type="label">
+                    <top>0</top>
+                    <left>142.5</left>
+                    <width>285</width>
+                    <height>40</height>
+                    <font>font13</font>
+                    <textcolor>ffE68a00</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <aligny>center</aligny>
+                    <align>center</align>
+                    <info>ListItem.Label</info>
+                </control>
+            </focusedlayout>
+        </control>
+    </controls>
 </window>
