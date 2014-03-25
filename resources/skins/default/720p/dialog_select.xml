@@ -134,7 +134,7 @@
       <posx>250</posx>
       <font>font13</font>
       <textcolor>ff606060</textcolor>
-    <label>([COLOR=ffe68a00]$INFO[Container(300).NumItems][/COLOR]) Items - Page ([COLOR=ffe68a00]$INFO[Container(300).CurrentPage]/$INFO[Container(300).NumPages][/COLOR])</label>
+    <label>([COLOR=ffe68a00]$INFO[Container(300).NumItems][/COLOR]) $ADDON[script.tmdb 32032] ([COLOR=ffe68a00]$INFO[Container(300).CurrentPage]/$INFO[Container(300).NumPages][/COLOR])</label>
     </control>
       </controls>
 </window>

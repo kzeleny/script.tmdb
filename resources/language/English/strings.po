@@ -136,6 +136,17 @@ msgctxt "#32029"
 msgid "Person"
 msgstr ""
 
+msgctxt "#32030"
+msgid "Box Office"
+msgstr ""
+
+msgctxt "#32031"
+msgid "Most Popular"
+msgstr ""
+
+msgctxt "#32032"
+msgid "Items - Page"
+msgstr ""
 
 #empty strings from id 32004 to 32099
 
