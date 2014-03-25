@@ -53,7 +53,7 @@
         <textwidth>150</textwidth>
         <height>25</height>
         <font>font13</font>
-        <label>32007</label>
+        <label>$ADDON[script.tmdb 32007]</label>
         <align>center</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
@@ -74,7 +74,7 @@
         <textwidth>150</textwidth>
         <height>25</height>
         <font>font13</font>
-        <label>32015</label>
+        <label>$ADDON[script.tmdb 32015]</label>
         <align>center</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
@@ -94,7 +94,7 @@
         <textwidth>150</textwidth>
         <height>25</height>
         <font>font13</font>
-        <label>32005</label>
+        <label>$ADDON[script.tmdb 32005]</label>
         <align>center</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
@@ -115,7 +115,7 @@
         <textwidth>160</textwidth>
         <height>25</height>
         <font>font13</font>
-        <label>32016</label>
+        <label>$ADDON[script.tmdb 32016]</label>
         <align>center</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
@@ -135,7 +135,7 @@
         <textwidth>150</textwidth>
         <height>25</height>
         <font>font13</font>
-        <label>32017</label>
+        <label>$ADDON[script.tmdb 32017]</label>
         <align>center</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
@@ -155,7 +155,7 @@
         <textwidth>150</textwidth>
         <height>25</height>
         <font>font13</font>
-        <label>32018</label>
+        <label>$ADDON[script.tmdb 32018]</label>
         <align>center</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
@@ -175,7 +175,7 @@
         <textwidth>150</textwidth>
         <height>25</height>
         <font>font13</font>
-        <label>32019</label>
+        <label>$ADDON[script.tmdb 32019]</label>
         <align>center</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
@@ -196,7 +196,7 @@
         <textoffsetx>5</textoffsetx>
         <height>31</height>
         <font>font13</font>
-        <label>32020</label>
+        <label>$ADDON[script.tmdb 32020]</label>
         <align>right</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
@@ -217,7 +217,7 @@
         <textoffsetx>5</textoffsetx>
         <height>31</height>
         <font>font13</font>
-        <label>32021</label>
+        <label>$ADDON[script.tmdb 32021]</label>
         <align>right</align>
         <texturefocus></texturefocus>
         <texturenofocus></texturenofocus>
@@ -305,7 +305,7 @@
         <posy>240</posy>
         <height>20</height>
         <font>font13</font>
-        <label>32022</label>
+        <label>$ADDON[script.tmdb 32022]</label>
         <shadowcolor></shadowcolor>
         <textcolor>ff606060</textcolor>
         <width>300</width>
@@ -1865,7 +1865,7 @@
           <textoffsetx>5</textoffsetx>
           <height>30</height>
           <font>font13</font>
-          <label>32023</label>
+          <label>$ADDON[script.tmdb 32023]</label>
           <align>right</align>
           <texturenofocus></texturenofocus>
           <textcolor>ffffffff</textcolor>
@@ -1885,7 +1885,7 @@
           <align>right</align>
           <height>30</height>
           <font>font13</font>
-          <label>32013</label>
+          <label>$ADDON[script.tmdb 32013]</label>
           <align>posx</align>
           <texturefocus>btn-focus.png</texturefocus>
           <texturenofocus></texturenofocus>
@@ -1907,7 +1907,7 @@
           <align>right</align>
           <height>30</height>
           <font>font13</font>
-          <label>32024</label>
+          <label>$ADDON[script.tmdb 32024]</label>
           <align>posx</align>
           <texturefocus>btn-focus.png</texturefocus>
           <texturenofocus></texturenofocus>
@@ -1929,7 +1929,7 @@
           <height>30</height>
           <align>right</align>
           <font>font13</font>
-          <label>32025</label>
+          <label>$ADDON[script.tmdb 32025]</label>
           <align>posx</align>
           <texturefocus>btn-focus.png</texturefocus>
           <texturenofocus></texturenofocus>
@@ -1957,7 +1957,7 @@
         <control type="button" id="81">
           <posx>0</posx>
           <posy>0</posy>
-          <label>32026</label>
+          <label>$ADDON[script.tmdb 32026]</label>
           <font>font13</font>
           <textcolor>ffffffff</textcolor>
           <shadowcolor></shadowcolor>
@@ -1975,7 +1975,7 @@
         <control type="button" id="82">
           <posx>0</posx>
           <posy>30</posy>
-          <label>32027</label>
+          <label>$ADDON[script.tmdb 32027]</label>
           <height>30</height>
           <width>115</width>
           <align>right</align>
@@ -1993,7 +1993,7 @@
         <control type="button" id="83">
           <posx>0</posx>
           <posy>60</posy>
-          <label>32028</label>
+          <label>$ADDON[script.tmdb 32028]</label>
           <height>30</height>
           <width>115</width>
           <textwidth>115</textwidth>
@@ -2011,7 +2011,7 @@
         <control type="button" id="84">
           <posx>0</posx>
           <posy>90</posy>
-          <label>32029</label>
+          <label>$ADDON[script.tmdb 32029]</label>
           <height>30</height>
           <width>115</width>
           <textwidth>115</textwidth>

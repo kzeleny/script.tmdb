@@ -89,7 +89,7 @@ msgid "Top Rated"
 msgstr ""
 
 msgctxt "#32018"
-msgid "Updoming"
+msgid "Upcoming"
 msgstr ""
 
 msgctxt "#32019"
