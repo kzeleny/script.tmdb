@@ -90,74 +90,9 @@ def getBaseFont():
             break
     return base_font
 
-def format_date(strDate):
-    strDate=str(strDate)
-    if strDate=='None':strDate=''
-    if '-' in strDate:
-        d=strDate.split('-')
-        if d[1]=='01':d[1]='January'
-        if d[1]=='02':d[1]='February'
-        if d[1]=='03':d[1]='March'
-        if d[1]=='04':d[1]='April'
-        if d[1]=='05':d[1]='May'
-        if d[1]=='06':d[1]='June'
-        if d[1]=='07':d[1]='July'
-        if d[1]=='08':d[1]='August'
-        if d[1]=='09':d[1]='September'
-        if d[1]=='10':d[1]='October'
-        if d[1]=='11':d[1]='November'
-        if d[1]=='12':d[1]='December'
-        strDate=d[1] + ' ' + d[2] + ', ' + d[0]
-    return strDate
-
-def format_currency(value, places=2, curr='', sep=',', dp='.',
-             pos='', neg='-', trailneg=''):
-    """Convert Decimal to a money formatted string.
-
-    places:  required number of places after the decimal point
-    curr:    optional currency symbol before the sign (may be blank)
-    sep:     optional grouping separator (comma, period, space, or blank)
-    dp:      decimal point indicator (comma or period)
-             only specify as blank when places is zero
-    pos:     optional sign for positive numbers: '+', space or blank
-    neg:     optional sign for negative numbers: '-', '(', space or blank
-    trailneg:optional trailing minus indicator:  '-', ')', space or blank
-
-    >>> d = Decimal('-1234567.8901')
-    >>> moneyfmt(d, curr='$')
-    '-$1,234,567.89'
-    >>> moneyfmt(d, places=0, sep='.', dp='', neg='', trailneg='-')
-    '1.234.568-'
-    >>> moneyfmt(d, curr='$', neg='(', trailneg=')')
-    '($1,234,567.89)'
-    >>> moneyfmt(Decimal(123456789), sep=' ')
-    '123 456 789.00'
-    >>> moneyfmt(Decimal('-0.02'), neg='<', trailneg='>')
-    '<0.02>'
-
-    """
-    q = Decimal(10) ** -places      # 2 places --> '0.01'
-    sign, digits, exp = value.quantize(q).as_tuple()
-    result = []
-    digits = map(str, digits)
-    build, next = result.append, digits.pop
-    if sign:
-        build(trailneg)
-    for i in range(places):
-        build(next() if digits else '0')
-    build(dp)
-    if not digits:
-        build('0')
-    i = 0
-    while digits:
-        build(next())
-        i += 1
-        if i == 3 and digits:
-            i = 0
-            build(sep)
-    build(curr)
-    build(neg if sign else pos)
-    return ''.join(reversed(result))
+def format_currency(number):
+    import math
+    return '$' + str(format(math.floor(number * 100) / 100, ',.2f'))
 
 def find_xbmc_by_title(title,year):
     moviestring = xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "VideoLibrary.GetMovies", "params": {"properties": ["file","title","year"]}, "id": 1}')
