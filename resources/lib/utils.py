@@ -90,6 +90,27 @@ def getBaseFont():
             break
     return base_font
 
+
+def format_date(strDate):
+    strDate=str(strDate)
+    if strDate=='None':strDate=''
+    if '-' in strDate:
+        d=strDate.split('-')
+        if d[1]=='01':d[1]='January'
+        if d[1]=='02':d[1]='February'
+        if d[1]=='03':d[1]='March'
+        if d[1]=='04':d[1]='April'
+        if d[1]=='05':d[1]='May'
+        if d[1]=='06':d[1]='June'
+        if d[1]=='07':d[1]='July'
+        if d[1]=='08':d[1]='August'
+        if d[1]=='09':d[1]='September'
+        if d[1]=='10':d[1]='October'
+        if d[1]=='11':d[1]='November'
+        if d[1]=='12':d[1]='December'
+        strDate=d[1] + ' ' + d[2] + ', ' + d[0]
+    return strDate
+    
 def format_currency(number):
     try:
         n='$' + format(number, ',.2f')
