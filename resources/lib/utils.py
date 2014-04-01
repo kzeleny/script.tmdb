@@ -91,7 +91,11 @@ def getBaseFont():
     return base_font
 
 def format_currency(number):
-    return '$' + format(number, ',.2f')
+    try:
+        n='$' + format(number, ',.2f')
+    except:
+        n='$' + str(number)
+    return n
 
 def find_xbmc_by_title(title,year):
     moviestring = xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "VideoLibrary.GetMovies", "params": {"properties": ["file","title","year"]}, "id": 1}')
