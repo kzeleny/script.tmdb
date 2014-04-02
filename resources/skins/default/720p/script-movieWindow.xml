@@ -1885,7 +1885,7 @@
           <align>right</align>
           <height>30</height>
           <font>font13</font>
-          <label>$ADDON[script.tmdb 32013]</label>
+          <label>$ADDON[script.tmdb 32014]</label>
           <align>posx</align>
           <texturefocus>btn-focus.png</texturefocus>
           <texturenofocus></texturenofocus>

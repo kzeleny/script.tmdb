@@ -62,7 +62,7 @@
                     <posy>30</posy>
                     <height>20</height>
                     <font>font13</font>
-                    <label>Loading</label>
+                    <label>$ADDON[script.tmdb 32022]</label>
                     <textcolor>ff606060</textcolor>
                     <shadowcolor></shadowcolor>
                     <width>185</width>
@@ -132,7 +132,7 @@
                     <align>center</align>
                     <textcolor>ff606060</textcolor>
                     <shadowcolor></shadowcolor>
-                    <label>1 of 10</label>
+                    <label></label>
                 </control>
             </control>
             <!-- Background -->
@@ -152,7 +152,7 @@
                     <posy>30</posy>
                     <height>20</height>
                     <font>font13</font>
-                    <label>Loading</label>
+                    <label>$ADDON[script.tmdb 32022]</label>
                     <textcolor>ff606060</textcolor>
                     <shadowcolor></shadowcolor>
                     <width>300</width>
@@ -223,7 +223,7 @@
                     <align>center</align>
                     <textcolor>ff606060</textcolor>
                     <shadowcolor></shadowcolor>
-                    <label>1 of 10</label>
+                    <label></label>
                 </control>
             </control>
             <control type="label" id="130">
@@ -254,7 +254,7 @@
                 <shadowcolor></shadowcolor>
                 <widht>auto</widht>
                 <height>20</height>
-                <label>[B]Plot:[/B]</label>
+                <label>[B]$ADDON[script.tmdb 32033]:[/B]</label>
             </control>
             <control type="textbox" id="103">
                 <description>Plot</description>
@@ -273,6 +273,7 @@
                 <posx>425</posx>
                 <posy>70</posy>
                 <control type="label">
+                  <description>Director</description>
                     <posx>0</posx>
                     <posy>0</posy>
                     <align>right</align>
@@ -281,9 +282,10 @@
                     <height>20</height>
                     <width>200</width>
                     <font>font13</font>
-                    <label>[B]Director:[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32034]:[/B]</label>
                 </control>
                 <control type="label" id="110">
+                  <description>Director</description>
                     <posx>5</posx>
                     <posy>0</posy>
                     <align>posx</align>
@@ -295,6 +297,7 @@
                     <label></label>
                 </control>
                 <control type="label">
+                  <description>Writer</description>
                     <posx>0</posx>
                     <posy>25</posy>
                     <align>right</align>
@@ -303,9 +306,10 @@
                     <height>20</height>
                     <width>200</width>
                     <font>font13</font>
-                    <label>[B]Writer:[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32035]:[/B]</label>
                 </control>
                 <control type="label" id="111">
+                  <description>Writer</description>
                     <posx>5</posx>
                     <posy>25</posy>
                     <align>posx</align>
@@ -318,7 +322,8 @@
                     <label></label>
                 </control>
                 <control type="label">
-                    <posx>0</posx>
+                  <description>Studio</description>
+                  <posx>0</posx>
                     <posy>50</posy>
                     <align>right</align>
                     <textcolor>ffe68a00</textcolor>
@@ -326,9 +331,10 @@
                     <height>20</height>
                     <width>200</width>
                     <font>font13</font>
-                    <label>[B]Studio:[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32036]:[/B]</label>
                 </control>
                 <control type="label" id="112">
+                  <description>Studio</description>
                     <posx>5</posx>
                     <posy>50</posy>
                     <align>posx</align>
@@ -341,6 +347,7 @@
                     <label></label>
                 </control>
                 <control type="label">
+                  <description>Genre</description>
                     <posx>0</posx>
                     <posy>75</posy>
                     <align>right</align>
@@ -349,9 +356,10 @@
                     <height>20</height>
                     <width>200</width>
                     <font>font13</font>
-                    <label>[B]Genre:[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32027]:[/B]</label>
                 </control>
                 <control type="label" id="113">
+                  <description>Genre</description>
                     <posx>5</posx>
                     <posy>75</posy>
                     <align>posx</align>
@@ -364,6 +372,7 @@
                     <label></label>
                 </control>
                 <control type="label">
+                  <description>MPAA Rating</description>
                     <posx>0</posx>
                     <posy>100</posy>
                     <align>right</align>
@@ -372,9 +381,10 @@
                     <height>20</height>
                     <width>200</width>
                     <font>font13</font>
-                    <label>[B]MPAA Rating:[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32037]:[/B]</label>
                 </control>
                 <control type="label" id="114">
+                  <description>MPAA Rating</description>
                     <posx>5</posx>
                     <posy>100</posy>
                     <align>posx</align>
@@ -387,6 +397,7 @@
                     <label></label>
                 </control>
                 <control type="label">
+                  <description>Status</description>
                     <posx>0</posx>
                     <posy>125</posy>
                     <align>right</align>
@@ -395,9 +406,10 @@
                     <height>20</height>
                     <width>200</width>
                     <font>font13</font>
-                    <label>[B]Status:[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32038]:[/B]</label>
                 </control>
                 <control type="label" id="115">
+                  <description>Status</description>
                     <posx>5</posx>
                     <posy>125</posy>
                     <align>posx</align>
@@ -410,6 +422,7 @@
                     <label></label>
                 </control>
                 <control type="label">
+                  <description>budget</description>
                     <posx>0</posx>
                     <posy>150</posy>
                     <align>right</align>
@@ -418,9 +431,10 @@
                     <height>20</height>
                     <width>200</width>
                     <font>font13</font>
-                    <label>[B]Budget:[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32039]:[/B]</label>
                 </control>
                 <control type="label" id="116">
+                  <description>budget</description>
                     <posx>5</posx>
                     <posy>150</posy>
                     <align>posx</align>
@@ -433,6 +447,7 @@
                     <label></label>
                 </control>
                 <control type="label">
+                  <description>revenue</description>
                     <posx>0</posx>
                     <posy>175</posy>
                     <align>right</align>
@@ -441,9 +456,10 @@
                     <height>20</height>
                     <width>200</width>
                     <font>font13</font>
-                    <label>[B]Revenue:[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32040]:[/B]</label>
                 </control>
                 <control type="label" id="117">
+                  <description>revenue</description>
                     <posx>5</posx>
                     <posy>175</posy>
                     <align>posx</align>
@@ -456,6 +472,7 @@
                     <label></label>
                 </control>
                 <control type="label">
+                  <description>release date</description>
                     <posx>0</posx>
                     <posy>200</posy>
                     <align>right</align>
@@ -464,9 +481,10 @@
                     <height>20</height>
                     <width>200</width>
                     <font>font13</font>
-                    <label>[B]Release Date:[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32041]:[/B]</label>
                 </control>
                 <control type="label">
+                  <description>runtime</description>
                     <posx>0</posx>
                     <posy>225</posy>
                     <align>right</align>
@@ -475,9 +493,10 @@
                     <height>20</height>
                     <width>200</width>
                     <font>font13</font>
-                    <label>[B]Runtime:[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32042]:[/B]</label>
                 </control>
                 <control type="label">
+                  <description>rating</description>
                     <posx>0</posx>
                     <posy>250</posy>
                     <align>right</align>
@@ -486,7 +505,7 @@
                     <height>20</height>
                     <width>200</width>
                     <font>font13</font>
-                    <label>[B]Rating:[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32043]:[/B]</label>
                 </control>
                 <control type="label" id="131">
                     <posx>174</posx>
@@ -554,7 +573,7 @@
                 <shadowcolor></shadowcolor>
                 <textwidth>150</textwidth>
                 <focusedcolor>ffE68a00</focusedcolor>
-                <label>Trailers</label>
+                <label>$ADDON[script.tmdb 32044]</label>
                 <onup>405</onup>
                 <onright></onright>
                 <onleft>132</onleft>
@@ -573,7 +592,7 @@
                 <shadowcolor></shadowcolor>
                 <textwidth>150</textwidth>
                 <focusedcolor>ffE68a00</focusedcolor>
-                <label>Couch Potato</label>
+                <label>$ADDON[script.tmdb 32045]</label>
                 <onup>50</onup>
                 <ondown>129</ondown>
                 <onleft>132</onleft>
@@ -592,7 +611,7 @@
                 <shadowcolor></shadowcolor>
                 <textwidth>150</textwidth>
                 <focusedcolor>ffE68a00</focusedcolor>
-                <label>Webpage</label>
+                <label>$ADDON[script.tmdb 32046]</label>
                 <onup>127</onup>
                 <ondown>200</ondown>
                 <onleft>132</onleft>
@@ -612,7 +631,7 @@
                 <shadowcolor></shadowcolor>
                 <textwidth>150</textwidth>
                 <focusedcolor>ffE68a00</focusedcolor>
-                <label>Similar</label>
+                <label>$ADDON[script.tmdb 32047]</label>
                 <onup>105</onup>
                 <onright>200</onright>
                 <onleft></onleft>
@@ -631,7 +650,7 @@
                 <shadowcolor></shadowcolor>
                 <textwidth>150</textwidth>
                 <focusedcolor>ffE68a00</focusedcolor>
-                <label>Keywords</label>
+                <label>$ADDON[script.tmdb 32048]</label>
                 <onup>122</onup>
                 <onright>200</onright>
                 <onleft></onleft>
@@ -650,7 +669,7 @@
                 <shadowcolor></shadowcolor>
                 <textwidth>150</textwidth>
                 <focusedcolor>ffE68a00</focusedcolor>
-                <label>Genre</label>
+                <label>$ADDON[script.tmdb 32027]</label>
                 <onup>51</onup>
                 <onright>200</onright>
                 <onleft></onleft>
@@ -669,7 +688,7 @@
                 <shadowcolor></shadowcolor>
                 <textwidth>150</textwidth>
                 <focusedcolor>ffE68a00</focusedcolor>
-                <label>Cast</label>
+                <label>$ADDON[script.tmdb 32049]</label>
                 <onup>52</onup>
                 <ondown></ondown>
                 <onleft></onleft>
@@ -1057,7 +1076,7 @@
           <textwidth>90</textwidth>
           <textoffsetx>40</textoffsetx>
           <focusedcolor>ffE68a00</focusedcolor>
-          <label>[B]Lists[/B]</label>
+          <label>[B]$ADDON[script.tmdb 32025][/B]</label>
           <height>32</height>
           <width>80</width>
           <ondown>404</ondown>
@@ -1089,7 +1108,7 @@
                     <textwidth>150</textwidth>
                     <textoffsetx>40</textoffsetx>
                     <focusedcolor>ffE68a00</focusedcolor>
-                    <label>[B]Favorite[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32023][/B]</label>
                     <height>32</height>
                     <width>120</width>
           <ondown>404</ondown>
@@ -1121,7 +1140,7 @@
                     <textwidth>150</textwidth>
                     <textoffsetx>40</textoffsetx>
                     <focusedcolor>ffE68a00</focusedcolor>
-                    <label>[B]Watchlist[/B]</label>
+                    <label>[B]$ADDON[script.tmdb 32014][/B]</label>
           <ondown>404</ondown>
           <onleft>4000</onleft>
                 </control>
@@ -1145,7 +1164,7 @@
             <textcolor>ff606060</textcolor>
             <shadowcolor></shadowcolor>
             <focusedcolor>ffE68a00</focusedcolor>
-            <label>[B]Show All[/B]</label>
+            <label>[B]$ADDON[script.tmdb 32050][/B]</label>
             <textoffsetx>0</textoffsetx>
             <textoffsety>0</textoffsety>
             <align>center</align>

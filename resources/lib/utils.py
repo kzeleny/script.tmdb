@@ -58,7 +58,7 @@ def getTitleFont():
             multiplier=f['size'] / 20
             break
     for f in fonts:
-        if f['size'] >= 26 * multiplier:
+        if f['size'] >= 28 * multiplier:
             title_font=f['name']
             break
     return title_font
